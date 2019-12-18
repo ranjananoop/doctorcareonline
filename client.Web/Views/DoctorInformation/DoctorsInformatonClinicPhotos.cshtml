@@ -1,0 +1,113 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonClinicPhotos";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@*<h2><span class="username">@Html.ActionLink("My Profile", "DoctorsInformatonViews", "DoctorInformation", htmlAttributes: new { @class = "username", title = "Manage" })</span>> Public Profile</h2>*@
+
+
+
+
+@using (Html.BeginForm())
+{
+           
+ 
+    <input id="MessageUpdateStatus" disabled="disabled" type="text" value="@Model.MessageUpdateStatus"   />
+     @Html.ValidationSummary(true) 
+    
+    <div class="fleet doctorsInfoClinicPhotos">
+        <div class="row">
+           
+                <h6>Clinic Details</h6> <a class="linkClass editLink editdocInfoClinicDisplay"></a>
+                  <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+            </p>
+                <br />
+              
+           
+
+            <div id="docInfoClinicDisplay">
+                @{Html.RenderPartial("_DoctorsInfoClinicPhotosDisplay");}
+            </div>
+            <div id="docInfoClinicEdit">@{Html.RenderPartial("_DoctorsInfoClinicPhotosEdit");}</div>
+        </div>
+        <div class="row">
+           
+                <h6>Doctor Availability on Clinic</h6>
+                  <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+            </p>
+           
+            <div class="_SetClinicAppointment">
+                <div class="stepsVideo">@{Html.RenderPartial("_SetClinicAppointment");}</div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+
+    $(document).ready(function () {
+
+        $('.c_pgTitleText').text('Clinic Info');
+        $('.c_pgTitleIcon').addClass('clinicPhoto');
+
+        $('#docInfoClinicDisplay').show();
+        $('#docInfoClinicEdit').hide();
+
+        $('.editdocInfoClinicDisplay').click(function () {
+            $('#docInfoClinicDisplay').hide();
+            $('#docInfoClinicEdit').show();
+        });
+
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+            $(".validation-summary-errors").hide();
+        });
+
+        $("#pagetitle").text('Clinic Info');
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+
+        $('.toggle.docInfoClinic').click(function () {
+
+            $('#docInfoClinicDisplay').hide();
+            $('#docInfoClinicEdit').show();
+        });
+        $('#TELEPHONE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s\-]*$/g, function (str) { return ''; }));
+        });
+      
+    });
+
+</script>
+<style>
+    .validation-summary-errors {
+width: 95% !important;
+margin: 10px 0px 0px 10px !important;
+}
+   
+   .display-label {
+  color: #096ca3 !important;
+    }
+</style>

@@ -1,0 +1,29 @@
+﻿@model client.Web.Models.PayPalModel
+@{
+    ViewBag.Title = "PayPalSubscription";
+}
+
+<div class="congraluations"></div>
+
+<div class="congraluations_highlights">
+    @if (Model.STATUS=="success"){
+    <div class="sorry_left">
+        <h3>Thanks for subscribing to docare online.</h3>
+    </div>
+    }
+    else{
+   <div class="sorry_left">
+       <h3> Please Subscribe To enjoy the docare Benefits!</h3>
+    </div>
+    }
+    <div class="row alignCenter">
+        <a  href="/DoctorInformation/Dashboard" class="button">Continue!</a>
+    </div>
+</div>
+
+<script>
+    $("#beforelogin").hide();
+    $("#afterlogin").show();
+    $("#afterloginsign").hide();
+    $('.c_site_search').hide();
+</script>

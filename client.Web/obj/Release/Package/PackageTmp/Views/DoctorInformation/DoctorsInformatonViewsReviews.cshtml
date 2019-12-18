@@ -1,0 +1,77 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViewsReviews";
+}
+<div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon docInfoViews"></div>
+                        <h1 class="c_pgTitleText">Doctors Reviews</h1>
+                    </div>
+                </div>
+
+<div class="c_body innerLayout">
+
+    
+    <div class="c_doctorsInfoViewsReviews">
+        <div class="fleet" style="min-height:400px;">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(false)
+
+               <div> @{Html.RenderPartial("_doctorreview");}</div>
+            
+
+    
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<style>
+    .row {margin-bottom: 3px !important;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        $('.customToggleCollapse').click(function () {
+
+            $(this).parent().next('.customAccordionContent').toggle();
+            $(this).toggleClass('customToggleExpand');
+        });
+
+        //$('.messagetoUser').appendTo('.lastContent');
+
+
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+        $('.img_ShowClinic').each(function () {
+
+            $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+
+
+    });
+
+</script>

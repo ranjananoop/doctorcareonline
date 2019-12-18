@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+    <title>@ViewBag.Title </title>
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="~/Content/reset.css" type="text/css" />*@
+    <link rel="stylesheet" href="~/Content/jMenu.jquery.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/kendo.common.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/kendo.default.min.css" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.3.js"></script>
+    @*        <script type="text/javascript" src="~/Scripts/jquery-1.9.0.min.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/jMenu.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/kendo.all.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/underscore-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/console.js"></script>
+    <link href="~/Content/verticalMenustyles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.weekcalendar.js"></script>
+    <link href="~/Content/reset.css" rel="stylesheet" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+    <link href="~/Content/patient.css" rel="stylesheet" />
+@*    <link href="~/Content/patientpage_Style.css" rel="stylesheet" />*@
+    <script src="~/Scripts/jquery.password-strength.min.js"></script>
+    <link href="~/Content/smoothness/jquery.weekcalendar.css" rel="stylesheet" />
+
+    
+ <script src="~/Scripts/imgLiquid-min.js" type="text/javascript"></script> 
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ba-dotimeout.js"></script>
+    
+    <style type="text/css">
+        #map_canvas {
+            height: 100%;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function resizeprofilephotopatient() {
+
+            $(".imgLiquidFill").imgLiquid({
+                fill: true,
+                horizontalAlign: "center",
+                verticalAlign: "top"
+            });
+        }
+        $(document).ready(function () {
+
+            //var leftColumnHeight = $('.leftMenu').height();
+            //var frameHeight = $('.frameContent').height();
+            //var formHeight = $('form').height();
+            //$('.middleColumnContent').height(frameHeight);
+
+          
+
+            $(".validation-summary-errors li").each(function () {
+                if ($(this).text().indexOf('Error') > -1) {
+                    $('.validation-summary-errors').removeClass();
+                    $('.validation-summary-errors').addClass('MessageUpdateStatus');
+                }
+            });
+
+
+            $('.leftMenu #cssmenu li ul li a').click(function () {
+                //$(this).addClass('active');
+            });
+
+            $('.customToggleCollapse').click(function () {
+                $(this).parent().next('.customAccordionContent').toggle();
+                $(this).toggleClass('customToggleExpand');
+            });
+
+
+            $('.collapse').toggle(function () {
+                $('.leftMenu').hide();
+                $(this).parent('.middleColumnContent').css('width', '100%');
+                $(this).addClass('expand');
+                $('.pageIcon').css('margin-left', '20px');
+
+            }, function () {
+                $('.leftMenu').show();
+                $(this).parent('.middleColumnContent').css('width', '622px');
+                $(this).removeClass('expand');
+                $('.pageIcon').css('margin-left', '0px');
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="c_container">
+     <header>
+            <div class="c_hdr_fleet">
+                <div class="left">
+                  <a class="fNiv" href="~/Home/Index">  <div class="c_logo"></div></a>
+                </div>
+                <div class="right">
+                    <ul class="c_headerMenu">
+                        <li><a href="~/Account/LogOff">Log Off</a></li>
+                    </ul>
+                    <div class="c_site_search" id="example">
+                        <input id="customers" style="width: 100%;" class="customers" placeholder="Search for Doctor"/>                       
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    
+                    var autocomplete = $(".customers").kendoAutoComplete({
+                        minLength: 1,
+                        dataTextField: "FIRSTNAME",
+                        template: "<a href='http://localhost:6999/DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;' ><div class='boxSep' ><div class='imgLiquidFill imgLiquid ' style='width: 80px;height: 80px;'><img  src='${ USERPHOTOFILEPATH }'    onload='resizeprofilephotopatient();' /></div></div>" +
+                                "<div class='doctorsName'><a href='http://localhost:6999/DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#'><b>Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }</b><p>${SPECIALITY }</p><p>${ USERSTATE }</p></a><div class='icon_searcharrowOff'></div></a></a>",
+                        dataSource: {
+                            transport: {
+                                read: {
+                                    dataType: "json",
+                                    url: "/AccountSettings/GetAllDoctors",
+                                }
+                            }
+                        },
+                        height: 370,
+                    }).data("kendoAutoComplete");
+
+                    $('#customers-list').addClass('doccareAutoSearch');
+                    $('.doccareAutoSearch').closest('html').addClass('doccareAutoSearchContainer');
+                });
+            </script>
+
+
+
+        </header>
+
+        <div class="c_body innerLayout">
+            <div class="c_body_fleet">
+                <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon"></div>
+                        <h1 class="c_pgTitleText"></h1>
+                    </div>
+                </div>
+            </div>
+
+
+           
+                <div class="c_column_one c_leftColumn">
+                    <div class="welcomePatient">
+                        <div class="d_doctorPic">
+                            <div class="boxSep" ><div class="imgLiquidFill imgLiquid " style="width: 130px;height: 160px;"><img  class="img_Showed "    onload='resizeprofilephotopatient();' /></div></div>
+                            
+                        </div>
+                        <h2>Welcome</h2>
+                        <input id="display" disabled="disabled" type="text" />
+                        <div id="CurrentDate" class="date">
+                            <p></p>
+                        </div>
+                    </div>
+                    @Html.Partial("~/Views/Shared/PatientDoctorsleftMenu.cshtml")
+                </div>
+                <div class="c_column_two c_rightColumn"> 
+                                   
+                                        @RenderSection("featured", required: false)
+                                        <section>
+                                            @RenderBody()
+                                        </section>
+                                    
+                             
+
+                          
+                       
+                  
+                 
+                </div>
+
+         
+            <div class="c_column_one bgoff">
+                <div id="example" class="k-content availableDoctor">
+                    <div class="panelHeader">
+                        <h3>Available Doctors</h3>
+                    </div>
+                    <table id="netflixTabledone">
+                        <thead style="display: none;">
+                            <tr>
+                                <th></th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script id="rowTemplatedone" type="text/x-kendo-tmpl">
+                <tr>
+                    <td  >
+                                            <img src="${ USERPHOTOFILEPATH }" style="width:80px;height:80px;margin:0 0 0 5px;" alt="${ UserName }" />
+                    </td>
+                    <td>
+                        <b>Dr. ${ FIRSTNAME } &nbsp; ${ LASTNAME }</b><br/> 
+                         ${ CITY }<br/>                    
+                        ${ USERSTATE }<br/>
+                         <a href='DoctorsInformatonViews?id=#=UserName#' class="linkClass">View Profile</a><br/>                       
+                    </td>
+                    
+                </tr>
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="c_footer_fleet">
+                @Html.Partial("~/Views/Shared/Menu.cshtml")
+            </div>
+
+        </footer>
+    </div>@*c_container  class close here*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            function resizeprofilephoto() {
+
+                $(".imgLiquidFill").imgLiquid({
+                    fill: true,
+                    horizontalAlign: "center",
+                    verticalAlign: "top"
+                });
+            }
+            $('.c_leftColumn').css('height', $('.c_body').outerHeight());
+
+         
+
+            function setHeight() {              
+                $('.c_leftColumn').css('height', $('.c_body').outerHeight());            
+            }
+
+            $.doTimeout(3000, function () {
+                setHeight();
+            });
+
+           
+
+            $('.img_Showed').each(function () {
+
+                $.ajax({
+                    async: true,
+                    type: "GET",
+                    url: "/PatientProfile/ImagePath",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        $('.img_Showed').attr('src', msg.msg);
+
+                    }
+                });
+
+            });
+            $("#jMenu").jMenu();
+
+            $('#pastapp_con').css('display', 'none');
+            $('#pre_con').css('display', 'none');
+            $('#pass_con').css('display', 'block');
+
+
+            $("#personal_details").click(function () {
+                $('#personal_dtl_con').slideToggle("slow");
+                $('#pastapp_con').css('display', 'none');
+                $('#pre_con').css('display', 'none');
+            });
+
+            $("#pastApp").click(function () {
+                $('#pastapp_con').slideToggle("slow");
+                $('#personal_dtl_con').css('display', 'none');
+                $('#pre_con').css('display', 'none');
+            });
+
+            $("#prefferedPro").click(function () {
+                $('#pre_con').slideToggle("slow");
+                $('#personal_dtl_con').css('display', 'none');
+                $('#pastapp_con').css('display', 'none');
+            });
+
+
+        });
+
+        
+
+
+        $('#cssmenu ul li ul').hide();
+        $('#cssmenu ul li:first').addClass('active').children('ul').show();
+        $('#cssmenu ul li').click(function () {
+            if ($(this).children('ul').is(':hidden')) {
+                $('#cssmenu ul li').removeClass('active').children('ul').slideUp();
+                $(this).toggleClass('active').children('ul').slideDown();
+            }
+            //return false;
+        });
+
+        $('#SEARCHZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#ZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        var statusSelected = 0;
+        var poData = [];
+        function emptyGridFix() {
+            if (this.total() > 0) return; // continue only for empty grid
+            var msg = this.options.emptyMsg;
+            if (!msg) msg = 'No Upcoming Appointments'; // Default message
+            $(this.options.table).parent().html('<div class="empty-grid">' + msg + '</div>')
+        }
+        $(document).ready(function () {
+
+
+
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/Username",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg) {
+                        $('#display').attr('value', msg.msg);
+                    }
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/CurrentDate",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $("#CurrentDate > p").html(msg.msg);
+
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/MessageCount",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $(".messageCounter > p").html(msg.msg);
+
+                }
+            });
+
+
+            $("#netflixTabledone").kendoGrid({
+                dataSource: {
+                    type: "Json",
+                    serverFiltering: true,
+
+                    transport: {
+                        read: "/PatientProfile/AllDoctors"
+                    },
+                    pageSize: 5,
+                },
+                rowTemplate: kendo.template($("#rowTemplatedone").html()),
+                height: 200
+            });
+
+        });
+        $(function () {
+
+            $('#cssmenu ul li a').each(function () {
+                var path = window.location.href;
+                var current = path.substring(path.lastIndexOf('/') + 1);
+                var url = $(this).attr('href');
+                if (current == 'VideoConfMain' || current == 'VideoConf') {
+                    $('#videorelease').addClass('selected');
+                } else if (url.indexOf(current) > -1) {
+                    $(this).parent('li').addClass('selected');
+                };
+            });
+        });
+    </script>
+
+
+    <style>
+        #gridupComingAppointment .k-grid-header {
+            padding-right: 0px !important;
+        }
+    </style>
+    <script type="text/javascript">
+        function calculate_time_zone() {
+            var rightNow = new Date();
+            var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  // jan 1st
+            var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); // june 1st
+            var temp = jan1.toGMTString();
+            var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+            temp = june1.toGMTString();
+
+            var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+            var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+            var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
+            var dst;
+            if (std_time_offset == daylight_time_offset) {
+                dst = "0"; // daylight savings time is NOT observed
+            } else {
+                // positive is southern, negative is northern hemisphere
+                var hemisphere = std_time_offset - daylight_time_offset;
+                if (hemisphere >= 0)
+                    std_time_offset = daylight_time_offset;
+                dst = "1"; // daylight savings time is observed
+            }
+            document.getElementById('timezoneOffset').value = std_time_offset;
+            document.getElementById('dstObserved').value = dst;
+
+        }
+      //  onload = calculate_time_zone;
+        </script>
+    <input type="hidden" id="timezoneOffset" />
+    <input type="hidden" id="dstObserved" />
+    @RenderSection("scripts", required: false)
+</body>
+</html>

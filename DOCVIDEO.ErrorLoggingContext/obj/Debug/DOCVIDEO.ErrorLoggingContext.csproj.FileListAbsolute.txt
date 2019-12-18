@@ -1,0 +1,66 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\DOCVIDEO.ErrorLoggingContext.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\DOCVIDEO.ErrorLoggingContext.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.xml
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.xml
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb
+D:\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Net.Http.Formatting.xml
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csprojResolveAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Debug\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Debug\Elmah.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Debug\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Debug\DOCVIDEO.ErrorLoggingContext.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Debug\GURUKUL.ErrorLoggingContext.pdb

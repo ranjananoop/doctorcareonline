@@ -1,0 +1,198 @@
+﻿<div class="actionPanel">
+    <div class="right">
+
+        <input type="button" value="Delete" id="btndelete" />
+        <input type="button" value="Refresh" id="btnrefresh" />
+        <input type="button" value="Select All" id="btnselect" />
+    </div>
+</div>
+<div id="grid1" style="width: 100%;"></div>
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+        $("#btnselect").click(function () {
+
+            $('.target').each(function () {
+
+
+                $('.targets').attr('checked', 'checked');
+            })
+        });
+        $("#btnrefresh").click(function () {
+
+            location.reload();
+
+        });
+
+        $('.target').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+            if ($(this).is(':checked')) {
+
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.push(MessageDeleteId);
+
+            } else {
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.pop(MessageDeleteId);
+            }
+        });
+
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 4,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetAllergyReportDoc",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetAllergyRep",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var allergyReport = new Object();
+
+                    if (type == "update") {
+                        allergyReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "ALLERGYID",
+                        fields: {
+                            ALLERGYID: { editable: false, nullable: true },
+                            ALLERGYREPORTNAME: { type: "string" },
+                            COMMENT: { type: "string" }
+                        }
+                    }
+                },
+        });
+
+
+        $("#grid1").kendoGrid({
+            dataSource: dataSource1,
+            type: "Json",
+            transport: { read: "/HealthHistory/GetAllergyReportDoc" },
+            schema: {
+                id: "ALLERGYID",
+                model: {
+                    fields: {
+                        ALLERGYID: { editable: false, nullable: true },
+                        ALLERGYREPORTNAME: { type: "string" },
+                        COMMENT: { type: "string" }
+
+                    }
+                }
+
+            },
+            groupable: false,
+            filterable: {
+                extra: false,
+                operators: {
+                    string: {
+                        startswith: "Starts with",
+                        eq: "Is equal to",
+                        neq: "Is not equal to"
+                    }
+                }
+            },
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+
+            columns: [{
+                template: "<input type='checkbox' class='target' value='#= ALLERGYID #'/>",
+                width: "100px",
+                title: "Select"
+            }, {
+                field: "ALLERGYREPORTNAME",
+                title: "Allergy Report Name",
+                filterable: false
+            },
+            {
+                title: "View",
+                width: 50, template: "<a  title=${ ALLERGYID } onclick=setStatus(${ ALLERGYID },3) class='linkClass'  >View</a>"
+            },
+            {
+                filterable: false,
+                template: "<a href='#= ALLERGYFILEPATH#' target=_blank class='linkDownload'></a>",
+                title: "Download",
+            }
+
+            ]
+        });
+
+
+
+
+        $("#btndelete").click(function () {
+            var AllergyDeleteIDs = [];
+            $('.target').each(function () {
+
+
+                if ($(this).is(':checked')) {
+                    var AllergyDeleteID = $(this).val();
+                    AllergyDeleteIDs.push(AllergyDeleteID);
+
+                }
+
+            });
+            var model = new Object();
+            model.AllergyDeleteIDs = AllergyDeleteIDs;
+            $.ajax({
+
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/DeleteAllergyReportDoc",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+
+                        $("#MessageUpdateStatus").val(msg.msg);
+
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        }
+                        var grids = $("#grid1").data("kendoGrid");
+                        grids.dataSource.read();
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+
+
+        });
+
+    });
+
+
+
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,166 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="accordion noaccordion">
+
+        <div class="patientInfo" id="p_sec_con">
+            <div class="p_img_con">
+               
+             
+                <div class="boxSep" ><div class="imgLiquidFill imgLiquid " style="width: 130px;height: 160px;"><img  src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephotopatient();' /></div></div>
+           
+            <div class="uploadClass">
+                <input id="UserImageUpload" name="UserImageUpload" type="file"   />
+                
+
+            </div>
+            </div>
+            <div class="p_input_info">
+            <table cellpadding="0" cellspacing="0">
+                @Html.HiddenFor(model => model.UserName)
+                   
+                <tr>
+
+                        <th class="">@Html.LabelFor(model => model.Salutation, new { @class = "slName" })</th>
+                        <td style="margin-bottom:10px;">@Html.DropDownListFor(model => model.Salutation, new[] {
+                                new SelectListItem(){Text = "Mr." ,Value="Mr." },
+                                new SelectListItem(){Text = "Ms." ,Value="Ms." },
+                                new SelectListItem(){Text = "Mrs." ,Value="Mrs." },
+                                new SelectListItem(){Text ="Dr.", Value ="Dr." }
+                            }, "Select Salutation", new { @style = "width:72px !important;" })
+                            @Html.ValidationMessageFor(model => model.Salutation)</td>
+
+                    </tr>
+                    <tr>
+                    <th>@Html.LabelFor(model => model.FIRSTNAME)</th>
+                    <td>@Html.TextBoxFor(model => model.FIRSTNAME, new { maxlength = "48" })
+                        @Html.ValidationMessageFor(model => model.FIRSTNAME)</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(model => model.LASTNAME)</th>
+                    <td>@Html.TextBoxFor(model => model.LASTNAME, new { maxlength = "48" })
+                        @Html.ValidationMessageFor(model => model.LASTNAME)</td>
+                </tr>
+                <tr>
+                    <th>@Html.LabelFor(model => model.GENDER)</th>
+                    <td>@Html.DropDownListFor(model => model.GENDER, new[] {
+                                new SelectListItem(){Text = "Male" ,Value="Male" },
+                                new SelectListItem(){Text ="Female", Value ="Female" }
+                            }, "Select Your Gender")
+                        @Html.ValidationMessageFor(model => model.GENDER)</td>
+                </tr>
+                <tr>
+                    <th><label>Date of Birth</label></th>
+                    <td>@Html.DropDownListFor(model => model.DOBMonth, new[] {
+                                new SelectListItem(){Value="1",Text = "Jan"},
+                                new SelectListItem(){Value="2",Text = "Feb"},
+                                new SelectListItem(){Value="3",Text = "Mar"},
+                                new SelectListItem(){Value="4",Text = "Apr"},
+                                new SelectListItem(){Value="5",Text = "May"},
+                                new SelectListItem(){Value="6",Text = "Jun"},
+                                new SelectListItem(){Value="7",Text = "Jul"},
+                                new SelectListItem(){Value="8",Text = "Aug"},
+                                new SelectListItem(){Value="9",Text = "Sep"},
+                                new SelectListItem(){Value="10",Text = "Oct"},
+                                new SelectListItem(){Value="11",Text = "Nov"},
+                                new SelectListItem(){Value="12",Text = "Dec"}
+                                                            }, "Month", new { @style = "width:72px !important;" })
+                        @Html.ValidationMessageFor(model => model.DOBMonth)
+                        &nbsp;
+                        @Html.DropDownListFor(model => model.DOBDAY, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Day", new { @style = "width:63px !important;" })
+                        @Html.ValidationMessageFor(model => model.DOBDAY)
+                        &nbsp; 
+                         @Html.DropDownListFor(model => model.DOBYEAR, Enumerable.Range(1900, DateTime.Now.Year - 1899).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Year", new { @style = "width:63px !important;" })
+
+                        @Html.ValidationMessageFor(model => model.DOBYEAR)
+
+                        @Html.HiddenFor(model => model.DOBDAYDISPLAY)                     
+
+                    </td>
+
+                </tr>
+            </table>
+            </div>
+            <div class="clear"></div>
+            <div class="row c_buttonContainer">
+                <div class="right">
+                 <input type="button" value="Cancel" class="button cancel" id="patineinfocancelconfirm" />
+                <input type="button" value="Save" class="button" id="patientinfoedit" />
+               </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+<script>
+    
+    $("#patientinfoedit").click(function (e) {
+        var USERSINFORMATION = new Object();
+
+        USERSINFORMATION.Salutation = $("#Salutation").val();
+        USERSINFORMATION.FIRSTNAME = $("#FIRSTNAME").val();
+        USERSINFORMATION.LASTNAME = $("#LASTNAME").val();       
+        USERSINFORMATION.GENDER = $("#GENDER").val();
+        USERSINFORMATION.DOBMonth = $("#DOBMonth").val();
+        USERSINFORMATION.DOBDAY = $("#DOBDAY").val();
+        USERSINFORMATION.DOBYEAR = $("#DOBYEAR").val();        
+
+
+
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/PatientProfile/_pateintinfoedit",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {               
+               window.location.reload();
+               
+            },
+            data: JSON.stringify(USERSINFORMATION),
+        });
+
+    });
+
+    function onSelect(e) {
+        $('#MessageUpdateStatus').hide();
+
+    }
+    function onSuccess(e) {
+        $('#MessageUpdateStatus').val('Image uploaded successfully')
+        $('#MessageUpdateStatus').show();
+    }
+
+    function onError(e) {
+        $('#MessageUpdateStatus').val('Error :Image upload  unsuccessfull')
+        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+            $('#MessageUpdateStatus').removeClass();
+            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+        }
+        $('#MessageUpdateStatus').show();
+    }
+    $("#UserImageUpload").kendoUpload({
+        async: {
+            saveUrl: "/PatientProfile/Save",
+            removeUrl: "/PatientProfile/Remove",
+            autoUpload: true
+        },
+        multiple: false,
+        error: onError,
+        select: onSelect,
+        success: onSuccess
+
+    });
+
+
+</script>
+

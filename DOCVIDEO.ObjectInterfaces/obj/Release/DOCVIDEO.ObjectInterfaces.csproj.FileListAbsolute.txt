@@ -1,0 +1,10 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Release\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Release\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Release\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\bin\Release\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\bin\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Release\DOCVIDEO.ObjectInterfaces.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Release\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Release\DOCVIDEO.ObjectInterfaces.csprojAssemblyReference.cache

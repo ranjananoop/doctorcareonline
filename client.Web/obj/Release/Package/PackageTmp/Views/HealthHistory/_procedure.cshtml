@@ -1,0 +1,249 @@
+﻿@model client.Web.Models.HealthHistoryModel
+
+
+@using (Html.BeginForm())
+{
+   
+   
+
+
+        
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PROCEDUREREPORTNAME)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PROCEDUREREPORTNAME, new { @Value = "", maxlength = "32" })
+        @Html.ValidationMessageFor(model => model.PROCEDUREREPORTNAME)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PROCEDUREDATE)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PROCEDUREDATE, new { id = "proceduredate", style = "display:block;" })
+        @Html.ValidationMessageFor(model => model.PROCEDUREDATE)
+    </div>
+       
+
+       
+    <div class="display-label">
+        @Html.LabelFor(model => model.PROCEDURENOTES)
+    </div>
+    <div class="display-field">
+        @Html.TextAreaFor(model => model.PROCEDURENOTES, new { @cols = 20, @rows = 5,@style="width: 210px;", maxlength = "700" })
+    </div>
+       
+      
+   <div class="row c_buttonContainer">
+   
+        <div class="right">
+        <input type="button" value="Save" class="button" id="btnprocedure" />
+    </div>
+        
+       </div>
+    
+    <div id="grid13"></div>
+   <div class="row c_buttonContainer">
+   
+        <div class="right">
+        <input type="button" value="Delete" id="btndel11" class="button cancel"/>
+  
+        </div>
+       </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('.advanceQuickSearch').insertBefore('.availableDoctor');
+        var now = new Date();
+        now.setDate(now.getDate() + 0);
+        $("#proceduredate").kendoDatePicker({
+            max: now,
+            min: new Date(1900, 0, 0)
+        });
+        var datepicker = $("#proceduredate").data("kendoDatePicker");
+        datepicker.value(now);
+
+    });
+
+    var ProcedureDeleteIDs = [];
+    $("#PROCEDURENOTES").val("");
+    $(document).ready(function () {
+
+
+        $("#PROCEDURENOTES").val("");
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 5,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetProcedureReport",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetProcedureRep",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var procedureReport = new Object();
+
+                    if (type == "update") {
+                        procedureReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "PROCEDUREID",
+                        fields: {
+                            PROCEDUREID: { editable: false, nullable: true },
+                            PROCEDUREREPORTNAME: { type: "string" },
+                            PROCEDUREDATE: { type: "Date", template: '#= kendo.toString(PROCEDUREDATE, "MM/dd/yyyy") #' }
+                        }
+                    }
+                },
+        });
+
+
+        $("#grid13").kendoGrid({
+            dataSource: dataSource1,
+            width: "20px",
+            groupable: false,
+            filterable: {
+                extra: false,
+                operators: {
+                    string: {
+                        startswith: "Starts with",
+                        eq: "Is equal to",
+                        neq: "Is not equal to"
+                    }
+                }
+            },
+
+            autoBind: true,
+            editable: "inline",
+            sortable: true,
+            pageable: true,
+            columns: [{
+                template: "<input type='checkbox' class='target' value='#= PROCEDUREID #'/>",
+                title: "Select",
+                width: 110,
+            },
+            {
+                field: "PROCEDUREREPORTNAME",
+                title: "Report Name",
+                filterable: false,
+                width: 220,
+            },
+            {
+                title: "Procedure Date", field: "PROCEDUREDATE", filterable: false, width: 110,
+                template: '#= kendo.toString(PROCEDUREDATE, "MM/dd/yyyy") #',
+                format: "{0:yyyy-MM-dd}",
+                editor: dateTimeEditor
+            },
+            {
+                title: "View",
+                width: 110, template: "<a  title=${ PROCEDUREID } onclick=setStatus(${ PROCEDUREID },2) class='linkClass'  >View</a>"
+            },
+            {
+                command: ["edit"],
+                title: "Edit",
+                width: 110,
+            }
+            ]
+        });
+        function dateTimeEditor(container, options) {
+            $('<input data-text-field="' + options.field + '" data-value-field="' + options.field + '" data-bind="value:' + options.field + '" data-format="' + options.format + '"/>')
+                    .appendTo(container)
+                    .kendoDatePicker({});
+        }
+
+        $('.target').live('change', function () {
+
+
+            if ($(this).is(':checked')) {
+
+                var ProcedureDeleteID = $(this).val();
+                ProcedureDeleteIDs.push(ProcedureDeleteID);
+
+            }
+            else {
+                var ProcedureDeleteID = $(this).val();
+                ProcedureDeleteIDs.pop(ProcedureDeleteID);
+            }
+        });
+
+        $("#btndel11").click(function () {
+            var model = new Object();
+            model.ProcedureDeleteIDs = ProcedureDeleteIDs;
+            $.ajax({
+
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/DeleteProcedureRepo",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").show();
+                        var url = '@Url.Action("upload", "HealthHistory")';
+                            window.location.href = url;
+                            return true;
+                        }
+
+                    },
+                    data: JSON.stringify(model)
+                });
+
+            });
+    });
+
+        $("#btnprocedure").click(function () {
+            var healthHistroymodel = new Object();
+
+            healthHistroymodel.PROCEDUREREPORTNAME = $("#PROCEDUREREPORTNAME").val();
+            healthHistroymodel.PROCEDUREDATE = $("#proceduredate").val();
+            healthHistroymodel.STOPPEDDATE = $("#STOPPEDDATE").val();
+            healthHistroymodel.PROCEDURENOTES = $("#PROCEDURENOTES").val();
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/_procedure",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg)
+                        $("#MessageUpdateStatus").show();
+                    var url = '@Url.Action("upload", "HealthHistory")';
+                window.location.href = url;
+
+            },
+            data: JSON.stringify(healthHistroymodel),
+        });
+
+
+    });
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+   #grid13 .k-textbox {
+width: 200px !important;
+height: 29px !important;
+}
+</style>

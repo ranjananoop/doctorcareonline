@@ -1,0 +1,92 @@
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\Altairis.Web.Security.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.BaseDataLayer.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.CompanyDatabaseInitilization.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\EntityFramework.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.BaseDataLayer.pdb
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.CompanyDatabaseInitilization.pdb
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.Domain.pdb
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\EntityFramework.xml
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\Altairis.Web.Security.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\bin\Debug\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\New folder\DOCCARE_Nov13\ENH\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+D:\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\Altairis.Web.Security.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.xml
+D:\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\Altairis.Web.Security.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.xml
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+E:\Data_old_Hard_disk_D\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\Altairis.Web.Security.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\EntityFramework.xml
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Anoop works\live_socailsite\GURUKUL\UnitTestProject1\bin\Debug\LoadTest1.loadtest

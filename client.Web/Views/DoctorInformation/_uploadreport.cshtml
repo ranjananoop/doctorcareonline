@@ -1,0 +1,99 @@
+﻿
+
+<div id="grid5" ></div>
+
+      
+
+
+<script>
+
+    $("#NOTES").val("");
+
+    $(document).ready(function () {
+
+
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 4,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetUploadReportDocPateint",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetUploadReportID",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var patientReport = new Object();
+
+                    if (type == "update") {
+                        patientReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "PATIENTREPORTID",
+                        fields: {
+                            PATIENTREPORTID: { editable: false, nullable: true },
+                            REPORTNAME: { type: "string" },
+                            NOTES: { type: "string" }
+                        }
+                    }
+                },
+        });
+
+        $("#grid5").kendoGrid({
+            dataSource: dataSource1,
+            transport: { read: "/HealthHistory/GetUploadReport" },
+
+            groupable: false,
+            filterable: {
+                extra: false,
+                operators: {
+                    string: {
+                        startswith: "Starts with",
+                        eq: "Is equal to",
+                        neq: "Is not equal to"
+                    }
+                }
+            },
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+            columns: [ {
+                 field: "REPORTNAME",
+                 title: "Report Name",
+                filterable: false
+            },          
+
+            {
+                title: "View",
+                width: 50, template: "<a  title=${ PATIENTREPORTID } onclick=setStatus(${ PATIENTREPORTID },1) class='linkClass'  >View</a>"
+            },
+            {
+        filterable: false,
+        template: "<a href='#= REPORTPATH#' target=_blank class='linkEdit'></a>"
+            }
+
+            ],
+
+        });
+    });
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,42 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+<div class="customAccordionContent" id="personal_details">
+
+    <div class="display-field">
+        <div id="fade" class="black_overlay" style="height: 244%;"></div>
+        <div class="closeDisplayBar" style="display: none; clear: both; margin-top: -164px; position: relative; margin-right: 167px; z-index: 1000000000;"></div>     
+        <div class="boxSep" >
+		<div class="imgLiquidFill imgLiquid" style="width: 130px;height: 160px;">
+			<img alt="Image Unvailable" id="viewimg" class="img_Show" />
+		</div>
+	</div>
+    </div>
+    <div class="personalInfo" id="p_first_con">
+      
+        <div class="row">
+          
+            <div class="display-field">
+               <h2> @Html.DisplayFor(model => model.Salutation)
+            
+                @Html.DisplayFor(model => model.FIRSTNAME)
+            
+                @Html.DisplayFor(model => model.LASTNAME)
+                   </h2>
+            </div><br />
+        
+       
+           
+            <div class="display-field">
+                @Html.DisplayFor(model => model.GENDER)
+            </div><br />
+     
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DOBDISPLAY)
+            </div><br />
+            <div class="clear"></div>
+         <div class="display-field" style="margin-top:17px;">
+            <a href="~/PatientProfile/BasicInformation"  style="color:#3AA3FF !important;">Change Password</a>
+        </div>
+         </div>
+    </div>
+</div>

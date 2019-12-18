@@ -1,0 +1,45 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+@{
+    ViewBag.Title = "PreBookYourAppointmentSecond";
+}
+
+
+<div class="frameContainer">
+     <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon appointmentsIcon"></div>
+                        <h1 class="c_pgTitleText">Appointments</h1>
+                    </div>
+                </div>
+<div>
+   @{Html.RenderPartial("_ResonForVisit");}
+</div>
+</div>
+<style>
+    
+    .display-field h3 p {
+        margin-left: 20px;
+    }
+    h6 {
+font-weight: 400;
+font-size: 20px;
+padding: 7px 0px 11px 10px !important;
+color: #000;
+margin: 0 0 10px 0px;
+/*background-color: #d2e6f4;*/
+}
+    .pre_book_con .app_left {
+float: left;
+width: 600px;
+background: #d2e6f4;
+border: 1px solid #999;
+padding: 0px 10px;
+height: 259px !important;
+}
+
+    h1 {
+        padding:5px 0px;
+    }
+
+</style>

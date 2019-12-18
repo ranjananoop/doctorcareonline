@@ -1,0 +1,396 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+@{
+    ViewBag.Title = "Personalinfo";
+}
+   @using (Html.BeginForm())
+
+   {
+@Html.ValidationSummary(true)
+<div class="c_body innerLayout">
+
+    <div class="c_body_fleet">
+        <div class="c_pgTitle">
+            <div class="c_pgTitle_Fleet">
+                <h1 class="c_pgTitleText"><span class="myProfile"></span>Personal Info</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="c_column_three d_doctorSteps">
+          <div class="fleet">
+        <div class="steps" style="margin:0px 0px -20px 0px;">
+                    <ul>
+                        <li class="step1 currentStep" style="margin-left:230px;">
+                            <h3>1</h3>
+                            <span>Personal Info</span>
+                        </li>
+                  <li class="step2">
+                            <h3>2</h3>
+                            <span>Contact Info</span>
+                        </li>
+                    </ul>
+                    <div class="stepsLine"></div>
+                </div>
+
+        <div class="personal_info">
+            <div class="signupForm">
+                <div class="accordion">
+                    <div class="frameContainer">
+                        <div id="p_inform" style="margin-top:-16px;">
+                            <div id="p_content">
+                              
+                                <br />
+                             
+                                    <div style="float: left; width: 140px;">
+                                       
+                                        <br />
+                                        <div id="fade" class="black_overlay" style="height: 244%;"></div>
+                                        <div class="closeDisplayBar" style="display: none;"></div>
+                                        <br />
+                                           <div class="boxSep" ><div class="imgLiquidFill imgLiquid " style="width: 100px;height: 120px;"><img  id="viewimg" src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephoto();' /></div></div>                                
+                 
+                                       
+                                        <div class="uploadWrapper">
+                                            <div class="editor-field">
+                                                <div class="uploadClass">
+                                                    <input id="UserImageUpload" name="UserImageUpload" type="file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                  
+                                    <div class="step_one_con">
+                                        <table>
+                                            @Html.HiddenFor(model => model.UserName)
+
+
+                                            <tr>
+                                                <th class="">@Html.LabelFor(model => model.Salutation, new {  })</th> </tr>
+                                              <tr> <td>@Html.DropDownListFor(model => model.Salutation, new[] {
+                                new SelectListItem(){Text = "Mr." ,Value="Mr." },
+                                new SelectListItem(){Text = "Ms." ,Value="Ms." },
+                                new SelectListItem(){Text = "Mrs." ,Value="Mrs." },
+                                new SelectListItem(){Text ="Dr.", Value ="Dr." }
+                            }, "Select Salutation",  new { @style = "width:98px !important;" })
+                                                    @Html.ValidationMessageFor(model => model.Salutation)</td>
+                                               
+                                            </tr>
+                                         
+                                            <tr >
+                                                <th>@Html.LabelFor(model => model.FIRSTNAME, new {  })</th>
+                                                </tr>
+                                            <tr>
+                                                <td>@Html.TextBoxFor(model => model.FIRSTNAME, new { @class = "slinputfield" })
+                                                    @Html.ValidationMessageFor(model => model.FIRSTNAME)</td>
+                                            </tr>
+                                          
+                                            <tr>
+                                                <th>@Html.LabelFor(model => model.LASTNAME)</th>
+                                                </tr>
+                                            <tr>
+                                                <td>@Html.TextBoxFor(model => model.LASTNAME, new { @class = "slinputfield", maxlength = "48" })
+                                                    @Html.ValidationMessageFor(model => model.LASTNAME)</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <th>@Html.LabelFor(model => model.GENDER)</th>
+                                                </tr>
+                                            <tr>
+                                                <td>@Html.DropDownListFor(model => model.GENDER, new[] {
+                                new SelectListItem(){Text = "Male" ,Value="Male" },
+                                new SelectListItem(){Text ="Female", Value ="Female" }
+                            }, "Select Your Gender", new { @class = "slinputfield" })
+                                                    @Html.ValidationMessageFor(model => model.GENDER)</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <th>
+                                                  @Html.LabelFor(model => model.DOBMonth)</th>
+                                                </tr>
+                                            <tr>
+                                                <td>@Html.DropDownListFor(model => model.DOBMonth, new[] {
+                                new SelectListItem(){Value="1",Text = "Jan"},
+                                new SelectListItem(){Value="2",Text = "Feb"},
+                                new SelectListItem(){Value="3",Text = "Mar"},
+                                new SelectListItem(){Value="4",Text = "Apr"},
+                                new SelectListItem(){Value="5",Text = "May"},
+                                new SelectListItem(){Value="6",Text = "Jun"},
+                                new SelectListItem(){Value="7",Text = "Jul"},
+                                new SelectListItem(){Value="8",Text = "Aug"},
+                                new SelectListItem(){Value="9",Text = "Sep"},
+                                new SelectListItem(){Value="10",Text = "Oct"},
+                                new SelectListItem(){Value="11",Text = "Nov"},
+                                new SelectListItem(){Value="12",Text = "Dec"}
+                                                            }, "Month", new { @style = "width:98px !important;" })
+                                                    @Html.ValidationMessageFor(model => model.DOBMonth)
+                                                    &nbsp;
+                        @Html.DropDownListFor(model => model.DOBDAY, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Day", new { @style = "width:98px !important;" })
+                                                    @Html.ValidationMessageFor(model => model.DOBDAY)
+                                                    &nbsp; 
+                         @Html.DropDownListFor(model => model.DOBYEAR, Enumerable.Range(1900, DateTime.Now.Year - 1899).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Year", new { @style = "width:94px !important;" })
+
+                                                    @Html.ValidationMessageFor(model => model.DOBYEAR)
+
+                                                    @Html.HiddenFor(model => model.DOBDAYDISPLAY)
+                                                    @Html.HiddenFor(model => model.Email)
+
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                        
+
+
+                                    </div>
+                                    
+                                    <div class="amy_group" style="float:right;">
+                            <p>Your profile is completed</p>
+                            <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1> 
+                                        <div class="amy_inner"></div>                          
+                        </div>
+                               
+                            </div>
+                        </div>
+                        <div class="row  c_buttonContainer" style="width:97%;">
+                                         <div class="right">
+                                            <input type="submit" value="Next" class="button"   />
+                                             </div>
+                                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+           
+        </div>
+              </div> @* fleet closed here*@
+      
+    </div>
+</div>
+     }
+<script>
+
+
+    $(document).ready(function () {
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        $("#advancesearch").hide();
+        
+        $("#viewimg").click(function () {
+            //Checks if the image is already in original size:
+
+            $(this).css("width", 400);
+            $(this).css("height", 400);
+            $(this).css("z-index", 99999999);
+            $(this).css("position", 'relative');
+            $(this).css("margin-top", -150);
+            $(this).css("border", " 8px solid white");
+            $(this).css("border-radius", 5);
+            $('#fade').show();
+            $('.closeDisplayBar').show();
+
+
+        });
+
+        $('.closeDisplayBar').click(function () {
+
+            $('#fade').hide();
+            $('.closeDisplayBar').hide();
+            $("#viewimg").css("width", 100);
+            $("#viewimg").css("height", 100);
+            $("#viewimg").css("z-index", 0);
+            $("#viewimg").css("position", 'relative');
+            $("#viewimg").css("margin-top", 0);
+            $(this).css("border",'');
+            $(this).css("border-radius", '');
+        });
+
+        function onSelect(e) {
+            $('#MessageUpdateStatus').hide();
+
+        }
+        function onSuccess(e) {
+            $('#MessageUpdateStatus').val('Image uploaded successfully')
+            $('#MessageUpdateStatus').show();
+        }
+
+        function onError(e) {
+            $('#MessageUpdateStatus').val('Error :Image upload  unsuccessfull')
+            if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                $('#MessageUpdateStatus').removeClass();
+                $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+            }
+            $('#MessageUpdateStatus').show();
+        }
+        $("#UserImageUpload").kendoUpload({
+            async: {
+                saveUrl: "/PatientProfile/Save",
+                removeUrl: "/PatientProfile/Remove",
+                autoUpload: true
+            },
+            multiple: false,
+            error: onError,
+            select: onSelect,
+            success: onSuccess
+
+        });
+
+
+      
+
+        $('.img_Show').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Show').attr('src', msg.msg);
+
+                }
+            });
+        });
+
+
+
+        $('#DOBMonth').change(function () {
+            var month = $(this).val();
+            var max;
+            if (month == 2) {
+                max = 28;
+            } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                max = 31;
+            }
+            else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                max = 30;
+            }
+            var mySelect = $('#DOBDAY');
+            $('#DOBDAY').empty();
+            mySelect.append(
+                   $('<option></option>').html("Day"));
+            for (i = 1; i <= max; i++) {
+                mySelect.append(
+                    $('<option></option>').val(i).html(i)
+                );
+            }
+        })
+
+        $('#DOBYEAR').change(function () {
+            var year = $(this).val();
+            var max;
+            var month = $('#DOBMonth').val()
+            if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0) && month == 2) {
+                max = 29;
+
+                var mySelect = $('#DOBDAY');
+                $('#DOBDAY').empty();
+                mySelect.append(
+                       $('<option ></option>').html("Day"));
+                for (i = 1; i <= max; i++) {
+                    mySelect.append(
+                        $('<option></option>').val(i).html(i)
+                    );
+                }
+            } else if (month == 2) {
+                max = 28;
+
+                var mySelect = $('#DOBDAY');
+                $('#DOBDAY').empty();
+                mySelect.append(
+                       $('<option></option>').html("Day"));
+                for (i = 1; i <= max; i++) {
+                    mySelect.append(
+                        $('<option></option>').val(i).html(i)
+                    );
+                }
+            }
+
+        })
+
+        if ($("#DOBDAYDISPLAY").val().length > 0) {
+            $("#DOBDAY").val($("#DOBDAYDISPLAY").val());
+        }
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+            $('.validation-summary-errors').hide();
+        });
+        $("select").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+            $('.validation-summary-errors').hide();
+        });
+
+
+
+        $('#FIRSTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#LASTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+
+        
+      //  $("#Salutation").kendoDropDownList();
+        //$("#GENDER").kendoDropDownList();
+        //    $("#DOBMonth").kendoDropDownList();
+        //    $("#DOBDAY").kendoDropDownList();
+        //    $("#DOBYEAR").kendoDropDownList();
+       });
+</script>
+<style>
+     #Salutation,#GENDER,#DOBMonth,#DOBDAY,#DOBYEAR {
+  
+     box-shadow: 1px 1px 0px 0px #999, 0 0 5px 0 #b8b8b8 inset  !important ;
+        height: 30px;
+        padding: 4px;
+        border: 1px solid #9fa3a6;
+        border-bottom-color: #94979a !important;
+        border-right-color: #94979a !important;
+        background: #fff !important;
+        width: 310px; 
+         margin-bottom:10px; 
+}
+    .step_one_con {
+        float: left !important;
+        width: 500px !important;
+        margin-top: 35px !important;
+    }
+.step_one_con input[type=text]{
+    width:300px;
+    margin-bottom:10px;
+    }
+
+        .step_one_con label {
+            margin-bottom:4px;
+        }
+
+    .steps ul li h3 {
+background-color: #fff;
+padding: 10px;
+float: left;
+font-weight: bold;
+color: #7d7d7d;
+border: 1px solid #999;
+clear: both;
+margin: 15px 0 0 25px !important;
+}
+    .steps ul li span {
+float: left;
+margin: -4px 0 8px -50px !important;
+font-size: 15px;
+color: #7d7d7d;
+padding-bottom: 9px;
+}
+
+</style>

@@ -1,0 +1,220 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "ReleaseStatement";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+    if (!@Model.appointment)
+    {
+    <div id="displayBarAppointment">
+        <div class="msgDisplayBar noAppoointment">
+            <h1 class="margin-space-class"> You don't have an appointment now.</h1>
+        </div>
+        <div class="row c_buttonContainer">
+            <div class="right">
+                <input type="button" value="Close" class="button cancel closeDisplayBar" />
+            </div>
+        </div>
+      
+
+    </div>
+    <div id="overlayContainer"></div>
+    }
+    else if (@Model.appointment)
+    {
+         @Html.HiddenFor(model => model.APPOINTMENTID)
+        @Html.HiddenFor(model => model.USERTYPE)
+        if (@Model.USERTYPE == "P")
+        {
+                
+     
+    <div class="p_realease_statement">
+        <h6>You have an appointment now.</h6> <br />
+           <div>Before we can connect you to the doctor please fill out this form </div><br /> 
+        <p>
+           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        </p>
+        
+    </div>
+    <div class="accordion noaccordion">
+       
+        <div class="frameContainer">
+            <div class="reason">
+
+               
+                <div class="row ">
+                    <div class="editor-field">
+                        @Html.CheckBoxFor(model => model.uploadreport, true)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.uploadreport)
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="row" >
+                    <div class="editor-field">
+                        @Html.CheckBoxFor(model => model.termsOfUse, true)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.termsOfUse)
+                    </div>
+                     <div class="clear"></div>
+                </div>
+                <div class="row">
+                    <div class="editor-field">
+                        @Html.CheckBoxFor(model => model.realeaseStatement, true)
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.realeaseStatement)
+                    </div>
+                      <div class="clear"></div>
+                </div>
+                <br />
+                  <div class="row" style="margin-left:10px;">
+                <div class="display-label heading style">
+                    @Html.DisplayNameFor(model => model.TimeDisplay)
+                    <span style="margin-left:55px;"> @Html.DisplayFor(model => model.TimeDisplay)</span>
+                </div>
+               
+
+            </div>
+            <div class="row" >
+                <div class="display-label heading" style="margin-left:10px;">
+                   <span class="p_rate_disp"> @Html.DisplayNameFor(model => model.RateDisplay)</span>
+                     @Html.DisplayFor(model => model.RateDisplay)
+                </div>
+                
+            </div>
+              
+            </div>
+        </div>
+    </div>
+        }
+        else if (@Model.USERTYPE == "D")
+        {
+          <div class="p_realease_statement">       
+    <div >
+        <h6>You have an appointment now.</h6><br />
+            <div> Before we can connect you to the Patient please fill out this form </div><br /> 
+        <p>
+           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        </p>
+        
+    </div>
+    <div class="accordion noaccordion">
+        
+        <div class="frameContainer">
+            <div class="reason">
+                <div class="row">
+                    <div class="editor-field">
+                        @Html.CheckBoxFor(model => model.medicaladviceDoctor, true)
+                    </div> 
+                    <div class="editor-label" >
+                        @Html.LabelFor(model => model.medicaladviceDoctor)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="editor-field" >
+                        @Html.CheckBoxFor(model => model.termsOfUseDoctor, true)
+                    </div>
+                    <div class="editor-label" >
+                        @Html.LabelFor(model => model.termsOfUseDoctor)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="editor-field" >
+                        @Html.CheckBoxFor(model => model.releaseStatementDoctor, true)
+                    </div>
+                    <div class="editor-label" >
+                        @Html.LabelFor(model => model.releaseStatementDoctor)
+                    </div>
+                </div>
+                  <div class="row" >
+                <div class="display-label heading">
+                    <span style="margin:0px 56px 0px 0px;">@Html.DisplayNameFor(model => model.TimeDisplay)</span>
+                     @Html.DisplayFor(model => model.TimeDisplay)
+                </div>
+               
+
+            </div>
+            <div class="row" >
+                <div class="display-label heading">
+                <span class="p_rate_disp">     @Html.DisplayNameFor(model => model.RateDisplay)</span>
+                     @Html.DisplayFor(model => model.RateDisplay)
+                </div>
+                
+            </div>
+               
+            </div>
+        </div>
+    </div>
+              </div>   
+        }
+
+     <div class="row" >
+         
+             <div class="c_buttonContainer" style="width:95%;margin-left:10px;">
+                 <div class="right">
+        <input type="submit" value="Save" class="button" />
+        <input type="button" value="Cancel" class="button cancel" />
+                     </div>
+                 </div>
+             
+    </div>
+    
+    
+    }
+}
+
+<script>
+    $('.img_Shows').each(function () {
+
+        $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+    });
+
+    $('.c_pgTitleText').text('Video Conference');
+    $('.c_pgTitleIcon').addClass('myProfile');
+
+    $(document).ready(function () {
+
+        $("#overlayContainer").insertBefore('.c_container');
+
+        $('#displayBarAppointment').insertBefore('#overlayContainer');
+        $("#overlayContainer").height($('body').height());
+
+        $('#displayBarAppointment').css({
+            left: ($(window).width() - $('#displayBarAppointment').outerWidth()) / 2,
+            top: ($(window).height() - $('#displayBarAppointment').outerHeight()) / 2
+        });
+
+        $(window).resize(function () {
+            $('#displayBarAppointment').css({
+                left: ($(window).width() - $('#displayBarAppointment').outerWidth()) / 2,
+                top: ($(window).height() - $('#displayBarAppointment').outerHeight()) / 2
+            });
+        });
+    });
+
+    $("#pagetitle").text('Release Statement');
+    $('.closeDisplayBar').click(function () {
+
+        var url = '@Url.Action("VideoConf", "DoctorInformation")';
+        window.location.href = url;
+        $('#displayBarAppointment').hide();
+        $('#overlayContainer').hide();
+    });
+</script>
+<style>
+    h3 {
+     
+        /*margin:20px 20px 20px 10px;*/
+        font-size:18px;
+    }
+    .p_rate_disp {
+        margin:0px 7px 0px 0px;
+    }
+</style>

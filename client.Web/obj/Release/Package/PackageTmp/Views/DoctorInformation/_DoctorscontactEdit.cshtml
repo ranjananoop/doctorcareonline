@@ -1,0 +1,169 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+   
+    <div class="_doctorscontactEdit">
+
+
+        <div class="row">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.USERSTREETADDRESS1)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.USERSTREETADDRESS1, new { maxlength = "265" })
+                @Html.ValidationMessageFor(model => model.USERSTREETADDRESS1)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.USERSTREETADDRESS2)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.USERSTREETADDRESS2, new { maxlength = "265" })
+                @Html.ValidationMessageFor(model => model.USERSTREETADDRESS1)
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CITY)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.CITY, new { maxlength = "35" })
+                @Html.ValidationMessageFor(model => model.CITY)
+            </div>
+        </div>
+        <div class="row">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.USERSTATE)
+            </div>
+            <div class="editor-field">
+                    @Html.DropDownListFor(model => model.USERSTATE, new[] {
+                      new SelectListItem(){Text= "Andaman and Nicobar Islands" ,Value="Andaman and Nicobar Islands" },
+                      new SelectListItem(){Text= "Andhra Pradesh" ,Value="Andhra Pradesh" },
+                      new SelectListItem(){Text= "Arunachal Pradesh" ,Value="Arunachal Pradesh" },
+                      new SelectListItem(){Text= "Assam" ,Value="Assam" },
+                      new SelectListItem(){Text= "Bihar" ,Value="Bihar" },
+                      new SelectListItem(){Text= "Chandigarh" ,Value="Chandigarh" },
+                      new SelectListItem(){Text= "Chhattisgarh" ,Value="Chhattisgarh" },
+                      new SelectListItem(){Text= "Dadra and Nagar Haveli" ,Value="Dadra and Nagar Haveli" },
+                      new SelectListItem(){Text= "Daman and Diu" ,Value="Daman and Diu" },
+                      new SelectListItem(){Text= "Delhi" ,Value="Delhi" },
+                      new SelectListItem(){Text= "Goa" ,Value="Goa" },
+                      new SelectListItem(){Text= "Gujarat" ,Value="Gujarat" },
+                      new SelectListItem(){Text= "Haryana" ,Value="Haryana" },
+                      new SelectListItem(){Text= "Himachal Pradesh" ,Value="Himachal Pradesh" },
+                      new SelectListItem(){Text= "Jammu and Kashmir" ,Value="Jammu and Kashmir" },
+                      new SelectListItem(){Text= "Jharkhand" ,Value="Jharkhand" },
+                      new SelectListItem(){Text= "Karnataka" ,Value="Karnataka" },
+                      new SelectListItem(){Text= "Kerala" ,Value="Kerala" },
+                      new SelectListItem(){Text= "Lakshadweep" ,Value="Lakshadweep" },
+                      new SelectListItem(){Text= "Madhya Pradesh" ,Value="Madhya Pradesh" },
+                      new SelectListItem(){Text= "Maharashtra" ,Value="Maharashtra" },
+                      new SelectListItem(){Text= "Manipur" ,Value="Manipur" },
+                      new SelectListItem(){Text= "Meghalaya" ,Value="Meghalaya" },
+                      new SelectListItem(){Text= "Mizoram" ,Value="Mizoram" },
+                      new SelectListItem(){Text= "Nagaland" ,Value="Nagaland" },
+                      new SelectListItem(){Text= "Orissa" ,Value="Orissa" },
+                      new SelectListItem(){Text= "Pondicherry" ,Value="Pondicherry" },
+                      new SelectListItem(){Text= "Punjab" ,Value="Punjab" },
+                      new SelectListItem(){Text= "Rajasthan" ,Value="Rajasthan" },
+                      new SelectListItem(){Text= "Sikkim" ,Value="Sikkim" },
+                      new SelectListItem(){Text= "Tamil Nadu" ,Value="Tamil Nadu" },
+                      new SelectListItem(){Text= "Tripura" ,Value="Tripura" },
+                      new SelectListItem(){Text= "Uttaranchal" ,Value="Uttaranchal" },
+                      new SelectListItem(){Text= "Uttar Pradesh" ,Value="Uttar Pradesh" },
+                      new SelectListItem(){Text= "West Bengal" ,Value="West Bengal" },
+                                                      }, "Select")                
+            </div>
+        </div>
+        <div class="row">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ZIPCODE)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ZIPCODE, new { maxlength = "6" })
+                @Html.ValidationMessageFor(model => model.ZIPCODE)
+            </div>
+        </div>
+        <div class="row">
+            <div class="editor-label">
+                @Html.DisplayNameFor(model => model.CurrenttimeZone)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("CurrenttimeZone", Model.CurrenttimeZone)
+            </div>
+        </div>
+
+        <div class="row c_buttonContainer">
+            <div class="right">
+                
+                <input type="button" value="Cancel" class="button cancel cancelDoctorscontactEdit" />
+                <input type="button" value="Save" class="button" id="doctorcontactedit"/>
+            </div>
+        </div>
+
+
+    </div>
+   
+    <div class="editor-field" style="display: none;">
+        <input class="text-box single-line" id="UserName" name="UserName" type="text" value="@Model.UserName" maxlength="100" />
+    </div>
+
+}
+
+<script type="text/javascript">
+    $("#doctorcontactedit").click(function (e) {
+        var DoctorsInformationEditModel = new Object();
+
+        
+        
+        
+        
+        
+        
+        DoctorsInformationEditModel.USERSTREETADDRESS1 = $("#USERSTREETADDRESS1").val();
+        DoctorsInformationEditModel.USERSTREETADDRESS2 = $("#USERSTREETADDRESS2").val();
+        DoctorsInformationEditModel.CITY = $("#CITY").val();
+        DoctorsInformationEditModel.USERSTATE = $("#USERSTATE").val();
+        DoctorsInformationEditModel.ZIPCODE = $("#ZIPCODE").val();
+        DoctorsInformationEditModel.CurrenttimeZone = $("#CurrenttimeZone").val();
+
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/DoctorInformation/_DoctorscontactEdit",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    window.location.reload();
+                }
+            },
+            data: JSON.stringify(DoctorsInformationEditModel),
+        });
+
+    });
+
+    $(document).ready(function () {
+
+
+        $('.contact  .cancel').click(function () {
+            $('#DoctorscontactDisplay').show();
+            $('#DoctorscontactEdit').hide();
+        });
+
+
+
+    });
+
+</script>

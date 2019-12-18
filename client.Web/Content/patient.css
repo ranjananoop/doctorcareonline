@@ -1,0 +1,479 @@
+﻿.uploadClass{float:left;width:99%;margin:15px 0 10px 10px}
+.slName{margin-right:30px;margin-top:20px}
+.slinputfield{margin-bottom:19px!important}
+
+.innerLayout .p_doctorPic{margin:15px 0 0 10px}
+.innerLayout .c_column_one{width:200px;background-color:#f2f2f2;box-shadow:-4px 0 3px -1px #999 inset}
+.innerLayout .c_column_two{width:780px;}
+
+.p_leftmenu{width:185px;background-color:#f2f2f2;box-shadow:-4px 0 3px -1px #999 inset}
+.p_middle_con{width:795px;float:left}
+.bgoff{background-color:transparent!important;box-shadow:none!important;margin-left:110px!important;margin-top:5px;display:none!important}
+.myProfileInfo{width: 765px;
+overflow: hidden;
+margin-left: 5px;}
+.p_accordion{width:630px;padding:5px}
+.p_accordion .p_accordion_Title{background-color:#d2e6f4;width:750px;margin-bottom:5px;cursor:pointer;border-bottom:1px solid #999;font-weight:400!important;font-size:20px!important;padding:10px 10px}
+
+.p_accordion .p_accordion_Title a{color:#686868!important}
+.p_accordion_Title h4{font-weight:400!important;float:left;font-size:16px!important}
+.p_accordion .p_accordion_Title.active{background-color:#d0e5f8}
+.p_accordion .p_accordion_content{background-color:#fff;width:90%;height:auto;padding:10px}
+.p_accordion .editText{float:right;margin-top:-32px;margin-right:-113px}
+.patientInfo{width:770px;}
+
+.myProfileInfo h2{font-size:18px;font-weight:700}
+.innerLayout input[type=text]{box-shadow:1px 1px 1px 0 #999;height:20px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:210px;margin-bottom:8px;padding:4px}
+.p_img_con{float:left;width:165px}
+.p_input_info{float:left;margin-left:-10px}
+.p_input_info select{box-shadow:1px 1px 1px 0 #999;height:30px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:220px;margin-bottom:8px;padding:4px}
+.p_input_info table label,.contactInfo table label,#p_content table label{font-weight:400!important;color:#096ca3!important;font-size:14px!important}
+.p_input_info table tr{margin-bottom:10px!important}
+
+.validation-summary-errors {
+color: #EC3636;
+height: 20px !important;
+width: 230px !important;
+}
+.contactInfo table th{width:195px;font-size:14px!important;color:#0b5984!important}
+.contactInfo table select{box-shadow:1px 1px 1px 0 #999;height:30px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:220px;margin-bottom:8px;    margin-left:0;padding:4px}
+
+.welcomePatient h2{font-size:18px;font-weight:400}
+#p_content select,#p_content input[type=text]{box-shadow:1px 1px 1px 0 #999;height:30px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:220px;margin-bottom:18px!important;padding:4px}
+
+#p_content input[type=text]{box-shadow:1px 1px 1px 0 #999;height:20px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:210px;margin-bottom:18px!important;padding:4px}
+.pagetTitle{width:96.5%;color:#2973b3;padding:9px}
+.p_appoinmet_con{width:780px!important}
+.p_appoinmet_con #divAppointments{position:relative!important;top:50%!important;left:3%!important;width:555px;height:350px!important;overflow:scroll;padding:10px!important}
+.p_appoinmet_con .frameContainer tr{height:36px}
+
+.healHistoryInfo .buttonsWrapper{text-align:left!important}
+.healHistoryInfo .k-datepicker{width:217px!important}
+.healHistoryInfo .k-datepicker input[type=text]{box-shadow:none!important;border:1px solid #fff!important;color:#000!important;height:11px}
+.healHistoryInfo label{margin-bottom:-2px}
+
+.doctorSearch input[type=text]{margin-top:-5px}
+.doctorSearch select{box-shadow:1px 1px 1px 0 #999;height:30px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:220px;margin-bottom:8px;margin-top:-5px;padding:4px}
+#Content_Area textarea{height:100px;width:210px}
+.doctorSearch .buttonsWrapper{text-align:left}
+.framecontentTitle h2{padding-left:5px;font-size:18px;font-weight:400;line-height:24px;color:#000}
+.pagetTitle h3{font-weight:400;border-bottom:1px solid #999;padding-bottom:6px;font-size:23px;color:#000}
+#prefferedprovider{width:745px!important;margin-left:10px;overflow:hidden}
+header{background:url(/Content/Images/hdr_bg.png) repeat-x;width:100%;height:78px;border-bottom:1px solid #ccc;position:relative;z-index:3;text-align:center;box-shadow:0 0 5px 1px #999;margin-bottom:10px!important}
+
+.p_message_con input[type=text]{width:200px;margin:-8px 0 -2px}
+.p_message_con textarea{width:500px}
+.contactInfo #COUNTRY{box-shadow:1px 1px 1px 0 #999 !important;height:30px;border:1px solid #9fa3a6;border-bottom-color:#94979a!important;border-right-color:#94979a!important;background:#fff!important;width:220px;margin-bottom:8px;margin-top:-5px;padding:4px}
+.p_book_con{width:720px}
+.p_changePassword{width:98%;overflow:hidden}
+#pass_con label{color:#0b5984!important;margin:8px 30px 0 0}
+
+.d_myReviews .d_doctors_review_rating_display{margin-bottom:15px;line-height:17px;}
+.d_myReviews .d_myReviews_reviewContent{border-top:1px solid #cecece;width:731px;padding:10px 0}
+.d_myReviews .d_myReviews_reviewContent:last-child{border-bottom:1px solid #cecece!important}
+.d_myReviews .d_myReviews_reviewContent .d_myReviews_userName{font-weight:700;float:left}
+.d_myReviews .d_myReviews_reviewContent .stars img{position:relative;margin:-14px 0 0;padding:0}
+.d_myReviews .d_myReviews_reviewContent .dates label{font-style:italic;font-size:12px;float:right}
+.d_doctors_review_rating_display .display-label{color:#013E71}
+.d_doctors_review_rating_display .display-field{clear:both;width:100%;margin:5px 0}
+d_myReviews .d_myReviews_reviewContent:first-child{border-top:1px solid #999!important}
+
+.innerLayout h6{
+    font-weight: 400;
+font-size: 20px;
+padding: 7px 0px 11px 10px !important;
+color: #000;
+/*margin: 0 0 10px 0px;*/
+background-color: #d2e6f4;
+width:99.6%;
+}
+
+#prefferedprovider a{font-size:14px;font-weight:400}
+.ads_firstBox_left select{box-shadow:inherit}
+.help{background:url(/content/images/help.jpg) no-repeat;width:16px;height:16px;cursor:pointer;margin:0 0 0 5px !important}
+#divAppointments{position:absolute!important;box-shadow:0 2px 16px 2px #666!important;z-index:50000000!important;background-color:#fff!important;height:auto!important;width:600px!important;font-size:16px!important;display:none;overflow:hidden;font-family:inherit;padding:0!important}
+.black_overlay{background-color:#fff!important;opacity:0.7!important;width:100%!important;height:170%!important;position:absolute!important;left:0!important;top:0!important;z-index:9999999!important;display:none;-moz-opacity:0.4;filter:alpha(opacity=40);}
+
+#displaymessage h3{margin-bottom:15px;color:#3AA3FF;border-bottom:1px solid #999;padding-bottom:15px;font-size:22px!important}
+#displaymessage b{float:left;width:100px}
+#displaymessage .popupcontent{width:93%;margin:20px}
+#displaymessage .left{float:left;width:400px}
+.p_dummy_txt{margin:15px 0 0}
+.sec_desc-con{padding:6px 0}
+#map_canvas{width:440px!important;height:440px!important;display:inline-block;border-radius:3px;background:#fff!important;margin-top:7px}
+.replyButton{margin:0 0 25px 25px}
+
+.c_pgTitleIcon{width:35px;height:35px;float:left;position:relative;margin:0 10px 0 15px}
+.c_pgTitleIcon.healHistory{background:url(/Content/Images/doccare_sprite.png) no-repeat -97px -24px}
+.c_pgTitleIcon.myProfile{background:url(/Content/Images/doccare_sprite.png) no-repeat -274px -26px}
+.c_pgTitleIcon.message{background:url(/Content/Images/doccare_sprite.png) no-repeat -133px -24px}
+.c_pgTitleIcon.profiderSearch{background:url(/Content/Images/doccare_sprite.png) no-repeat -170px -24px}
+.c_pgTitleIcon.appointmentsIcon{background:url(/Content/Images/doccare_sprite.png) no-repeat scroll -242px -24px}
+.c_pgTitleIcon.myAccounts{background:url(/Content/Images/doccare_sprite.png) no-repeat -207px -24px}
+.c_pgTitleIcon.myInfo{background:url(/Content/Images/doccare_sprite.png) no-repeat -308px -25px}
+.c_pgTitleIcon.proPicture{background:url(/Content/Images/doccare_sprite.png) no-repeat -348px -25px}
+.c_pgTitleIcon.contact{background:url(/Content/Images/doccare_sprite.png) no-repeat -385px -25px}
+.c_pgTitleIcon.inbox{background:url(/Content/Images/doccare_sprite.png) no-repeat -423px -25px;width:40px}
+.c_pgTitleIcon.sentItems{background:url(/Content/Images/doccare_sprite.png) no-repeat -464px -25px;width:40px}
+.c_pgTitleIcon.appointmentFailure{background:url(/Content/Images/doccare_sprite.png) no-repeat -579px -25px;width:30px}
+.c_pgTitleIcon.publicProfile{background:url(/Content/Images/doccare_sprite.png) no-repeat -621px -25px;width:30px}
+.c_pgTitleIcon.reports{background:url(/Content/Images/doccare_sprite.png) no-repeat -690px -25px;width:25px}
+.c_pgTitleIcon.editDocInfo{background:url(/Content/Images/doccare_sprite.png) no-repeat -658px -25px;width:25px}
+.c_pgTitleIcon.docInfoViews{background:url(/Content/Images/doccare_sprite.png) no-repeat -690px -25px;width:30px}
+.c_pgTitleIcon.docAvailable{background:url(/Content/Images/doccare_sprite.png) no-repeat -758px -25px;width:30px}
+.c_pgTitleIcon.clinicPhoto{background:url(/Content/Images/doccare_sprite.png) no-repeat -104px -59px;width:30px}
+.c_pgTitleIcon.compose{background:url(/Content/Images/doccare_sprite.png) no-repeat -142px -59px;width:40px}
+.c_pgTitleIcon.video{background:url(/Content/Images/doccare_sprite.png) no-repeat -192px -59px;width:40px}
+
+.docInfoDetails{float:left;width:752px;background:#013E71;color:#fff;margin:0}
+.p_publicProfileContactInfo_List ul li{width:190px!important}
+.pre_book_con,h1,h2,h3{font-family:'Segoe UI', Arial}
+#pre_book_con h3{color:#0f82dc}
+.payPalMessage{width:600px}
+footer{width:970px!important}
+.d_doctorPic{margin-bottom:10px}
+.p_accordion_content .boxSep{margin-left:5px;margin-bottom:15px}
+#MESSAGEBODY,#NOTES,#COMMENT,#IMUCOMMENT,#ALCOMMENT,#PROCEDURENOTES{width: 700px !important;
+height: 200px !important;}
+.sorry_left h1{float:left;width:500px;color:#0f82dc;text-align:center;font-weight:700;margin-top:50px;font-size:80px}
+.sorry_left h3{float:left;width:500px;color:#0f82dc;text-align:center;font-weight:700;margin-top:50px;font-size:30px}
+body{background:url(/Content/Images/bg2.png);font-family:'Segoe UI',Arial;font-size:13px;color:#333;text-align:center;margin:0 auto;padding:0}
+.login{width:500px;height:auto;background-color:#fff;border:0 solid #bdbdbd;border-bottom:0 solid #bdbdbd;box-shadow:0 1px 3px 1px #8e8c8c;margin:70px auto 0}
+
+.imagedisplay{width:100px;height:100px}
+.tabLogin.selected{background-color:#10c8fe}
+.tabLogin{background-color:#a3a3a3;color:#fff;font-weight:400;font-size:18px;float:left;width:90%;text-align:center;cursor:pointer;padding:3% 5%}
+.registration{display:inline-block;width:100%;padding:20px}
+a{text-decoration:none;color:#4d4d4d}
+a:hover{color:#4d4d4d;cursor:pointer;text-decoration:none!important}
+.toggle a{color:inherit;text-decoration:none}
+
+.toggle a:hover{color:#c3221a;cursor:pointer}
+input,textarea{color:inherit}
+ul,ul li{margin:0 auto;padding:0}
+/*table{width:100%!important;text-align:left!important;font-weight:400!important}
+table tr td{font-size:14px!important;padding:5px 4px!important}
+table label,table th{font-weight:400!important}
+table th{padding:5px 0}*/
+#overlayContainer{background-color:#000;opacity:0.3;width:100%;height:100%;position:absolute;left:0;top:0;z-index:9999999}
+.divider{float:left;padding:0 5px}
+textarea{resize:none}
+input:active,input:focus{background-color:#fff}
+input#VERIFICATIONCODE{width:227px}
+#divAppointment{font-size:16px;margin-top:100px;z-index:2002!important;position:absolute;width:600px!important;height:300px!important;border:0 solid gray;background-color:#FFF;overflow:hidden;color:#000!important;box-shadow:0 1px 5px 2px #333;margin-left:-20px;top:200px;padding:0}
+.ui-dialog{width:600px!important;position:absolute!important;top:0!important}
+.read{background-color:#fff!important;height:20px;font-size:12px}
+.unread{background-color:#f2f2f2!important;font-weight:700!important;height:10px;font-size:12px}
+.ui-dialog-titlebar-close{background:url(/Content/Images/dialog_close.jpg);background-repeat:no-repeat;border:0;cursor:pointer;right:-260px;top:290px;position:relative;z-index:2000000;text-indent:-9999px;height:21px;width:20px;white-space:nowrap;border-radius:22px;outline:none;margin:14px 8px 0 0}
+.editor-field,.editor-label{margin:3px 0}
+a.btn,input.btn{background-color:#999;width:100%;height:100%;text-align:center;color:#fff;border:0;text-indent:0;cursor:pointer;box-shadow:2px 2px 0 0 #C3C3C3;margin-left:0;padding:5px 10px}
+input.btn{padding:4px 10px!important}
+.linkClass:hover{text-decoration:underline}
+a.btnClass{background-color:#10c8fe;height:100%;text-align:center;color:#fff;border-radius:3px;text-indent:0;cursor:pointer;border:1px solid #1ea9d2;font-weight:700;padding:8px 10px 7px}
+
+
+
+.tabLogin:hover{background-color:#8e8c8c}
+fieldset{border:none;margin:0;padding:0}
+.field-validation-error{color:#c3221a;width:100%;float:left;padding:1px 0}
+/*.validation-summary-errors{background-color:#D2F7FF;color:#12A2C4;border:0 solid #12A2C4;font-weight:700;background-image:url(/Content/Images/successmessage.png);width:100%;background-repeat:no-repeat;margin:0;padding:5px 5px 5px 40px}
+.validation-summary-errors span{font-weight:700;font-size:15px}
+.validation-summary-errors ul{margin:5px 0 0}*/
+
+.menu{float:left;width:100%;margin:10px 0 0}
+.menu ul li{height:30px;display:inline-block;border-right:1px solid #590904;background-color:transparent;margin-right:-5px}
+.menu ul li:hover{background-color:#590904}
+.menu ul li a{text-transform:none;font-size:13px!important;padding:8px 15px}
+.menu ul li ul{width:250px!important}
+.menu ul li ul li{width:250px!important;text-align:left}
+.menu ul.jMenu li ul li:hover{background-color:#1c1c1c!important}
+
+#body{width:100%;display:inline-block;margin:0 auto}
+.bodyContent{width:99%;background-color:#fff;position:relative;top:0;margin:20px auto}
+.bodyContentPadding{padding:20px}
+.bodyContentPadding h3{font-size:20px;margin-bottom:20px}
+.bodyContent.edit h3{font-size:20px;margin-bottom:10px}
+
+.title_b_l{background:url(../content/images/title_b_l.jpg) no-repeat;width:10px;height:10px;left:0;bottom:0;position:relative;top:23px;display:none}
+.title_b_r{background:url(../content/images/title_b_r.jpg) no-repeat;width:10px;height:10px;right:0;bottom:0;position:relative;top:13px;float:right;display:none}
+.buttonsWrapper{width:750px;text-align:right}
+.buttonsWrapper a{box-shadow:2px 2px 0 0 #C3C3C3;margin:0 5px}
+.btnWrapper{clear:both;height:30px;float:left;margin:10px 0 0}
+.lblDelete{color:#c3221a}
+.linkEdit{background:url(../content/images/icon_edit.png) no-repeat;width:17px;height:17px;display:block;color:#1072B5}
+.appnment_cancel{color:#1072B5}
+
+.linkDownload{background:url(/Content/Images/doccare_sprite.png) no-repeat -4px -120px;width:70px;height:30px;display:block;float:left}
+.linkDetails{background:url(../content/images/icon_details.png) no-repeat;width:17px;height:17px;display:block;float:left}
+.linkDelete{background:url(../content/images/icon_delete.png) no-repeat;width:17px;height:17px;display:block;float:left}
+.linkRoles{background:url(../content/images/icon_role.png) no-repeat;width:17px;height:17px;display:block;float:left}
+
+#tabs{z-index:1}
+#tabs ul{list-style-type:none;margin:10px 0 0;padding:0}
+#tabs ul li{display:inline-block;clear:none;background:#fff;font-weight:700;border:1px solid #A5A5A5;border-bottom:0;padding:8px}
+#tabs ul li:hover{background-color:#ececec}
+#tabs ul li.active{background-color:#3AA3FF;border:0; border-top:2px solid #333;}
+#tabs ul li a{display:block;color:#666;text-decoration:none;left:1px;cursor:pointer}
+#tabs ul li a:hover{text-decoration:none}
+#tabs #Content_Area{clear:both;position:relative;z-index:5;height:auto;overflow:hidden;border-top:1px solid #A5A5A5;padding:0; width:97%;}
+
+.gridPadding{float:left;padding:20px 0 0}
+.whoIs{float:right;display:inline-block;margin:10px 0 0}
+.whoIs b{font-size:20px;color:#999;display:inline-block;font-weight:400;margin:16px 10px 0 0}
+.whoIs span{width:50px;height:46px;background:url(/Content/Images/doccare_sprite.png) no-repeat -2px -63px;float:right}
+.bodyInner{width:1024px;margin:0 auto}
+.homeSlider{background-color:#10c8fe;width:100%;height:318px;text-align:center}
+.homeSlider img{text-align:center}
+.welcome{background-color:#ededed;width:100%;padding:15px 0}
+.welcome .welcomeInner{width:960px;margin:0 auto;padding:0 20px}
+.welcome .welcomeInner h1{color:#000;font-size:30px}
+.welcome .welcomeInner p{color:#000;font-size:15px;line-height:27px}
+.f_tabs a{float:left;border-right:1px solid #696969;line-height:18px;height:30px;padding:10px}
+.f_tabs :hover{background-color:#767676}
+.footer_right{float:right;font-size:11px;margin:-40px 20px 0 0}
+.homeBlocks{width:100%;background-color:#fff;float:left;padding:20px 0 50px}
+.homeBlocksInner{width:960px;margin:0 auto}
+.signupBlock{background:url(Images/signup.jpg) no-repeat;width:249px;height:256px;float:left;cursor:pointer}
+.home_block_help{background:url(Images/home_help_block.jpg) no-repeat;width:219px;height:263px;float:left;cursor:pointer}
+.home_block_watchVideo{background:url(Images/home_watchVideo.jpg) no-repeat;width:409px;height:264px;float:right;cursor:pointer}
+.frameHeader{background-color:#10c8fe;width:100%;display:inline-block;padding:0}
+.frameHeaderInner{color:#fff;display:inline-block;width:100%;padding:12px 0}
+.frameHeaderInner .left{padding-left:15px;width:auto!important}
+.frameHeaderInner h1{font-size:35px}
+.frameHeaderInner h2{font-weight:700}
+.framecontentTitle{clear:both;font-size:23px;width:99%;height:30px;cursor:pointer}
+.noaccordion .frameContainer{display:block!important}
+.framecontentTitle span{background-color:#9e9e9e;float:left;color:#fff;margin-right:5px;padding:3px 12px}
+.switchPatientSignup{float:right;background-color:#00a0cf;cursor:pointer;padding:7px 30px}
+.switchPatientSignup:hover{background-color:#00607c}
+.switchPatientSignup h2{margin-top:3px}
+form .frameContainer input{width:250px}
+#image{width:150px;height:150px;float:left;margin-bottom:20px}
+.profileImage{float:left;width:150px;height:150px;padding:0 10px 0 0}
+.profileHeader .left{width:300px}
+.leftColumn{width:200px;float:left;padding-right:0;margin-left:-20px;border-right:1px solid #cfcfcf}
+.rightColumn{width:500px;padding-left:20px;display:inline-block}
+.clear{clear:both}
+.pateint_wrapper{width:1024px;margin:auto}
+.patentPage_headerInner{margin-left:120px}
+.pBodyContent{width:1024px;float:left;box-shadow:0 1px 3px 1px #8e8c8c;margin:0 auto}
+.pateint_rightCOntent{float:right;width:300px;margin-right:50px;margin-top:-880px}
+.patieet_leftmenu{width:200px;float:left;background:#fff;margin:60px 15px 20px;padding:15px}
+.MessageUpdateStatusNormal{background-color: #fdfcdd !important;color:green;width:94%;font-size: 15px;margin:10px 0 0 10px;font-weight: normal !important;padding: 10px 11px !important;}
+#MessageUpdateStatus{color:green !important;width:95% !important;font-size: 15px;font-weight: normal !important;}
+.MessageUpdateStatus{color:#12A2C4!important;border:0 solid #12A2C4;font-weight:700!important;background-color: #fdfcdd !important;width:100%!important;background-repeat:no-repeat!important;margin:0!important;}
+.streamHolder{background-color:#000;height:350px;width:300px;clear:both}
+.videoSmall{position:absolute;left:0;top:0;margin:0}
+.streamLight{float:left;vertical-align:middle;margin-bottom:4px}
+#streamsList li{min-height:160px;min-width:160px;position:relative;list-style:none;margin:0}
+.streamName{margin-top:3px;padding-left:25px}
+#streamsList{width:95%;float:left}
+div#clock{width:215px;height:45px}
+div#div1{width:240px;height:45px}
+.videoConference input{width:auto!important;height:auto!important}
+.clockWrapper{background-color:#343434;width:471px;float:left;margin:0}
+#divMessages{border:0;height:313px;width:97%;overflow-y:auto;font-size:11px;float:left;padding:4px}
+.k-dropzone{padding:0!important}
+.clockWrapper #div1{float:right;background-color:#666}
+.clockWrapper .hasCountdown{background-color:transparent;color:#fff;border:0}
+#divChat{float:left;width:100%;box-shadow:0 1px 5px 1px #666}
+.character{background:url(Images/character.png) no-repeat;width:160px;height:220px;float:left;position:fixed;right:0;bottom:45px;cursor:pointer}
+#divChat h3{background-color:#01a3d2;width:91%;text-indent:5px;color:#fff;padding:10px}
+#divChat input{position:relative;z-index:9999}
+.chatControl{float:left;background-color:#666;box-shadow:0 1px 5px 1px #666;width:96%;padding:2%}
+.chatControl input{box-shadow:none}
+.chatControl input.btnClass{padding:4px 14px}
+.uploadFiles{float:left;margin:15px 0 0}
+.table tbody tr td{background-color:#BABABA;font-weight:700;color:#fff;text-indent:0;vertical-align:top;padding-left:5px!important}
+.empty-grid{color:#888;background:#eee;height:100%;text-align:center;line-height:100px}
+#heightClass{min-height:500px}
+.zipContent{float:right;width:180px;margin:-50px -35px 0 0}
+.my_profile_content{background-color:#10c8fe;height:20px;text-align:left;margin-bottom:20px;color:#fff;padding:9px}
+.QuicksearchText{color:#000;font-size:16px;background:#ccc;height:25px;text-align:left;padding:5px 0 0 10px}
+.available_doc_list{font-size:18px}
+#accordion{border-left:1px solid #aaa;border-right:1px solid #aaa}
+.leftmenu_header{font-weight:200;color:#fff;cursor:pointer;background-color:#ccc;outline:none}
+li a:hover{color:#10c8fe}
+.patiet_name{margin-top:-30px}
+.therepist_image{margin-left:-10px;cursor:pointer}
+.patient_heading{font-size:16px}
+.headingText{background:#ccc;height:25px;cursor:pointer;padding:6px}
+.inboxBtn{float:left;width:170px;margin-top:-27px;font-size:18px}
+.header_right_image{float:right;font-size:18px;margin-right:20px}
+.advanceheader{background:#ccc;font-size:18px;height:25px;margin:0 0 -40px;padding:8px}
+#UserImageUpload{text-align:left;margin-left:-100px}
+
+.lastColumnContent{float:left;width:200px;margin-top:10px;text-align:left}
+.welcomePatient{float:left;width:90%;background-color:#ededed;box-shadow:-4px 0 3px -1px #999 inset;padding:10px}
+.welcomePatient img{width:100px;height:100px;border:1px solid #c3c3c3}
+.welcomePatient #display{color:#1072B5;width:100%;font-size:23px;font-weight:400;text-indent:0;word-break:break-all;border:none!important;background-color:#fff;background:transparent!important;box-shadow:none!important;height:100%;margin:3px 0;padding:0}
+.welcomePatient h4{clear:both;width:100%}
+.panelHeader{background-color:#666;width:98%;display:inline-block;padding:5px 3px}
+.panelHeader h3{color:#fff;float:left;margin:3px 0 0 3px}
+#personal_details img.img_Show{width:100px;height:100px;border:1px solid #c3c3c3;margin:10px 10px 20px 15px}
+#personal_details .personalInfo{float:left;width:350px;margin:0px 15px 10px 10px !important}
+#personal_details .personalInfo .display-label{float:left;width:150px;font-weight:700}
+.healHistoryInfo #tabs ul li{border-radius:0px 0 0;padding:15px 18px;border-top:2px solid #666;margin:0 2px;}
+#p_inform table tr td{background-color:transparent;color:#333}
+#p_inform .buttonsWrapper{text-align:left;margin:10px 0 0 82px;padding:0}
+.profilePicture .img_Show{width:150px;height:150px;border:1px solid #c3c3c3}
+
+.contactInfo table tr td{background-color:transparent!important;color:#333!important}
+.doctorSearch{width:722px}
+.doctorSearch .left:last-child{margin-right:0}
+.doctorSearch #example{float:left!important}
+.Inbox{width:755px}
+.Inbox .actionPanel{background-color:#e8e8e8!important;display:inline-block;width:745px;margin-top:7px;padding:7px 5px}
+.k-grid.k-widget table tr td{background-color:transparent!important;font-weight:400!important;/*border-right: 1px solid #c5c5c5;*/}
+.k-grid td{border-bottom:1px solid #d9d9d9!important;color:#5f6c75!important}
+a,input{outline:none}
+.uploadWrapper .left{width:auto!important;margin:0!important}
+.uploadClass .k-upload-button{border-radius:0!important;background-color:transparent!important;border:0!important;background:url(/Content/Images/attach.png) no-repeat;width:24px;height:24px;text-indent:-999px;margin:-7px 0 0 -7px}
+
+table#netflixTable tr td{text-indent:0!important;padding-left:4px!important}
+table#netflixTable thead{background-color:#BABABA}
+table#netflixTable td.docImage{width:100px;word-break:break-all}
+table#netflixTable td.docImage img{word-break:break-all;float:left}
+table#netflixTable tr:nth-child(2n){background-color:#EEE}
+
+.myReviews{float:left;width:100%;padding:5px}
+.myReviews .leftContent{width:220px;float:left}
+.myReviews .middleContent{margin-left:120px;width:400px;float:left;clear:both}
+.myReviews .lastContent{width:400px;float:left;margin-left:0}
+.myReviews .middleContent .display-label{width:54%;font-weight:400}
+.myReviews .lastContent .display-label{width:212px;clear:both}
+.myReviews .doctorName{width:100%;display:inline-block;margin:0 0 10px}
+.myReviews .doctorName .left{float:left;width:400px!important;margin:-4px 0 0 3px}
+.myReviews .doctorName .right{float:right;width:150px!important}
+.myReviews .doctorName .right a{color:#10c8fe;text-decoration:underline}
+.myReviews .profileMyReviews img{float:left;margin:0 15px 0 0}
+.myReviews .ratings img{width:28px;float:left;margin:0}
+.myReviews .row{width:100%!important}
+
+.docInfoEdit input,.docInfoEdit select{width:200px!important;height:auto!important}
+.docInfoEdit .lastContent{margin-left:20px}
+.docInfoDetails .leftContent{width:160px;float:left}
+.docInfoDetails .lastContent{width:100%;float:left;clear:both;margin-left:0}
+.docInfoDetails .lastContent img{float:left;width:28px;margin:0;padding:0}
+.docInfoDetails .lastContent .display-field{width:65%;font-weight:400;word-wrap:break-word}
+.docInfoDetails .lastContent .display-label{width:200px;font-weight:700}
+h1.subTitle{border-bottom:1px dashed #999;font-size:15px;width:500px;float:left;color:#666;line-height:7px;margin:8px 0}
+.payRates{width:100%;float:left;margin:0}
+.payRates .row{border-bottom:1px solid #999;display:inline-block;width:100%;padding:5px 0}
+.payRates .heading{width:100px;font-weight:700;text-align:left}
+ul.k-pager-numbers li{background-color:transparent!important;border:0!important;font-weight:400!important;padding:0!important}
+.k-grid-edit,.k-grid-cancel,.k-grid-update,.k-grid-save{background-color:transparent!important;color:#1073B5!important;background-image:none!important;border:0!important;font-size:12px!important}
+
+.k-icon.k-edit:hover{background:url(/Content/Images/doccare_sprite.png) no-repeat -532px -7px}
+.k-grid tbody .k-button{min-width:0!important}
+.read a{cursor:pointer!important}
+.bookAppointment #tabs ul{margin:10px!important}
+.bookAppointment #textContainers{margin:0 0 10px 10px}
+.bookAppointment #textContainers p{color:red;font-weight:700;margin:0;padding:0}
+.reason{float:left;width:100%;margin:0 0 0 10px}
+.reason .display-label{float:left;color:#0F82DC;min-width:90px}
+.reason .display-field{float:left;width:350px;margin-left:20px;font-size:14px}
+.reason .display-field p{font-weight:400;font-size:13px;margin:0;padding:0}
+.reason .display-field.checkbox-group{font-weight:400;font-size:13px}
+.reason .display-field select{width:100px;font-size:13px}
+.bookAppointment #Content_Area{border-top:0!important;margin:0 0 0 5px}
+.bookAppointment #tabs ul li{border:0!important;padding:0}
+.payforVisit{float:left;width:100%}
+.payforVisit .payPal{border:0 solid #ccc;float:left;width:100%;margin-bottom:10px;padding:15px 10px}
+.payPalLogo{background:url(/Content/Images/doccare_sprite.png) no-repeat -4px -148px;width:137px;height:50px;float:right;margin:0}
+.payforVisit .row{float:left;margin:0 0 13px}
+.payPalMessage.width570{width:570px}
+.payforVisit .appointmentDateandTime{margin-top:21px}
+.appointmentDateandTime .display-label{width:100px}
+.appointmentDateandTime .display-feild{margin-left:10px}
+.payPalConfirm{background:url(/Content/Images/doccare_sprite.png) no-repeat -150px -148px;width:70px;height:70px;float:left;margin:-20px 0 0}
+.messagePopupHeader{background-color:#1072B5;width:100%;display:none;top:0;position:absolute;text-align:left;color:#fff;padding:10px}
+.k-state-selected{border:0!important}
+.k-widget.k-dropdown k-header{font-weight:400!important;text-align:left!important}
+.messageSubject{font-size:20px;font-weight:700;width:100%}
+.messageFrom{font-size:14px;width:100%;border-bottom:1px solid dotted}
+.messageBody{margin-top:20px}
+
+/*.customToggleCollapse{cursor:pointer;background:url(/Content/Images/collapse.png) no-repeat right -1px;width:20px;height:20px;float:right}
+.customToggleExpand{cursor:pointer;background:url(/Content/Images/expand.png) no-repeat right -1px;width:20px;height:20px;float:right}
+.toggleCalender{cursor:pointer;float:left}*/
+.error b{color:red;display:inline-block;margin:5px 0 0 30px}
+.iconError{position:absolute;float:left;z-index:9999;background:url(/Content/Images/doccare_sprite.png) no-repeat -556px -30px;width:25px;height:25px;margin:0 10px 0 0}
+.tabReason{background:url(/Content/Images/doccare_sprite.png) no-repeat -5px -220px;width:220px;height:45px;float:left;margin:0}
+.tabPay{background:url(/Content/Images/doccare_sprite.png) no-repeat -5px -268px;width:153px;height:45px;float:left;position:relative;margin:0 0 0 -43px}
+.tabConfirm{background:url(/Content/Images/doccare_sprite.png) no-repeat -5px -320px;width:176px;height:45px;float:left;position:relative;margin:0 0 0 -31px}
+#li_tab2.active .tabPay{background:url(/Content/Images/doccare_sprite.png) no-repeat -161px -268px;width:153px;height:45px;float:left;position:relative;margin:0 0 0 -43px}
+#li_tab3.active .tabConfirm{background:url(/Content/Images/doccare_sprite.png) no-repeat -172px -320px;width:186px;height:45px;float:left;position:relative;margin:0 0 0 -43px}
+#loading{display:none;width:20px;float:right;margin:-25px 5px 0 0}
+#loading img{width:20px;height:20px}
+.doctorRatingViews .middleContent{clear:none!important;margin-left:0!important}
+.doctorInformationViews_Clinic .docClinic .leftContent{width:420px!important}
+
+.p_appoinmet_con .frameContainer{width:99%;margin-bottom: 35px;}
+#patientSearch{width:720px!important}
+.personal_info .frameContainer,.d_myReviews .right,.d_doctors_review_rating_display .right{float:left;width:600px}
+.p_accordion .p_accordion_Title a.editLink,.d_myReviews .d_myReviews_reviewContent .dates,.toggleRight{float:right}
+.personalInfo table label,.p_input_info .display-field{font-size:14px!important}
+.p_message_con,.docInfoEdit{width:770px}
+.d_myReviews .left,.d_doctors_review_rating_display .left{float:left;width:130px}
+.d_myReviews img.userImage,.d_doctors_review_rating_display img.userImage{width:100px;height:120px}
+#displaymessage,.reason .display-field h3{font-size:14px}
+
+.fleet,.padding{padding:10px}
+.displayOff,fieldset legend,fieldset.loginform_Patient,#passwordPolicy,.availableDoctor,.docInfoDetails .middleContent .panelHeading{display:none}
+.closeDisplayBar,.closeDisplayBar2{float:right;background:url(/Content/Images/doccare_sprite.png) no-repeat -230px -59px;width:40px;height:40px;cursor:pointer;margin:20px 10px 0 0}
+input[type=radio],#pracdate,.profilePicture .buttonsWrapper input,.contactInfo .buttonsWrapper input,.k-grid.k-widget table tr td input[type=checkbox],.docInfoEdit .btnClass{width:auto!important}
+input[type=checkbox],.bodyContent.edit table tr td input[type=checkbox],.buttonsWrapper input,.Inbox .right,.padding .btnClass,.myReviews .middleContent .row{width:auto}
+input.btnClass:hover,a.btnClass:hover{background-color:#2CD7FF}
+.login input,.bodyContent.edit table,.videoLarge{width:100%}
+.login .login_links a:hover,.leftmenu_header:hover,.leftmenu_header li:hover{color:#000}
+#tabs ul li.active a,.switchPatientSignup:hover a,.leftMenu #cssmenu ul li.active a{color:#fff}
+.noaccordion .framecontentTitle,.noaccordion .framecontentTitle.active{background-image:none}
+.framecontentTitle.active h2,.payforVisit .linkClass{margin:0}
+.profileHeader,table.table{margin:10px 0 0}
+
+.clockWrapper #clock,.floatleft,.myReviews .lastContent .display-field,.customAccordionContent,.payforVisit img,.doctorRatingViews{float:left}
+#btndelete,#btnrefresh,#btnselect,#btndelete1,#btnrefresh1,#btnselect1{width:16px!important;height:16px;border:0;float:left;text-indent:-9999px;border-radius:0;box-shadow:none;cursor:pointer;margin:2px 5px}
+
+#btndelete,#btndelete1{background:url(Images/trash16x16.png) no-repeat}
+#btnrefresh,#btnrefresh1{background:url(Images/refresh16x16.png) no-repeat}
+#btnselect,#btnselect1{background:url(Images/selectall16x16.png) no-repeat}
+.leftMenu #cssmenu ul li ul li a.selected,.error{color:red}
+.lastColumnContent #example,ul.k-pager-numbers{margin:0!important}
+
+.welcomePatient #CurrentDate,.uploadWrapper{width:100%;float:left}
+.welcomePatient #CurrentDate p,.Inbox #textContainers p{margin:0;padding:0}
+.healHistoryInfo #tabs ul,.healHistoryInfo #tabs #Content_Area{margin:0 0px!important}
+#p_inform,#pass_box,.profilePicture,.contactInfo{float:left;margin:10px}
+#pass_box .buttonsWrapper,.profilePicture .buttonsWrapper{text-align:left;margin:10px 0 0;padding:0}
+
+.myReviews .leftContent .display-label,.myReviews .middleContent .display-label,.docInfoDetails .middleContent .display-field,.myReviews .lastContent .display-label,.docInfoDetails .lastContent .display-field{float:left;padding-bottom:7px}
+.payRates .display-label,.payRates .display-field{float:left;width:70px;text-align:center;margin:10px 0}
+.k-icon.k-edit,.k-grid-edit:hover .k-edit{background:url(/Content/Images/doccare_sprite.png) no-repeat -532px -7px;width:19px;height:19px;float:left}
+
+.reason .btnClass,.appointmentDateandTime .btnClass{width:auto;padding:4px 10px}
+.bookAppointment #tabs ul li:hover,.bookAppointment #tabs ul li.active{background-color:transparent!important}
+
+div.k-grid-header, div.k-grid-footer {
+padding-right: 2px !important;
+}
+
+.sorry_right {
+    margin-left:50px !important;
+    
+}
+.sorry_left{
+    float:left;
+    width:352px;
+    margin:20px 0 0 2px !important;
+}
+
+.healHistoryInfo{line-height:22px;}
+.healHistoryInfo .editor-field, .healHistoryInfo .display-label, .healHistoryInfo .editor-label{clear:both;}
+.c_leftColumn {
+    min-height:720px !important;
+}
+
+.inboxPatient{}
+.inboxPatient p{margin:15px 0; display:inline-block;line-height:normal;}
+.inboxPatient .Inbox{margin:0px 0 15px 0 !important;}

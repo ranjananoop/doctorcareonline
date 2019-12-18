@@ -1,0 +1,146 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "AccountDetails";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+ <div class="row">
+           
+                <h6>Subscription Detials</h6>             
+            
+        </div>
+
+ @Html.HiddenFor(model => model.DOCSUBSCRIPTION.UserName)
+<div class="d_doctorInfoDisplay">   
+    <div class="row">
+        <div class="display-label">
+             Maximum Number of Payments : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.MaxNumberOfPayments)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>Subscription Start Date  :</b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.StartingDate)</div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="display-label">
+             Subscription End Date : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.EndingDate)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>Amount charged Per Payment : </b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.MaxAmountPerPayment)</div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="display-label">
+             Currency Code : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.CurrencyCode)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>Pay Pal Email : </b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.SenderEmail)</div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="display-label">
+             Date Of Month Charged : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.DateOfMonth)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>Is Approved : </b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.IsApproved)</div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="display-label">
+             Pre Approval Status : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.Status)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>Maximum Total Amount Of All Payments</b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.MaxTotalAmountOfAllPayments)</div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="display-label">
+            Maximum Total Amount Of All Payments : @Html.DisplayFor(model => model.DOCSUBSCRIPTION.MaxTotalAmountOfAllPayments)
+        </div>
+                <div class="right">
+                    <div class="display-label"><b>CREATED DATE:</b></div>
+                    <div>@Html.DisplayFor(model => model.DOCSUBSCRIPTION.CREATEDDATE)</div>
+        </div>
+        </div>
+    <div class="row">
+    </div>
+</div>
+
+ <script>
+     var data = [];
+     $(document).ready(function () {
+
+         $('.c_pgTitleText').text('Account Settings');
+         $('.c_pgTitleIcon').addClass('myAccounts');
+
+        var userName = '@Model.UserName';
+        
+         $("#grid").kendoGrid({
+                
+             dataSource: {
+                 pageSize: 5,
+                 type: "Json",
+                 serverFiltering: false,
+                 transport: {
+                     read: {
+                         url: "/AccountSettings/GetSubscriptionPayments/",                           
+                         dataType: "json",
+                         type: "post",
+                         //contentType: "application/json; charset=utf-8",
+                        data: { userName: userName },
+                     },
+                 },
+                 schema: {
+                     id: "SUBSCRIPTIONPAYMENTID",
+                     model: {
+                         fields: {                               
+                             PaymentDate: { type: "string" },
+                             PaymentGross: { type: "Decimal" },
+                             McCurrency: { type: "string" },
+                             Business: { type: "string" },
+                             TxnId: { type: "string" },
+                             PaymentStatus: { type: "string" },
+                            PayerEmail: { type: "string" }
+                         }
+                     }
+                 },
+             },               
+             groupable: false,                          
+             sortable: true,
+             pageable: true,
+             columns: [
+                 {
+                     field: "PaymentDate",
+                     title: "Payment Date",
+                     width: 100
+                 },
+                 {
+                     //field: "PaymentGross",
+                     title: "Gross Payment",
+                     template: '#= PaymentGross # #= McCurrency# ',
+                    width: 70
+                 },
+                 {
+                     field: "TxnId",
+                     title: "Transaction Id",
+                     width: 100
+                 },
+                 {
+                     field: "PaymentStatus",
+                     title: "Payment Status",
+                     width: 80
+                 },
+                 {
+                     field: "PayerEmail",
+                     title: "Pay Pal Email",
+                     width: 120
+                 }
+             ]
+         });
+     }); 
+ </script>

@@ -1,0 +1,2269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\anoranja\Desktop\doccareonline</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Altairis.Web.Security.dll">
+      <publishTime>11/05/2013 10:55:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>11/05/2013 10:57:00</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>10/22/2013 20:38:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>11/05/2013 10:55:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>11/05/2013 10:55:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>11/05/2013 10:55:24</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>11/05/2013 10:55:30</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>11/05/2013 10:55:32</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>11/05/2013 10:55:34</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/05/2013 10:55:42</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.BaseDataLayer.dll">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.BaseDataLayer.dll.config">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.BaseDataLayer.pdb">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.CompanyDatabaseInitilization.dll">
+      <publishTime>07/24/2019 15:46:20</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.CompanyDatabaseInitilization.dll.config">
+      <publishTime>07/16/2019 11:25:29</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.CompanyDatabaseInitilization.pdb">
+      <publishTime>07/24/2019 15:46:20</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Domain.dll">
+      <publishTime>07/24/2019 15:46:20</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Domain.dll.config">
+      <publishTime>11/05/2013 10:55:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Domain.pdb">
+      <publishTime>07/24/2019 15:46:20</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.ErrorLoggingContext.dll">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.ErrorLoggingContext.pdb">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceBoundedContext.dll">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceBoundedContext.dll.config">
+      <publishTime>11/05/2013 10:55:10</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceBoundedContext.pdb">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceRepoUOW.dll">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceRepoUOW.dll.config">
+      <publishTime>11/05/2013 10:55:10</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.MarksHistoryServiceRepoUOW.pdb">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.ObjectInterfaces.dll">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.ObjectInterfaces.pdb">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceBoundedContext.dll">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceBoundedContext.dll.config">
+      <publishTime>11/05/2013 10:55:10</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceBoundedContext.pdb">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceRepoUOW.dll">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceRepoUOW.dll.config">
+      <publishTime>11/05/2013 10:55:12</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.StudentInformationServiceRepoUOW.pdb">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceBoundedContext.dll">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceBoundedContext.dll.config">
+      <publishTime>11/17/2013 19:43:54</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceBoundedContext.pdb">
+      <publishTime>07/24/2019 15:46:37</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceRepoUOW.dll">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceRepoUOW.dll.config">
+      <publishTime>11/05/2013 10:55:14</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.UserServiceRepoUOW.pdb">
+      <publishTime>07/24/2019 15:46:38</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Utility.dll">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Utility.pdb">
+      <publishTime>07/24/2019 15:46:04</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Web.dll">
+      <publishTime>07/26/2019 15:13:03</publishTime>
+    </File>
+    <File Include="bin/GURUKUL.Web.pdb">
+      <publishTime>07/26/2019 15:13:03</publishTime>
+    </File>
+    <File Include="bin/JWT.dll">
+      <publishTime>04/21/2017 10:11:04</publishTime>
+    </File>
+    <File Include="bin/MFCapturer.dll">
+      <publishTime>04/29/2019 14:43:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/05/2013 10:56:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>11/05/2013 10:56:40</publishTime>
+    </File>
+    <File Include="bin/Mono.Math.dll">
+      <publishTime>11/05/2013 10:55:28</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/02/2017 17:46:32</publishTime>
+    </File>
+    <File Include="bin/opentok.dll">
+      <publishTime>04/29/2019 14:43:12</publishTime>
+    </File>
+    <File Include="bin/OpenTokNET.dll">
+      <publishTime>04/29/2019 14:43:14</publishTime>
+    </File>
+    <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
+      <publishTime>11/05/2013 10:55:28</publishTime>
+    </File>
+    <File Include="bin/PayPalAdaptivePaymentsSDK.dll">
+      <publishTime>11/12/2013 12:37:40</publishTime>
+    </File>
+    <File Include="bin/PayPalCoreSDK.dll">
+      <publishTime>11/12/2013 12:37:42</publishTime>
+    </File>
+    <File Include="bin/Recaptcha.dll">
+      <publishTime>11/05/2013 10:56:56</publishTime>
+    </File>
+    <File Include="bin/Recaptcha.MvcModel.dll">
+      <publishTime>11/05/2013 10:56:56</publishTime>
+    </File>
+    <File Include="bin/Recaptcha.pdb">
+      <publishTime>11/05/2013 10:56:56</publishTime>
+    </File>
+    <File Include="bin/Recaptcha.Web.dll">
+      <publishTime>11/05/2013 10:56:56</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x64/msvcr120.dll">
+      <publishTime>03/26/2019 14:59:00</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x64/SqlServerSpatial140.dll">
+      <publishTime>03/26/2019 14:59:00</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x86/msvcr120.dll">
+      <publishTime>03/26/2019 14:59:00</publishTime>
+    </File>
+    <File Include="bin/SqlServerTypes/x86/SqlServerSpatial140.dll">
+      <publishTime>03/26/2019 14:59:00</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/05/2013 10:56:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/05/2013 10:56:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/05/2013 10:56:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/05/2013 10:56:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/05/2013 10:56:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>11/05/2013 10:56:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/05/2013 10:56:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/05/2013 10:56:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/05/2013 10:56:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/05/2013 10:56:38</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>11/05/2013 10:57:06</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>11/05/2013 10:56:40</publishTime>
+    </File>
+    <File Include="bin/WPFVideoRenderer.dll">
+      <publishTime>04/29/2019 14:43:14</publishTime>
+    </File>
+    <File Include="bin/x64/MFCapturer.dll">
+      <publishTime>04/29/2019 14:43:12</publishTime>
+    </File>
+    <File Include="bin/x64/opentok.dll">
+      <publishTime>04/29/2019 14:43:12</publishTime>
+    </File>
+    <File Include="Content/animate.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/common.css">
+      <publishTime>07/12/2019 15:53:38</publishTime>
+    </File>
+    <File Include="Content/custom.css">
+      <publishTime>07/16/2019 11:24:11</publishTime>
+    </File>
+    <File Include="Content/Default/editor.png">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/Default/imagebrowser.png">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/Default/loading-image.gif">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Default/loading.gif">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Default/slider-h.gif">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Default/slider-v.gif">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Default/sprite.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/demos.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/doctor.css">
+      <publishTime>07/04/2019 10:36:07</publishTime>
+    </File>
+    <File Include="Content/erp_styles.css">
+      <publishTime>07/16/2019 11:24:11</publishTime>
+    </File>
+    <File Include="Content/examples-offline.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/Fonts/LineIcons.eot">
+      <publishTime>07/08/2019 12:25:21</publishTime>
+    </File>
+    <File Include="Content/Fonts/LineIcons.svg">
+      <publishTime>07/08/2019 12:25:21</publishTime>
+    </File>
+    <File Include="Content/Fonts/LineIcons.ttf">
+      <publishTime>07/08/2019 12:25:21</publishTime>
+    </File>
+    <File Include="Content/Fonts/LineIcons.woff">
+      <publishTime>07/08/2019 12:25:21</publishTime>
+    </File>
+    <File Include="Content/Fonts/OpenSans-Light.eot">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Fonts/OpenSans-Light.svg">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Fonts/OpenSans-Light.ttf">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Fonts/OpenSans-Light.woff">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/1.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/1234.png">
+      <publishTime>11/11/2013 09:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/2.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/3.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/4.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/5.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/6.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/7.png">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/amy_doctorSearch.jpg">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/Images/amy_home.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/amy_home_new.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/amy_inner.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/amy_inner_new.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/amy_login.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/amy_login_new.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/appoinment.PNG">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/arrow.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/attach.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/avatarLarge.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/avatarSmall.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/benifits.jpg">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/bg1.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/blue_marker.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/calendar_arrow_indicator.png">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/callout.gif">
+      <publishTime>11/05/2013 10:50:58</publishTime>
+    </File>
+    <File Include="Content/Images/circle.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/collapse.jpg">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/collapse.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/collapse_large.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/congratulations.png">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/connect.jpg">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/dashboard_chart.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/dash_app.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/dash_mail.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/dash_patient.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/dash_payment.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/dash_viewed.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/doccare_sprite.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/docotr profle page.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/doctorProfile.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/doctorsignup.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/doctor_benefits.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/doctor_n.png">
+      <publishTime>11/11/2013 09:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/doctor_profile.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/d_appoinments.jpg">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/d_img.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/d_img_d.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/d_img_n.png">
+      <publishTime>11/05/2013 10:51:00</publishTime>
+    </File>
+    <File Include="Content/Images/Empty.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/expand.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/expand.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/expand_large.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/false.jpg">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/Filled.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/filter_icon.png">
+      <publishTime>11/05/2013 10:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/finddoc.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/five.png">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/four.png">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/g1.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/g10.jpg">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/g2.jpg">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/g4.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/g5.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/g6.jpg">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/g7.jpg">
+      <publishTime>11/05/2013 10:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/g8.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/g9.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/hdr_bg.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/header.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/help.jpg">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icn_send_message.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_clinic.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_clinicSlots.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_close.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_congra_createProfile.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_congra_payrate.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_congra_scheduleApp.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_delete.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/icon_details.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_edit.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_education.png">
+      <publishTime>11/05/2013 10:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/icon_role.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/icon_search_arrowBack.png">
+      <publishTime>11/14/2013 18:08:14</publishTime>
+    </File>
+    <File Include="Content/Images/icon_search_arrowoff.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/icon_search_arrowOn.png">
+      <publishTime>11/14/2013 18:08:14</publishTime>
+    </File>
+    <File Include="Content/Images/icon_search_inHdr.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/icon_telephone.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/icon_videoSlots.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/img_createProfile.png">
+      <publishTime>11/11/2013 09:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/img_find_doctor.png">
+      <publishTime>11/11/2013 09:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/img_getConnected.png">
+      <publishTime>11/11/2013 09:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/img_mail.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/img_npiIcon.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/img_requestIcon.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/img_setAppointment.png">
+      <publishTime>11/11/2013 09:51:02</publishTime>
+    </File>
+    <File Include="Content/Images/img_videoIcon.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/logo.png">
+      <publishTime>07/14/2019 14:01:28</publishTime>
+    </File>
+    <File Include="Content/Images/logo_footer.png">
+      <publishTime>07/14/2019 14:01:28</publishTime>
+    </File>
+    <File Include="Content/Images/marriage_logo.png">
+      <publishTime>07/08/2019 16:49:01</publishTime>
+    </File>
+    <File Include="Content/Images/none.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/bg1.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/bg2.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/bg_jRatingInfos.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/block_sep.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/body_bg.gif">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/bullet.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/character.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/closeBtn.jpg">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/close_button.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/dialog_close.jpg">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/doccare_logo.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/dropdownArrow.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/home_doctor_block.jpg">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/home_help_block.jpg">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/home_watchVideo.jpg">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/processing.gif">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/profile_doctor.jpg">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/signup.jpg">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/Images/old_images/tabLoginArrow.jpg">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/Images/one.png">
+      <publishTime>11/05/2013 10:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/patient_n.png">
+      <publishTime>11/11/2013 09:51:04</publishTime>
+    </File>
+    <File Include="Content/Images/paypal.gif">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/paypal_img.jpg">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/psignup.jpg">
+      <publishTime>11/05/2013 10:51:12</publishTime>
+    </File>
+    <File Include="Content/Images/P_benefits.jpg">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/p_img.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/p_img_d.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/p_img_n.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/refresh.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/refresh16x16.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/selectall16x16.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/sep_horizontal.png">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/slider1.jpg">
+      <publishTime>11/05/2013 10:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/slider1.png">
+      <publishTime>11/05/2013 10:51:14</publishTime>
+    </File>
+    <File Include="Content/Images/slider1n.png">
+      <publishTime>11/05/2013 10:51:18</publishTime>
+    </File>
+    <File Include="Content/Images/slider1nn.png">
+      <publishTime>11/11/2013 09:51:08</publishTime>
+    </File>
+    <File Include="Content/Images/slider1nnn.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/slider2.jpg">
+      <publishTime>11/05/2013 10:51:14</publishTime>
+    </File>
+    <File Include="Content/Images/slider2.png">
+      <publishTime>11/05/2013 10:51:14</publishTime>
+    </File>
+    <File Include="Content/Images/slider2n.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/slider2nn.png">
+      <publishTime>11/11/2013 09:51:10</publishTime>
+    </File>
+    <File Include="Content/Images/slider3n.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/slider3nn.png">
+      <publishTime>11/11/2013 09:51:06</publishTime>
+    </File>
+    <File Include="Content/Images/small.png">
+      <publishTime>11/05/2013 10:51:14</publishTime>
+    </File>
+    <File Include="Content/Images/spinner.gif">
+      <publishTime>11/05/2013 10:51:16</publishTime>
+    </File>
+    <File Include="Content/Images/spinner20_20.gif">
+      <publishTime>11/05/2013 10:51:16</publishTime>
+    </File>
+    <File Include="Content/Images/stars.png">
+      <publishTime>11/05/2013 10:51:16</publishTime>
+    </File>
+    <File Include="Content/Images/step1.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/step2.png">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/Images/success.png">
+      <publishTime>11/05/2013 10:51:18</publishTime>
+    </File>
+    <File Include="Content/Images/successmessage.png">
+      <publishTime>11/05/2013 10:51:18</publishTime>
+    </File>
+    <File Include="Content/Images/three.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/tick.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/trash16x16.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/true.jpg">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/Images/two.png">
+      <publishTime>11/05/2013 10:51:20</publishTime>
+    </File>
+    <File Include="Content/jMenu.jquery.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/jquery-ui-1.10.2.custom.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/jquery.countdown.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/jquery.countdown1.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/jquery.countdownold.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/kendo.common.min.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/kendo.default.min.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/LineIcons.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/magnific-popup.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/main.css">
+      <publishTime>07/08/2019 17:14:23</publishTime>
+    </File>
+    <File Include="Content/main.map">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/model.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/nivo-lightbox.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/onepage-scroll.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/owl.carousel.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/owl.theme.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/patient.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/profile_patient.jpg">
+      <publishTime>11/05/2013 10:50:56</publishTime>
+    </File>
+    <File Include="Content/reset.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/responsive.css">
+      <publishTime>07/08/2019 12:23:43</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-icons_222222_256x240.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-icons_454545_256x240.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-icons_888888_256x240.png">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/smoothness/jquery-ui-1.8rc3.custom.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/smoothness/jquery.weekcalendar.css">
+      <publishTime>11/05/2013 10:51:22</publishTime>
+    </File>
+    <File Include="Content/smoothness/jquery.weekcalendar1.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/style.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/animated-overlay.gif">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.menu.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.spinner.css">
+      <publishTime>11/05/2013 10:51:24</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tooltip.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/animated-overlay.gif">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>11/05/2013 10:51:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.menu.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.spinner.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>11/05/2013 10:51:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tooltip.min.css">
+      <publishTime>11/05/2013 10:51:28</publishTime>
+    </File>
+    <File Include="Content/verticalMenustyles.css">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="DoctorInformation/anoop%40gmail.com/Desert_06122013052544.jpg">
+      <publishTime>11/05/2013 10:53:54</publishTime>
+    </File>
+    <File Include="DoctorInformation/anoop%40gmail.com/Desert_06122013053052.jpg">
+      <publishTime>11/05/2013 10:54:02</publishTime>
+    </File>
+    <File Include="DoctorInformation/anoop%40gmail.com/Desert_06122013053417.jpg">
+      <publishTime>11/05/2013 10:53:46</publishTime>
+    </File>
+    <File Include="DoctorInformation/anoopranjan.1983%40gmail.com/DSC_0004_06202014034527.JPG">
+      <publishTime>06/20/2014 09:15:28</publishTime>
+    </File>
+    <File Include="DoctorInformation/anoopranjan.1983%40gmail.com/DSC_0004_06202014034528.JPG">
+      <publishTime>06/20/2014 09:15:30</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/Desert_11192013123539.jpg">
+      <publishTime>11/19/2013 06:05:40</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/DSC_0001_05142014053509.JPG">
+      <publishTime>05/14/2014 23:05:10</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/DSC_0001_05142014053510.JPG">
+      <publishTime>05/14/2014 23:05:12</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/DSC_0043_06092014035136.JPG">
+      <publishTime>06/09/2014 21:21:38</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/DSC_0043_06092014035137.JPG">
+      <publishTime>06/09/2014 21:21:38</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/Koala_11192013123731.jpg">
+      <publishTime>11/19/2013 06:07:32</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/Lighthouse_11172013064846.jpg">
+      <publishTime>11/18/2013 00:18:48</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/Penguins_11192013123551.jpg">
+      <publishTime>11/19/2013 06:05:52</publishTime>
+    </File>
+    <File Include="DoctorInformation/guptasn1957%40gmail.com/Tulips_11192013123602.jpg">
+      <publishTime>11/19/2013 06:06:04</publishTime>
+    </File>
+    <File Include="DoctorInformation/test4567%40gmail.com/Chrysanthemum_07122013011805.jpg">
+      <publishTime>11/05/2013 10:51:34</publishTime>
+    </File>
+    <File Include="DoctorInformation/testdoc1%40gmail.com/Koala_07302013120305.jpg">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="DoctorInformation/testentity111%40gmail.com/Penguins_11052013120153.jpg">
+      <publishTime>11/05/2013 17:31:54</publishTime>
+    </File>
+    <File Include="DoctorInformation/testingdoctor1%40gmail.com/Jellyfish_11052013100834.jpg">
+      <publishTime>11/05/2013 15:38:36</publishTime>
+    </File>
+    <File Include="DoctorInformation/testingdoctor1%40gmail.com/Jellyfish_11052013100835.jpg">
+      <publishTime>11/05/2013 15:38:36</publishTime>
+    </File>
+    <File Include="DoctorInformation/testingdoctor2%40gmail.com/Lighthouse_11112013110836.jpg">
+      <publishTime>11/11/2013 16:38:38</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>11/05/2013 10:50:54</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/05/2013 10:50:52</publishTime>
+    </File>
+    <File Include="HealthHistory/ranjanananoop47%40gmail.com/DSC_2060_11172013054130.jpg">
+      <publishTime>11/17/2013 23:11:32</publishTime>
+    </File>
+    <File Include="HealthHistory/testentity999%40gmail.com/Penguins_11052013125137.jpg">
+      <publishTime>11/05/2013 18:21:38</publishTime>
+    </File>
+    <File Include="HealthHistory/testentity999%40gmail.com/Penguins_11052013125202.jpg">
+      <publishTime>11/05/2013 18:22:04</publishTime>
+    </File>
+    <File Include="HealthHistory/testing11%40twitter.com/Chrysanthemum_10052013062245.jpg">
+      <publishTime>11/05/2013 10:54:10</publishTime>
+    </File>
+    <File Include="HtmlPage1 - Copy.html">
+      <publishTime>03/27/2019 11:34:36</publishTime>
+    </File>
+    <File Include="HtmlPage1.html">
+      <publishTime>03/29/2019 10:18:26</publishTime>
+    </File>
+    <File Include="Images/.DS_Store">
+      <publishTime>04/08/2019 19:07:16</publishTime>
+    </File>
+    <File Include="Images/2.png">
+      <publishTime>03/06/2019 00:18:08</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>11/05/2013 10:51:34</publishTime>
+    </File>
+    <File Include="Images/arrow_down.png">
+      <publishTime>11/05/2013 10:51:34</publishTime>
+    </File>
+    <File Include="Images/arrow_right.png">
+      <publishTime>11/05/2013 10:51:34</publishTime>
+    </File>
+    <File Include="Images/bg.jpg">
+      <publishTime>11/05/2013 10:52:40</publishTime>
+    </File>
+    <File Include="Images/bg/bg-subs.jpg">
+      <publishTime>03/04/2019 04:33:28</publishTime>
+    </File>
+    <File Include="Images/bg/home2-bg.jpg">
+      <publishTime>03/04/2019 04:33:28</publishTime>
+    </File>
+    <File Include="Images/bg/testimonial-bg.jpg">
+      <publishTime>03/04/2019 04:33:28</publishTime>
+    </File>
+    <File Include="Images/bg_jRatingInfos.png">
+      <publishTime>11/05/2013 10:51:36</publishTime>
+    </File>
+    <File Include="Images/blog/01.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/02.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/03.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/avater-1.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/blog-1-big.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/img1.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/img2.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/img3.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/blog/ta-avater.jpg">
+      <publishTime>03/04/2019 04:34:28</publishTime>
+    </File>
+    <File Include="Images/btn_bg.jpg">
+      <publishTime>11/05/2013 10:51:36</publishTime>
+    </File>
+    <File Include="Images/btn_inner_bg.jpg">
+      <publishTime>11/05/2013 10:51:36</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>11/05/2013 10:51:36</publishTime>
+    </File>
+    <File Include="Images/business/business-img.png">
+      <publishTime>03/06/2019 00:19:01</publishTime>
+    </File>
+    <File Include="Images/character.jpg">
+      <publishTime>11/05/2013 10:51:42</publishTime>
+    </File>
+    <File Include="Images/character.png">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/collapse.jpg">
+      <publishTime>11/05/2013 10:51:42</publishTime>
+    </File>
+    <File Include="Images/collapse.png">
+      <publishTime>11/05/2013 10:51:42</publishTime>
+    </File>
+    <File Include="Images/contact/.DS_Store">
+      <publishTime>03/06/2019 00:18:32</publishTime>
+    </File>
+    <File Include="Images/contact/01.png">
+      <publishTime>03/06/2019 00:18:25</publishTime>
+    </File>
+    <File Include="Images/doccare_logo.jpg">
+      <publishTime>11/05/2013 10:51:44</publishTime>
+    </File>
+    <File Include="Images/download_button.png">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/dropdownArrow.png">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/Empty.png">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/expand.jpg">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/expand.png">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/Filled.png">
+      <publishTime>11/05/2013 10:51:46</publishTime>
+    </File>
+    <File Include="Images/filter_icon.png">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/five.png">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/footer-logo.png">
+      <publishTime>03/06/2019 00:18:19</publishTime>
+    </File>
+    <File Include="Images/four.png">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/hdr_bg.jpg">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/hero-area.jpg">
+      <publishTime>03/06/2019 00:17:50</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>11/05/2013 10:51:48</publishTime>
+    </File>
+    <File Include="Images/home_doctor_block.jpg">
+      <publishTime>11/05/2013 10:52:02</publishTime>
+    </File>
+    <File Include="Images/home_help_block.jpg">
+      <publishTime>11/05/2013 10:52:00</publishTime>
+    </File>
+    <File Include="Images/home_watchVideo.jpg">
+      <publishTime>11/05/2013 10:52:04</publishTime>
+    </File>
+    <File Include="Images/icn_send_message.png">
+      <publishTime>11/05/2013 10:52:02</publishTime>
+    </File>
+    <File Include="Images/icon_collapse.jpg">
+      <publishTime>11/05/2013 10:52:04</publishTime>
+    </File>
+    <File Include="Images/icon_delete.png">
+      <publishTime>11/05/2013 10:52:06</publishTime>
+    </File>
+    <File Include="Images/icon_details.png">
+      <publishTime>11/05/2013 10:52:04</publishTime>
+    </File>
+    <File Include="Images/icon_edit.png">
+      <publishTime>11/05/2013 10:52:06</publishTime>
+    </File>
+    <File Include="Images/icon_role.png">
+      <publishTime>11/05/2013 10:52:06</publishTime>
+    </File>
+    <File Include="Images/img1.jpg">
+      <publishTime>11/05/2013 10:52:08</publishTime>
+    </File>
+    <File Include="Images/img2.jpg">
+      <publishTime>11/05/2013 10:52:10</publishTime>
+    </File>
+    <File Include="Images/img3.jpg">
+      <publishTime>11/05/2013 10:52:10</publishTime>
+    </File>
+    <File Include="Images/img4.jpg">
+      <publishTime>11/05/2013 10:52:10</publishTime>
+    </File>
+    <File Include="Images/intro.png">
+      <publishTime>03/04/2019 04:40:24</publishTime>
+    </File>
+    <File Include="Images/logo.png">
+      <publishTime>07/14/2019 14:01:28</publishTime>
+    </File>
+    <File Include="Images/none.png">
+      <publishTime>11/05/2013 10:52:10</publishTime>
+    </File>
+    <File Include="Images/one.png">
+      <publishTime>11/05/2013 10:52:12</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>11/05/2013 10:52:12</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>11/05/2013 10:52:12</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/paypal.gif">
+      <publishTime>11/05/2013 10:52:14</publishTime>
+    </File>
+    <File Include="Images/profile_doctor.jpg">
+      <publishTime>11/05/2013 10:52:16</publishTime>
+    </File>
+    <File Include="Images/profile_patient.jpg">
+      <publishTime>11/05/2013 10:52:24</publishTime>
+    </File>
+    <File Include="Images/refresh.png">
+      <publishTime>11/05/2013 10:52:20</publishTime>
+    </File>
+    <File Include="Images/refresh16x16.png">
+      <publishTime>11/05/2013 10:52:20</publishTime>
+    </File>
+    <File Include="Images/selectall16x16.png">
+      <publishTime>11/05/2013 10:52:22</publishTime>
+    </File>
+    <File Include="Images/showcase/01.jpg">
+      <publishTime>03/04/2019 04:38:10</publishTime>
+    </File>
+    <File Include="Images/showcase/02.jpg">
+      <publishTime>03/04/2019 04:38:10</publishTime>
+    </File>
+    <File Include="Images/showcase/03.jpg">
+      <publishTime>03/04/2019 04:38:10</publishTime>
+    </File>
+    <File Include="Images/showcase/04.jpg">
+      <publishTime>03/04/2019 04:38:10</publishTime>
+    </File>
+    <File Include="Images/showcase/05.jpg">
+      <publishTime>03/04/2019 04:38:10</publishTime>
+    </File>
+    <File Include="Images/signup.jpg">
+      <publishTime>11/05/2013 10:52:28</publishTime>
+    </File>
+    <File Include="Images/slider1.jpg">
+      <publishTime>11/05/2013 10:52:38</publishTime>
+    </File>
+    <File Include="Images/small.png">
+      <publishTime>11/05/2013 10:52:28</publishTime>
+    </File>
+    <File Include="Images/stars.png">
+      <publishTime>11/05/2013 10:52:30</publishTime>
+    </File>
+    <File Include="Images/tabLoginArrow.jpg">
+      <publishTime>11/05/2013 10:52:30</publishTime>
+    </File>
+    <File Include="Images/team/01.jpg">
+      <publishTime>03/04/2019 04:38:48</publishTime>
+    </File>
+    <File Include="Images/team/02.jpg">
+      <publishTime>03/04/2019 04:38:48</publishTime>
+    </File>
+    <File Include="Images/team/03.jpg">
+      <publishTime>03/04/2019 04:38:48</publishTime>
+    </File>
+    <File Include="Images/team/04.jpg">
+      <publishTime>03/04/2019 04:38:48</publishTime>
+    </File>
+    <File Include="Images/testimonial/01.png">
+      <publishTime>03/04/2019 04:39:30</publishTime>
+    </File>
+    <File Include="Images/three.png">
+      <publishTime>11/05/2013 10:52:32</publishTime>
+    </File>
+    <File Include="Images/title_b_l.jpg">
+      <publishTime>11/05/2013 10:52:32</publishTime>
+    </File>
+    <File Include="Images/title_b_r.jpg">
+      <publishTime>11/05/2013 10:52:34</publishTime>
+    </File>
+    <File Include="Images/trash16x16.png">
+      <publishTime>11/05/2013 10:52:34</publishTime>
+    </File>
+    <File Include="Images/two.png">
+      <publishTime>11/05/2013 10:52:36</publishTime>
+    </File>
+    <File Include="Images/unreadcount.png">
+      <publishTime>11/05/2013 10:52:38</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>07/16/2019 11:24:12</publishTime>
+    </File>
+    <File Include="MyJS/CustomerViewModel.js">
+      <publishTime>11/05/2013 10:52:42</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/22/2019 16:09:26</publishTime>
+    </File>
+    <File Include="PatientProfile/anoopranjan.1983%40gmail.com/Koala_10042013112853.jpg">
+      <publishTime>11/05/2013 10:55:08</publishTime>
+    </File>
+    <File Include="PatientProfile/anoopranjan.1983%40gmail.com/Koala_10042013123011.jpg">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="PatientProfile/testdoc1%40gmail.com/Koala_07302013120305.jpg">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="PatientProfile/testentity999%40gmail.com/Chrysanthemum_11052013124713.jpg">
+      <publishTime>11/05/2013 18:17:14</publishTime>
+    </File>
+    <File Include="PatientProfile/testentity999%40gmail.com/Chrysanthemum_11052013124753.jpg">
+      <publishTime>11/05/2013 18:17:54</publishTime>
+    </File>
+    <File Include="PatientProfile/testentity999%40gmail.com/Lighthouse_11052013124731.jpg">
+      <publishTime>11/05/2013 18:17:32</publishTime>
+    </File>
+    <File Include="PatientProfile/testentity999%40gmail.com/Tulips_11052013124933.jpg">
+      <publishTime>11/05/2013 18:19:34</publishTime>
+    </File>
+    <File Include="PatientProfile/testingpatient1%40gmail.com/Chrysanthemum_11092013095122.jpg">
+      <publishTime>11/09/2013 15:21:24</publishTime>
+    </File>
+    <File Include="PatientProfile/testingpatient1%40gmail.com/Penguins_11092013095149.jpg">
+      <publishTime>11/09/2013 15:21:50</publishTime>
+    </File>
+    <File Include="RecaptchaNet.ReadMe.txt">
+      <publishTime>11/05/2013 10:50:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/console.js">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="Scripts/Googlemap.js">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="Scripts/imgLiquid-min.js">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="Scripts/jMenu.jquery.js">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.4.min.js">
+      <publishTime>11/05/2013 10:54:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.3.js">
+      <publishTime>06/03/2018 00:24:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.0.js">
+      <publishTime>11/05/2013 10:54:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.0.min.js">
+      <publishTime>11/05/2013 10:54:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.0.min.map">
+      <publishTime>11/05/2013 10:54:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-min.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.0.js">
+      <publishTime>11/05/2013 10:54:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.0.min.js">
+      <publishTime>11/05/2013 10:54:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8rc3.custom.min.js">
+      <publishTime>11/05/2013 10:54:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>11/05/2013 10:54:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ba-dotimeout.js">
+      <publishTime>11/05/2013 10:53:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery.countdown.js">
+      <publishTime>11/05/2013 10:53:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dropdownPlain.js">
+      <publishTime>11/05/2013 10:53:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery.easing.min.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.magnific-popup.min.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.min.js">
+      <publishTime>11/05/2013 10:53:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.nav.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.onepage-scroll.js">
+      <publishTime>11/05/2013 10:53:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.password-strength.js">
+      <publishTime>11/05/2013 10:53:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.password-strength.min.js">
+      <publishTime>11/05/2013 10:53:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.realperson.js">
+      <publishTime>11/05/2013 10:53:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery.realperson.min.js">
+      <publishTime>11/05/2013 10:53:54</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ui.core.js">
+      <publishTime>11/05/2013 10:53:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ui.dialog.js">
+      <publishTime>11/05/2013 10:53:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ui.tabs.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ui.widget.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>11/05/2013 10:54:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>11/05/2013 10:53:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery.weekcalendar.js">
+      <publishTime>11/05/2013 10:54:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.weekcalendar1.js">
+      <publishTime>11/05/2013 10:54:02</publishTime>
+    </File>
+    <File Include="Scripts/jquery.weekcalendar2.js">
+      <publishTime>11/05/2013 10:54:02</publishTime>
+    </File>
+    <File Include="Scripts/jRating.jquery.js">
+      <publishTime>11/05/2013 10:54:24</publishTime>
+    </File>
+    <File Include="Scripts/jRating.jquery.min.js">
+      <publishTime>11/05/2013 10:54:24</publishTime>
+    </File>
+    <File Include="Scripts/kendo.all.min.js">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Scripts/kendo.dropdownlist.min.js">
+      <publishTime>11/05/2013 10:54:26</publishTime>
+    </File>
+    <File Include="Scripts/kendo.web.min.js">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Scripts/knockout-1.2.1.debug.js">
+      <publishTime>11/05/2013 10:54:28</publishTime>
+    </File>
+    <File Include="Scripts/knockout-1.2.1.js">
+      <publishTime>11/05/2013 10:54:32</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.debug.js">
+      <publishTime>11/05/2013 10:54:38</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.2.1.js">
+      <publishTime>11/05/2013 10:54:34</publishTime>
+    </File>
+    <File Include="Scripts/main.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/mask.js">
+      <publishTime>11/05/2013 10:54:32</publishTime>
+    </File>
+    <File Include="Scripts/menu.initializer.js">
+      <publishTime>11/05/2013 10:54:32</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>11/05/2013 10:54:34</publishTime>
+    </File>
+    <File Include="Scripts/nivo-lightbox.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/opentox.js">
+      <publishTime>07/12/2019 11:55:52</publishTime>
+    </File>
+    <File Include="Scripts/owl.carousel.js">
+      <publishTime>07/08/2019 12:24:54</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js">
+      <publishTime>07/08/2019 12:24:55</publishTime>
+    </File>
+    <File Include="Scripts/scrolling-nav.js">
+      <publishTime>07/08/2019 12:24:55</publishTime>
+    </File>
+    <File Include="Scripts/slider/controls.png">
+      <publishTime>11/05/2013 10:54:34</publishTime>
+    </File>
+    <File Include="Scripts/slider/jquery.slider.1.js">
+      <publishTime>11/05/2013 10:54:38</publishTime>
+    </File>
+    <File Include="Scripts/slider/jquery.slider.2.js">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Scripts/slider/jquery.slider.3.js">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Scripts/slider/jquery.slider.4.js">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Scripts/underscore-min.js">
+      <publishTime>11/05/2013 10:54:34</publishTime>
+    </File>
+    <File Include="Scripts/watermark.jquery.js">
+      <publishTime>11/05/2013 10:54:34</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>11/05/2013 10:53:48</publishTime>
+    </File>
+    <File Include="SessionHandler.cs">
+      <publishTime>11/05/2013 10:50:52</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePassword.cshtml">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Views/Account/ChangePasswordSuccess.cshtml">
+      <publishTime>11/05/2013 10:54:38</publishTime>
+    </File>
+    <File Include="Views/Account/ForgotPassword.cshtml">
+      <publishTime>11/05/2013 10:54:38</publishTime>
+    </File>
+    <File Include="Views/Account/LogOn.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/Account/RegistrationSuccess.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/AccountAdmin.cshtml">
+      <publishTime>11/11/2013 14:13:24</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/AccountDetails.cshtml">
+      <publishTime>11/11/2013 09:51:06</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/AccountSettingPatient.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/AccountSettings.cshtml">
+      <publishTime>11/12/2013 11:26:22</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/_SetAppointments.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/AccountSettings/_SetClinicAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/AppoinmnetRestriction.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/Appointment.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/BookYourAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/ClinicInfo.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/ClinicPreBookYourAppointment.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/ClinicPreBookYourAppointmentOuter.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/ClinicPreBookYourAppointmentSecond.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/Dashboard.cshtml">
+      <publishTime>07/26/2019 10:29:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorAppointmentConfirmation.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorChangedPassword.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonCalender.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonClinicPhotos.cshtml">
+      <publishTime>11/11/2013 16:43:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonEdit.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonMain.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonReviews.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonUpdateAvailabilty.cshtml">
+      <publishTime>07/24/2019 14:26:28</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonViews.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonViewsAnnonymus.cshtml">
+      <publishTime>11/13/2013 18:03:06</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsInformatonViewsReviews.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsReports.cshtml">
+      <publishTime>11/05/2013 10:54:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/DoctorsSearch.cshtml">
+      <publishTime>07/12/2019 15:53:38</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/EducationalInfo.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/Inbox.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/Index.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PayPalIPINVerification.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PayPalSubscription.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PersonalInfo.cshtml">
+      <publishTime>07/04/2019 11:06:48</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PostPaymentBookYourAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PreBookYourAppointment.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/PreBookYourAppointmentSecond.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/ReleaseStatement.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/SentItems.cshtml">
+      <publishTime>11/05/2013 10:54:50</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/SocialHubConnect.cshtml">
+      <publishTime>07/15/2019 13:10:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/SubscriptionInfo.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/VideoConf.cshtml">
+      <publishTime>07/26/2019 12:58:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/VideoConfMain - Copy.cshtml">
+      <publishTime>07/10/2019 12:52:19</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/VideoConfMain.cshtml">
+      <publishTime>07/10/2019 12:52:19</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/VideoConfMain_whatsapp.cshtml">
+      <publishTime>07/26/2019 12:59:22</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/VideoInfo.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/Welcomepage.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_allergies.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_allergy.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_AppointmentLogIn.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_changepassword.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_ConfirmPayForVisit.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_doctorpatientreview.cshtml">
+      <publishTime>11/05/2013 10:54:42</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_doctorreview.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorscontactDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:40</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorscontactEdit.cshtml">
+      <publishTime>07/04/2019 11:09:20</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorseduDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:42</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorseduEdit.cshtml">
+      <publishTime>11/05/2013 10:54:42</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoClinicPhotosDisplay.cshtml">
+      <publishTime>11/15/2013 13:17:26</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoClinicPhotosEdit.cshtml">
+      <publishTime>07/04/2019 11:36:09</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:42</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoDisplayCustom.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoEdit.cshtml">
+      <publishTime>11/05/2013 10:54:42</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsInfoRatingDisplay.cshtml">
+      <publishTime>11/13/2013 18:15:58</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsNpiDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsNpiEdit.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsPayRatesDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsPayRatesEdit.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsReviewRatingDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_DoctorsSearch.cshtml">
+      <publishTime>07/04/2019 11:09:20</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_immunization.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_medication.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_pastappointment.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_PayForVisit.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_procedure.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_ResonForVisit.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_SetAppointmentDisplays.cshtml">
+      <publishTime>11/05/2013 10:54:44</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_SetAppointments.cshtml">
+      <publishTime>07/24/2019 15:15:28</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_SetClinicAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_SetClinicAppointmentDisplay.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_upcomingappointment.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_upcomingappointmentrequest.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_uploadreport.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/DoctorInformation/_uploadreports.cshtml">
+      <publishTime>11/05/2013 10:54:46</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/AdvancedQuickSearch.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/upload.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/uploadquicksearch.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_advancequicksearch.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_allergies.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_immunization.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_medication.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_procedure.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/HealthHistory/_uploadreport.cshtml">
+      <publishTime>11/05/2013 10:54:52</publishTime>
+    </File>
+    <File Include="Views/Home/getStarted_Doctor.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/Home/getStarted_Patient.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/16/2019 11:24:13</publishTime>
+    </File>
+    <File Include="Views/Home/Index_root.cshtml">
+      <publishTime>07/25/2019 13:12:25</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/AppointmentConfirmation.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/AppointmentConfirmationRequest.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/AppointmentRequest.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/AppointmentRequestDecline.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/Followupemail.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/MonthlyReport.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/PatientAppointmentCancellation.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/PatientRegistrationTemplate.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/Registration.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/MailTemplate/RemainderEmail.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/Message/AdvancedQuickSearch.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/Message/Inbox.cshtml">
+      <publishTime>11/11/2013 12:37:06</publishTime>
+    </File>
+    <File Include="Views/Message/inboxAdvancesearch.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/Message/Index.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/Message/SentItems.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/Message/_advancequicksearch.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/AdvancedQuickSearch.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/AppoinmnetRating.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/AppoinmnetRatingRestriction.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/AppoinmnetRestriction.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/Appointment.cshtml">
+      <publishTime>08/24/2017 03:41:08</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/AppointmentQuickSearch.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/BasicInformation.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/BookYourAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/BookYourAppointmentClinic.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/CancelAppointment.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/ContactInformation.cshtml">
+      <publishTime>07/04/2019 11:08:39</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/ContactInformationupdate.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/Dashboard.cshtml">
+      <publishTime>07/25/2019 15:57:12</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/DoctorsInformatonViews.cshtml">
+      <publishTime>07/16/2019 11:24:14</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/DoctorsRatingsViews.cshtml">
+      <publishTime>07/16/2019 11:24:14</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/DoctorsSearch.cshtml">
+      <publishTime>07/04/2019 10:45:25</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/MyProfile.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/Personalinfo.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/PreferredProviders.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/ProfilePicure.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/QuickSearch.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/SocialHubConnect.cshtml">
+      <publishTime>07/24/2019 15:10:39</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/VideoConf.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_advancequicksearch.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_changepassword.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_ConfirmPayForVisit.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_DoctorsSearch.cshtml">
+      <publishTime>07/12/2019 15:53:39</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pastappointment.cshtml">
+      <publishTime>11/05/2013 10:54:54</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pastappointmentmain.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pateintconctdisplay.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pateintconctedit.cshtml">
+      <publishTime>07/04/2019 11:08:22</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pateintinfodisplay.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_pateintinfoedit.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_PayForVisit.cshtml">
+      <publishTime>06/20/2014 09:07:42</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_preferredproviders.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_preferredProviderssearch.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_quicksearch.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_quicksearchappointment.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_quicksearchappointmentrating.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_quicksearchbookappointment.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_ResonForVisit.cshtml">
+      <publishTime>11/15/2013 12:50:34</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_SetAppointments.cshtml">
+      <publishTime>07/12/2019 15:53:39</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_SetClinicAppointment.cshtml">
+      <publishTime>07/12/2019 15:53:39</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_upcomingappointment.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_upcomingappointmentmain.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/PatientProfile/_upcomingappointmentresent.cshtml">
+      <publishTime>11/05/2013 10:54:56</publishTime>
+    </File>
+    <File Include="Views/Registration/Congratulations.cshtml">
+      <publishTime>11/05/2013 10:54:58</publishTime>
+    </File>
+    <File Include="Views/Registration/DoctorSignUp.cshtml">
+      <publishTime>07/16/2019 11:24:14</publishTime>
+    </File>
+    <File Include="Views/Registration/PatientSignUp.cshtml">
+      <publishTime>07/16/2019 11:24:14</publishTime>
+    </File>
+    <File Include="Views/Shared/AccessDenied.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/DoctorMenu.cshtml">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+    <File Include="Views/Shared/DoctorsleftMenu.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/Menu.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/PateintleftMenu.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/PatientDoctorsleftMenu.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_DoctorsInformationLayout.cshtml">
+      <publishTime>07/26/2019 10:58:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout _blank.cshtml">
+      <publishTime>07/08/2019 16:15:43</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/12/2019 15:53:39</publishTime>
+    </File>
+    <File Include="Views/Shared/_PateintInformationLayout.cshtml">
+      <publishTime>07/26/2019 10:58:25</publishTime>
+    </File>
+    <File Include="Views/User/Create.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/User/Delete.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/User/Details.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/User/Edit.cshtml">
+      <publishTime>11/05/2013 10:55:00</publishTime>
+    </File>
+    <File Include="Views/User/Index.cshtml">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+    <File Include="Views/User/ResetPasswordSuccess.cshtml">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+    <File Include="Views/User/Roles.cshtml">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/05/2013 10:54:36</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/26/2019 15:13:05</publishTime>
+    </File>
+    <File Include="xml/PasswordPolicy.xml">
+      <publishTime>11/05/2013 10:55:02</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

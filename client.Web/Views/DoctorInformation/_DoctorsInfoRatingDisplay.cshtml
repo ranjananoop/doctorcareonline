@@ -1,0 +1,63 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+<div class="docInfoDisplay p_pub_doc_disp">
+
+    <div class="docInfoDetails">
+
+        <div class="display-field profileDocReview fleet">
+            <div id="fade" class="black_overlay" style="height: 244%;"></div>
+            <div class="closeDisplayBar" style="display: none; clear: both; margin-top: -266px; position: relative; margin-right: -312px; z-index: 1000000000;"></div>
+            <div class="boxSep">
+                <div class="imgLiquidFill imgLiquid " style="width: 130px; height: 160px;">
+                    <img  id="viewimg" src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephotopatient();' /></div>
+            </div>
+
+        </div>
+
+        <div class="middleContent">
+            <div style="margin: 10px 0px 0px 10px;">
+                <div class="row">
+                    <div class="display-label">
+                        <h2>@Html.DisplayFor(model => model.Salutation)&nbsp;@Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME),&nbsp;@Html.DisplayFor(model => model.SUFFIX)</h2>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+
+                    <div class="display-field" style="margin-top:5px;">
+                        @Html.DisplayFor(model => model.Speciality)
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:13px;">
+                    <div class="display-label">
+                        @Html.LabelFor(m => m.rejectCount)                    
+                       <span style="margin:0px 0px 10px 10px;"><a class="recount"><span style="color:white">@Html.DisplayFor(m => m.rejectCount)</span></a></span>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="display-field">
+                        @for (var k = 0; k < @Model.Ratings; k++)
+                        {
+                            <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                        }
+                        @for (var i = 0; i < 5 - @Model.Ratings; i++)
+                        {
+                            <img class="Empty" src="~/Content/Images/Empty.png" />
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="c_profileViewedCountRight">
+            <div class="c_profileCount" style="color: black">
+                <div id="hits">
+                    <h1 id="hitcount">@Html.DisplayFor(model => model.HITCOUNT)</h1>
+                    <label>Profile Viewed</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

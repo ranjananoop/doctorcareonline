@@ -1,0 +1,41 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\obj\Release\DOCVIDEO.UserServiceRepoUOW.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\obj\Release\GURUKUL.UserServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.UserServiceRepoUOW\obj\Release\GURUKUL.UserServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\GURUKUL.UserServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\bin\Release\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\obj\Release\DOCVIDEO.UserServiceRepoUOW.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\obj\Release\DOCVIDEO.UserServiceRepoUOW.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\obj\Release\DOCVIDEO.UserServiceRepoUOW.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\obj\Release\GURUKUL.UserServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.UserServiceRepoUOW\obj\Release\GURUKUL.UserServiceRepoUOW.pdb

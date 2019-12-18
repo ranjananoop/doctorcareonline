@@ -1,0 +1,103 @@
+﻿@model CIINVENT.Domain.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="contentTitle">
+    <h2>User Details</h2>
+    <div class="title_b_l"></div>
+    <div class="title_b_r"></div>
+</div>
+
+<div class="bodyContent edit">
+    <div class="bodyContentPadding">
+
+
+        <table style="width: 75%" cellpadding="0" cellspacing="0">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.UserName)</th>
+        <td>@Html.DisplayFor(model => model.UserName)</td>
+        <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+        <td>@Html.DisplayFor(model => model.DateOfBirth)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <td>@Html.DisplayFor(model => model.Email)</td>
+        <th>@Html.DisplayNameFor(model => model.DateOfJoining)</th>
+        <td>@Html.DisplayFor(model => model.DateOfJoining)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Comment)</th>
+        <td>@Html.DisplayFor(model => model.Comment)</td>
+        <th>@Html.DisplayNameFor(model => model.DateCreated)</th>
+        <td>@Html.DisplayFor(model => model.DateCreated)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IsApproved)</th>
+        <td>@Html.DisplayFor(model => model.IsApproved)</td>
+        <th>@Html.DisplayNameFor(model => model.DateLastLogin)</th>
+        <td>@Html.DisplayFor(model => model.DateLastLogin)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Mobile)</th>
+        <td>@Html.DisplayFor(model => model.Mobile)</td>
+        <th>@Html.DisplayNameFor(model => model.DateLastActivity)</th>
+        <td>@Html.DisplayFor(model => model.DateLastActivity)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Landline)</th>
+        <td>@Html.DisplayFor(model => model.Landline)</td>
+        <th>@Html.DisplayNameFor(model => model.DateLastPasswordChange)</th>
+        <td>@Html.DisplayFor(model => model.DateLastPasswordChange)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Designation.Name)</th>
+        <td>@Html.DisplayFor(model => model.Designation.Name)</td>
+        <th>@Html.DisplayNameFor(model => model.PFNo)</th>
+        <td>@Html.DisplayFor(model => model.PFNo)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <td>@Html.DisplayFor(model => model.FirstName)</td>
+        <th>@Html.DisplayNameFor(model => model.PAN)</th>
+        <td>@Html.DisplayFor(model => model.PAN)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.LastName)</th>
+        <td>@Html.DisplayFor(model => model.LastName)</td>
+        <th>@Html.DisplayNameFor(model => model.ESICNo)</th>
+        <td>@Html.DisplayFor(model => model.ESICNo)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.MiddleName)</th>
+        <td>@Html.DisplayFor(model => model.MiddleName)</td>
+        <th>@Html.DisplayNameFor(model => model.NextHikeDate)</th>
+        <td>@Html.DisplayFor(model => model.NextHikeDate)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Gender)</th>
+        <td>@Html.DisplayFor(model => model.Gender)</td>
+        <th>@Html.DisplayNameFor(model => model.Teaching)</th>
+        <td>@Html.DisplayFor(model => model.Teaching)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.BankName)</th>
+        <td>@Html.DisplayFor(model => model.BankName)</td>
+        <th>@Html.DisplayNameFor(model => model.Department.Name)</th>
+        <td>@Html.DisplayFor(model => model.Department.Name)</td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.BankAccountNo)</th>
+        <td>@Html.DisplayFor(model => model.BankAccountNo)</td>
+        <th>@Html.DisplayNameFor(model => model.EmployeeType.EmpType)</th>
+        <td>@Html.DisplayFor(model => model.EmployeeType.EmpType)</td>
+    </tr>
+</table>
+        <div class="buttonsWrapper">
+            @Html.ActionLink("Edit", "Edit", "User",  new { id = Model.UserName }, new { @class = "btnClass" })
+            @Html.ActionLink("Change Password", "ChangePassword", new { id = Model.UserName }, new { @class = "btn" })
+            @Html.ActionLink("Back to List", "Index", "User", null, new { @class = "btn" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,684 @@
+﻿html{background-color:#f7f7f7 !important;background-image:none !important;}
+
+@font-face {
+    font-family: "Open Sans Light";
+    src: url("Fonts/OpenSans-Light.eot?") format("eot"),url("Fonts/OpenSans-Light.woff") format("woff"),url("Fonts/OpenSans-Light.ttf") format("truetype"),url("Fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+  
+}
+ 
+body {
+    background-color:#f7f7f7;
+    font-family: helvetica !important;
+    font-size:13px;
+    margin:0px auto;
+    padding:0px;
+    color:#666;
+}
+h1, h2, h3, h4, h5, h6 {padding:0;margin:0;font-weight:bold; /*font-family: "Open Sans Light";*/font-family:helvetica;}
+a {color:inherit;text-decoration:none;}
+a:hover{color:#10c8fe;cursor: hand; cursor: pointer;text-decoration:none;}
+.toggle a {color:inherit;text-decoration:none;}
+.toggle a:hover{color:#c3221a;cursor:hand; cursor: pointer;}
+input,textarea{color:inherit;}
+ul,ul li{margin:0px auto; padding:0;}
+table{width:100% !important;text-align:left !important; font-weight:normal !important;}
+table tr td{padding:5px 2px !important;}
+table label, table th{font-weight:normal !important;}
+table th{padding:5px 0;}
+
+.divider {float:left;padding:0 5px;}
+
+/*form controls*/
+input,textarea {border:1px solid #c3c3c3;padding:6px 0;font-family:inherit;box-shadow:1px 0 2px 1px #C3C3C3;text-indent:10px;width:250px;background-color:#fff;border-radius:5px;}
+textarea{resize:none;}
+input:active,input:focus{background-color:#fff;}
+select {width:250px;border:1px solid #c3c3c3;font-family:inherit;/*box-shadow:2px 2px 0 0 #C3C3C3;padding:3px 5px;*/color:inherit;padding:1px;font-family:helvetica;}
+/*input[type='checkbox']{width:auto;}*/
+input#VERIFICATIONCODE{width:227px;}
+
+
+p {
+    font-family: helvetica;
+}
+
+select {
+    position: relative;
+    display: inline-block;
+}
+
+select {
+        display: inline-block;
+        border:1px solid #c3c3c3;
+        padding: 5px 3px 5px 5px;
+        font: inherit;
+        outline:none; /* remove focus ring from Webkit */
+        line-height: 1.2;      
+        width:250px ;       
+        box-shadow:1px 0 2px 1px #C3C3C3;
+        border-radius:5px;
+        height:30px;
+        font-family: helvetica;
+    }
+
+    /* for Webkit's CSS-only solution */
+    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+        select {
+               
+        }
+    }
+    
+    /* Since we removed the default focus styles, we have to add our own */
+   
+    
+    /* Select arrow styling */
+    /*select:after {
+        content: "?";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 60%;
+        line-height: 30px;
+        padding: 0 7px;
+        background: #bbb;
+        color: black;
+        
+        pointer-events:none;
+        
+        -webkit-border-radius: 0 6px 6px 0;
+        -moz-border-radius: 0 6px 6px 0;
+        border-radius: 0 6px 6px 0;
+    }*/
+    
+    /*.no-pointer-events .select:after {
+        content: none;
+    }*/
+
+
+
+
+
+
+input[type='checkbox']{width:auto;}
+
+.editor-field,.editor-label {margin:5px 0; padding-bottom:5px;}
+/*button*/
+input.btnClass{background-color:#10c8fe;/*width:100%;*/height:100%;text-align:center;color:#fff;border:0px;padding:8px 14px;text-indent:0;cursor:pointer;border:1px solid #1ea9d2;font-family: helvetica;font-weight:bold;}
+input.btnClass.cancel{background-color:#d4d4d4;border:1px solid #a2a2a1;color:#999;}
+a.btn, input.btn{background-color:#999;width:100%;height:100%;text-align:center;color:#fff;border:0px;padding:5px 10px;text-indent:0;cursor:pointer;box-shadow:2px 2px 0 0 #C3C3C3;margin-left:0px;/*display:block;float:left;*/}
+input.btn{padding:4px 10px !important;}
+
+a.btnClass{background-color:#10c8fe;width:100%;height:100%;text-align:center;color:#fff;border:0px;padding:4px 10px;text-indent:0;cursor:pointer;border:1px solid #1ea9d2;}
+
+/*login*/
+.login {
+    width:500px;height:320px;background-color:#fff;border:0px solid #bdbdbd;border-bottom:0px solid #bdbdbd;margin:0px auto;margin-top:70px;box-shadow:0px 1px 3px 1px #8e8c8c;
+}
+
+.logo {width:153px;height:47px;display:inline-block;margin:8px 0 0 0;}
+.login h2 {color:#fff !important;margin:10px 0 0 0;font-weight:normal !important;font-size:20px !important;}
+.login fieldset {width:400px;margin:0px auto;padding:30px 0 0 0;margin-bottom:30px;display:inline-block;margin-left:40px;clear:both}
+.login input {width:100%;}
+.login input[type='checkbox'] {width:auto;float:left;margin:0 5px 0 0;}
+.login input.btnClass {width:auto;margin-left:10px;}
+.login .login_links {float:right;color:#10c8fe;}
+.login .login_links a{float:left;margin:8px 0 0 0;color:#10c8fe;}
+.login .login_links a:hover{color:#000;}
+.login .login_links .divider{margin:8px 0 0 0;}
+
+.login .register_links {float:right;margin:10px 0 0 0;}
+.login .register_links a{margin:8px 0 0 10px;width:auto;}
+.tabLogin {background-color:#a3a3a3;padding:3% 5%;color:#fff;font-weight:normal;font-size:18px;float:left;width:90%;text-align:center;cursor:pointer;}
+.tabLogin:hover{background-color:#8e8c8c;}
+.tabLogin.selected{background-color:#10c8fe;}
+/*.tabLogin.selected:after{
+    position:absolute;
+    content:'';
+   margin-top:38px;
+    background:url(/Content/Images/tabLoginArrow.jpg) no-repeat;
+    width:25px;
+    height:11px;
+    margin-left:-50px;
+}*/
+
+fieldset {border: none;margin: 0;padding: 0;
+
+}
+fieldset legend {display: none;}
+.field-validation-error{color:#c3221a;padding:6px 0;width:100%;float:left;}
+.validation-summary-errors {background-color:#f4e2e1;margin:0px 0 0 0;padding:20px;color:#c3221a;}
+.validation-summary-errors span{font-weight:bold;}
+.validation-summary-errors ul{margin:5px 0 0 15px;}
+
+
+/*menu*/
+.menu{margin:10px 0 0 0;float:left;width:100%;}
+.menu ul li {height:30px;display:inline-block;border-right:1px solid #590904;background-color:transparent;margin-right:-5px;}
+.menu ul li:hover{background-color:#590904;}
+.menu ul li a{padding:8px 15px; text-transform:none;font-size:13px !important;}
+.menu ul li ul{width:250px !important;}
+.menu ul li ul li{width:250px !important;text-align:left;}
+.menu ul.jMenu li ul li:hover{background-color:#1c1c1c !important;}
+
+/*body*/
+#body{width:100%;margin:0px auto;}
+
+
+
+.bodyContent{width:99%;margin:0px auto;background-color:#fff;position:relative;top:0px;border-left:1px solid #bbbbbb;border-right:1px solid #bbbbbb;border-bottom:1px solid #bbbbbb;}
+.bodyContentPadding{padding:20px;}
+.bodyContent.edit table{width:100%;}
+.bodyContentPadding h3{font-size:20px;margin-bottom:20px;}
+
+
+.bodyContent.edit table tr td input[type='checkbox']{width:auto;}
+.bodyContent.edit h3{font-size:20px;margin-bottom:10px;}
+.title_b_l{background:url(../content/images/title_b_l.jpg) no-repeat;width:10px;height:10px;left:0;bottom:0;position:relative;top:23px;}
+.title_b_r{background:url(../content/images/title_b_r.jpg) no-repeat;width:10px;height:10px;right:0;bottom:0;position:relative;top:13px;float:right;}
+.grid{margin-top:20px;}
+
+/*.k-header, .k-grid-header, .k-toolbar, .k-dropdown-wrap, .k-picker-wrap, .k-grouping-header, .k-pager-wrap, .k-textbox, .k-button, .k-draghandle, .k-tile, .k-autocomplete, .k-state-highlight, .k-tabstrip-items .k-item {
+    background-color:#485158 !important;background-image:none !important;color:#fff !important;
+}
+.k-block, .k-widget, .k-inline-block, .k-textbox > input, .k-input[type="text"], .k-input[type="number"], .k-textbox, .k-picker-wrap .k-input, .k-button, .k-draghandle    
+*/
+.k-content{margin:20px 0 0 0;width:100%;}
+.k-header,.k-grid-header{background-color:#485158 !important;background-image:none !important;color:#fff !important;}
+.k-header a{color:#fff !important;}
+.k-grid td{border-bottom:1px solid #d9d9d9 !important;border-left-width:0px !important;color:#5f6c75 !important;}
+.k-block, .k-widget{border:0px !important;}
+.k-alt, .k-separator{background-color:white !important;}
+#grid table tr:hover{background-color:#fffce2 !important;}
+/*.grid table tr:hover{background-color:#fffce2 !important;}**/
+
+.k-icon.k-filter {
+    background: url(../content/images/filter_icon.png) no-repeat !important;
+    width: 8px !important;
+    height: 8px !important;
+    margin-right:10px !important;
+}
+.k-grid td a {padding:0 3px;}
+
+.k-state-active, .k-state-active:hover, .k-active-filter{background-color:transparent !important;}
+.k-state-selected, .k-button:active {background-color:#c3221a !important;background-image:none !important;}
+
+.buttonsWrapper {border-top:0px solid #e0e0e0;width:100%;padding:15px 0px;margin:10px 0 0 0;clear:both;text-align:left;}
+.buttonsWrapper input{width:auto;text-align:center;}
+.buttonsWrapper a{box-shadow:2px 2px 0 0 #C3C3C3;margin:0 5px;}
+.btnWrapper{clear: both; height: 30px; margin: 10px 0 0 0; float: left;}
+/*.buttonsWrapper a:nth-child(2){margin-left:10px;}*/
+
+
+/*label*/
+.lblDelete {color:#c3221a;}
+
+
+/*buttons*/
+.linkEdit{background:url(../content/images/icon_edit.png) no-repeat; width:17px;height:17px;display:block;float:left;}
+.linkDetails{background:url(../content/images/icon_details.png) no-repeat; width:17px;height:17px;display:block;float:left;}
+.linkDelete{background:url(../content/images/icon_delete.png) no-repeat; width:17px;height:17px;display:block;float:left;}
+.linkRoles{background:url(../content/images/icon_role.png) no-repeat; width:17px;height:17px;display:block;float:left;}
+
+
+/*tabs*/
+#tabs {z-index:1;}
+
+/*tab styles*/
+#tabs ul {padding: 0px;margin: 0px;list-style-type: none;margin-top:20px;}
+#tabs ul li {display: inline-block;clear: none;float: left;background: #cdcdcd;padding:8px 30px;border-radius:6px 6px 0 0;margin:0 3px;}
+#tabs ul li:hover{background-color:#d13e37;}
+#tabs ul li:hover a{color:#fff;}
+#tabs ul li.active{background-color:#c3221a;}
+#tabs ul li a {display: block;color: #000000;text-decoration: none;font-weight: bold;cursor:pointer;}
+#tabs ul li.active a{color:#fff;}
+#tabs ul li a:hover {text-decoration: none;}
+#tabs #Content_Area {padding: 0 0px;clear: both;overflow: hidden;position: relative;padding:10px 0 10px 0;
+z-index: 5;height: auto;overflow: hidden;border-top:1px solid #bbbbbb;}
+
+.gridPadding{padding:20px 0 0 0;float:left;}
+
+/*docare styles*/
+#logo {background:url(Images/doccare_logo.jpg) no-repeat;width:211px;height:38px;float:left;display:block;cursor:pointer;margin:10px 0 0 10px;}
+.wrapper {width: 100%;}
+header {width:100%;height:70px;background-color:#fff;box-shadow:1px 0 2px 1px #C3C3C3;}
+header .headerInner{width:960px;margin:0 auto;}
+.bodyInner{width:960px;margin:0 auto;}
+.homeSlider {background-color:#10c8fe;width:100%;height:318px;text-align: center;}
+.homeSlider img {text-align: center;}
+.welcome {background-color:#ededed;width:100%;padding:15px 0;}
+.welcome .welcomeInner{width:960px;margin:0 auto;padding:0 20px;}
+.welcome .welcomeInner h1{color:#000;font-size:30px;}
+.welcome .welcomeInner p{color:#000;font-size:15px;line-height:27px;font-family: helvetica;}
+
+/*footer*/
+footer {width:100%;margin:30px 0 0 0;background-color:#828282;height:40px;position:fixed;z-index:999;bottom:0;}
+
+.footerTabs {
+    margin-left: 10px;
+}
+
+.f_tabs {
+    float:left;
+    margin:0px 3px;
+    /*border-right:1px solid #fff;*/
+    padding:0px 4px;
+}
+
+.footer_right {
+    float: right;
+    margin: -20px 40px 0px 0px;
+}
+
+footer .footerInner{width:960px;margin:0 auto;}
+footer li{border-right:1px solid #696969;height:40px;}
+footer li a{padding:13px 10px;line-height:21px;font-family: helvetica;font-weight:bold;}
+footer li a:hover{background-color:#767676;}
+
+.homeBlocks{width:100%;background-color:#fff;float:left;padding:20px 0 50px 0;}
+.homeBlocksInner{width:960px;margin:0 auto;}
+.signupBlock{background:url(Images/signup.jpg) no-repeat;width:249px;height:256px;float:left;cursor:pointer;}
+.home_block_help{background:url(Images/home_help_block.jpg) no-repeat;width:219px;height:263px;float:left;cursor:pointer;}
+.home_block_watchVideo{background:url(Images/home_watchVideo.jpg) no-repeat;width:409px;height:264px;float:right;cursor:pointer;}
+fieldset.loginform_Patient {
+    display:none;
+}
+
+
+.frame {
+    width:100%;height:auto;background-color:#fff;border:0px solid #bdbdbd;border-bottom:0px solid #bdbdbd;margin:40px 0 80px 0;box-shadow:0px 1px 3px 1px #8e8c8c;padding-bottom:0px;
+}
+.frameHeader{background-color:#10c8fe;width:100%;padding:0px 0;}
+.frameHeaderInner{padding:12px 0 0 0px;color:#fff;display:inline-block;width:100%;}
+.frameHeaderInner .left{padding-left:15px;}
+.frameHeaderInner .switchPatientSignup{}
+.frameHeaderInner h1{font-size:35px;}
+.frameHeaderInner h2{font-weight:bold;}
+.frameHeaderInner .left{width:auto !important;}
+.frameContent{margin:10px 20px;display:inline-block;width:96%;}
+.framecontentTitle{clear:both;border-bottom:1px solid #D1D1D1;width:100%;height:40px;padding: 7px 0;border-top-width:0px;cursor:pointer;background:#F0F0F0 url(/Content/Images/expand.png) no-repeat right 25px;margin-bottom:8px;/*box-shadow:0 3px 1px -2px #aeaeae;*/}
+.framecontentTitle h2{font-size:16px;color:#666;font-weight:bold;margin:10px 0 0 5px;line-height:24px;color:#666;}
+.framecontentTitle:hover{background-color:#dddddd;}
+.framecontentTitle:hover h2{color:#10c8fe;}
+.framecontentTitle:hover span{background-color:#10c8fe;}
+
+.framecontentTitle.active h2{color:#fff;}
+.framecontentTitle.active{background:#10C8FE url(/Content/Images/collapse.png) no-repeat right 25px;color:#fff;}
+.framecontentTitle.active span{background-color:#10c8fe;padding:3px 12px;float:left;color:#fff;margin-right:5px;}
+.framecontentTitle span{background-color:#9e9e9e;padding:3px 12px;float:left;color:#fff;margin-right:5px;}
+
+.frame.inside .frameContent{margin:0px;width:100%;border-top:1px solid #999;margin-top:15px;}
+.frame.inside .frameContent .left{width:720px;}
+
+.switchPatientSignup{float: right;
+background-color: #00a0cf;
+padding: 7px 30px;
+position: absolute;
+margin: -14px 0 0 660px;
+cursor: pointer;}
+
+#passwordPolicy {
+display:none;
+}
+.switchPatientSignup h2{margin-top:3px;}
+.frameContainer{}
+form .frameContainer{width:100%;}
+form .frameContainer input{width:250px;height:15px;}
+form .frameContainer input.check-box{width:20px;margin-top:11px;float:left;}
+.row{margin-bottom:0px;clear:both;width:100%;}
+.row .left{float:left;width:40%;}
+.row .right{width:50%;}
+.row .editor-label{margin:0px;}
+.row label{}
+/*.row select{width:60%;}*/
+.row select option{padding:3px 2px;}
+.left{float:left;}
+.right{float:right;}
+#VERIFICATIONCODE{clear:both;}
+.verificationCode{background-color:#dbe9ed;padding:9px;width:auto;display:inline-block;margin-top:10px;}
+.verificationCode #CaptchaInputText{position:relative;margin-top:-22px;font-family: helvetica;float:left;width:230px;}
+.verificationCode .realperson-challenge{position:absolute;margin-top:-81px;display:inline-block;width:auto;}
+.verificationTitle{font-weight:bold;font-size:15px;padding-bottom:5px;margin-bottom:10px;border-bottom:1px solid #c2c2c2;}
+.realperson-challenge{width:100%;}
+.realperson-text{float:left;}
+.realperson-regen{float:left;background:url(/Content/Images/refresh.png) no-repeat;width:24px;height:24px;text-indent:-1000px;margin:0 0 0 10px;}
+
+
+#map_canvas{width: 350px; height: 400px; border: 1px solid #d3d3d3;display:inline-block;}
+
+#image{width:150px;height:150px;float:left;padding:0 10px 0 0;}
+
+.profileImage{float:left;width:150px;height:150px;padding:0 10px 0 0;}
+.profileHeader{margin:10px 0 0 0;}
+.profileHeader .left{width:300px;}
+.leftColumn{width:200px;float:left;padding-right:0px;margin-left:-20px;}
+.rightColumn{width:500px;padding-left:20px;display:inline-block;}
+
+.clear {
+    clear: both;
+}
+
+/*Style sheet for patient pages starts here*/
+
+.pateint_wrapper {
+    /*margin-left:10px;*/
+}
+.patentPage_headerInner {
+}
+
+.patieet_leftmenu {
+    width:260px;
+    float:left;
+   margin:20px;
+   box-shadow: 0px 1px 3px 1px #8e8c8c;
+   padding:15px;
+}
+#display {
+    color:black;width:110px;border:none !important;background-color: #fff;background: transparent !important;box-shadow:none !important;
+    text-transform:uppercase;
+    font-size:18px;
+}
+#grid2 {
+   /* width: 60%;*/
+}
+#heightClass {
+    min-height:500px;
+}
+.k-pager-wrap {
+    display: none;
+}
+.zipContent {
+    float: right;
+width: 420px;
+margin-top: -920px;
+margin-right: -120px;
+}
+.my_profile_content {
+    width: 500px;
+    background-color: #10c8fe;
+    height: 40px;
+    padding: 10px;
+}
+
+
+.profilePicture{float:left;width:180px;}
+.profilePicture img{width:150px;height:150px;border:1px solid #999;float:left;margin:10px 0 10px 10px;}
+.profileDocReview img{width:100px;height:100px;border:1px solid #999;float:left;margin:0px 10px 10px 0px;}
+
+
+.accordion{}
+.accordion .framecontentTitle{height:20px;background-position:98% 13px;}
+.accordion .framecontentTitle h3{line-height:24px;padding-left:10px;color:#666;}
+.accordion .framecontentTitle.active h3{color:#fff;}
+.accordion .framecontentTitle a.toggle{float:right;position:relative;margin:-20px 53px 0 0;color:#999;}
+.accordion .framecontentTitle a.toggle:hover{color:#000;text-decoration:underline;}
+.accordion .framecontentTitle.active a.toggle{color:#fff;}
+.accordion .framecontentTitle.active a.toggle:hover{color:#fff;}
+
+.docInfoDisplay{}
+.docInfoDetails{float:left;width:770px;margin-bottom:20px;}
+.docInfoEdit{width:770px;}
+.docInfoEdit input,.docInfoEdit select{width:200px !important;height:auto !important;}
+.docInfoEdit .btnClass{width:auto !important;}
+.docInfoEdit .lastContent{margin-left:20px;}
+
+.docInfoDetails .leftContent{width:120px;float:left;}
+.docInfoDetails .middleContent{margin-right:15px;width:200px;float:left;}
+.docInfoDetails .lastContent{width:300px;float:left;}
+.docInfoDetails .middleContent .display-label,.docInfoDetails .middleContent .display-field{float:left;padding-bottom:10px;}
+.docInfoDetails .lastContent .display-label,.docInfoDetails .lastContent .display-field{float:left;padding-bottom:10px;}
+
+.docInfoDetails .middleContent .display-label{width:120px;font-weight:normal;}
+.docInfoDetails .lastContent .display-label{width:160px;}
+
+/*Doctor Review*/
+/*About Doctor*/
+#doctorsInfoDisplay{display:block;}
+#doctorsInfoEdit{display:none;}
+
+/*About Clinic*/
+#docInfoClinicDisplay{display:block;}
+#docInfoClinicEdit{display:none;}
+
+/*Video oppointment*/
+/*Clinic oppointment*/
+
+/*Doctor rating*/
+#docRatesDisplay{display:block;}
+#docRatesEdit{display:none;}
+
+.myReviews{width:770px;margin-top:20px;}
+
+
+.myReviews .leftContent{width:200px;float:left;}
+.myReviews .middleContent{margin-right:15px;width:200px;float:left;}
+.myReviews .lastContent{width:220px;float:left;}
+.myReviews .leftContent .display-label,.myReviews .middleContent .display-label,.docInfoDetails .middleContent .display-field{float:left;padding-bottom:7px;}
+.myReviews .lastContent .display-label,.docInfoDetails .lastContent .display-field{float:left;padding-bottom:7px;}
+.myReviews .middleContent .display-label{width:100px;font-weight:normal;}
+.myReviews .lastContent .display-label{width:50px;}
+
+.ratings{}
+.ratings img{float:left;padding:0 0px;border:0px !important;margin:0px !important;width:auto !important;height:auto !important;}
+
+.docClinic{width:770px;}
+.docClinic .clinicPicture{float:left;width:120px;}
+.docClinic .clinicPicture img{width:100px;height:100px;border:1px solid #999;float:left;margin:0px 10px 10px 0px;}
+.docClinic .leftContent{width:200px;float:left;}
+.docClinic .middleContent{margin-right:15px;width:200px;float:left;}
+.docClinic .lastContent{width:220px;float:left;}
+.docClinic .leftContent .display-label{float:left;padding-bottom:7px;width:150px;}
+.docClinic .lastContent .display-field{float:left;padding-bottom:7px;}
+.docClinic input{width:300px !important;height:auto !important;}
+.docClinic .btnClass{width:auto !important;}
+
+.videoAppointments{width:720px;}
+.titlebar{font-size:13px;}
+.videoAppointments input{width:auto !important;height:auto !important;}
+.availableTime{}
+.availableTime b{clear:both;width:100%;margin:10px 0;display:inline-block;border-bottom:1px solid #999; }
+.availableTime label{width:80px;margin-left:0px !important;display:inline-block;}
+.availableTime span.k-timepicker{margin-right:15px;}
+.availableTime span.k-datepicker{margin-right:15px;}
+.videoAppointments .btnWrapper{margin:10px 0 0 0;width:100%;text-align:center;}
+
+ul#daysbox{margin:4px 0 0 0;}
+ul#daysbox li{display:inline-block;padding:0 4px;}
+
+ul#daysbox1{margin:4px 0 0 0;}
+ul#daysbox1 li{display:inline-block;padding:0 4px;}
+
+
+
+.videoAppointmentCalender{width:720px;margin:10px 0 15px 0;}rightColumnContent
+
+.clinicAppointments{width:720px;}
+.clinicAppointments input{width:auto !important;height:auto !important;}
+.clinicAppointments .btnWrapper{margin:10px 0 0 0;width:100%;text-align:center;}
+.clinicAppointmentCalender{width:720px;margin:10px 0 15px 0;}
+
+.toggleCalender{border:0px;float:left;color:#10C8FE;cursor:pointer;}
+.toggleCalender b{border:0px;}
+
+.payRates{width:100%;}
+.payRates .row{border-bottom:1px solid #999;padding:5px 0;display:inline-block;width:720px;}
+.payRates .display-label{float:left;width:70px;text-align:center;margin:10px 0;}
+.payRates .display-field{float:left;width:70px;text-align:center;margin:10px 0;}
+.payRates .heading{width:100px;font-weight:bold;text-align:left;}
+
+.docRatesEdit{width:770px;float:left;}
+.docRatesEdit .row{border-bottom:1px solid #999;padding:5px 0;display:inline-block;width:720px;}
+.docRatesEdit .editor-label{float:left;width:70px;text-align:center;margin:10px 0;}
+.docRatesEdit .editor-field{float:left;width:70px;text-align:center;margin:10px 0;}
+.docRatesEdit .heading{width:100px;font-weight:bold;text-align:left;}
+.docRatesEdit input{width:60px !important;height:auto !important;}
+.docRatesEdit .btnClass{width:auto !important;}
+
+
+.leftMenu{float:left;width:200px;border-right:0px solid #999;}
+.leftMenu #cssmenu ul li{border-bottom:1px solid #999;padding:0px 0;}
+.leftMenu #cssmenu ul li ul li{border-bottom:0px solid #999;padding:0px 0;}
+.leftMenu #cssmenu ul li ul{float:left;}
+.leftMenu #cssmenu li a{padding:3%;font-family:helvetica;color:#666;}
+.leftMenu #cssmenu li a:hover{background-color:#c5c5c5;color:#000;}
+.leftMenu #cssmenu li ul li a{padding:1%;}
+.leftMenu #cssmenu li a:hover ul li a:hover{background-color:transparent;}
+.leftMenu #cssmenu li ul li a:hover{background-color:transparent;color:#000;}
+.leftMenu #cssmenu ul li ul{}
+.leftMenu #cssmenu ul li.last{}
+.leftMenu #cssmenu ul li.active{background-color:#999;border-radius:0px;color:#fff;}
+.leftMenu #cssmenu ul li.active a{color:#fff;}
+.leftMenu #cssmenu ul li.active ul li a{color:#666;}
+
+
+.rightColumnContent{border-left:1px solid #999999;width:745px !important;min-height:350px;}
+.docSection{margin:10px 0 0 10px;}
+
+.doctorWelcome{margin:10px 0 0 10px;float:left;width:750px;}
+.doctorWelcome a{font-weight:bold;color:#10C8FE;padding:0 0 0 6px;font-size:12px;}
+.doctorWelcome a:hover{text-decoration:underline;}
+.doctorWelcome a:first-child{padding:0 6px 0 0;}
+.doctorWelcomeMessage{clear:both;color:#999;margin:10px 0 0 0;}
+.doctorWelcomeMessage a{color:#000;}
+
+.videoConference{width:740px;margin:0 0 30px 0;float:left;}
+.videoConference input{width:auto !important;height:auto !important;}
+
+.clockWrapper{margin:0px 0 0 0;background-color:#343434;width:471px;float:left;}
+.clockWrapper #clock{float:left;}
+.clockWrapper #div1{float:right;background-color:#666;}
+.clockWrapper .hasCountdown{background-color:transparent;color:#fff;border:0px;}
+.videoLarge{width:100%;}
+.videoLarge .streamHolder{width:100%;}
+.videoSmall{position:absolute;margin:0px;left:0;top:0;}
+.videoSmall .streamHolder{width:150px;height:150px;background-color:#4b4b4b;position:relative;margin:10px 0 0 10px;}
+
+.black_overlay {
+display: none;
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: #000;
+z-index: 1001;
+-moz-opacity: 0.4;
+opacity: .40;
+filter: alpha(opacity=40);
+}
+
+.white_content {
+display: none;
+margin:0px auto;
+position:absolute;
+top:25%;
+width: 500px;
+height: 250px;
+padding: 16px;
+border: 0px solid gray;
+background-color: white;
+z-index: 1002;
+overflow: auto;
+color: Black !important;
+box-shadow:0px 1px 5px 2px #333;
+}
+#divAppointment {
+    z-index:9999999 !important;
+}
+.ui-dialog.ui-widget.ui-widget-content {
+       z-index:9999999 !important;
+}
+.streamLight {
+float: left;
+vertical-align: middle;
+margin-bottom: 4px;
+}
+
+.streamName {
+margin-top: 3px;
+padding-left: 25px;
+}
+
+.streamHolder {
+/* background-color: #77888C; */
+
+background-color: #000;
+/*height: 138px;
+width: 215px;*/
+height: 350px;
+width: 300px;
+clear: both;
+}
+#streamsList {
+    width:95%;float:left;
+}
+
+#streamsList li {
+margin: 0px;
+min-height: 160px;
+min-width: 160px;
+position:relative;
+list-style: none;
+}
+
+div#clock {
+width: 215px;
+height: 45px;
+}
+
+div#div1 {
+width: 240px;
+height: 45px;
+}
+.character{background:url(Images/character.png) no-repeat;width:160px;height:220px;float:left;position:fixed;right:0;bottom:45px;cursor:pointer;}
+.characterDesc{background-color:#10C8FE;border-radius:10px;padding:10px 20px;font-weight:bold;color:#fff;position:absolute;bottom:0;}
+
+#divMessages {
+   
+    border:0px;
+    height: 313px;
+    width: 97%;
+    overflow-y: auto;
+    font-size: 11px;
+    padding: 4px 4px 4px 4px;
+    float:left;
+}
+
+#divChat {
+    float:left;
+    width:100%;
+    box-shadow:0px 1px 5px 1px #666;
+}
+#divChat h3{background-color:#01a3d2;padding:10px 10px;width:91%;text-indent:5px;color:#fff;}
+#divChat input{position:relative;z-index:9999;}
+.chatControl{float:left;background-color:#666;box-shadow:0 1px 5px 1px #666666;padding:2%;width:96%;}
+.chatControl input{box-shadow:none;}
+.chatControl input.btnClass{padding:4px 14px;}
+#pracdate{width:auto !important;}
+.uploadFiles{float:left;margin:15px 0 0 0;}
+
+.appointment{}
+.appointment .framecontentTitle{margin-bottom:0px;}
+.appointment .k-header, .k-grid-header{background-color:#e8e8e8 !important;}
+.appointment .k-header a{color:#666 !important; font-weight:bold !important;}
+.appointment input{width:auto !important;}
+
+.actionPanel{background-color:#e8e8e8 !important;display:inline-block;padding:5px 8px;width:98%;}
+.inbox{width:100%;}
+.inbox .actionPanel{background-color:#e8e8e8 !important;display:inline-block;padding:1%;width:98%;}
+.inbox #grid{width:100%;float:left;}
+
+.inbox #drpMessageStatus{}
+.inbox .framecontentTitle{margin-bottom:0px;}
+.inbox input{width:auto !important;}
+
+
+#btndelete ,#btnrefresh, #btnselect,  #btndel3, #btndel40{width:16px !important;height:16px;margin:2px 5px;border:0px;float:left;text-indent:-9999px;border-radius:0;box-shadow:none;cursor:pointer;}
+#btndelete,  #btndel3, #btndel40{background:url(Images/trash16x16.png) no-repeat;}
+#btnrefresh{background:url(Images/refresh16x16.png) no-repeat;}
+#btnselect{background:url(Images/selectall16x16.png) no-repeat;}
+
+#btndelete1 ,#btnrefresh1, #btnselect1{width:16px !important;height:16px;margin:2px 5px;border:0px;float:left;text-indent:-9999px;border-radius:0;box-shadow:none;cursor:pointer;}
+#btndelete1{background:url(Images/trash16x16.png) no-repeat;}
+#btnrefresh1{background:url(Images/refresh16x16.png) no-repeat;}
+#btnselect1{background:url(Images/selectall16x16.png) no-repeat;}
+.k-grid.k-widget{width:98% !important;}

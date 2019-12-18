@@ -1,0 +1,98 @@
+﻿
+  <div id="grid2"></div>
+<script>
+        var statusSelected = 0;
+        var poData = [];
+        $(document).ready(function () {
+            calculate_time_zone();
+            var doctorSlot = {
+                TimeZoneOffset: document.getElementById('timezoneOffset').value,
+                DSTObserved: document.getElementById('dstObserved').value
+            };
+         
+
+            $("#grid2").kendoGrid({
+                
+                dataSource: {
+                    pageSize: 5,
+                    type: "Json",
+                    serverFiltering: false,
+                  //  transport: { read: "/PatientProfile/GetPastAppintment" },
+                    transport: {
+                        read: {
+                            url: "/PatientProfile/GetPastAppintment",
+                            dataType: "json",
+                            type: "post",
+                            //contentType: "application/json; charset=utf-8",
+                            data: doctorSlot,
+                        },
+                    },
+                    schema: {
+                        id: "APPOINTMENTID",
+                        model: {
+                            fields: {                               
+                                FIRSTNAME: { type: "string" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                CurrenttimeZone: { type: "string" },
+                                REASONFORVISIT: { type: "string" }
+                            }
+                        }
+                    },
+                },
+              
+                groupable: false,
+                scrollable: true,
+                sortable: true,
+                pageable: true,
+                columns: [                    
+
+                    {
+                        field: "FIRSTNAME",
+                    width:90,
+                    title: "Doctor",             
+                    
+
+                    },
+                     {
+                         field: "APPOINTMENTSTARTTIME",
+                         title: "Date",
+                     template: '#= kendo.toString(APPOINTMENTSTARTTIME, "MM/dd/yyyy") #',
+                     width:90,
+
+                     },
+                    {
+                        field: "APPOINTMENTSTARTTIME",
+                        title: " Time",
+                     template: '#= kendo.toString(APPOINTMENTSTARTTIME, "hh:mm tt") #'+" "+ '#=CurrenttimeZone#',
+                    width:90,
+                    },
+                    {
+                        field: "REASONFORVISIT",
+                        title: "Reason For Visit",
+                    width: 120,
+
+                    },
+                     {
+                         filterable: false,
+                         template: "<a href=/PatientProfile/AppoinmnetRating?id=#= APPOINTMENTID#  class='linkEdit'></a>",
+                         width: 50,
+                         title: "Rating"
+                      
+                     }                     
+                      ,
+                     {
+                         filterable: false,
+                         template: "<a title=${ APPOINTMENTID } onclick=setStatus(${ APPOINTMENTID },7) class='linkClass' href='javascript:void(0);' >Notes</a>",
+                         title: "Notes",
+                         width: 80
+                     }
+                ]
+            });
+       
+        }); 
+ 
+ </script>
+
+
+  

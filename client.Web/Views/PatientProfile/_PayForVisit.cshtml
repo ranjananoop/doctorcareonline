@@ -1,0 +1,88 @@
+﻿
+@model client.Web.Models.BookingAppointmentModel
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+  
+    <div class="payforVisit">
+        <div class="payPal">
+            <div>
+                
+                <div class="payPalMessage">
+                    <h2>Please pay using your PayPal account or credit card</h2>
+                    <p>
+                        PayPal is the faster,safer way to pay and get paid online.The service allows the members to send money without sharing financial information, with the flexibility to pay using their account balances,bank accounts, credit card or promotional financing.
+                    </p>
+                </div>
+          <div class="p_app_con">
+                <div class="appontment_1Box">
+        <img src="~/Images/paypal_img.jpg" />
+      
+        </div>
+                <div class="appontment_2Box">
+                <div class="appointmentDateandTime">
+                    <div class="row">
+                        <div class="display-label" style=" color: #0F82DC !important;">
+                            @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)
+                        </div>
+                        <div class="display-field">
+                            <div><h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="display-label" style=" color: #0F82DC !important;">
+                            <div>@Html.DisplayNameFor(model => model.Speciality)</div>
+                             @Html.HiddenFor(model => model.DOCTORSLOTID)
+                        </div>
+                        <div class="display-field">
+                            <div><h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                                @Html.DisplayFor(model => model.LASTNAME)</strong></h3></div>
+                           <div><h3><em style="margin-left: 10px;"> @Html.DisplayFor(model => model.Speciality)</em></h3></div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="display-label">
+                           @Html.DisplayNameFor(model => model.RateDisplay)
+                        </div>
+                            <p style="clear:both;">
+                                <h3><strong> @Html.DisplayFor(model => model.RateQuatermins)</strong></h3></p>
+                        </div>
+
+                    </div>
+                  
+                   
+                </div>
+                
+                 <div class="appontment_3Box" style="margin: 49px 0px 0px 11px;">
+                     <img src="~/Content/Images/paypal.gif" />
+                     </div>
+              </div>
+                 <div class="row c_buttonContainer">
+                        <div class="right">
+                        <div class="display-field ">
+                            <input type="submit" value="Submit" class="button" />
+                        </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+}
+<style>
+.payPalMessage h2 {
+    color: #0F82DC;
+font-size: 22px;
+margin-top: -17px;
+margin-bottom: 9px;
+}
+   
+  
+
+</style>

@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('body').children('welcome')) {
+            $('.bodyInner').css('width', 'auto');
+        }
+    });
+
+</script>
+
+<div class="c_homeSlider">
+</div>
+<div id="slide">
+    <div id="slide-scroll" class="scrollable">
+        <div class="items">
+            <div class="item">
+                <a href="#">
+                    <img src="~/content/images/slider1nn.png">
+                </a>
+            </div>
+            @*<div class="item">
+                <a href="#">
+                    <img src="~/content/images/slider1nnn.png">
+                </a>
+            </div>*@
+            <div class="item">
+                <a href="#">
+                    <img src="~/content/images/slider2nn.png">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <img src="~/content/images/slider3nn.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div id="slide-scroller" class="scroll-wrap">
+            <div class="navi">
+                <a class="" href="#"></a>
+                <a class="" href="#"></a>
+                <a class="" href="#"></a>
+                @* <a class="" href="#"></a>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="c_homeWelcome">
+    <div class="c_homeWelcome_Text">
+        <h1>Welcome docare online</h1>
+        <p>docare online is an online care system that allows patients to connect with doctors immediately, whenever and wherever.</p>
+    </div>
+    <div class="c_homeWelcome_amy"></div>
+</div>
+<div class="row">
+    <div class="c_home_blockDoctor left">
+        <div class="c_doctorImg"></div>
+
+        <div class="c_fleet_push">
+            <h1>Doctor</h1>
+            <p>Increase your online visibility and connect to new patients online</p>
+
+            <a href="~/Home/getStarted_Doctor">Get Started</a>
+        </div>
+
+    </div>
+
+    <div class="c_home_blockPatient right">
+
+        <div class="c_fleet_push">
+            <h1>Patient</h1>
+            <p>Connect with your doctor conveniently from anywhere </p>
+
+            <a href="~/Home/getStarted_Patient">Get Started</a>
+        </div>
+
+        <div class="c_patientImg"></div>
+
+    </div>
+</div>
+<div class="row center">
+    <div class="c_home_highlights_flow">
+        <img src="~/content/images/1234.png" />
+    </div>
+    <ul class="c_home_highlights">
+        <li>
+            @*<img src="~/content/images/img_createProfile.png" />*@
+            <h3>Create Profile</h3>
+            <p>Enter your basic information and medical history into our secure platform</p>
+        </li>
+        <li>
+            @*<img src="~/content/images/img_find_doctor.png" />*@
+            <h3>Find a Doctor</h3>
+
+            <p>Easily search our database for local doctors <span style="color: #fff">medical history into our secure platform</span></p>
+        </li>
+        <li>
+            @* <img src="~/content/images/img_setAppointment.png" />*@
+            <h3>Schedule Appointments</h3>
+            <p>Schedule Appointments – View a doctor’s schedule and book your next appointment</p>
+        </li>
+        <li>
+            @* <img src="~/content/images/img_getConnected.png" />*@
+            <h3>Connect with your Doctor</h3>
+
+            <p>Video conference with your doctor <span style="color: #fff">medical history into our secure platform</span></p>
+        </li>
+
+    </ul>
+</div>

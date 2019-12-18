@@ -1,0 +1,171 @@
+﻿<div class="actionPanel">
+   <div class="right"> 
+         <input type="button" value="Delete" id="btndelete1" />
+                        <input type="button" value="Refresh" id="btnrefresh1" />
+                        <input type="button" value="Select All" id="btnselect1" />       
+
+       </div>
+    </div>
+
+<div id="grid5" style="width: 100%;"></div>
+
+      
+   
+
+<script>
+
+
+   
+    $(document).ready(function () {
+        $("#btnselect1").click(function () {
+            $('.targets').each(function () {
+
+
+                $('.targets').attr('checked', 'checked');
+            })           
+            
+        });
+        $("#btnrefresh1").click(function () {
+
+            location.reload();
+
+        });
+
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 4,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetUploadReportDoc",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetUploadReportID",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var patientReport = new Object();
+
+                    if (type == "update") {
+                        patientReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "PATIENTREPORTID",
+                        fields: {
+                            PATIENTREPORTID: { editable: false, nullable: true },
+                            REPORTNAME: { type: "string" },
+                            NOTES: { type: "string" }
+                        }
+                    }
+                },
+        });
+
+        $("#grid5").kendoGrid({
+            dataSource: dataSource1,          
+            groupable: false,           
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+            columns: [{
+                template: "<input type='checkbox' class='targets' value='#= PATIENTREPORTID #'/>",
+                width: "40px",
+                title: "",
+                filterable: false
+            }, {
+                field: "REPORTNAME",
+                title: "Report Name",
+                filterable: false
+            },
+
+            {
+                title: "View",
+                width: 50, template: "<a  title=${ PATIENTREPORTID } onclick=setStatus(${ PATIENTREPORTID },1) class='linkClass'  >View</a>"
+            },
+            {
+                filterable: false,
+                template: "<a href='#= REPORTPATH#' target=_blank class='linkDownload'></a>",
+                title: "Download"
+            }
+
+            ]
+        });
+
+
+        $('.targets').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+            if ($(this).is(':checked')) {
+
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.push(MessageDeleteId);
+
+            } else {
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.pop(MessageDeleteId);
+            }
+        });
+
+        $("#btndelete1").click(function () {
+            var model = new Object();
+            var PatientRepoDeleteIDs = [];
+            $('.targets').each(function () {
+                
+
+                if ($(this).is(':checked')) {
+                  
+                    var PatientRepoDeleteID = $(this).val();
+                    PatientRepoDeleteIDs.push(PatientRepoDeleteID);
+
+                }
+                
+            });
+            model.PatientRepoDeleteIDs = PatientRepoDeleteIDs;
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/DeleteRepoMessageDoc",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    $("#MessageUpdateStatus").val(msg.msg);
+
+                    if ($("#MessageUpdateStatus").val().length > 0) {
+                        $("#MessageUpdateStatus").show();
+                    } else {
+                        $("#MessageUpdateStatus").hide();
+                    }
+                    if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                        $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                    }
+
+                    var grids = $("#grid5").data("kendoGrid");
+                    grids.dataSource.read();
+                },
+                data: JSON.stringify(model)
+            });
+           
+        });
+
+
+
+    });
+
+  </script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

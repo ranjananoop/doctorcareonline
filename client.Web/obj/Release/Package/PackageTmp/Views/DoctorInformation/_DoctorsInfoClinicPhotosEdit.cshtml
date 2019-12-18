@@ -1,0 +1,338 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+ <script type="text/javascript" >
+     function resizeprofilephotoclinic() {
+
+         $(".imgLiquidFill").imgLiquid({
+             fill: true,
+             horizontalAlign: "center",
+             verticalAlign: "top"
+         });
+
+       
+     }
+    </script>
+
+@using (Html.BeginForm())
+{
+  
+    <div class="_doctorsInfoClinicPhotosEdit">
+        <div class="left">
+            
+            <div class="boxSep" style="margin-top:-2px;">
+                <div class="imgLiquidFill imgLiquid " style="width: 128px; height: 160px;border: 1px solid #aaa;">
+                    <img id="viewimg" src="#" onload='resizeprofilephotoclinic();' />
+                </div>
+                <div class="clinic_arrow_con">
+            <a  >  <img src="~/Content/Images/icon_search_arrowBack.png" width="20" height="20"  class="backdisplay" /></a>
+               <a  >  <img src="~/Content/Images/icon_search_arrowOn.png" width="20" height="20"  class="nextdisplay"  /></a>
+                    <div id="editclinic" >Edit</div>
+                </div>
+            </div>
+
+            <div class="editor-field" id="UserClinicImage" style="display:none;">
+                <input id="UserClinicImageUpload" name="UserClinicImageUpload" type="file"  />
+            </div>
+        </div>
+
+        <div style="float:left;margin-left:15px;width:366px;">
+            <div class="row">
+                <div class="editor-label">
+                    Contact Person:
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.CONTACTPERSON, new { maxlength = "100" })
+                    @Html.ValidationMessageFor(model => model.CONTACTPERSON)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CONTACTMAILID)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.CONTACTMAILID, new { maxlength = "100" })
+                    @Html.ValidationMessageFor(model => model.CONTACTMAILID)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.INSTITUTIONNAME)
+                    @Html.HiddenFor(model => model.UserName)
+                    @Html.HiddenFor(model => model.FIRSTNAME)
+                    @Html.HiddenFor(model => model.LASTNAME)
+                    @Html.HiddenFor(model => model.GENDER)
+                    @Html.HiddenFor(model => model.CITY)
+                    @Html.HiddenFor(model => model.ZIPCODE)
+                    @Html.HiddenFor(model => model.USERSTATE)
+                    @Html.HiddenFor(model => model.USERSTREETADDRESS1)
+                    @Html.HiddenFor(model => model.LICENSEIN)
+                    @Html.HiddenFor(model => model.LICENSE)
+                    @Html.HiddenFor(model => model.DOBDAY)
+                    @Html.HiddenFor(model => model.DOBYEAR)
+                    @Html.HiddenFor(model => model.DOBMonth)
+                    @Html.HiddenFor(model => model.CurrenttimeZone)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.INSTITUTIONNAME, new { maxlength = "200" })
+                    @Html.ValidationMessageFor(model => model.INSTITUTIONNAME)
+                </div>
+            </div>
+           @* <div class="row">
+                <div class="editor-label">
+                    @Html.HiddenFor(model => model.UserName)
+                </div>
+            </div>*@
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.STREETADDRESS1)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.STREETADDRESS1, new { maxlength = "128" })
+                    @Html.ValidationMessageFor(model => model.STREETADDRESS1)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.STREETADDRESS2)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.STREETADDRESS2, new { maxlength = "128" })
+                    @Html.ValidationMessageFor(model => model.STREETADDRESS2)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CLINICCITY)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.CLINICCITY)
+                    @Html.ValidationMessageFor(model => model.CLINICCITY)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CLINICUSERSTATE):
+                    
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.CLINICUSERSTATE, new[] {
+                       new SelectListItem(){Text= "Andaman and Nicobar Islands" ,Value="Andaman and Nicobar Islands" },
+                        new SelectListItem(){Text= "Andhra Pradesh" ,Value="Andhra Pradesh" },
+                        new SelectListItem(){Text= "Arunachal Pradesh" ,Value="Arunachal Pradesh" },
+                        new SelectListItem(){Text= "Assam" ,Value="Assam" },
+                        new SelectListItem(){Text= "Bihar" ,Value="Bihar" },
+                        new SelectListItem(){Text= "Chandigarh" ,Value="Chandigarh" },
+                        new SelectListItem(){Text= "Chhattisgarh" ,Value="Chhattisgarh" },
+                        new SelectListItem(){Text= "Dadra and Nagar Haveli" ,Value="Dadra and Nagar Haveli" },
+                        new SelectListItem(){Text= "Daman and Diu" ,Value="Daman and Diu" },
+                        new SelectListItem(){Text= "Delhi" ,Value="Delhi" },
+                        new SelectListItem(){Text= "Goa" ,Value="Goa" },
+                        new SelectListItem(){Text= "Gujarat" ,Value="Gujarat" },
+                        new SelectListItem(){Text= "Haryana" ,Value="Haryana" },
+                        new SelectListItem(){Text= "Himachal Pradesh" ,Value="Himachal Pradesh" },
+                        new SelectListItem(){Text= "Jammu and Kashmir" ,Value="Jammu and Kashmir" },
+                        new SelectListItem(){Text= "Jharkhand" ,Value="Jharkhand" },
+                        new SelectListItem(){Text= "Karnataka" ,Value="Karnataka" },
+                        new SelectListItem(){Text= "Kerala" ,Value="Kerala" },
+                        new SelectListItem(){Text= "Lakshadweep" ,Value="Lakshadweep" },
+                        new SelectListItem(){Text= "Madhya Pradesh" ,Value="Madhya Pradesh" },
+                        new SelectListItem(){Text= "Maharashtra" ,Value="Maharashtra" },
+                        new SelectListItem(){Text= "Manipur" ,Value="Manipur" },
+                        new SelectListItem(){Text= "Meghalaya" ,Value="Meghalaya" },
+                        new SelectListItem(){Text= "Mizoram" ,Value="Mizoram" },
+                        new SelectListItem(){Text= "Nagaland" ,Value="Nagaland" },
+                        new SelectListItem(){Text= "Orissa" ,Value="Orissa" },
+                        new SelectListItem(){Text= "Pondicherry" ,Value="Pondicherry" },
+                        new SelectListItem(){Text= "Punjab" ,Value="Punjab" },
+                        new SelectListItem(){Text= "Rajasthan" ,Value="Rajasthan" },
+                        new SelectListItem(){Text= "Sikkim" ,Value="Sikkim" },
+                        new SelectListItem(){Text= "Tamil Nadu" ,Value="Tamil Nadu" },
+                        new SelectListItem(){Text= "Tripura" ,Value="Tripura" },
+                        new SelectListItem(){Text= "Uttaranchal" ,Value="Uttaranchal" },
+                        new SelectListItem(){Text= "Uttar Pradesh" ,Value="Uttar Pradesh" },
+                        new SelectListItem(){Text= "West Bengal" ,Value="West Bengal" },
+                                                        }, "Select")
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CLINICZIPCODE):
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.CLINICZIPCODE, new { maxlength = "6" })
+                    @Html.ValidationMessageFor(model => model.CLINICZIPCODE):
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TELEPHONE)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.TELEPHONE, new { maxlength = "11" })
+                    @Html.ValidationMessageFor(model => model.TELEPHONE)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ABOUTCLINIC):
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(model => model.ABOUTCLINIC, new { maxlength = "500" })
+                    @Html.ValidationMessageFor(model => model.ABOUTCLINIC)
+                </div>
+            </div>
+           
+        </div>
+         <div class="row c_buttonContainer">
+                <div class="right" style="float:right !important;">                    
+                    <input type="button" value="Cancel" class="button cancel docInfoClinicDisplay" />
+                    <input type="submit" value="Save" class="button" id="Update" />
+                </div>
+            </div>
+
+    </div>
+}
+<script>
+    
+
+    $("#editclinic").click(function () {
+        $("#UserClinicImage").show();        
+    });
+
+    if ($('#CurrentClinicImage').val() != "") {
+
+        $("#viewimg").attr('src', $('#CurrentClinicImage').val());
+        $("#viewimg2").attr('src', $('#CurrentClinicImage').val());
+    } else {
+        $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+    }
+    
+    var src = $("#viewimg").attr("src");
+  
+    if (src == '#') {
+        $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+    }
+   
+    $(".nextdisplay").click(function () {
+         var src = $("#viewimg").attr("src");
+        if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHFOURTH').val());
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHFOURTH').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+        if (src == '#') {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+    });
+
+    $(".backdisplay").click(function () {
+
+
+        var src = $("#viewimg").attr("src");
+        if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHFOURTH').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHFOURTH').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+        }
+
+        if (src == '#') {
+
+            $("#viewimg").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+        }
+    });
+        $('#CLINICCITY').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#INSTITUTIONNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#STREETADDRESS1').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#STREETADDRESS2').keyup(function () {
+            var $th = $(this);
+            //$th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $(document).ready(function () {
+            $("#UserClinicImageUpload").kendoUpload({
+                async: {
+                    saveUrl: "/DoctorInformation/ClinicImageSave",
+                    removeUrl: "/DoctorInformation/ClinicImageRemove",
+                    autoUpload: false
+                },
+                multiple: false,
+                upload: function (e) {
+                    e.data = { UserName: "@Model.UserName", clinicpath: $("#viewimg").attr("src") };
+        },
+        success: onSuccess
+             });
+
+            function onSuccess(e) {
+
+                //location.reload();
+            }
+          
+
+
+        });
+</script>
+<style>
+    .k-file {
+        width: 87px !important;
+    }
+
+    .k-filename {
+        max-width: 104px !important;
+        min-width: 104px !important;
+    }
+    #editclinic {
+        height:18px;
+        border:0px;
+        cursor:pointer;
+        margin-left: 60px;
+        margin-top: -19px;
+    }
+    .k-button {
+border-radius: 0px !important;
+margin-left: 16px;
+margin-top: 10px !important;
+}
+</style>

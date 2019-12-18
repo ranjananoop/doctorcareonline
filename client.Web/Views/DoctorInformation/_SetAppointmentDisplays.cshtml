@@ -1,0 +1,410 @@
+﻿<link rel="stylesheet" href="~/Content/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" />
+<link href="~/Content/smoothness/jquery.weekcalendar.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/jquery-ui-1.8rc3.custom.min.js"></script>
+<script src="~/Scripts/jquery.weekcalendar.js"></script>
+
+<style type="text/css" >
+.panelContent {
+  display: block;
+  background-color: #f0f0f0;
+}
+</style>
+
+<script type='text/javascript'>
+    
+    var doctorSlots = [];
+    var existingSlots = [];
+    var eventData = [];
+
+    $(document).ready(function () {
+
+        GetExistingSlots();
+
+      
+        function renderCalendar() {
+
+            $('#calendar').weekCalendar({
+                appointmentURL: '',
+                isPatient: false,
+                timeslotsPerHour: 4,
+                useShortDayNames: true,
+                businessHours: { start: 7, end: 22, limitDisplay: true },
+                height: function ($calendar) {
+                    return $(window).height() - $("h1").outerHeight();
+                },
+                eventRender: function (calEvent, $event) {
+                    if (calEvent.end.getTime() < new Date().getTime()) {
+                        $event.css("backgroundColor", "#aaa");
+                        $event.find(".time").css({ "backgroundColor": "#999", "border": "1px solid #888" });
+                    }
+                },
+                eventNew: function (calEvent, $event) {
+                    displayMessage("<strong>Added event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                    alert("You've added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.");
+                },
+                eventDrop: function (calEvent, $event) {
+                    displayMessage("<strong>Moved Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventResize: function (calEvent, $event) {
+                    displayMessage("<strong>Resized Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventClick: function (calEvent, $event) {
+                    displayMessage("<strong>Clicked Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventMouseover: function (calEvent, $event) {
+                    displayMessage("<strong>Mouseover Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventMouseout: function (calEvent, $event) {
+                    displayMessage("<strong>Mouseout Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                noEvents: function () {
+                    displayMessage("There are no events for this week");
+                },
+                data: eventData
+            });
+
+            $('#calendar').weekCalendar('refresh');
+        }
+
+  
+
+        function displayMessage(message) {
+            //alert(message);
+	       // $("#message").html(message).fadeIn();
+	    }
+
+	  //  $("<div id=\"message\" class=\"ui-corner-all\"></div>").prependTo($("body"));
+
+
+
+	    function startChange() {
+	        var startTime = start.value();
+
+	        if (startTime) {
+	            startTime = new Date(startTime);
+
+	            end.max(startTime);
+
+	            startTime.setMinutes(startTime.getMinutes() + 15);
+
+	            end.min(startTime);
+	            end.value(startTime);
+	        }
+	    }
+
+        //init start timepicker
+	    var start = $("#start").kendoTimePicker({
+	        change: startChange,
+	        interval: 15,
+	        animation: {
+	            open: {
+	                effects: "fadeIn",
+	                duration: 300,
+	                show: true
+	            }
+	        }
+	    }).data("kendoTimePicker");
+
+        //init end timepicker
+	    var end = $("#end").kendoTimePicker({
+	        interval: 15,
+	        animation: {
+	            open: {
+	                effects: "fadeIn",
+	                duration: 300,
+	                show: true
+	            }
+	        }
+	    }).data("kendoTimePicker");
+
+        //define min/max range
+	    start.min("7:00 AM");
+	    start.max("10:00 PM");
+
+        //define min/max range
+	    end.min("7:15 AM");
+	    end.max("10:30 PM");
+
+	    $("#startDate").kendoDatePicker({value:new Date(),});
+	    var today = new Date();
+	    var seventhDay  = new Date(today.setDate(today.getDate() + 6));
+	    $("#endDate").kendoDatePicker({ value: new Date(seventhDay), });
+
+	   
+	    $("#btnEdit").click(function () {
+	    });
+	    
+	    $("#btnConfirm").click(function () {
+	        setAppointments();
+	        $("#confirmDialog").hide();
+	    });
+
+	    $("#btnCancel").click(function () {
+	        $("#confirmDialog").hide();
+	    });
+	   
+
+	    $("#btnAvailability").click(function () {
+
+	        var slotsExists = false;
+	        var deleteConfirm = false;
+	        //Check for existing slots
+	        $.ajax({
+	            async: false,
+	            type: "POST",
+	            cache: false,
+	            dataType: 'json',
+	            url: "/DoctorInformation/CheckExistingSlots",
+	            contentType: "application/json; charset=utf-8",
+	            success: function (msg) {
+	                if (msg.msg == "exists") {
+	                    alert(msg.msg);
+	                    slotsExists = true;
+	                }
+	            },
+	            data: JSON.stringify(doctorSlots),
+	        });
+
+	        if (slotsExists) {
+	            alert('inside');
+	            $("#confirmDialog").show();
+	        }
+	        else {
+	            setAppointments()
+	        }
+	    });
+
+	    function setAppointments() {
+	        doctorSlots = [];
+	        var eventDays = [];
+	        var notWorkingDays = [];
+	        var sTime = " 2013 / 1/ 1 " + $("#start").val();
+	        var eTime = " 2013 / 1/ 1 " + $("#end").val();
+
+	        var startDate = new Date(parseInt(new Date($("#startDate").val()).getFullYear()) + ',' + parseInt(new Date($("#startDate").val()).getMonth() + 1) + ',' + parseInt(new Date($("#startDate").val()).getDate()));
+	        var endDate = new Date(parseInt(new Date($("#endDate").val()).getFullYear()) + ',' + parseInt(new Date($("#endDate").val()).getMonth() + 1) + ',' + parseInt(new Date($("#endDate").val()).getDate()));
+
+	        var startHour = new Date(0, 0, 0, parseInt(new Date(sTime).getHours()), parseInt(new Date(sTime).getMinutes()));
+	        var endHour = new Date(0, 0, 0, new Date(eTime).getHours(), new Date(eTime).getMinutes());
+	        var notWorkingDays = [];
+
+	        var count = 1;
+
+	        eventDays = getEventDays(startDate, endDate);
+
+	        if (eventDays.length > 0) {
+	            var jsonObj = '{"events" : [';
+	            for (var i = 0; i < eventDays.length; i++) {
+	                var doctorSlot = new Object();
+	                var startMin = new Date(startHour);
+	                while (startMin < endHour) {
+
+	                    var eventStartDate = new Date(eventDays[i].getMonth() + 1 + '/' + eventDays[i].getDate() + '/' + eventDays[i].getFullYear() + ' ' + startMin.getHours() + ':' + startMin.getMinutes()).getTime();
+	                    startMin.setMinutes(startMin.getMinutes() + 15);
+	                    var eventEndDate = new Date(eventDays[i].getMonth() + 1 + '/' + eventDays[i].getDate() + '/' + eventDays[i].getFullYear() + ' ' + startMin.getHours() + ':' + startMin.getMinutes()).getTime();
+
+	                    var event = ' { "id": ' + count + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "" },';
+	                    jsonObj += event;
+	                    count++;
+	                    doctorSlot = { FROMTIME: new Date(eventStartDate), CALYEAR: eventDays[i].getFullYear(), CALMONTH: eventDays[i].getMonth() + 1, CALDATE: eventDays[i].getDate(), TOTIME: new Date(eventEndDate), AVAILABILITYMODE: 'V' };
+	                    doctorSlots.push(doctorSlot);
+	                }
+	            }
+	            jsonObj = jsonObj.substr(0, jsonObj.length - 1);
+	            jsonObj += ']}';
+	            eventData = $.parseJSON(jsonObj);
+
+	            renderCalendar();
+
+	            $.ajax({
+	                async: false,
+	                type: "POST",
+	                cache: false,
+	                dataType: 'json',
+	                url: "/DoctorInformation/SetDoctorsSlots",
+	                contentType: "application/json; charset=utf-8",
+	                success: function (msg) {
+	                    if (msg.msg == "Success") {
+	                        alert(msg.msg);
+	                        window.location.href = url;
+	                        return;
+	                    }
+	                    else {
+	                        alert(msg.msg);
+	                    }
+	                },
+	                data: JSON.stringify(doctorSlots),
+	            });
+	        }
+
+	    }
+
+	    function getEventDays(stDate, ndDate) {
+	        var eDays = [];
+	        while (stDate <= ndDate) {
+                
+	            if ($('#daysbox input:checked').length > 0) {
+	                var isChecked = false;
+	                $('#daysbox input:checked').each(function () {
+	                    if (stDate.getDay() == parseInt($(this).attr('name'))) {
+	                       isChecked = true;
+	                       return false;
+	                    }
+	                });
+	                if (!isChecked) {
+	                    eDays.push(new Date(stDate));
+	                }
+	            }
+	            else
+	                eDays.push(new Date(stDate));
+	            stDate.setDate(stDate.getDate() + 1);
+	        }
+	        
+	        return eDays;
+	    }
+
+	    function GetExistingSlots() {
+	        $.getJSON("/DoctorInformation/GetExistingSlots", function (data) {
+	            existingSlots = data;
+	            var jsonObj = '{"events" : [';
+	            if (existingSlots.length > 0) {
+	                for (var i = 0; i < existingSlots.length; i++) {
+
+	                    var stDate = new Date(parseInt(existingSlots[i].FROMTIME.substring(6, existingSlots[i].FROMTIME.length - 2)));
+	                    var ndDate = new Date(parseInt(existingSlots[i].TOTIME.substring(6, existingSlots[i].TOTIME.length - 2)));
+
+	                    var eventStartDate = new Date(stDate.getMonth() + 1 + '/' + stDate.getDate() + '/' + stDate.getFullYear() + ' ' + stDate.getHours() + ':' + stDate.getMinutes()).getTime();
+	                    var eventEndDate = new Date(ndDate.getMonth() + 1 + '/' + ndDate.getDate() + '/' + ndDate.getFullYear() + ' ' + ndDate.getHours() + ':' + ndDate.getMinutes()).getTime();
+
+
+	                    var event = ' { "id": ' + existingSlots[i].DOCTORSLOTID + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "" },';
+	                    jsonObj += event;
+	                }
+	            }
+	            jsonObj = jsonObj.substr(0, jsonObj.length - 1);
+	            jsonObj += ']}';
+	            eventData = $.parseJSON(jsonObj);
+
+	            renderCalendar();
+
+	        });
+	    }
+	});
+
+    
+   
+</script>
+
+<div id="edit4">
+
+<div class="panelContent" style="display:none;">
+    <div id="dialog-form" title="Create New Scenario">
+        <div id="confirmDialog" style="display:none">
+            <div>Exisitng Slots will be deleted. Please confirm.</div>
+            <input type="button" value="Confirm"  id="btnConfirm"/>
+            <input type="button" value="Cancel" id="btnCancel"/>
+        </div>
+        <div id="myAvailabilityDiv">
+            <div>
+                <div class="titlebar">
+                        <div class="titile"><h4>My Availability</h4></div>
+                </div>
+                    <div class="innercontainer">
+                        Available Time
+                    <div class="field_container">
+                        <div class="fieldbar">
+	                        <label for="start">Start time:</label>
+                            <input id="start" value="7:00 AM" />
+
+                            <label for="end" style="margin-left:3em">End time:</label>
+                            <input id="end" value="7:15 AM"/>
+                        </div>
+                        <br />
+                        <br />
+                       
+                        <div class="fieldbar">
+        <label>Start Date:</label>
+                            <input id="startDate" />
+                        </div>
+                        <div class="fieldbar">
+        <label>End Date:</label>
+
+                            <input id="endDate" />
+                    </div>
+                </div>
+                    </div>
+                    <div class="innercontainer">
+                        Available Time  
+	                <div class="field_container">
+	                    @*<div>
+	                        <div style="width:200px; float:left">
+                                <input type="radio" id="1" checked="checked" value="1" disabled="disabled"><label for="1">Weekly</label>
+                                <input type="radio" id="2" value="2" disabled="disabled"><label for="2">Monthly</label> 
+                            </div>
+	                    </div>*@
+	                    <div style=" color:#3970a6">Select not working day</div>
+	                    <div id="daysbox">
+                            <div>
+                                <input type="checkbox" name="1" value="true" id="monday">
+                                <input type="hidden" id="__checkbox_monday" name="__checkbox_monday" value="true">  
+                                Monday
+                            </div>
+	                        <div>
+                                <input type="checkbox" name="2" value="true" id="tuesday">
+                                <input type="hidden" id="__checkbox_tuesday" name="__checkbox_tuesday" value="true">  
+                                Tuesday
+                            </div>
+	                        <div>
+                                <input type="checkbox" name="3" value="true" id="wednesday">
+                                <input type="hidden" id="__checkbox_wednesday" name="__checkbox_wednesday" value="true">
+                                    Wednesday
+                                </div>
+                            <div>
+                                <input type="checkbox" name="4" value="true" id="thursday">
+                                <input type="hidden" id="__checkbox_thursday" name="__checkbox_thursday" value="true">
+                                Thursday
+                            </div>
+                            <div>
+                                <input type="checkbox" name="5" value="true" id="friday">
+                                <input type="hidden" id="__checkbox_friday" name="__checkbox_friday" value="true">
+                                Friday
+                            </div>
+                            <div>
+                                <input type="checkbox" name="6" value="true" id="saturday">
+                                <input type="hidden" id="__checkbox_saturday" name="__checkbox_saturday" value="true">  
+                                Saturday
+                            </div>
+	                        <div>
+                                <input type="checkbox" name="0" value="true" id="sunday">
+                                <input type="hidden" id="__checkbox_sunday" name="__checkbox_sunday" value="true">
+                                Sunday
+                            </div>
+	                    </div>
+	                </div>
+	            </div>
+                <div class="buttoncontainer">
+		            <div style="width: 80px; margin: 0 auto; height: 45px;" align="center">
+			            <div >
+				            <input type="button" id="btnAvailability" value="Update" />
+			            </div>
+		            </div>
+	            </div>
+	            <div>
+		            <input type="hidden" name="availabilityModeSave" value="V" id="availabilityModeSave">
+	            </div>
+            </div>
+    
+                <input type="hidden" name="workDaysString" value="" id="workDaysString">
+                <input type="hidden" name="startTimeHidden" value="" id="startTimeHidden">
+                <input type="hidden" name="endTimeHidden" value="" id="endTimeHidden">
+                <input type="hidden" name="startDateHidden" value="" id="startDateHidden">
+                <input type="hidden" name="endDateHidden" value="" id="endDateHidden">
+            </div>
+    </div>
+</div>
+</div>
+<div id="view4">
+    <div id='calendar'></div>
+</div>

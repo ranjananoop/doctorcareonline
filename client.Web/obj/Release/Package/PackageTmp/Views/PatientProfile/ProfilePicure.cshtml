@@ -1,0 +1,142 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+@{
+    ViewBag.Title = "ProfilePicture";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="pagetTitle">
+        <span class="pageIcon proPicture"></span>
+        <h3>Profile Picture</h3>
+    </div>
+    <div class="accordion noaccordion">
+
+        <div class="frameContainer">
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" style="width: 92.4% !important; display: none;" />
+            <div class="profilePicture">
+
+                <div class="display-field">
+                    <div id="fade" class="black_overlay" style="height: 244%;"></div>
+                    <div class="closeDisplayBar" style="display: none; clear: both; margin-top: -164px; position: relative; margin-right: 167px; z-index: 1000000000;"></div>
+                    <img alt="Image Unvailable" id="viewimg" class="img_Show" />
+                </div>
+                <div class="uploadWrapper">
+                    <div class="editor-field">
+                        <div class="uploadClass" style="margin-top: 0;">
+                            <input id="UserImageUpload" name="UserImageUpload" type="file" /></div>
+                    </div>
+                </div>
+                <div class="buttonsWrapper" style="clear: both; float: left;">
+                    <input type="submit" value="Save" class="btnClass" style="display: none;" />
+                </div>
+            </div>
+        </div>
+    </div>     
+ 
+    <div>
+        @{Html.RenderPartial("_quicksearch");}
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+
+        $("#viewimg").click(function () {
+            //Checks if the image is already in original size:
+
+            $(this).css("width", 400);
+            $(this).css("height", 400);
+            $(this).css("z-index", 99999999);
+            $(this).css("position", 'relative');
+            $(this).css("margin-top", -150);
+            $(this).css("border", " 8px solid white");
+            $(this).css("border-radius", 5);
+            $('#fade').show();
+            $('.closeDisplayBar').show();
+
+
+        });
+
+        $('.closeDisplayBar').click(function () {
+
+            $('#fade').hide();
+            $('.closeDisplayBar').hide();
+            $("#viewimg").css("width", 100);
+            $("#viewimg").css("height", 100);
+            $("#viewimg").css("z-index", 0);
+            $("#viewimg").css("position", 'relative');
+            $("#viewimg").css("margin-top", 0);
+        });
+        $('.quickSearch').insertBefore('.availableDoctor');
+        $('.img_Show').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Show').attr('src', msg.msg);
+
+                }
+            });
+        });
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+
+</script>
+<script>
+    function onSelect(e) {
+        $('#MessageUpdateStatus').hide();
+
+    }
+    function onSuccess(e) {
+        $('#MessageUpdateStatus').val('Image uploaded successfully')
+        $('#MessageUpdateStatus').show();
+    }
+
+    function onError(e) {
+        $('#MessageUpdateStatus').val('Error :Image upload  unsuccessfull')
+        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+            $('#MessageUpdateStatus').removeClass();
+            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+        }
+        $('#MessageUpdateStatus').show();
+    }
+    $("#UserImageUpload").kendoUpload({
+        async: {
+            saveUrl: "/PatientProfile/Save",
+            removeUrl: "/PatientProfile/Remove",
+            autoUpload: false
+        },
+        multiple: false,
+        error: onError,
+        select: onSelect,
+        success: onSuccess
+
+    });
+
+
+</script>
+

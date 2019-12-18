@@ -1,0 +1,127 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\obj\Release\DOCVIDEO.BaseDataLayer.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\obj\Release\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.BaseDataLayer\obj\Release\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.Common.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.Design.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.WebDesign.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.WebForms.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.ReportViewer.WinForms.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\EnvDTE.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\stdole.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.VSHelp.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Debugger.InteropA.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\EnvDTE80.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Data.Services.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\VSLangProj.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Data.Core.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\VSLangProj80.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.ManagedInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Newtonsoft.Json.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.GraphModel.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.MSXML.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\VSLangProj2.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\obj\Release\DOCVIDEO.BaseDataLayer.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\obj\Release\DOCVIDEO.BaseDataLayer.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\obj\Release\DOCVIDEO.BaseDataLayer.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\obj\Release\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.BaseDataLayer\obj\Release\GURUKUL.BaseDataLayer.pdb

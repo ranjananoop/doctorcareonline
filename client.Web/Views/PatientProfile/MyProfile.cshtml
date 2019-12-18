@@ -1,0 +1,170 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+
+
+<div class="accordion myProfileInfo" >
+
+    <div>
+          <input id="MessageUpdateStatus" disabled="disabled" type="text"  value="@Model.MessageUpdateStatus" />
+        <div class="p_accordion">      
+            <h4 class="p_accordion_Title">Basic Information </h4>
+            <span class="toggleRight editText">
+                <a class="editLink editPersonalInfo"></a> 
+                @*<a class="customToggleCollapse docMyProfile"></a>*@
+
+            </span>
+            <div class="clear"></div>
+
+            </div>
+
+          <div class=" p_accordion_content">
+            <div id="patientsInfoDisplays" class="p_dis_three">
+                @{Html.RenderPartial("_pateintinfodisplay");}
+            </div>
+            <div id="patientsInfoEdits" class="displayOff p_dis_four">@{Html.RenderPartial("_pateintinfoedit");}</div>
+        </div>
+
+        <div class="p_accordion">
+            <h4 class="p_accordion_Title">Contact</h4>
+            <span class="toggleRight editText">
+                <a class="editLink patientscontactEdit"></a>
+              @*   <a class="customToggleCollapse docMyProfile"></a>*@
+
+            </span>
+            <div class="clear"></div>
+        </div>
+
+        <div class=" p_accordion_content">
+            <div id="patientscontactDisplay">
+                @{Html.RenderPartial("_pateintconctdisplay");}
+            </div>
+            <div id="patientscontactEdit" class="displayOff" >
+                @{Html.RenderPartial("_pateintconctedit");}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $('.c_pgTitleText').text('Profile');
+    $('.c_pgTitleIcon').addClass('myProfile');
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    $(document).ready(function () {
+
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+        $('#patineinfocancelconfirm').click(function () {
+            $('#patientsInfoDisplays').show();
+            $('#patientsInfoEdits').hide();
+        });
+
+        $('#contactcancel').click(function () {
+
+          
+            $('#patientscontactDisplay').show();
+            $('#patientscontactEdit').hide();
+        });
+
+        $("#patineinfocancelconfirm").click(function () {
+            $('#patientsInfoDisplays').show();
+            $('#patientsInfoEdits').hide();
+        });
+
+        $('.editLink.editPersonalInfo').click(function () {
+            $('#patientsInfoDisplays').hide();
+            $('#patientsInfoEdits').show();
+           
+        });
+   
+        $('.patientscontactEdit').click(function () {
+            $('#patientscontactDisplay').hide();
+            $('#patientscontactEdit').show();
+        });
+     
+        $('.quickSearch').insertBefore('.availableDoctor');
+        $('.img_Show').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Show').attr('src', msg.msg);
+
+                }
+            });
+        });
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("select").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+        $("textarea").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+      
+        $('#COUNTRY').on('change', function () {
+            if (this.value == 'United States') {
+                $('#customdisplaystate').show();
+            }
+            else {
+                $('#customdisplaystate').hide();
+            }
+        });
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+
+</script>
+<style>
+    .hidecustom {
+        display: none;
+    }
+
+    .patientInfo input[type=text] ,.patientInfo select{  
+    margin-bottom:15px !important;
+
+    }
+    .patientscontactEdit input[type=text] ,.patientscontactEdit select{
+        margin-bottom:5px !important;
+    }
+</style>

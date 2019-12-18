@@ -1,0 +1,193 @@
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Antlr3.Runtime.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.MvcModel.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Optimization.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebGrease.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Elmah.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Release\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Release\RdlCompile.cache
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Release\RdlCompile.compiled
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Utility.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Web.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Release\GURUKUL.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Release\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Antlr3.Runtime.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.Core.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Newtonsoft.Json.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.MvcModel.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Net.Http.Formatting.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Helpers.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.WebHost.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Optimization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebGrease.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebMatrix.Data.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Mono.Math.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.Core.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Newtonsoft.Json.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Net.Http.Formatting.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Helpers.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.WebHost.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Mvc.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebMatrix.Data.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Mono.Math.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Release\DOCVIDEO.Web.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Release\DOCVIDEO.Web.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Release\DOCVIDEO.Web.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Release\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Release\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\MFCapturer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\opentok.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\x64\MFCapturer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\x64\opentok.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\JWT.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\OpenTokNET.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WPFVideoRenderer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\OpenTokNET.xml

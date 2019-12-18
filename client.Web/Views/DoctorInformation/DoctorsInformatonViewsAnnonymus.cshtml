@@ -1,0 +1,166 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    
+}
+
+
+
+<div class="c_body innerLayout">
+    <div class="c_body_fleet">
+        <div class="c_pgTitle">
+            <div class="c_pgTitle_Fleet">
+                <h1 class="c_pgTitleText">Public Profile</h1>
+            </div>
+        </div>
+
+        <div class="c_publicProfile">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(false)
+                <div>
+                    @{Html.RenderPartial("_DoctorsInfoDisplayCustom");}
+                </div>
+                <div class="moreInformationContent">
+                    <div class="row">
+                        <b>About Me</b>
+                        <p>
+                            @Html.DisplayFor(model => model.ABOUTME)
+                            @Html.HiddenFor(model => model.mode)
+                        </p>
+                    </div>
+                    <div class="row">
+                        <b>Award</b>
+                        <p>@Html.DisplayFor(model => model.AWARDCERTIFICATION)</p>
+                    </div>
+                    <div class="row">
+                        <b>Certification</b>
+                        <p>@Html.DisplayFor(model => model.CERTIFICATIONBOARD)</p>
+                    </div>
+                </div>
+               
+                 
+
+                <div class="row" style="display: none;">
+                    <div class="row" id="details">
+                        <div id="prefferedprovider" />
+                    </div>
+                </div>
+
+
+
+              
+            }
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+<script>
+
+
+    $(function () {
+      
+    });
+    $("#prefferedprovider").kendoGrid({
+        dataSource: {
+            type: "Json",
+            pageSize: 5,
+            serverFiltering: true,
+
+            transport: {
+                read: "/AccountSettings/GetAllFilteredDoctors"
+            },
+            groupable: false,
+        },
+        sortable: true,
+        pageable: true,
+        columns: [
+        {
+            field: "", width: 100, template: "<a href='DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;' ><img src='${ USERPHOTOFILEPATH }' class='docImage' style='width:80px;height:80px;float:left;' alt=${ UserName } /></a>" +
+                                  "<div style='float:left;width:195px;font-size:medium;font-weight:bold;margin:0px;padding:0px;'><a href='DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;text-decoration:none;width: 100%;margin-top: 0;height: 90px;' >Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }<br/>${ USERSTREETADDRESS1 } ${ CITY }${ USERSTATE }</a>"
+        },
+        ]
+    });
+    $(document).ready(function () {
+
+        if ($("#mode").val() == 2) {
+
+            //$("#videodisplay").addClass('inactive');
+            $("#clinicdisplay").removeClass();
+            $("#clinicdisplay").addClass('button');
+            //$(".c_bookVideoConference").hide();
+            $(".c_bookClinicAppointment").show();
+
+            
+            $("#toggleClinicInfo").addClass('inactive');
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.clinic').show();
+            $(".c_detailsofclinicaddress").hide();
+        }
+        else if ($("#mode").val() == 1) {
+            $("#videodisplay").removeClass();
+            $("#videodisplay").addClass('button'); 
+            $("#toggleClinicInfo").addClass('inactive');
+            $(".c_bookVideoConference").show();
+            $(".c_detailsofclinicaddress").hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.video').show();
+        }
+
+
+
+        $("#videodisplay").click(function () {
+            //Checks if the image is already in original size:      
+            $("#videoslot").show();
+            $("#clinicslot").hide();
+        });
+        $("#clinicdisplay").click(function () {
+            //Checks if the image is already in original size:      
+            $("#videoslot").hide();
+            $("#clinicslot").show();
+        });
+        $('#paypal').hide();
+        $('.customToggleCollapse').click(function () {
+
+            $(this).parent().next('.customAccordionContent').toggle();
+            $(this).toggleClass('customToggleExpand');
+        });
+
+
+        //Checks if the image is already in original size:      
+       
+
+        $("#hidedisplayclinic").click(function () {
+            //Checks if the image is already in original size:      
+            $("#details").css("display", "none");
+        });
+
+
+        $(".expandMoreInformation").click(function () {
+            $(".moreInformationContent").slideDown('slow');
+            $(this).hide();
+            $(".collapseMoreInformation").show();
+        });
+        $(".collapseMoreInformation").click(function () {
+            $(".moreInformationContent").slideUp('slow');
+            $(this).hide();
+            $(".expandMoreInformation").show();
+        });
+
+
+    });
+
+</script>

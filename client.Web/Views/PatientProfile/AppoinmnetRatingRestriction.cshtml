@@ -1,0 +1,55 @@
+﻿@model client.Web.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Rating Restriction";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+<div class="pagetTitle" style="width:770px;">
+    <span class=""></span>
+    @*<h3>Rating Restriction</h3>*@
+</div>
+
+
+    
+
+<div class="sorry_left">
+        <h1 class="hidemsg">Sorry,</h1>
+        <h3>You have already rated this appointment 
+        </h3>
+    </div>
+       <div class="sorry_right">
+        <img src="~/Content/Images/amy_home.png" />
+    </div>
+    <div class="clear"></div>
+  <div class="row c_buttonContainer" style="width:93%;margin-top: 20px;">
+                       <div class="right">                      
+                             
+                            <a  class="button cancel" href="/PatientProfile/Appointment" >Go Back</a>                             
+                        </div>                           
+</div>
+
+<script>
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+    $(document).ready(function () {
+        $('.quicksearchAppointmentRating').insertBefore('.availableDoctor');
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+
+</script>

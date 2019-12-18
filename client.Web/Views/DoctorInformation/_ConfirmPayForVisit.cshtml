@@ -1,0 +1,112 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+
+
+<div class="payforVisit" style="font-size:15px;">
+    <div class="payPal">
+        <div class="payPalConfirm"></div><br />
+        <div class="payPalMessage" >
+            <h3><strong>Please Confirm your Appointment</strong></h3>
+          
+            <p style="margin:10px 0px;">
+                Paypal is the faster,safer way to pay and get paid online.The service allows the members to send money without sharing financial information, with the felixibility to pay using their account balances,bank accounts, creditcard or promotional financing.
+            </p>
+        </div>
+        <br />
+        <div class="appointmentDateandTime">
+            <div class="row">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)
+                </div>
+                <div class="display-field" >
+                    <div><h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="display-label">
+                    <div>@Html.DisplayNameFor(model => model.Speciality)</div>
+                </div>
+                <div class="display-field" >
+                    <div><h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                        @Html.DisplayFor(model => model.LASTNAME)</strong></h3></div><br />
+                    <div><h3><em>@Html.DisplayFor(model => model.Speciality)</em></h3></div>
+                </div>
+            </div>
+           <div class="row">
+                            <div class="display-label">
+                                @Html.DisplayNameFor(model => model.RateDisplay)
+                            </div>
+                            <div class="display-field">
+                                <div><h3><strong>@Html.DisplayFor(model => model.RateQuatermins)</strong></h3></div>
+                            </div>
+                        </div>
+          
+            <div class="row">
+                @Html.HiddenFor(model => model.APPOINTMENTID)
+                @Html.HiddenFor(model => model.DOCTORSLOTID)
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</div>
+<div class="app_right" style="float:right;">
+        <div class="amy_inner"></div>
+    </div>
+      <div class="row c_buttonContainer" style="width:94%;">
+                <div class="display-label">&nbsp;</div>
+                <div class="right">
+                    <input type="button" value="Submit" class="button" id="btnConfirm" />
+                </div>
+            </div>
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#btnConfirm").click(function () {
+
+            $("#loading").show();
+            $("#fade").show();
+            $("#btnConfirm").attr('background-color', 'green');
+
+            var BookingAppointmentModelOuter = new Object();
+            var datavalue = null;
+            BookingAppointmentModelOuter.ISEXISITING = $("#ISEXISITING").val();
+            BookingAppointmentModelOuter.REASONFORVISIT = $("#REASONFORVISIT").val();
+            BookingAppointmentModelOuter.APPOINTMENTENDTIME = $("#APPOINTMENTENDTIME").val();
+            BookingAppointmentModelOuter.APPOINTMENTSTARTTIME = $("#APPOINTMENTSTARTTIME").val();
+            BookingAppointmentModelOuter.DOCTORID = $("#DOCTORID").val();
+            BookingAppointmentModelOuter.APPOINTMENTID = $("#APPOINTMENTID").val();
+            BookingAppointmentModelOuter.DOCTORSLOTID = $("#DOCTORSLOTID").val();
+
+            $.ajax({
+                async: true,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/AppintmentConfirmOuter",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        $("#loading").hide();
+                        $("#fade").hide();
+                        $("#btnConfirm").attr('disabled', 'disabled');
+                    }
+                },
+                data: JSON.stringify(BookingAppointmentModelOuter),
+            });
+
+
+        });
+
+    });
+
+</script>

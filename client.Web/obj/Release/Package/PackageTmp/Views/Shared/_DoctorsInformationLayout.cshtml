@@ -1,0 +1,401 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title </title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+
+
+    <link rel="stylesheet" href="~/Content/jMenu.jquery.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/kendo.common.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/kendo.default.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/examples-offline.css" type="text/css" />
+    <link href="~/Content/erp_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link href="~/Content/verticalMenustyles.css" rel="stylesheet" />
+
+    <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/common.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/doctor.css" rel="stylesheet" type="text/css" />
+
+    @*    <link href="~/Content/patient.css" rel="stylesheet" />*@  
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Scripts/jMenu.jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/kendo.all.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/underscore-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/console.js"></script>
+    <script type="text/javascript" src="~/Scripts/jRating.jquery.js"></script>
+    <script src="~/Scripts/jquery.password-strength.min.js"></script>
+
+    <script src="~/Scripts/jquery.weekcalendar.js"></script>
+    <script src="~/Scripts/modernizr-2.5.3.js"></script>
+    <script src="~/Scripts/imgLiquid-min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+</head>
+<body>
+    <div class="c_container">
+        <header>
+            <div class="c_hdr_fleet">
+                <div class="left">
+                    <a class="fNiv" href="~/Home/Index">
+                        <div class="c_logo"></div>
+                    </a>
+                </div>
+                <div class="right">
+                    <ul class="c_headerMenu">
+                        <li><a href="~/Account/LogOff">Log Off</a></li>
+                    </ul>
+                    <div class="c_site_search" id="example">
+                        <input id="customers" style="width: 100%;"  class="customers" placeholder="Search for Doctor"/>
+                        <a href="~/DoctorInformation/DoctorsSearch">Advanced Search</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script>
+                function resizeprofilephotodoctor() {
+
+                    $(".imgLiquidFill").imgLiquid({
+                        fill: true,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    });
+                }
+                $(document).ready(function () {
+                    var autocomplete = $(".customers").kendoAutoComplete({
+                        minLength: 1,
+                        dataTextField: "FIRSTNAME",
+                        template: "<a href='http://localhost:6999/DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;' ><div class='boxSep' ><div class='imgLiquidFill imgLiquid ' style='width: 80px;height: 80px;'><img  src='${ USERPHOTOFILEPATH }'    onload='resizeprofilephotodoctor();' /></div></div>" +
+                                "<div class='doctorsName'><a href='http://localhost:6999/DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#'><b>Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }</b><p>${SPECIALITY }</p><p>${ USERSTATE }</p></a><div class='icon_searcharrowOff'></div></a></a>",
+                        dataSource: {
+                            transport: {
+                                read: {
+                                    dataType: "json",
+                                    url: "/AccountSettings/GetAllDoctors",
+                                }
+                            }
+                        },
+                        height: 370,
+                    }).data("kendoAutoComplete");
+
+                    $('#customers-list').addClass('doccareAutoSearch');
+                    $('.doccareAutoSearch').closest('html').addClass('doccareAutoSearchContainer');
+                });
+            </script>
+
+
+
+        </header>
+        <div class="c_body innerLayout">
+            <div class="c_body_fleet">
+                <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                        <div class="c_pgTitleIcon"></div>
+                        <h1 class="c_pgTitleText"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="c_column_one c_leftColumn">
+
+
+                @if (@Model.USERTYPE == "D")
+                {
+                    if (@Model.USERTYPE == "D")
+                    {
+                    <div class="d_doctor_photoSection">
+                        <div class="d_doctorPic">
+                            <div class="boxSep">
+                                <div class="imgLiquidFill imgLiquid " style="width: 130px; height: 160px;">
+                                    <img  src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephotodoctor();' /></div>
+                            </div>
+                        </div>
+                        <div class="doctorWelcome">
+                            <div class="left">
+                                <h2>Welcome</h2>
+                                <h1 style="color: #0B5984 !important;">@Html.DisplayFor(model => model.Salutation)&nbsp;@Html.DisplayFor(model => model.LASTNAME) </h1>
+                                <div class="date">
+                                    @Html.DisplayFor(model => model.currentDate)
+                                </div>
+                                <div class="row">
+                                    <div class="display-label">
+                                        @Html.LabelFor(m => m.rejectCount)&nbsp;@Html.DisplayFor(m => m.rejectCount)
+                                    </div>
+
+                                    <div class="row star">
+
+                                        <p>@Html.DisplayNameFor(model => model.Ratings)</p>
+                                        <div class="starGroup">
+
+                                            @for (var k = 0; k < Model.Ratings; k++)
+                                            {
+                                                <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                                            }
+                                            @for (var i = 0; i < 5 - Model.Ratings; i++)
+                                            {
+                                                <img class="Empty" src="~/Content/Images/Empty.png" />
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    }
+                    @Html.Partial("~/Views/Shared/DoctorsleftMenu.cshtml")
+                }
+                else if (@Model.USERTYPE == "P")
+                {
+                    <div class="c_column_one c_leftColumn">
+                        <div class="welcomePatient" style="box-shadow: -4px 0 3px -1px #999 inset;background-color: #ededed;">
+                            <div class="d_doctorPic">
+                                <div class="boxSep">
+                                    <div class="imgLiquidFill imgLiquid " style="width: 130px; height: 160px;">
+                                        <img class="img_Showed " onload='resizeprofilephotopatient();' /></div>
+                                </div>
+
+                            </div>
+                            <div class="doctorWelcome">
+                                <h2 style="margin-left:4px;font-size: 18px;font-weight: 400;">Welcome</h2>
+                                <input id="display" disabled="disabled" type="text" style="color: #1072B5;text-transform: inherit !important;font-size: 21px;
+font-weight: 400;" />
+                                <div id="CurrentDate" class="date" style="margin-top:-0px;margin-left:4px">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        @Html.Partial("~/Views/Shared/PatientDoctorsleftMenu.cshtml")
+                    </div>
+                    
+                }
+                else if (@Model.USERTYPE == "A")
+                {
+
+                }
+            </div>
+            <div class="c_column_two c_rightColumn">
+                @RenderSection("featured", required: false)
+                <section>
+                    @RenderBody()
+
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div class="c_footer_fleet">
+                @Html.Partial("~/Views/Shared/Menu.cshtml")
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            function resizeprofilephoto() {
+
+                $(".imgLiquidFill").imgLiquid({
+                    fill: true,
+                    horizontalAlign: "center",
+                    verticalAlign: "top"
+                });
+            }
+
+            var HealthHistoryModel = new Object();
+            HealthHistoryModel.DOCTORID = "@User.Identity.Name.ToString()";
+            HealthHistoryModel.flag = 6;
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: '@Url.Action("DisplayField", "HealthHistory")',
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#divCancelledAppointments > p").html(msg.msg);
+
+                    }
+                },
+                data: JSON.stringify(HealthHistoryModel),
+            });
+
+
+            $('#TELEPHONE').keyup(function (e) {
+                var curchr = this.value.length;
+                var curval = $(this).val();
+                if (curchr == 3) {
+                    $('#TELEPHONE').val(curval + "-");
+                }
+                if (curchr == 7) {
+                    $('#TELEPHONE').val(curval + "-");
+                }
+            });
+            $("#jMenu").jMenu();
+
+            //$('.leftMenu #cssmenu ul li').hover(function () {
+            //    // $(this).children('ul').toggle().toggleClass('active');
+            //});
+
+            $('.frameContainer').hide();
+            $('.framecontentTitle:first').addClass('active').next().show();
+            $('.framecontentTitle').click(function () {
+                if ($(this).next().is(':hidden')) { //If immediate next container is closed...
+                    $('.framecontentTitle').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+                    $(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+                }
+                return false; //Prevent the browser jump to the link anchor
+            });
+
+            $('.accordion').children('.framecontentTitle').removeClass('active');
+
+
+
+
+            $('.customToggleCollapse').click(function () {
+                $(this).parent().next('.customAccordionContent').toggle();
+                $(this).toggleClass('customToggleExpand');
+            });
+            $('.customToggleCollapse.docMyProfile').click(function () {
+                $(this).parent().parent().next('.customAccordionContent').toggle();
+
+
+            });
+            $('.recount').mouseover(function () {
+                $('#divCancelledAppointments').show();
+                //$('.appclose').show();
+                $('.arrow-up').show();
+            });
+            $('#divCancelledAppointments').mouseover(function () {
+                $('#divCancelledAppointments').show();
+                //$('.appclose').show();
+                $('.arrow-up').show();
+            });
+            $('#divCancelledAppointments').mouseout(function () {
+                $('#divCancelledAppointments').hide();
+                //$('.appclose').hide();
+                $('.arrow-up').hide();
+            });
+
+
+        });
+
+
+        $(function () {
+
+            $('#cssmenu ul li a').each(function () {
+                var path = window.location.href;
+                var current = path.substring(path.lastIndexOf('/') + 1);
+                var url = $(this).attr('href');
+                if (current == 'VideoConfMain' || current == 'VideoConf') {
+                    $('#videorelease').addClass('selected');
+                } else if (url.indexOf(current) > -1) {
+                    $(this).parent('li').addClass('selected');
+                };
+            });
+
+            var header_footer = $('header').height() + $('footer').height();
+            var bodyHeight = $(document).outerHeight() - header_footer;
+
+            //$('.c_body').height(bodyHeight);
+
+
+            $('.c_leftColumn').height($(document).height());
+
+
+            $('.img_Showed').each(function () {
+
+                $.ajax({
+                    async: true,
+                    type: "GET",
+                    url: "/PatientProfile/ImagePath",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        $('.img_Showed').attr('src', msg.msg);
+
+                    }
+                });
+
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/Username",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg) {
+                        $('#display').attr('value', msg.msg);
+                    }
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/CurrentDate",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $("#CurrentDate > p").html(msg.msg);
+
+                }
+            });
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        function calculate_time_zone() {
+            var rightNow = new Date();
+            var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  // jan 1st
+            var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); // june 1st
+            var temp = jan1.toGMTString();
+            var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+            temp = june1.toGMTString();
+
+            var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+            var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+            var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
+            var dst;
+            if (std_time_offset == daylight_time_offset) {
+                dst = "0"; // daylight savings time is NOT observed
+            } else {
+                // positive is southern, negative is northern hemisphere
+                var hemisphere = std_time_offset - daylight_time_offset;
+                if (hemisphere >= 0)
+                    std_time_offset = daylight_time_offset;
+                dst = "1"; // daylight savings time is observed
+            }
+            document.getElementById('timezoneOffset').value = std_time_offset;
+            document.getElementById('dstObserved').value = dst;
+
+        }
+        onload = calculate_time_zone;
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+    <input type="hidden" id="timezoneOffset" />
+    <input type="hidden" id="dstObserved" />
+</body>
+</html>

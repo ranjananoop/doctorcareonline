@@ -1,0 +1,168 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "Appointment";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@*<h2><span class="username">@Html.ActionLink("My Profile", "DoctorsInformatonViews", "DoctorInformation", htmlAttributes: new { @class = "username", title = "Manage" })</span>> Public Profile</h2>*@
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false) 
+    <div class="d_appointments">
+
+       <div id="fade" class="black_overlay">
+        </div>  
+        <div class="d_accordion">
+            <div class="fleet">
+                 <div class="row">
+                     <div id="divAppointments">
+                         <h2 class="notesTitle">Notes and Chat History</h2>
+                         <p></p>
+                         <div class="row c_buttonContainer">
+                             <div class="right">
+                                 <input type="button" value="Close" class="button closeMessageDialog" />
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+       
+                 <div class="d_accordion_Title">
+                    <h6>Appointments Confirmed</h6>
+                     <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+                    </p>
+                </div>
+                <div class="d_accordion_content">
+                    <div>@{Html.RenderPartial("_upcomingappointment");}</div>
+                </div>
+
+                 <div class="d_accordion_Title">
+                    <h6>Upcoming Appointment Requests</h6>
+                     <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+                    </p>
+                </div>
+                <div class="d_accordion_content">
+                    <div>@{Html.RenderPartial("_upcomingappointmentrequest");}</div>
+                </div>
+                <div class="d_accordion_Title">
+                    <h6>Past Appointments</h6>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+                    </p>
+                </div>
+                <div class="d_accordion_content">
+                    <div>@{Html.RenderPartial("_pastappointment");}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>  
+
+    
+    
+  
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<style scoped="scoped">
+
+</style>
+
+
+
+
+<script>
+    $("#pagetitle").text('Appointments');
+    $('.closeMessageDialog').click(function () {
+        $('#divAppointments').fadeOut('slow');
+        $('#fade').fadeOut('slow');
+        $('html').removeClass('scrollbarOff');
+    });
+    function setStatus(ID, flag) {
+
+
+
+        var HealthHistoryModel = new Object();
+        HealthHistoryModel.ID = ID;
+        HealthHistoryModel.flag = flag;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: '@Url.Action("DisplayField", "HealthHistory")',
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+
+                        $("#divAppointments > p").html(msg.msg);
+                        $("#divAppointments > p").addClass('notesScrollbar');
+                        $("#divAppointments").fadeIn('slow');
+
+                        $('#fade').insertBefore('.c_container');
+                        $('#divAppointments').insertBefore('#fade');                      
+                       
+
+                        $('#divAppointments').css({
+                            left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                            top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                        });
+
+                        $(window).resize(function () {
+                            $('#divAppointments').css({
+                                left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                                top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                            });
+                        });
+
+
+                        $('#fade').height($(document).height());
+                        $('html').addClass('scrollbarOff');
+
+                        jQuery.fn.center = function () {
+                            this.css("position", "absolute");
+                            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                        $(window).scrollTop()) + "px");
+                            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                        $(window).scrollLeft()) + "px");
+                            return this;
+                        }
+
+                        $('#divAppointments').center();
+
+                        $(".black_overlay").fadeIn('slow');
+                    }
+                },
+                data: JSON.stringify(HealthHistoryModel),
+            });
+
+        }
+    $(document).ready(function () {
+        
+       
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        $('.c_pgTitleText').text('Appointments');
+        $('.c_pgTitleIcon').addClass('appointmentsIcon');
+    });
+
+</script>

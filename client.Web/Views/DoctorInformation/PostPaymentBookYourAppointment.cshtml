@@ -1,0 +1,88 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+@{
+    ViewBag.Title = "PostPaymentBookYourAppointment";
+}
+ <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon appointmentsIcon"></div>
+                        <h1 class="c_pgTitleText">Appointments</h1>
+                    </div>
+                </div>
+<div class="signupForm">
+<div class="pagetTitle">
+    <span class="pageIcon inbox"></span>
+    
+<div>
+
+    <div>
+        <div class="bookAppointment">
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" style="display:none;" />
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(false)
+                <div id="tabs">
+                 
+
+                    <div id="Content_Area">  
+
+                        <div id="tab3">
+                            <div>
+                                @{Html.RenderPartial("_ConfirmPayForVisit");}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            }
+
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+    <style>
+        .payforVisit {
+            width:600px;
+        }
+        h2 {
+        color: #3aa3ff;
+        font-size: 28px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+        width:600px;
+    }
+        .appointmentDateandTime {
+            margin:10px 0px 0px 0px;
+        }
+        .amy_inner {
+            margin:-210px 0px 0px 140px !important;
+        }
+        .display-label {
+            width:110px;
+            color: #096ca3 !important;
+        
+        }
+        h6 {
+font-weight: 400;
+font-size: 20px;
+padding: 7px 0px 11px 10px !important;
+color: #000;
+margin: 0 0 10px 0px;
+/*background-color: #d2e6f4;*/
+}
+    .payforVisit{
+float: left;
+width: 600px;
+background: #d2e6f4;
+border: 1px solid #999;
+padding: 0px 10px;
+height: 259px !important;
+}
+
+    h1 {
+        padding:5px 0px;
+    }
+
+    </style>

@@ -1,0 +1,134 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.dll.config
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.BaseDataLayer.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.PatientInformationServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.BaseDataLayer.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.Domain.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\DOCVIDEO.PatientInformationServiceBoundedContext.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojResolveAssemblyReference.cache
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojResolveAssemblyReference.cache
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojResolveAssemblyReference.cache
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\GURUKUL.StudentInformationServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\bin\Debug\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\DOCVIDEO.PatientInformationServiceRepoUOW.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.PatientInformationServiceRepoUOW\obj\Debug\GURUKUL.StudentInformationServiceRepoUOW.pdb

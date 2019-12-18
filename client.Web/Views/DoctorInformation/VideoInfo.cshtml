@@ -1,0 +1,133 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "VideoInfo";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="c_body innerLayout">
+        <div class="c_body_fleet">
+            <div class="c_pgTitle">
+                <div class="c_pgTitle_Fleet">
+                    <h1 class="c_pgTitleText">Steps</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="c_column_three d_doctorSteps step3">
+            <div class="fleet">
+                <div class="steps">
+                 <ul>
+                        <li class="step1 completedStep">
+                            <span>Personal Info</span>
+                            <h3>1</h3>
+                        </li>
+                        <li class="step2 completedStep">
+                            <span>Educational Info </span>
+                            <h3>2</h3>
+                        </li>
+                        <li class="step3 currentStep">
+                            <span>Video Info</span>
+                            <h3>3</h3>
+                        </li>
+                        <li class="step4 ">
+                            <span>Clinic Info</span>
+                            <h3>4</h3>
+                        </li>
+                        <li class="step5 " >
+                            <span>Subscription Info</span>
+                            <h3>5</h3>
+                        </li>
+                    </ul>
+                    <div class="stepsLine"></div>
+                </div>
+                
+                <div style="float: left; width: 675px;">
+                     @Html.ValidationSummary(true) 
+                    <div class="row" id="docInfoClinicDisplay">
+
+                        <div class="row">
+                            <h6>About Video</h6>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </p>
+                        </div>
+                        <div class="row">
+
+                            <div class="subTitle"><b>@Html.LabelFor(model => model.TimeDisplay)</b></div>
+
+                        </div>
+                        <div class="row">
+                            <div class="editor-label heading">
+                                @Html.LabelFor(model => model.RateDisplay)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.RateQuatermins, new { maxlength = "5" })
+                                @Html.ValidationMessageFor(model => model.RateQuatermins)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.PAYPALEMAIL)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.PAYPALEMAIL, new { maxlength = "30" })
+                                @Html.ValidationMessageFor(model => model.PAYPALEMAIL)
+                            </div>
+                        </div>
+
+                     @* this update button for update the calender imformation this belongs to second part of the page final by anoop*@
+                <div class="row c_buttonContainer" >
+                    <div class="right">
+                        <input type="submit" value="UPDATE" class="button" />
+                    </div>
+                </div>
+                         
+
+                    </div>
+                    <div class="row" id="docVideoAvailabilityDisplay">
+                        <div class="row">
+                            <h6>Doctor Availability on Video</h6>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            </p>
+                            <div class="stepsVideo">@{Html.RenderPartial("_SetAppointments");}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="amy_group" style="float: right;">
+                    <p>Your profile is completed</p>
+                    <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                    <div class="amy_inner"></div>
+
+                </div>
+             
+                <div class="row c_buttonContainer">
+                    <div class="right">
+                        <a class="button cancel" href="/DoctorInformation/EducationalInfo">Back</a>
+                     
+                        <a href="/DoctorInformation/ClinicInfo" class="button">Next </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+  
+    $(document).ready(function () {
+        $('.c_site_search').hide();
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+
+    });
+
+</script>

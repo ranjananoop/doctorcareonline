@@ -1,0 +1,230 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "BookYourAppointment";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@*<h2><span class="username">@Html.ActionLink("My Profile", "DoctorsInformatonViews", "DoctorInformation", htmlAttributes: new { @class = "username", title = "Manage" })</span>> Public Profile</h2>*@
+
+
+
+<div class="d_doctorAppointmentConfirmation">
+    <div class="fleet">
+
+        <h6>Appointment Confirmation / Cancellation</h6>
+ 
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(false)
+            if (!@Model.appointment)
+            {
+            <div id="displayBarAppointment">
+                <div class="msgDisplayBar noAppoointment">
+                    <h1>This is not valid Appointment.</h1>
+                </div>
+                <div class="closeDisplayBar"></div>
+            </div>
+            <div id="overlayContainer"></div>
+            }
+            else if (@Model.appointment)
+            {
+           
+
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" style="display: none;" />
+           
+            <div class="row">
+                <div class="display-label">
+                    Appointment on:                 
+                </div>
+                <div class="display-field">
+                    <strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="display-label">
+                    Patient name:                
+                       
+                </div>
+                <div class="display-field">
+                    <strong>@Html.DisplayFor(model => model.APPOINTMENTSalutation) @Html.DisplayFor(model => model.APPOINTMENTFIRSTNAME)  @Html.DisplayFor(model => model.APPOINTMENTLASTNAME)</strong>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="display-label">
+                    Reason for visit:                 
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.REASONFORVISIT)
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="display-label">
+                    @Html.HiddenFor(model => model.APPOINTMENTID)
+                    @Html.HiddenFor(model => model.mode)
+                </div>
+                <div class="display-field">
+                    @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="display-label">
+                    Decline Reason:             
+                </div>
+                <div class="display-field">
+                    @Html.TextBoxFor(model => model.REASONTOCANCEL, new { maxlength = "50" })
+                </div>
+            </div>
+           
+            <div class="row c_buttonContainer">
+                <div class="right">
+                    <a class="button cancel" href="/DoctorInformation/Appointment">Go Back</a>
+                    <input type="button" value="Decline" class="button cancel" id="btnDecline" />
+                    <input type="button" value="Confirm" class="button" id="btnConfirm" />
+
+                </div>
+            </div>
+            }
+        }
+    </div>
+        </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<script>
+
+
+    $('.closeDisplayBar').click(function () {
+
+        var url = '@Url.Action("Appointment", "DoctorInformation")';
+        window.location.href = url;
+        $('#displayBarAppointment').hide();
+        $('#overlayContainer').hide();
+    });
+
+
+    $(document).ready(function () {
+
+        $('.c_pgTitleText').text('Appointments');
+        $('.c_pgTitleIcon').addClass('appointmentsIcon');
+
+        $('#REASONTOCANCEL').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        $("#btnConfirm").click(function () {
+            $("#loading").show();
+            var DoctorsInformationEditModel = new Object();
+            var datavalue = null;
+            DoctorsInformationEditModel.ISEXISITING = $("#ISEXISITING").val();
+            DoctorsInformationEditModel.REASONFORVISIT = $("#REASONFORVISIT").val();
+            DoctorsInformationEditModel.APPOINTMENTENDTIME = $("#APPOINTMENTENDTIME").val();
+            DoctorsInformationEditModel.APPOINTMENTSTARTTIME = $("#APPOINTMENTSTARTTIME").val();
+            DoctorsInformationEditModel.DOCTORID = $("#DOCTORID").val();
+            DoctorsInformationEditModel.mode = $("#mode").val();
+            DoctorsInformationEditModel.APPOINTMENTID = $("#APPOINTMENTID").val();
+            $.ajax({
+                async: true,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/AppintmentConfirm",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#loading").hide();
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        }
+                        $("#btnConfirm").attr('disabled', 'disabled');
+                        $("#btnDecline").attr('disabled', 'disabled');
+                    }
+
+                },
+                data: JSON.stringify(DoctorsInformationEditModel),
+            });
+
+
+        });
+
+
+        $("#btnDecline").click(function (e) {
+            $("#loading").show();
+            var DoctorsInformationEditModel = new Object();
+            var datavalue = null;
+            DoctorsInformationEditModel.ISEXISITING = $("#ISEXISITING").val();
+            DoctorsInformationEditModel.REASONFORVISIT = $("#REASONFORVISIT").val();
+            DoctorsInformationEditModel.APPOINTMENTENDTIME = $("#APPOINTMENTENDTIME").val();
+            DoctorsInformationEditModel.APPOINTMENTSTARTTIME = $("#APPOINTMENTSTARTTIME").val();
+            DoctorsInformationEditModel.DOCTORID = $("#DOCTORID").val();
+            DoctorsInformationEditModel.mode = $("#mode").val();
+            DoctorsInformationEditModel.APPOINTMENTID = $("#APPOINTMENTID").val();
+            if ($("#REASONTOCANCEL").val() != "") {
+
+                DoctorsInformationEditModel.REASONTOCANCEL = $("#REASONTOCANCEL").val();
+                $.ajax({
+                    async: true,
+                    type: "POST",
+                    cache: false,
+                    dataType: 'json',
+                    url: "/DoctorInformation/AppintmentCanceled",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (msg) {
+                        if (msg) {
+                            $("#btnConfirm").attr('disabled', 'disabled');
+                            $("#btnDecline").attr('disabled', 'disabled');
+                            $("#loading").hide();
+                            $("#MessageUpdateStatus").val(msg.msg);
+                            if ($("#MessageUpdateStatus").val().length > 0) {
+                                $("#MessageUpdateStatus").show();
+                            } else {
+                                $("#MessageUpdateStatus").hide();
+                            }
+                            if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                                $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                            }
+                        }
+                    },
+                    data: JSON.stringify(DoctorsInformationEditModel),
+                });
+
+            } else {
+                $("#loading").hide();
+                $("#MessageUpdateStatus").val('Error : Reason to Decline Required');
+                if ($("#MessageUpdateStatus").val().length > 0) {
+                    $("#MessageUpdateStatus").show();
+                } else {
+                    $("#MessageUpdateStatus").hide();
+                }
+                if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                    $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                }
+            }
+        });
+
+    });
+
+</script>

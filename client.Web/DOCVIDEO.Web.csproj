@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D31B6C1A-3FD4-4BDC-88B3-DAF551F70B77}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>client.Web</RootNamespace>
+    <AssemblyName>GURUKUL.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Altairis.Web.Security, Version=2.4.4.0, Culture=neutral, PublicKeyToken=9a962e35c1398fb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Altairis.Web.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.3.3.13295\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="JWT, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.2.3.2\lib\net45\JWT.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTokNET, Version=2.16.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTok.Client.2.16.0\lib\net40-client\OpenTokNET.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalAdaptivePaymentsSDK, Version=2.6.106.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PayPalAdaptivePaymentsSDK.2.6.106\lib\PayPalAdaptivePaymentsSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PayPalCoreSDK.1.4.1\lib\net45\PayPalCoreSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha">
+      <HintPath>..\packages\recaptcha.1.0.5.0\lib\.NetFramework 4.0\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha.MvcModel">
+      <HintPath>..\packages\reCaptchaMvcExtensions.1.0.1\lib\Recaptcha.MvcModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha.Web, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RecaptchaNet.1.3\lib\net45\Recaptcha.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFVideoRenderer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTok.Client.2.16.0\lib\net40-client\WPFVideoRenderer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeByRoleAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="bin\PayPalAdaptivePaymentsSDK.dll" />
+    <Content Include="bin\PayPalCoreSDK.dll" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\doctor.css" />
+    <Content Include="Content\erp_styles.css" />
+    <Content Include="Content\Images\1.png" />
+    <Content Include="Content\Images\1234.png" />
+    <Content Include="Content\Images\2.png" />
+    <Content Include="Content\Images\3.png" />
+    <Content Include="Content\Images\4.png" />
+    <Content Include="Content\Images\5.png" />
+    <Content Include="Content\Images\6.png" />
+    <Content Include="Content\Images\7.png" />
+    <Content Include="Content\Images\amy_doctorSearch.jpg" />
+    <Content Include="Content\Images\amy_home.png" />
+    <Content Include="Content\Images\amy_home_new.png" />
+    <Content Include="Content\Images\amy_inner.png" />
+    <Content Include="Content\Images\amy_inner_new.png" />
+    <Content Include="Content\Images\amy_login.png" />
+    <Content Include="Content\Images\amy_login_new.png" />
+    <Content Include="Content\Images\appoinment.PNG" />
+    <Content Include="Content\Images\arrow.png" />
+    <Content Include="Content\Images\attach.png" />
+    <Content Include="Content\Images\avatarLarge.png" />
+    <Content Include="Content\Images\avatarSmall.png" />
+    <Content Include="Content\Images\benifits.jpg" />
+    <Content Include="Content\Images\bg1.png" />
+    <Content Include="Content\Images\blue_marker.png" />
+    <Content Include="Content\Images\calendar_arrow_indicator.png" />
+    <Content Include="Content\Images\callout.gif" />
+    <Content Include="Content\Images\circle.png" />
+    <Content Include="Content\Images\collapse.jpg" />
+    <Content Include="Content\Images\collapse.png" />
+    <Content Include="Content\Images\collapse_large.png" />
+    <Content Include="Content\Images\congratulations.png" />
+    <Content Include="Content\Images\connect.jpg" />
+    <Content Include="Content\Images\dashboard_chart.png" />
+    <Content Include="Content\Images\dash_app.png" />
+    <Content Include="Content\Images\dash_mail.png" />
+    <Content Include="Content\Images\dash_patient.png" />
+    <Content Include="Content\Images\dash_payment.png" />
+    <Content Include="Content\Images\dash_viewed.png" />
+    <Content Include="Content\Images\doccare_sprite.png" />
+    <Content Include="Content\Images\docotr profle page.jpg" />
+    <Content Include="Content\Images\doctorProfile.png" />
+    <Content Include="Content\Images\doctorsignup.jpg" />
+    <Content Include="Content\Images\doctor_benefits.jpg" />
+    <Content Include="Content\Images\doctor_n.png" />
+    <Content Include="Content\Images\doctor_profile.jpg" />
+    <Content Include="Content\Images\d_appoinments.jpg" />
+    <Content Include="Content\Images\d_img.png" />
+    <Content Include="Content\Images\d_img_d.png" />
+    <Content Include="Content\Images\d_img_n.png" />
+    <Content Include="Content\Images\Empty.png" />
+    <Content Include="Content\Images\expand.jpg" />
+    <Content Include="Content\Images\expand.png" />
+    <Content Include="Content\Images\expand_large.png" />
+    <Content Include="Content\Images\false.jpg" />
+    <Content Include="Content\Images\Filled.png" />
+    <Content Include="Content\Images\filter_icon.png" />
+    <Content Include="Content\Images\finddoc.jpg" />
+    <Content Include="Content\Images\five.png" />
+    <Content Include="Content\Images\four.png" />
+    <Content Include="Content\Images\g1.jpg" />
+    <Content Include="Content\Images\g10.jpg" />
+    <Content Include="Content\Images\g2.jpg" />
+    <Content Include="Content\Images\g4.jpg" />
+    <Content Include="Content\Images\g5.jpg" />
+    <Content Include="Content\Images\g6.jpg" />
+    <Content Include="Content\Images\g7.jpg" />
+    <Content Include="Content\Images\g8.jpg" />
+    <Content Include="Content\Images\g9.jpg" />
+    <Content Include="Content\Images\hdr_bg.png" />
+    <Content Include="Content\Images\header.png" />
+    <Content Include="Content\Images\help.jpg" />
+    <Content Include="Content\Images\icn_send_message.png" />
+    <Content Include="Content\Images\icon_clinic.png" />
+    <Content Include="Content\Images\icon_clinicSlots.png" />
+    <Content Include="Content\Images\icon_close.png" />
+    <Content Include="Content\Images\icon_congra_createProfile.png" />
+    <Content Include="Content\Images\icon_congra_payrate.png" />
+    <Content Include="Content\Images\icon_congra_scheduleApp.png" />
+    <Content Include="Content\Images\icon_delete.png" />
+    <Content Include="Content\Images\icon_details.png" />
+    <Content Include="Content\Images\icon_edit.png" />
+    <Content Include="Content\Images\icon_education.png" />
+    <Content Include="Content\Images\icon_role.png" />
+    <Content Include="Content\Images\icon_search_arrowoff.png" />
+    <Content Include="Content\Images\icon_search_arrowOn.png" />
+    <Content Include="Content\Images\icon_search_inHdr.png" />
+    <Content Include="Content\Images\icon_telephone.png" />
+    <Content Include="Content\Images\icon_videoSlots.png" />
+    <Content Include="Content\Images\img_createProfile.png" />
+    <Content Include="Content\Images\img_find_doctor.png" />
+    <Content Include="Content\Images\img_getConnected.png" />
+    <Content Include="Content\Images\img_mail.png" />
+    <Content Include="Content\Images\img_npiIcon.png" />
+    <Content Include="Content\Images\img_requestIcon.png" />
+    <Content Include="Content\Images\img_setAppointment.png" />
+    <Content Include="Content\Images\img_videoIcon.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo_footer.png" />
+    <Content Include="Content\Images\none.png" />
+    <Content Include="Content\Images\old_images\bg1.png" />
+    <Content Include="Content\Images\old_images\bg2.png" />
+    <Content Include="Content\Images\old_images\bg_jRatingInfos.png" />
+    <Content Include="Content\Images\old_images\block_sep.png" />
+    <Content Include="Content\Images\old_images\body_bg.gif" />
+    <Content Include="Content\Images\old_images\bullet.png" />
+    <Content Include="Content\Images\old_images\character.png" />
+    <Content Include="Content\Images\old_images\closeBtn.jpg" />
+    <Content Include="Content\Images\old_images\close_button.png" />
+    <Content Include="Content\Images\old_images\dialog_close.jpg" />
+    <Content Include="Content\Images\old_images\doccare_logo.png" />
+    <Content Include="Content\Images\old_images\dropdownArrow.png" />
+    <Content Include="Content\Images\old_images\home_doctor_block.jpg" />
+    <Content Include="Content\Images\old_images\home_help_block.jpg" />
+    <Content Include="Content\Images\old_images\home_watchVideo.jpg" />
+    <Content Include="Content\Images\old_images\processing.gif" />
+    <Content Include="Content\Images\old_images\profile_doctor.jpg" />
+    <Content Include="Content\Images\old_images\signup.jpg" />
+    <Content Include="Content\Images\old_images\tabLoginArrow.jpg" />
+    <Content Include="Content\Images\one.png" />
+    <Content Include="Content\Images\patient_n.png" />
+    <Content Include="Content\Images\paypal.gif" />
+    <Content Include="Content\Images\paypal_img.jpg" />
+    <Content Include="Content\Images\psignup.jpg" />
+    <Content Include="Content\Images\P_benefits.jpg" />
+    <Content Include="Content\Images\p_img.png" />
+    <Content Include="Content\Images\p_img_d.png" />
+    <Content Include="Content\Images\p_img_n.png" />
+    <Content Include="Content\Images\refresh.png" />
+    <Content Include="Content\Images\refresh16x16.png" />
+    <Content Include="Content\Images\selectall16x16.png" />
+    <Content Include="Content\Images\sep_horizontal.png" />
+    <Content Include="Content\Images\slider1.jpg" />
+    <Content Include="Content\Images\slider1.png" />
+    <Content Include="Content\Images\slider1n.png" />
+    <Content Include="Content\Images\slider1nn.png" />
+    <Content Include="Content\Images\slider1nnn.png" />
+    <Content Include="Content\Images\slider2.jpg" />
+    <Content Include="Content\Images\slider2.png" />
+    <Content Include="Content\Images\slider2n.png" />
+    <Content Include="Content\Images\slider2nn.png" />
+    <Content Include="Content\Images\slider3n.png" />
+    <Content Include="Content\Images\slider3nn.png" />
+    <Content Include="Content\Images\small.png" />
+    <Content Include="Content\Images\spinner.gif" />
+    <Content Include="Content\Images\spinner20_20.gif" />
+    <Content Include="Content\Images\stars.png" />
+    <Content Include="Content\Images\step1.png" />
+    <Content Include="Content\Images\step2.png" />
+    <Content Include="Content\Images\success.png" />
+    <Content Include="Content\Images\successmessage.png" />
+    <Content Include="Content\Images\three.png" />
+    <Content Include="Content\Images\tick.png" />
+    <Content Include="Content\Images\trash16x16.png" />
+    <Content Include="Content\Images\true.jpg" />
+    <Content Include="Content\Images\two.png" />
+    <Content Include="Content\jMenu.jquery.css" />
+    <Content Include="Content\jquery-ui-1.10.2.custom.css" />
+    <Content Include="Content\jquery.countdown1.css" />
+    <Content Include="Content\jquery.countdownold.css" />
+    <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\kendo.common.min.css" />
+    <Content Include="Content\kendo.default.min.css" />
+    <Content Include="Content\LineIcons.css" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\model.css" />
+    <Content Include="Content\nivo-lightbox.css" />
+    <Content Include="Content\onepage-scroll.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.theme.css" />
+    <Content Include="Content\patient.css" />
+    <Content Include="Content\profile_patient.jpg" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\smoothness\jquery-ui-1.8rc3.custom.css" />
+    <Content Include="Content\smoothness\jquery.weekcalendar.css" />
+    <Content Include="Content\smoothness\jquery.weekcalendar1.css" />
+    <Content Include="Content\verticalMenustyles.css" />
+    <Content Include="DoctorInformation\anoop%40gmail.com\Desert_06122013052544.jpg" />
+    <Content Include="DoctorInformation\anoop%40gmail.com\Desert_06122013053052.jpg" />
+    <Content Include="DoctorInformation\anoop%40gmail.com\Desert_06122013053417.jpg" />
+    <Content Include="DoctorInformation\test4567%40gmail.com\Chrysanthemum_07122013011805.jpg" />
+    <Content Include="DoctorInformation\testdoc1%40gmail.com\Koala_07302013120305.jpg" />
+    <Content Include="HealthHistory\testing11%40twitter.com\Chrysanthemum_10052013062245.jpg" />
+    <Content Include="HtmlPage1 - Copy.html" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Images\bg_jRatingInfos.png" />
+    <Content Include="Images\btn_bg.jpg" />
+    <Content Include="Images\btn_inner_bg.jpg" />
+    <Content Include="Images\character.jpg" />
+    <Content Include="Images\character.png" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\collapse.png" />
+    <Content Include="Images\doccare_logo.jpg" />
+    <Content Include="Images\download_button.png" />
+    <Content Include="Images\dropdownArrow.png" />
+    <Content Include="Images\Empty.png" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\expand.png" />
+    <Content Include="Images\Filled.png" />
+    <Content Include="Images\filter_icon.png" />
+    <Content Include="Images\five.png" />
+    <Content Include="Images\four.png" />
+    <Content Include="Images\home_doctor_block.jpg" />
+    <Content Include="Images\home_help_block.jpg" />
+    <Content Include="Images\home_watchVideo.jpg" />
+    <Content Include="Images\icn_send_message.png" />
+    <Content Include="Images\icon_collapse.jpg" />
+    <Content Include="Images\icon_delete.png" />
+    <Content Include="Images\icon_details.png" />
+    <Content Include="Images\icon_edit.png" />
+    <Content Include="Images\icon_role.png" />
+    <Content Include="Images\img1.jpg" />
+    <Content Include="Images\img2.jpg" />
+    <Content Include="Images\img3.jpg" />
+    <Content Include="Images\img4.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\none.png" />
+    <Content Include="Images\one.png" />
+    <Content Include="Images\paypal.gif" />
+    <Content Include="Images\profile_patient.jpg" />
+    <Content Include="Images\profile_doctor.jpg" />
+    <Content Include="Images\refresh.png" />
+    <Content Include="Images\refresh16x16.png" />
+    <Content Include="Images\selectall16x16.png" />
+    <Content Include="Images\signup.jpg" />
+    <Content Include="Images\slider1.jpg" />
+    <Content Include="Images\small.png" />
+    <Content Include="Images\stars.png" />
+    <Content Include="Images\tabLoginArrow.jpg" />
+    <Content Include="Images\three.png" />
+    <Content Include="Images\title_b_l.jpg" />
+    <Content Include="Images\title_b_r.jpg" />
+    <Content Include="Images\trash16x16.png" />
+    <Content Include="Images\two.png" />
+    <Content Include="Images\unreadcount.png" />
+    <Content Include="index.html" />
+    <Content Include="PatientProfile\anoopranjan.1983%40gmail.com\Koala_10042013112853.jpg" />
+    <Content Include="PatientProfile\anoopranjan.1983%40gmail.com\Koala_10042013123011.jpg" />
+    <Content Include="PatientProfile\testdoc1%40gmail.com\Koala_07302013120305.jpg" />
+    <Content Include="RecaptchaNet.ReadMe.txt" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Googlemap.js" />
+    <Content Include="Scripts\imgLiquid-min.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8rc3.custom.min.js" />
+    <Content Include="Scripts\jquery.ba-dotimeout.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\jquery.dropdownPlain.js" />
+    <Content Include="Scripts\jquery.onepage-scroll.js" />
+    <Content Include="Scripts\jquery.password-strength.js" />
+    <Content Include="Scripts\jquery.password-strength.min.js" />
+    <Content Include="Scripts\jquery.realperson.js" />
+    <Content Include="Scripts\jquery.realperson.min.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Scripts\jquery.weekcalendar2.js" />
+    <Content Include="Scripts\jquery.weekcalendar.js" />
+    <Content Include="Scripts\jquery.weekcalendar1.js" />
+    <Content Include="Scripts\jRating.jquery.js" />
+    <Content Include="Scripts\jRating.jquery.min.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
+    <Content Include="Scripts\mask.js" />
+    <Content Include="Scripts\opentox.js" />
+    <Content Include="Scripts\slider\controls.png" />
+    <Content Include="Scripts\slider\jquery.slider.1.js" />
+    <Content Include="Scripts\slider\jquery.slider.2.js" />
+    <Content Include="Scripts\slider\jquery.slider.3.js" />
+    <Content Include="Scripts\slider\jquery.slider.4.js" />
+    <Content Include="Scripts\watermark.jquery.js" />
+    <Content Include="SessionHandler.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountSettingsController.cs" />
+    <Compile Include="Controllers\DoctorInformationController.cs" />
+    <Compile Include="Controllers\HealthHistoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailTemplateController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\OpenTok.cs" />
+    <Compile Include="Controllers\PatientProfileController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\Roles.cs" />
+    <Compile Include="Controllers\SessionProperties.cs" />
+    <Compile Include="Controllers\TokenProperties.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AppointmentDisplay.cs" />
+    <Compile Include="Models\BookingAppointmentModel.cs" />
+    <Compile Include="Models\BookingAppointmentModelOuter.cs" />
+    <Compile Include="Models\PatientInformationEditModel.cs" />
+    <Compile Include="Models\DoctorsInformationEditModel.cs" />
+    <Compile Include="Models\PateintUserModels.cs" />
+    <Compile Include="Models\PatientRegistrationModel.cs" />
+    <Compile Include="Models\DoctorsRegistrationModel.cs" />
+    <Compile Include="Models\HealthHistoryModel.cs" />
+    <Compile Include="Models\PayPalModel.cs" />
+    <Compile Include="Models\QuickSearchModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="xml\PasswordPolicy.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Default\editor.png" />
+    <Content Include="Content\Default\imagebrowser.png" />
+    <Content Include="Content\Default\loading-image.gif" />
+    <Content Include="Content\Default\loading.gif" />
+    <Content Include="Content\Default\slider-h.gif" />
+    <Content Include="Content\Default\slider-v.gif" />
+    <Content Include="Content\Default\sprite.png" />
+    <Content Include="Content\demos.css" />
+    <Content Include="Content\examples-offline.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\arrow_down.png" />
+    <Content Include="Images\arrow_right.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\hdr_bg.jpg" />
+    <Content Include="Scripts\console.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo.web.min.js" />
+    <Content Include="Scripts\knockout-1.2.1.debug.js" />
+    <Content Include="Scripts\knockout-1.2.1.js" />
+    <Content Include="Content\Fonts\OpenSans-Light.eot" />
+    <Content Include="Content\Fonts\OpenSans-Light.svg" />
+    <Content Include="Content\Fonts\OpenSans-Light.ttf" />
+    <Content Include="Content\Fonts\OpenSans-Light.woff" />
+    <Content Include="Content\main.map" />
+    <None Include="Properties\PublishProfiles\PROFESSOR.pubxml" />
+    <None Include="Properties\PublishProfiles\PROFESSORSONLINE.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="MyJS\CustomerViewModel.js" />
+    <Content Include="Scripts\jMenu.jquery.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.9.0.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\jquery-1.9.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.10.0.js" />
+    <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.1.debug.js" />
+    <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\menu.initializer.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Shared\DoctorsleftMenu.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Roles.cshtml" />
+    <Content Include="Views\Shared\AccessDenied.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\User\ResetPasswordSuccess.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Registration\DoctorSignUp.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonViews.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonReviews.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonUpdateAvailabilty.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonClinicPhotos.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonEdit.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoEdit.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoClinicPhotosEdit.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoClinicPhotosDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsSearch.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsPayRatesDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsPayRatesEdit.cshtml" />
+    <Content Include="Views\HealthHistory\upload.cshtml" />
+    <Content Include="Views\HealthHistory\_allergies.cshtml" />
+    <Content Include="Views\HealthHistory\_immunization.cshtml" />
+    <Content Include="Views\HealthHistory\_medication.cshtml" />
+    <Content Include="Views\HealthHistory\_procedure.cshtml" />
+    <Content Include="Views\HealthHistory\_uploadreport.cshtml" />
+    <Content Include="Views\PatientProfile\BasicInformation.cshtml" />
+    <Content Include="Views\PatientProfile\ContactInformationupdate.cshtml" />
+    <Content Include="Views\PatientProfile\MyProfile.cshtml" />
+    <Content Include="Views\PatientProfile\ProfilePicure.cshtml" />
+    <Content Include="Views\Registration\PatientSignUp.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Shared\_PateintInformationLayout.cshtml" />
+    <Content Include="Views\Shared\PateintleftMenu.cshtml" />
+    <Content Include="Views\PatientProfile\DoctorsSearch.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsSearch.cshtml" />
+    <Content Include="Views\PatientProfile\_DoctorsSearch.cshtml" />
+    <Content Include="Views\Message\Inbox.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\SentItems.cshtml" />
+    <Content Include="Views\PatientProfile\_changepassword.cshtml" />
+    <Content Include="Views\PatientProfile\QuickSearch.cshtml" />
+    <Content Include="Views\PatientProfile\_quicksearch.cshtml" />
+    <Content Include="Views\PatientProfile\AdvancedQuickSearch.cshtml" />
+    <Content Include="Views\PatientProfile\_advancequicksearch.cshtml" />
+    <Content Include="Views\Message\AdvancedQuickSearch.cshtml" />
+    <Content Include="Views\Message\_advancequicksearch.cshtml" />
+    <Content Include="Views\HealthHistory\AdvancedQuickSearch.cshtml" />
+    <Content Include="Views\HealthHistory\_advancequicksearch.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonViewsAnnonymus.cshtml" />
+    <Content Include="Views\MailTemplate\AppointmentConfirmation.cshtml" />
+    <Content Include="Views\MailTemplate\AppointmentConfirmationRequest.cshtml" />
+    <Content Include="Views\MailTemplate\AppointmentRequest.cshtml" />
+    <Content Include="Views\MailTemplate\AppointmentRequestDecline.cshtml" />
+    <Content Include="Views\MailTemplate\Followupemail.cshtml" />
+    <Content Include="Views\MailTemplate\MonthlyReport.cshtml" />
+    <Content Include="Views\MailTemplate\PatientAppointmentCancellation.cshtml" />
+    <Content Include="Views\MailTemplate\PatientRegistrationTemplate.cshtml" />
+    <Content Include="Views\MailTemplate\Registration.cshtml" />
+    <Content Include="Views\MailTemplate\RemainderEmail.cshtml" />
+    <Content Include="Views\PatientProfile\PreferredProviders.cshtml" />
+    <Content Include="Views\DoctorInformation\Inbox.cshtml" />
+    <Content Include="Views\DoctorInformation\SentItems.cshtml" />
+    <Content Include="Views\DoctorInformation\Index.cshtml" />
+    <Content Include="Views\DoctorInformation\_SetAppointments.cshtml" />
+    <Content Include="Views\PatientProfile\DoctorsInformatonViews.cshtml" />
+    <Content Include="Views\PatientProfile\_SetAppointments.cshtml" />
+    <Content Include="Views\PatientProfile\BookYourAppointment.cshtml" />
+    <Content Include="Views\PatientProfile\_ResonForVisit.cshtml" />
+    <Content Include="Views\PatientProfile\_PayForVisit.cshtml" />
+    <Content Include="Views\PatientProfile\_ConfirmPayForVisit.cshtml" />
+    <Content Include="Views\DoctorInformation\_SetClinicAppointment.cshtml" />
+    <Content Include="Views\PatientProfile\_SetClinicAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorAppointmentConfirmation.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoRatingDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsReviewRatingDisplay.cshtml" />
+    <Content Include="Views\PatientProfile\Appointment.cshtml" />
+    <Content Include="Views\PatientProfile\AppointmentQuickSearch.cshtml" />
+    <Content Include="Views\PatientProfile\_quicksearchappointment.cshtml" />
+    <Content Include="Views\PatientProfile\_pastappointment.cshtml" />
+    <Content Include="Views\PatientProfile\_preferredproviders.cshtml" />
+    <Content Include="Views\PatientProfile\_upcomingappointment.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\DoctorInformation\Appointment.cshtml" />
+    <Content Include="Views\DoctorInformation\_SetAppointmentDisplays.cshtml" />
+    <Content Include="Views\DoctorInformation\_SetClinicAppointmentDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_pastappointment.cshtml" />
+    <Content Include="Views\DoctorInformation\_upcomingappointment.cshtml" />
+    <Content Include="Views\Account\RegistrationSuccess.cshtml" />
+    <Content Include="Views\DoctorInformation\VideoConf.cshtml" />
+    <Content Include="Views\DoctorInformation\VideoConfMain_whatsapp.cshtml" />
+    <Content Include="Views\PatientProfile\AppoinmnetRestriction.cshtml" />
+    <Content Include="Views\PatientProfile\VideoConf.cshtml" />
+    <Content Include="Views\DoctorInformation\_doctorreview.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsReports.cshtml" />
+    <Content Include="Views\DoctorInformation\_allergy.cshtml" />
+    <Content Include="Views\DoctorInformation\_uploadreports.cshtml" />
+    <Content Include="Views\PatientProfile\AppoinmnetRating.cshtml" />
+    <Content Include="Views\PatientProfile\AppoinmnetRatingRestriction.cshtml" />
+    <Content Include="Views\PatientProfile\_quicksearchappointmentrating.cshtml" />
+    <Content Include="Views\PatientProfile\_quicksearchbookappointment.cshtml" />
+    <Content Include="Views\HealthHistory\uploadquicksearch.cshtml" />
+    <Content Include="Views\AccountSettings\AccountSettings.cshtml" />
+    <Content Include="Views\AccountSettings\AccountSettingPatient.cshtml" />
+    <Content Include="Views\PatientProfile\_preferredProviderssearch.cshtml" />
+    <Content Include="Views\DoctorInformation\_doctorpatientreview.cshtml" />
+    <Content Include="Views\Shared\PatientDoctorsleftMenu.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorChangedPassword.cshtml" />
+    <Content Include="Views\DoctorInformation\_changepassword.cshtml" />
+    <Content Include="Views\Message\inboxAdvancesearch.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\PatientProfile\DoctorsRatingsViews.cshtml" />
+    <Content Include="Views\Shared\DoctorMenu.cshtml" />
+    <Content Include="Views\DoctorInformation\_allergies.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\DoctorInformation\_immunization.cshtml" />
+    <Content Include="Views\DoctorInformation\_medication.cshtml" />
+    <Content Include="Views\DoctorInformation\_procedure.cshtml" />
+    <Content Include="Views\DoctorInformation\_uploadreport.cshtml" />
+    <Content Include="Views\DoctorInformation\ReleaseStatement.cshtml" />
+    <Content Include="Views\PatientProfile\CancelAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonViewsReviews.cshtml" />
+    <Content Include="Views\PatientProfile\BookYourAppointmentClinic.cshtml" />
+    <Content Include="Views\PatientProfile\_pastappointmentmain.cshtml" />
+    <Content Include="Views\PatientProfile\_upcomingappointmentmain.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonMain.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsInfoDisplayCustom.cshtml" />
+    <Content Include="Views\AccountSettings\AccountAdmin.cshtml" />
+    <Content Include="Views\Shared\_DoctorsInformationLayout.cshtml" />
+    <Content Include="Views\AccountSettings\_SetAppointments.cshtml" />
+    <Content Include="Views\AccountSettings\_SetClinicAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\BookYourAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\_ResonForVisit.cshtml" />
+    <Content Include="Views\DoctorInformation\_PayForVisit.cshtml" />
+    <Content Include="Views\DoctorInformation\_ConfirmPayForVisit.cshtml" />
+    <Content Include="Views\DoctorInformation\_AppointmentLogIn.cshtml" />
+    <Content Include="Views\DoctorInformation\PreBookYourAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\PreBookYourAppointmentSecond.cshtml" />
+    <Content Include="Views\DoctorInformation\PostPaymentBookYourAppointment.cshtml" />
+    <Content Include="Views\DoctorInformation\AppoinmnetRestriction.cshtml" />
+    <Content Include="Views\DoctorInformation\ClinicPreBookYourAppointmentSecond.cshtml" />
+    <Content Include="Views\DoctorInformation\ClinicPreBookYourAppointmentOuter.cshtml" />
+    <Content Include="Views\DoctorInformation\Dashboard.cshtml" />
+    <Content Include="Views\PatientProfile\Dashboard.cshtml" />
+    <Content Include="Views\DoctorInformation\PersonalInfo.cshtml" />
+    <Content Include="Views\DoctorInformation\EducationalInfo.cshtml" />
+    <Content Include="Views\DoctorInformation\ClinicInfo.cshtml" />
+    <Content Include="Views\DoctorInformation\VideoInfo.cshtml" />
+    <Content Include="Views\DoctorInformation\ClinicPreBookYourAppointment.cshtml" />
+    <Content Include="Views\PatientProfile\Personalinfo.cshtml" />
+    <Content Include="Views\PatientProfile\ContactInformation.cshtml" />
+    <Content Include="Views\DoctorInformation\_upcomingappointmentrequest.cshtml" />
+    <Content Include="Views\PatientProfile\_upcomingappointmentresent.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorscontactDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorscontactEdit.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorseduDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorseduEdit.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsNpiDisplay.cshtml" />
+    <Content Include="Views\DoctorInformation\_DoctorsNpiEdit.cshtml" />
+    <Content Include="Views\PatientProfile\_pateintinfodisplay.cshtml" />
+    <Content Include="Views\PatientProfile\_pateintconctdisplay.cshtml" />
+    <Content Include="Views\PatientProfile\_pateintinfoedit.cshtml" />
+    <Content Include="Views\PatientProfile\_pateintconctedit.cshtml" />
+    <Content Include="Views\Registration\Congratulations.cshtml" />
+    <Content Include="Views\DoctorInformation\Welcomepage.cshtml" />
+    <Content Include="Views\Home\getStarted_Doctor.cshtml" />
+    <Content Include="Views\Home\getStarted_Patient.cshtml" />
+    <Content Include="Views\DoctorInformation\SubscriptionInfo.cshtml" />
+    <Content Include="Views\DoctorInformation\PayPalSubscription.cshtml" />
+    <Content Include="Views\DoctorInformation\PayPalIPINVerification.cshtml" />
+    <Content Include="Views\AccountSettings\AccountDetails.cshtml" />
+    <Content Include="Views\DoctorInformation\DoctorsInformatonCalender.cshtml" />
+    <Content Include="Views\Home\Index_root.cshtml" />
+    <Content Include="Views\DoctorInformation\VideoConfMain.cshtml" />
+    <Content Include="Views\DoctorInformation\SocialHubConnect.cshtml" />
+    <Content Include="Views\PatientProfile\SocialHubConnect.cshtml" />
+    <Content Include="Views\Shared\_Layout _blank.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\PO.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DOCVIDEO.BaseDataLayer\DOCVIDEO.BaseDataLayer.csproj">
+      <Project>{1a21c8e4-f37d-4f98-9db5-4589597a0919}</Project>
+      <Name>DOCVIDEO.BaseDataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.CompanyDatabaseInitilization\DOCVIDEO.CompanyDatabaseInitilization.csproj">
+      <Project>{0c0320d0-320a-4dd4-a58d-8652a6832eae}</Project>
+      <Name>DOCVIDEO.CompanyDatabaseInitilization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.Domain\DOCVIDEO.Domain.csproj">
+      <Project>{144705c1-670d-4755-bf73-a7e5231b9357}</Project>
+      <Name>DOCVIDEO.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.ErrorLoggingContext\DOCVIDEO.ErrorLoggingContext.csproj">
+      <Project>{476a3d7d-986e-4807-a069-2af6638bf15e}</Project>
+      <Name>DOCVIDEO.ErrorLoggingContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.HealthHistoryServiceBoundedContext\DOCVIDEO.HealthHistoryServiceBoundedContext.csproj">
+      <Project>{4ffe1013-96d1-4f0e-98eb-655a5ad566ec}</Project>
+      <Name>DOCVIDEO.HealthHistoryServiceBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.HealthHistoryServiceRepoUOW\DOCVIDEO.HealthHistoryServiceRepoUOW.csproj">
+      <Project>{eee6a34c-b463-404b-978d-636ce7931629}</Project>
+      <Name>DOCVIDEO.HealthHistoryServiceRepoUOW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.ObjectInterfaces\DOCVIDEO.ObjectInterfaces.csproj">
+      <Project>{a12e2bdb-00bb-4485-a0f0-a358101d9337}</Project>
+      <Name>DOCVIDEO.ObjectInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.PatientInformationServiceBoundedContext\DOCVIDEO.PatientInformationServiceBoundedContext.csproj">
+      <Project>{79066692-51f3-49e9-ab8f-4091e5f9dae8}</Project>
+      <Name>DOCVIDEO.PatientInformationServiceBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.PatientInformationServiceRepoUOW\DOCVIDEO.PatientInformationServiceRepoUOW.csproj">
+      <Project>{115c0922-358c-422b-b058-007ab8aac3eb}</Project>
+      <Name>DOCVIDEO.PatientInformationServiceRepoUOW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.UserServiceBoundedContext\DOCVIDEO.UserServiceBoundedContext.csproj">
+      <Project>{ac13b4b0-e252-4f15-b6e9-7695be48de43}</Project>
+      <Name>DOCVIDEO.UserServiceBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.UserServiceRepoUOW\DOCVIDEO.UserServiceRepoUOW.csproj">
+      <Project>{8cdd7aa9-c088-4f5b-b620-e7ef89e9c58b}</Project>
+      <Name>DOCVIDEO.UserServiceRepoUOW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOCVIDEO.Utility\DOCVIDEO.Utility.csproj">
+      <Project>{79bfac65-3456-4f71-b182-3bcc2de7c836}</Project>
+      <Name>DOCVIDEO.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18906</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6998/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\OpenTok.Client.2.16.0\build\OpenTok.Client.targets" Condition="Exists('..\packages\OpenTok.Client.2.16.0\build\OpenTok.Client.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenTok.Client.2.16.0\build\OpenTok.Client.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenTok.Client.2.16.0\build\OpenTok.Client.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

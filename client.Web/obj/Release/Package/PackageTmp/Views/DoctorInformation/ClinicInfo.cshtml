@@ -1,0 +1,154 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "ClinicInfo";
+}
+
+@using (Html.BeginForm())
+{
+     
+    <div class="c_body innerLayout">
+        <div class="c_body_fleet">
+            <div class="c_pgTitle">
+                <div class="c_pgTitle_Fleet">
+                    <h1 class="c_pgTitleText">Steps</h1>
+                </div>
+            </div>
+        </div>
+        <div class="c_column_three d_doctorSteps step4">
+            <div class="fleet">
+                <div class="steps">
+                     <ul>
+                        <li class="step1 completedStep">
+                            <span>Personal Info</span>
+                            <h3>1</h3>
+                        </li>
+                        <li class="step2 completedStep">
+                            <span>Educational Info </span>
+                            <h3>2</h3>
+                        </li>
+                        <li class="step3 completedStep">
+                            <span>Video Info</span>
+                            <h3>3</h3>
+                        </li>
+                        <li class="step4 currentStep">
+                            <span>Clinic Info</span>
+                            <h3>4</h3>
+                        </li>
+                        <li class="step5 " >
+                            <span>Subscription Info</span>
+                            <h3>5</h3>
+                        </li>
+                    </ul>
+                    <div class="stepsLine"></div>
+                </div>
+                <div style="width: 650px; float: left;">
+                    <div class="row">
+                        <h6>About Clinic</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div id="docInfoClinicDisplay">
+
+                            @{Html.RenderPartial("_DoctorsInfoClinicPhotosEdit");}
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <h6>Doctor Availability on Clinic</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="stepsVideo">@{Html.RenderPartial("_SetClinicAppointment");}</div>
+                    </div>
+                </div>
+                <div class="amy_group" style="float: right;">
+                    <p>Your profile is completed</p>
+                    <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                    <div class="amy_inner"></div>
+                </div>
+
+                <div class="row c_buttonContainer">
+                    <div class="right">
+                        <a href="/DoctorInformation/VideoInfo" class="button cancel" style="display:block !important;float:left;margin-top:4px;">Back</a>
+                        <a href="/DoctorInformation/SubscriptionInfo" class="button">Next </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="MessageUpdateStatus" disabled="disabled" type="text" value="@Model.MessageUpdateStatus"   />
+    </div>
+
+}
+
+<script>
+    $(".cancel").hide();
+    $("#Update").val('Update');
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+
+    $(document).ready(function () {
+
+
+        $("#DONE").click(function () {
+
+
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/FirstLoginUpdate",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        var url = '@Url.Action("Dashboard", "DoctorInformation")';
+                        window.location.href = url;
+                    }
+                }
+            });
+
+        });
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+
+
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+
+        $('#TELEPHONE').keyup(function (e) {
+            var curchr = this.value.length;
+            var curval = $(this).val();
+            if (curchr == 3) {
+                $('#TELEPHONE').val(curval + "-");
+            }
+            if (curchr == 7) {
+                $('#TELEPHONE').val(curval + "-");
+            }
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s\-]*$/g, function (str) { return ''; }));
+        });
+
+
+        $('.c_site_search').hide();
+    });
+
+</script>

@@ -1,0 +1,98 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+@{
+    ViewBag.Title = "BookYourAppointment";   
+}
+ <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon appointmentsIcon"></div>
+                        <h1 class="c_pgTitleText">Appointments</h1>
+                    </div>
+                </div>
+<div class="signupForm">
+<div class="pagetTitle">
+    <span class="pageIcon inbox"></span>
+   @* <h6 >Book an Appointment</h6>*@
+
+    <div id="loading">
+        <img src="~/Content/Images/spinner20_20.gif" /></div>
+</div>
+<div>
+
+    <div>
+        <div class="bookAppointment">
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" style="width: 99.7%;" />
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(false)
+                <div id="tabs">
+                 
+
+                    <div id="Content_Area">
+                       
+                        <div id="tab2">
+                            <div>
+                                <p>@{Html.RenderPartial("_PayForVisit");
+            }</p>
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+    
+    
+            }
+
+        </div>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+
+    $(document).ready(function (e) {
+        if ($('#pstatus').val() != null) {
+            //alert($('#pstatus').val());
+            if ($('#pstatus').val() == "cancel") {
+                var url = '@Url.Action("DoctorsSearch", "DoctorInformation")';
+                window.location.href = url;
+            }
+            if ($('#pstatus').val() == "success") {
+                var url = '@Url.Action("PostPaymentBookYourAppointment", "DoctorInformation")';
+                 window.location.href = url;
+             }
+        }
+    });
+
+</script>
+<style>
+    #MessageUpdateStatus {
+        display:none;
+    }
+    
+    .p_pay_visit {
+        width: 700px;
+        clear: both;
+        
+    }
+    .amy_inner {
+
+width: 245px;
+height: 320px;
+margin-left: 484px !important;
+margin-top: -224px;
+
+
+}
+    #loading {
+        display:none;
+    }
+</style>
+

@@ -1,0 +1,168 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+@{
+    ViewBag.Title = "DoctorsInformatonEdit";
+
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+     
+}
+
+<script type="text/javascript" src="../../Scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.countdown.js"></script>
+<script src='https://swww.tokbox.com/v1.1/js/TB.min.js' type="text/javascript"></script>
+<link rel="stylesheet" href="~/Content/jquery.countdown.css" />
+<script type="text/javascript">
+    var chatMessage = new Object();
+    var cMessage = new Object();
+    var doctorID = null, patientID = null;
+    var startTime = null, endTime = null;
+    var userType = null;
+    var totalMinutes = null, elapsedMinutes = null; appointmentId = 0;
+    var cCount = null;
+    $('.img_Showed').each(function () {
+
+        $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+    });
+    $(document).ready(function () {
+
+  $('.close_upcomingAppointment').click(function () {
+    
+        $(this).parent('.upcomingAppointment').hide();
+    });
+
+    });
+
+  
+</script>
+
+          
+
+
+
+<div class="videoConference">
+       @if (Model.appintmentcurrentnext)
+       {
+           <div class="upcomingAppointment">
+               
+                    <h3>Next Upcoming Appointment :</h3>
+              
+           
+               With: @Html.DisplayFor(model => model.APPOINTMENTSalutation)  @Html.DisplayFor(model => model.APPOINTMENTFIRSTNAME) @Html.DisplayFor(model => model.APPOINTMENTLASTNAME)
+                @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)  @Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)
+
+               <div class="close_upcomingAppointment"></div>
+           
+               </div>
+       }
+           
+    <div class="padding">
+
+        <div class="videoLeft">
+            <div class="videoHeader">
+                <b>Doctor</b>
+            </div>
+            <div class="videoStreamLarge">
+                
+            </div>
+            <div class="uploadFiles">
+                <div class="padding">
+                    <div class="editor-label">Attach File</div>
+                    <div class="uploadClass">
+                        <input id="files" name="files" type="file" disabled="disabled"/>
+                    </div>
+                </div>
+
+            </div>
+          
+        </div>
+
+        <div class="videoRight">
+
+            <div class="videoSmall">
+                <div class="videoHeader">
+                    <b>Patient</b>
+                    <div style="float: right; margin: -2px -8px 0 0;">
+                        <input type="button" class="btnStart" id="publishLink" onclick="javascript: start_Publishing()" />
+                        <input type="button" class="btnStop" id="unpublishLink" onclick="javascript: stopPublishing()" />
+                    </div>
+                </div>
+                <div class="videoStreamSmall" >
+                    
+                </div>
+            </div>
+            <div class="timeSlot" id="clock">
+                <div class="timer" id="minutes"></div>
+                <label>Minutes Left</label>
+                
+                <div id="div1"></div>
+            </div>
+
+            <div class="chatWindow" id="divChat">
+                <div class="videoHeader">
+                    <b>Chat</b>
+                </div>
+                <div id="divMessages">
+                    <div id="divChatText"></div>
+                </div>
+                <div class="chatControl">
+                    <textarea id="txtMessage" onkeyup="ReplaceChars()" onclick="FocusMe()" onfocus="SetToEnd(this)" maxlength="500"></textarea>
+                    <input type="button" id="btnSend" value="Send" class="button" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="tempStream1" style="display:none">
+    <div id="stream_light_1" class="streamLight">
+            <img src="images/off.png" alt="stream off" width="20" height="20" style="display:none;"/>
+    </div>
+    <div id="stream_name_1" class="streamName"></div>
+    <div id="stream_1" ></div>
+</div>
+<div id="tempStream2" style="display:none">
+        <div id="stream_light_2" class="streamLight">
+                <img src="images/off.png" alt="stream off" width="20" height="20" style="display:none;" />
+        </div>
+        <div id="stream_name_2" class="streamName"></div>
+            <div id="stream_2" ></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    $('.c_pgTitleText').text('Video Conference');
+    $('.c_pgTitleIcon').addClass('myProfile');
+    $('.img_Shows').each(function () {
+
+        $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+    });
+
+    $("#files").kendoUpload({
+        async: {
+            saveUrl: "/DoctorInformation/SaveFile",
+            //removeUrl: "/DoctorInformation/RemoveFile",
+            autoUpload: true
+        },
+        upload: function (e) {
+            e.data = { doctorID: doctorID, patientID: patientID };
+        },
+        success: onSuccess
+    });
+
+    function onSuccess(e) {
+
+
+    }
+</script>

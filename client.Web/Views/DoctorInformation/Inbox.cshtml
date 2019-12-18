@@ -1,0 +1,620 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+   
+    <div class="d_inbox">
+        <div class="fleet">
+            <div class="row">
+
+                <input id="MessageUpdateStatus" disabled="disabled" type="text" style="display: none;" />
+                <h6>Inbox</h6>
+                <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+                    </p>
+                <div>
+                    <div class="actionPanel">
+                        <div id="drpMessageStatus" style="width: 100px; display: block; float: left;"></div>
+                        <div class="right">
+                            <input type="button" value="Delete" id="btndelete" />
+                            <input type="button" value="Refresh" id="btnrefresh" />
+                            <input type="button" value="Select All" id="btnselect" />
+                        </div>
+                    </div>
+
+                    <div id="divAppointments">
+                        <p></p>
+                        <div class="row c_buttonContainer">
+                            <div class="right">
+                                <input type="button" value="Close" class="button closeMessageDialog" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fade" class="black_overlay">
+                    </div>
+                    <div id="example" class="k-content">
+                        <div id="patientInbox"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <h6>Sent Items</h6>
+                <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+                    </p>
+                <div>
+                    <div class="actionPanel">
+
+                        <div id="drpMessageStatus1" style="width: 100px; display: block; float: left;"></div>
+                        <div class="right">
+                            <input type="button" value="Delete" id="btndelete1" />
+                            <input type="button" value="Refresh" id="btnrefresh1" />
+                            <input type="button" value="Select All" id="btnselect1" />
+                        </div>
+                    </div>
+
+                    <div id="grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+}
+<style type="text/css">
+    .read {
+        background-color: #fff !important;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .unread {
+        background-color: #f2f2f2 !important;
+        font-weight: bold;
+        height: 10px;
+        font-size: 12px;
+    }
+</style>
+<script>
+
+   
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    var MessageDeleteIds = [];
+    var messages = [];
+    var messageType = '';
+
+    function Hide(displaymessage) {
+
+        $('#' + displaymessage).hide();
+
+    }
+    var preferedData = new Object();
+    function setStatus(MESSAGEID) {
+
+        var message = new Object();
+        message.MESSAGEID = MESSAGEID;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/Message/UpdateMailStatus",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#divAppointments > p").html(msg.msg);
+
+                    $("#divAppointments").fadeIn('slow');
+                    $('#fade').height($(document).height());
+                    $('html').addClass('scrollbarOff');
+
+                    jQuery.fn.center = function () {
+                        this.css("position", "absolute");
+                        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                    $(window).scrollTop()) + "px");
+                        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                    $(window).scrollLeft()) + "px");
+                        return this;
+                    }
+
+                    $('#divAppointments').center();
+                    $(".black_overlay").fadeIn('slow');
+                }
+            },
+            data: JSON.stringify(message),
+        });
+
+    }
+
+    $(document).ready(function () {
+
+        $('.c_pgTitleText').text('Message Center');
+        $('.c_pgTitleIcon').addClass('inbox');
+
+
+        $('#fade').insertBefore('.c_container');
+        $('#divAppointments').insertBefore('#fade');
+
+        //$('#divAppointments').children('.button.cancel.replyButton').hide();
+        //$('.replyButton').appendTo('.c_buttonContainer');
+
+        $('#divAppointments').css({
+            left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+            top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+        });
+
+        $(window).resize(function () {
+            $('#divAppointments').css({
+                left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+            });
+        });
+
+        $('.closeMessageDialog').click(function () {
+            $('#divAppointments').fadeOut('slow');
+            $('#fade').fadeOut('slow');
+            $('html').removeClass('scrollbarOff');
+        });
+
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+       
+
+
+        BindGrid("All");
+        BindGridSentItem("All");
+
+        $("#drpMessageStatus1").kendoDropDownList({
+            optionLabel: "All",
+            dataTextField: "MESSAGESTATUS",
+            dataValueField: "MESSAGESTATUS",
+            dataSource: {
+                type: "json",
+                serverFiltering: false,
+                transport: {
+                    read: "/Message/Getdrpdwn"
+                }
+            },
+            change: function () {
+                BindGridSentItem(this.value());
+                $("#MessageUpdateStatus").val("");
+                if ($("#MessageUpdateStatus").val().length > 0) {
+                    $("#MessageUpdateStatus").show();
+                } else {
+                    $("#MessageUpdateStatus").hide();
+                }
+            },
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            },
+            index: 0
+        });
+        $("#drpMessageStatus").kendoDropDownList({
+            optionLabel: "All",
+            dataTextField: "MESSAGESTATUS",
+            dataValueField: "MESSAGESTATUS",
+            dataSource: {
+                type: "json",
+                serverFiltering: false,
+                transport: {
+                    read: {
+                        url: "/Message/Getdrpdwn",
+                        dataType: "json",
+                        type: "post",
+                        contentType: "application/json; charset=utf-8",
+                    },
+                    update: {
+                        url: "/Message/UpdateMailStatus",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                    },
+
+                    parameterMap: function (data, type) {
+                        var patientmessage = new Object();
+
+                        if (type == "update") {
+                            patientmessagetModel = data.models;
+                            return JSON.stringify(data);
+                        }
+                        return JSON.stringify(data);
+                    }
+                }
+            },
+            change: function () {
+                BindGrid(this.value());
+                $("#MessageUpdateStatus").val("");
+                if ($("#MessageUpdateStatus").val().length > 0) {
+                    $("#MessageUpdateStatus").show();
+                } else {
+                    $("#MessageUpdateStatus").hide();
+                }
+
+            },
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            },
+            index: 0
+        });
+
+
+    });
+
+    function BindGrid(status) {
+        var dataSourceProjects = new kendo.data.DataSource({
+            pageSize: 5,
+            autoSync: true,
+            transport: {
+                read: {
+                    url: "/Message/GetFilteredInboxDoc",
+                    data: function () {
+                        return {
+                            id: status,
+                        }
+                    },
+                    dataType: "json",
+                    type: "post",
+                }
+            },
+            schema:
+               {
+                   model:
+                       {
+                           id: "MessageId",
+                           fields: {
+                               //MessageId: { editable: false, field: "MessageId" },
+                               Salutation: { field: "Salutation", editable: false, },
+                               FIRSTNAME: { field: "FIRSTNAME", editable: false, },
+                               LASTNAME: { field: "FIRSTNAME", editable: false, },
+                               SENDMESSAGEFROM: { field: "SENDMESSAGEFROM", editable: false, },
+                               MESSAGESUBJECT: { field: "MESSAGESUBJECT", editable: true, },
+                               MESSAGESTATUS: { field: "MESSAGESTATUS", editable: false, },
+                               MESSAGEBODY: { field: "MESSAGEBODY", editable: false, }
+                           }
+                       }
+               },
+        });
+        dataSourceProjects.read();
+
+        $("#patientInbox").kendoGrid({
+            dataSource: dataSourceProjects,
+            sortable: true,
+            pageable: true,
+            columns: [
+                { field: "", width: 50, template: "<input type='checkbox'  class='targets' value='${ MESSAGEID }'/>", title: "Select" },
+                { field: "FIRSTNAME", width: 130, title: "From", template: "  ${ Salutation }&nbsp;${ FIRSTNAME }&nbsp; ${ LASTNAME }" },
+                { field: "MESSAGESUBJECT", width: 100, title: "Subject" },
+                { width: 40, template: "<a  title=${ MESSAGEID } onclick=setStatus(${ MESSAGEID }) class='linkClass' href='javascript:void(0);' >View</a>", title: "View" },
+                { width: 40, template: "<a   title='${ SENDMESSAGEFROM }' href=/DoctorInformation/Index?sendto=${ SENDMESSAGEFROM }  class=''>New Mail</a> ", title: "Compose" }
+
+            ],
+            dataBound: function () {
+                var grid = this;
+                if (grid.table.hasClass('k-focusable'))
+                    grid.table.removeClass('k-focusable');
+                grid.tbody.find('>tr').each(function () {
+                    var dataItem = grid.dataItem(this);
+                    if ($(this).hasClass('k-alt')) {
+                        $(this).removeClass('k-alt');
+                    }
+                    if (dataItem.MESSAGESTATUS == "Read") {
+
+                        $(this).addClass('read');
+                    }
+                    else {
+                        $(this).addClass('unread');
+                    }
+                })
+            }
+        });
+
+
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.target').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+           
+        });
+        $('.targets').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+
+        });
+        $("#btnselect").click(function () {
+
+            $('.targets').attr('checked', 'checked');
+
+            $("#MessageUpdateStatus").val("All Messages Selected");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+        });
+        $("#btnrefresh").click(function () {
+
+            location.reload();
+
+        });
+
+        $("#btndelete").click(function () {
+            MessageDeleteIds = [];
+            var model = new Object();
+            $('.targets').each(function () {
+
+
+                if ($(this).is(':checked')) {
+
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.push(MessageDeleteId);
+
+                }               
+            });
+            model.MessageDeleteIds = MessageDeleteIds;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/Message/DeleteMessageDoc",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        }
+
+                        MessageDeleteIds = [];
+                        BindGrid("All");
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+        });
+
+
+    }
+
+    function BindGridSentItem(status) {
+
+        var dataSourceProjects = new kendo.data.DataSource({
+            pageSize: 5,
+            autoSync: true,
+            transport: {
+                read: {
+                    url: "/Message/GetFilteredSentItemDoc",
+                    data: function () {
+                        return {
+                            id: status,
+                        }
+                    },
+                    dataType: "json",
+                    type: "post",
+                }
+            }
+        });
+        dataSourceProjects.read();
+
+        $("#grid").kendoGrid({
+            dataSource: dataSourceProjects,
+            //height: 260,
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+            columns: [{
+                title: "Select",
+                template: "<input type='checkbox' class='target' value='#= MESSAGEID #'/>",
+                width: "40px"
+            },
+                   { field: "FIRSTNAME", width: 150, title: "To", template: "  ${ Salutation }&nbsp;${ FIRSTNAME }&nbsp; ${ LASTNAME }" },
+                   { field: "MESSAGESUBJECT", title: "Subject", width: "100px", },
+              { width: 50, template: "<a  title=${ MESSAGEID } onclick=setStatus(${ MESSAGEID }) class='linkClass'  >View</a>", title: "View" }
+            ],
+            dataBound: function () {
+                var grid = this;
+                if (grid.table.hasClass('k-focusable'))
+                    grid.table.removeClass('k-focusable');
+                grid.tbody.find('>tr').each(function () {
+                    var dataItem = grid.dataItem(this);
+                    if ($(this).hasClass('k-alt')) {
+                        $(this).removeClass('k-alt');
+                    }
+                    if (dataItem.MESSAGESTATUS == "Read") {
+
+                        $(this).addClass('read');
+                    }
+                    else {
+                        $(this).addClass('unread');
+                    }
+                })
+            }
+        });
+
+
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $("#btnselect1").click(function () {
+
+            $('.target').attr('checked', 'checked');
+
+            $("#MessageUpdateStatus").val("All Messages Selected");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+        });
+
+        $("#btnrefresh1").click(function () {
+
+            location.reload();
+
+        });
+
+       
+
+        $('.target').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+            if ($(this).is(':checked')) {
+
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.push(MessageDeleteId);
+
+            } else {
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.pop(MessageDeleteId);
+            }
+        });
+
+        $("#btndelete1").click(function () {
+            MessageDeleteIds = [];
+            var model = new Object();
+            $('.target').each(function () {
+
+
+                if ($(this).is(':checked')) {
+
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.push(MessageDeleteId);
+
+                }
+
+            });
+            model.MessageDeleteIds = MessageDeleteIds;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/Message/DeleteMessageDoc",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg.msg == "Success") {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        MessageDeleteIds = [];
+                        BindGridSentItem("All");
+                    }
+                    else {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        }
+                        MessageDeleteIds = [];
+                        BindGridSentItem("All");
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+
+        });
+
+
+    }
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style scoped="scoped">
+    .white_content {
+        top: 38% !important;
+        width: 519px !important;
+    }
+
+    #grid .k-toolbar {
+        min-height: 27px;
+        padding: 1.3em;
+    }
+
+    .category-label {
+        vertical-align: middle;
+        padding-right: .5em;
+    }
+
+    #category {
+        vertical-align: middle;
+    }
+
+    .toolbar {
+        float: right;
+    }
+</style>
+<style scoped="scoped">
+    #grid .k-toolbar {
+        min-height: 27px;
+        padding: 1.3em;
+    }
+
+    .category-label {
+        vertical-align: middle;
+        padding-right: .5em;
+    }
+
+    #category {
+        vertical-align: middle;
+    }
+
+    .toolbar {
+        float: right;
+    }
+
+    .k-grid-content {
+        overflow: hidden !important;
+    }
+</style>

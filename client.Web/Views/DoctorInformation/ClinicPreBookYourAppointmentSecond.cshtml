@@ -1,0 +1,117 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+@{
+    ViewBag.Title = "ClinicPreBookYourAppointmentSecond";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+   
+        <div class="pre_book_con signupForm" style="font-size:15px;">
+
+    <div class="app_left">
+
+        <h2>@Html.DisplayNameFor(model => model.ISEXISITING)</h2>
+
+        <p class="sec_desc-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+
+
+
+        <div class="row">
+            <div class="display_label">@Html.DisplayNameFor(model => model.REASONFORVISIT)</div>
+            <div>@Html.TextBoxFor(model => model.REASONFORVISIT, new { maxlength = "46" })</div>
+        </div>
+        <div class="row">
+            <div class="display_label">
+                @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</div>
+
+
+            <div><h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+        </div>
+        <div class="row">
+        <div class="display_label">@Html.DisplayNameFor(model => model.Speciality)</div>
+
+
+        <div>
+           <h3><strong> Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+            @Html.DisplayFor(model => model.LASTNAME)</strong></h3>
+            <p><h3><strong> @Html.DisplayFor(model => model.Speciality)</strong></h3></p>
+        </div>
+        <br />
+        
+        </div>
+
+
+        
+    </div>
+
+    <div class="app_right">
+        <div class="amy_inner" style="margin-left: 55px;"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="c_buttonContainer" style="width: 100%;">
+    <div class="right">
+        <input type="submit" value="Confirm" class="button" id="btnSave"  />
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="row">
+    <div>
+        <div class="display-field">
+            @Html.HiddenFor(model => model.DOCTORID)
+            @Html.HiddenFor(model => model.tabvalue)
+            @Html.HiddenFor(model => model.DOCTORSLOTID)
+            @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+
+      
+}
+
+<script>
+    $(document).ready(function () {
+
+   $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        $('.validation-summary-errors').insertAfter('.app_left');
+
+    });
+</script>
+<style>
+    input[type=text] {
+        width: 250px;
+    }
+
+    .pre_book_con .app_left {
+        float: left;
+        width: 600px;
+    }
+
+    .pre_book_con .app_right {
+        float: left;
+    }
+
+    .app_left h2 {
+        color: #3aa3ff;
+        font-size: 28px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+    }
+
+    .sec_desc-con {
+        margin: 10px 0px;
+    }
+    .pre_book_con .display_label {
+        width:120px;
+       
+    }
+</style>

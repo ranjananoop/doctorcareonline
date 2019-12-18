@@ -1,0 +1,247 @@
+﻿<link rel="stylesheet" href="~/Content/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" />
+<link href="~/Content/smoothness/jquery.weekcalendar.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/jquery-ui-1.8rc3.custom.min.js"></script>
+<script src="~/Scripts/jquery.weekcalendar.js"></script>
+
+<style type="text/css" >
+
+.panelContent {
+  display: block;
+  background-color: #f0f0f0;
+}
+
+</style>
+
+<script type='text/javascript'>
+
+    var doctorSlots = [];
+    var existingSlots = [];
+    var eventData = [];
+    var timeSlots = [], startTime, endTime, tempStartTime, tempEndTime;
+    $(document).ready(function () {
+
+        $('.toggleCalender.Video').toggle(
+            function () {
+                $('#calendar').hide();
+                $(this).html('Show Calender');
+            },
+        function () {
+            $('#calendar').show();
+            $(this).html('Hide Calender');
+        }
+        );
+
+        function displayMessage(message) {
+            
+            // $("#message").html(message).fadeIn();
+        }
+        calculate_time_zone();
+        GetExistingSlots();
+
+        function renderCalendar() {
+            timeSlots.sort(function (a, b) {
+                return a.start - b.start
+            });
+            $('#calendar').weekCalendar({
+                timeSlots: timeSlots,
+                appointmentURL: '/DoctorInformation/PreBookYourAppointment?id=',
+                isPatient: true,
+                timeslotsPerHour: 4,
+                useShortDayNames: true,
+                businessHours: { start: 7, end: 22, limitDisplay: true },
+                height: function ($calendar) {
+                    return $(window).height() - $("h1").outerHeight();
+                },
+                eventRender: function (calEvent, $event) {
+                    if (calEvent.end.getTime() < new Date().getTime()) {
+                        $event.css("backgroundColor", "#aaa");
+                        $event.find(".time").css({ "backgroundColor": "#999", "border": "1px solid #888" });
+                    }
+                },
+                eventNew: function (calEvent, $event) {
+                    displayMessage("<strong>Added event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                    alert("You've added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.");
+                },
+                eventDrop: function (calEvent, $event) {
+                    displayMessage("<strong>Moved Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventResize: function (calEvent, $event) {
+                    displayMessage("<strong>Resized Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventClick: function (calEvent, $event) {
+                    displayMessage("<strong>Clicked Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventMouseover: function (calEvent, $event) {
+                    displayMessage("<strong>Mouseover Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                eventMouseout: function (calEvent, $event) {
+                    displayMessage("<strong>Mouseout Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+                },
+                noEvents: function () {
+                    displayMessage("There are no events for this week");
+                },
+                data: eventData
+            });
+
+            $('#calendar').weekCalendar('refresh');
+        }
+
+        //function renderCalendar() {
+
+        //    $('#calendar').weekCalendar({
+        //        appointmentURL: '/DoctorInformation/PreBookYourAppointment?id=',
+        //        isPatient: true,
+        //        isClinic: false,
+        //        timeslotsPerHour: 4,
+        //        useShortDayNames: true,
+        //        businessHours: { start: 7, end: 22, limitDisplay: true },
+        //        height: function ($calendar) {
+        //            return $(window).height() - $("h1").outerHeight();
+        //        },
+        //        eventRender: function (calEvent, $event) {
+        //            if (calEvent.end.getTime() < new Date().getTime()) {
+        //                $event.css("backgroundColor", "#aaa");
+        //                $event.find(".time").css({ "backgroundColor": "#999", "border": "1px solid #888" });
+        //            }
+        //        },
+        //        eventNew: function (calEvent, $event) {
+        //            displayMessage("<strong>Added event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //            alert("You've added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.");
+        //        },
+        //        eventDrop: function (calEvent, $event) {
+        //            displayMessage("<strong>Moved Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //        },
+        //        eventResize: function (calEvent, $event) {
+        //            displayMessage("<strong>Resized Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //        },
+        //        eventClick: function (calEvent, $event) {
+        //            displayMessage("<strong>Clicked Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //        },
+        //        eventMouseover: function (calEvent, $event) {
+        //            displayMessage("<strong>Mouseover Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //        },
+        //        eventMouseout: function (calEvent, $event) {
+        //            displayMessage("<strong>Mouseout Event</strong><br/>Start: " + calEvent.start + "<br/>End: " + calEvent.end);
+        //        },
+        //        noEvents: function () {
+        //            displayMessage("There are no events for this week");
+        //        },
+        //        data: eventData
+        //    });
+
+        //    $('#calendar').weekCalendar('refresh');
+        //}
+
+        function GetExistingSlots() {
+            var doctorSlot = {
+                TimeZoneOffset: document.getElementById('timezoneOffset').value,
+                DSTObserved: document.getElementById('dstObserved').value
+            };
+            $.getJSON("/DoctorInformation/GetExistingDoctorSlots", doctorSlot, function (data) {
+                existingSlots = data;
+
+                var isStart = false;
+
+                var jsonObj = '{"events" : [';
+
+                if (existingSlots.length > 0) {
+                    for (var i = 0; i < existingSlots.length; i++) {
+                        var stDate = new Date(parseInt(existingSlots[i].FROMTIME.substring(6, existingSlots[i].FROMTIME.length - 2)));
+                        var ndDate = new Date(parseInt(existingSlots[i].TOTIME.substring(6, existingSlots[i].TOTIME.length - 2)));
+                        tempStartTime = stDate.getHours();
+                        if (ndDate.getMinutes() > 0)
+                            tempEndTime = ndDate.getHours() + 1;
+                        else
+                            tempEndTime = ndDate.getHours();
+                        if (!isStart) {
+                            startTime = tempStartTime;
+                            endTime = tempEndTime;
+                            isStart = true;
+                            if (existingSlots.length == 1) {
+                                var slot = { "start": startTime, "end": endTime };
+                                timeSlots.push(slot);
+                            }
+                        }
+                        else {
+                            if (endTime != tempStartTime) {
+
+                                var slot = { "start": startTime, "end": endTime };
+                                if (!containsObject(slot, timeSlots)) {
+                                    timeSlots.push(slot);
+
+                                }
+                            }
+                            startTime = tempStartTime
+                            endTime = tempEndTime;
+                        }
+
+                    }
+                }
+                if (existingSlots.length > 0) {
+                    for (var i = 0; i < existingSlots.length; i++) {
+                        var stDate = new Date(parseInt(existingSlots[i].FROMTIME.substring(6, existingSlots[i].FROMTIME.length - 2)));
+                        var ndDate = new Date(parseInt(existingSlots[i].TOTIME.substring(6, existingSlots[i].TOTIME.length - 2)));
+                        var isTaken = existingSlots[i].STATUS;
+                        var eventStartDate = new Date(stDate.getMonth() + 1 + '/' + stDate.getDate() + '/' + stDate.getFullYear() + ' ' + stDate.getHours() + ':' + stDate.getMinutes()).getTime();
+                        var eventEndDate = new Date(ndDate.getMonth() + 1 + '/' + ndDate.getDate() + '/' + ndDate.getFullYear() + ' ' + ndDate.getHours() + ':' + ndDate.getMinutes()).getTime();
+
+                        var event = ' { "id": ' + existingSlots[i].DOCTORSLOTID + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "", "isTaken":"' + isTaken + '" },';
+                        jsonObj += event;
+                    }
+                }
+                jsonObj = jsonObj.substr(0, jsonObj.length - 1);
+                jsonObj += ']}';
+                eventData = $.parseJSON(jsonObj);
+                renderCalendar();
+
+            });
+        }
+        //function GetExistingSlots() {
+        //    $.getJSON("/DoctorInformation/GetExistingDoctorSlots", function (data) {
+        //        existingSlots = data;
+        //        var jsonObj = '{"events" : [';
+        //        if (existingSlots.length > 0) {
+        //            for (var i = 0; i < existingSlots.length; i++) {
+
+        //                var stDate = new Date(parseInt(existingSlots[i].FROMTIME.substring(6, existingSlots[i].FROMTIME.length - 2)));
+        //                var ndDate = new Date(parseInt(existingSlots[i].TOTIME.substring(6, existingSlots[i].TOTIME.length - 2)));
+
+        //                var eventStartDate = new Date(stDate.getMonth() + 1 + '/' + stDate.getDate() + '/' + stDate.getFullYear() + ' ' + stDate.getHours() + ':' + stDate.getMinutes()).getTime();
+        //                var eventEndDate = new Date(ndDate.getMonth() + 1 + '/' + ndDate.getDate() + '/' + ndDate.getFullYear() + ' ' + ndDate.getHours() + ':' + ndDate.getMinutes()).getTime();
+
+
+        //                var event = ' { "id": ' + existingSlots[i].DOCTORSLOTID + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "" },';
+        //                jsonObj += event;
+        //            }
+        //        }
+        //        jsonObj = jsonObj.substr(0, jsonObj.length - 1);
+        //        jsonObj += ']}';
+        //        eventData = $.parseJSON(jsonObj);
+
+        //        renderCalendar();
+
+        //    });
+        //}
+    });
+
+    function containsObject(obj, list) {
+        var i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i].start === obj.start && list[i].end === obj.end) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+</script>
+
+
+@* <div class="panelHeading">
+    <h1>  Video Appointments</h1>   
+</div>
+<div class="linkClass toggleCalender Video">Hide Calender</div>*@
+<div id='calendar'></div>

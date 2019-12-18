@@ -1,0 +1,155 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViews";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+    
+    
+}
+
+
+<div class="p_doc_review" style="width:760px;margin-left:10px;">
+<div class="pagetTitle">
+    <h6>Doctor Rating Reviews</h6>
+</div>
+<div class="fleet">
+     <div class="d_myReviews">
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false)
+
+
+    <div class="accordion noaccordion doctorRatingViews">
+       
+        <div class="frameContainer">
+
+            <div class="myReviews">
+                <div>
+                    @*<div class="doctorName">
+                        <div class="left">
+                            <h1>Dr.&nbsp;@Html.DisplayFor(model => model.FIRSTNAME)
+                                @Html.DisplayFor(model => model.LASTNAME)</h1>
+                        </div>
+
+                    </div>*@
+                    <div class="reviewContentWrapper d_doctors_review_rating_display">
+                        @Html.Partial("~/Views/DoctorInformation/_DoctorsReviewRatingDisplay.cshtml")
+
+                     @foreach (var temp in Model.DoctorsInformationEditModels)
+        {
+                    
+            <div class="d_myReviews_reviewContent">
+
+            
+                    <div class="row">
+                        <div class="d_myReviews_userName">docare loyal patient </div>
+                    </div>
+                    <div class="row">
+                        <div class="stars">
+                            @for (var k = 0; k < temp.CLIENTRATING; k++)
+                            {
+                                <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                            }
+                            @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                            {
+                                <img class="Empty" src="~/Content/Images/Empty.png" />
+                            }
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="display-field">@Html.LabelFor(m => m.Comment, @temp.Comment) </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="display-field dates">
+                            @Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))
+                        </div>
+                    </div>
+                
+            </div>
+                   
+                  
+
+                  
+                   
+        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+</div>
+</div>
+    <div class="clear"></div>
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.c_pgTitleText').text('Doctors Reviews');
+        $('.c_pgTitleIcon').addClass('docInfoViews');
+        $('.leftContent').appendTo('.profileMyReviews');
+
+        $('.img_Show').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Show').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+      
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+        $('.img_ShowClinic').each(function () {
+
+            $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+    });
+
+</script>

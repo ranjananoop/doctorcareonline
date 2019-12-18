@@ -1,0 +1,31 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{Html.RenderPartial("_DoctorsReviewRatingDisplay");}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+         });
+    });
+</script>
+

@@ -1,0 +1,33 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Debug\DOCVIDEO.Utility.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Debug\DOCVIDEO.Utility.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb
+D:\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+D:\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+D:\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+D:\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.csprojResolveAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\bin\Debug\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Debug\DOCVIDEO.Utility.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Debug\GURUKUL.Utility.pdb

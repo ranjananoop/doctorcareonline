@@ -1,0 +1,181 @@
+﻿@model client.Web.Models.BookingAppointmentModel
+
+@{
+    ViewBag.Title = "CancelAppointment";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <div class="d_doctorAppointmentConfirmation">
+
+        <div class="reason">
+            <br />
+            <div >
+            <h6 style="color:#000;width:757px;margin-bottom:10px;">Appointment Confirmation / Cancellation</h6>
+                </div>
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" />
+            <div class="p_app_cancelCon">
+            <div class="row">
+                <br />
+                <div class="p_cancel_label">
+                    @Html.DisplayNameFor(model => model.REASONFORVISIT)
+                </div>
+                </div>
+            <div class="row">
+                <div>@Html.DisplayFor(model => model.REASONFORVISIT)</div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="p_cancel_label">
+                    Appoinment on 
+                    </div>
+                </div>
+            <div class="row">
+                        <div><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                       <div class="p_cancel_label">  Appoinment With </div>
+                        </div>
+            <div class="row">
+
+
+                       <div><strong> Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                            @Html.DisplayFor(model => model.LASTNAME).</strong> <br />
+                       <em> @Html.DisplayFor(model => model.Speciality)</em></div>
+
+                    </div>
+                </div>
+                    
+                    <div class="row c_buttonContainer" style="width:93%;margin-top: 20px;">
+                       <div class="right">                      
+                             
+                            <a  class="button cancel" href="/PatientProfile/Appointment" >Go Back</a>
+                            <input type="button" value="Cancel Appointment" class="button" id="btnSave"  />
+                        </div>                           
+                    </div>
+
+               
+                <div class="row">
+                    <div>
+                        <div class="display-field">
+                            @Html.HiddenFor(model => model.DOCTORID)
+                            @Html.HiddenFor(model => model.DOCTORSLOTID)
+                            @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+                            @Html.HiddenFor(model => model.APPOINTMENTID)
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+
+
+            </div>
+
+       
+}
+<script>
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    $(document).ready(function () {
+        $('.quicksearchAppointment').insertBefore('.availableDoctor');
+
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+        var frameHeight = $('.frameContent').height();
+        var formHeight = $('form').height();
+        $('.middleColumnContent').height(frameHeight - 400);
+
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+    $("#btnSave").click(function (e) {
+        var BookingAppointmentModel = new Object();
+        var datavalue = null;
+
+
+        BookingAppointmentModel.APPOINTMENTID = $("#APPOINTMENTID").val();
+
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/PatientProfile/CancelAppointment",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#MessageUpdateStatus").val(msg.msg);
+                    if ($("#MessageUpdateStatus").val().length > 0) {
+                        $("#MessageUpdateStatus").show();
+                    } else {
+                        $("#MessageUpdateStatus").hide();
+                    }
+                }
+
+            },
+            data: JSON.stringify(BookingAppointmentModel),
+        });
+
+
+    });
+
+
+</script>
+<style>
+    .reason {
+    font-size:14px;
+    }
+   .p_cancel_label {
+width: 110px;
+color: #0f82dc;
+float: left;
+margin-top: 3px;
+}
+   #MessageUpdateStatus {
+background-color: #fdfcdd !important;
+box-shadow: none !important;
+border: 0px !important;
+color: green !important;
+width: 89% !important;
+font-weight: bold;
+margin: 0px 0px 10px 10px !important;
+
+}
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+

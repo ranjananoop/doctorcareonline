@@ -1,0 +1,235 @@
+﻿@model client.Web.Models.HealthHistoryModel
+@using (Html.BeginForm())
+{
+  
+
+
+        
+    <div class="editor-label">
+        @Html.LabelFor(model => model.REPORTNAME)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.REPORTNAME, new { @Value = "", maxlength = "32" })
+        @Html.ValidationMessageFor(model => model.REPORTNAME)
+    </div>
+    <div class="display-label">
+        @Html.LabelFor(model => model.NOTES)
+    </div>
+    <div class="row">
+        <div class="display-field">
+            @Html.TextAreaFor(model => model.NOTES, new { @cols = 20, @rows = 5, maxlength = "700" })
+        </div>
+    </div>
+    <div class="uploadWrapper">
+        <div class="editor-label">
+            <div class="left">@Html.LabelFor(model => model.REPORTPATH)</div>
+            <div class="uploadClass">
+                <input id="Upload" name="Upload" type="file" />
+            </div>
+        </div>
+    </div>
+    <div class="row c_buttonContainer" style="margin-top:-10px !important">
+
+        <div class="right">
+            <input type="button" value="Save" class="button" id="btnuploadreport" />
+        </div>
+
+    </div>
+    <div id="grid5"></div>
+    <div class="row c_buttonContainer">
+
+        <div class="right">
+            <input type="button" value="Delete" id="btndel3" class="button cancel" />
+        </div>
+
+    </div>
+      
+   
+}
+<script>
+
+    $("#Upload").kendoUpload({
+        async: {
+            saveUrl: "/HealthHistory/Save",
+            removeUrl: "/HealthHistory/Remove",
+            autoUpload: true,
+
+
+        },
+        multiple: false,
+        success: onSuccess
+    });
+
+    function onSuccess(e) {
+
+
+    }
+
+</script>
+<script>
+
+    $("#NOTES").val("");
+    var PatientRepoDeleteIDs = [];
+    $(document).ready(function () {
+
+
+        $('.advanceQuickSearch').insertBefore('.availableDoctor');
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 5,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetUploadReport",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetUploadReportID",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var patientReport = new Object();
+
+                    if (type == "update") {
+                        patientReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "PATIENTREPORTID",
+                        fields: {
+                            PATIENTREPORTID: { editable: false, nullable: true },
+                            REPORTNAME: { type: "string" },
+                        }
+                    }
+                },
+        });
+
+        $("#grid5").kendoGrid({
+            dataSource: dataSource1,
+            transport: { read: "/HealthHistory/GetUploadReport" },
+
+            groupable: false,
+            autoBind: true,
+            editable: "inline",
+            sortable: true,
+            pageable: true,
+            columns: [{
+                title: "Select",
+                template: "<input type='checkbox' class='target' value='#= PATIENTREPORTID #'/>",
+                width: 100,
+            },
+             {
+                 field: "REPORTNAME",
+                 title: "Report Name",
+                 width: 220,
+             }
+           ,
+
+
+            {
+                command: ["edit"],
+                title: "Edit",
+                width: 90,
+            },
+
+            {
+                title: "View",
+                width: 90, template: "<a  title=${ PATIENTREPORTID } onclick=setStatus(${ PATIENTREPORTID },1) class='linkClass'  >View</a>"
+            }
+             ,
+
+            {
+                template: "<a href='#= REPORTPATH#' target=_blank class='linkDownload'></a>",
+                title: "Download",
+                width: 90,
+            }
+
+            ],
+
+        });
+
+
+        $('.target').live('change', function () {
+
+
+            if ($(this).is(':checked')) {
+
+                var PatientRepoDeleteID = $(this).val();
+                PatientRepoDeleteIDs.push(PatientRepoDeleteID);
+
+            } else {
+                var PatientRepoDeleteID = $(this).val();
+                PatientRepoDeleteIDs.pop(PatientRepoDeleteID);
+            }
+        });
+        $("#btnuploadreport").click(function () {
+            var healthHistroymodel = new Object();
+            healthHistroymodel.REPORTNAME = $("#REPORTNAME").val();
+            healthHistroymodel.NOTES = $("#NOTES").val();
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/_uploadreport",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg)
+                        $("#MessageUpdateStatus").show();
+                    var url = '@Url.Action("upload", "HealthHistory")';
+                    window.location.href = url;
+
+                },
+                data: JSON.stringify(healthHistroymodel),
+            });
+
+
+        });
+        $("#btndel3").click(function (e) {
+            var model = new Object();
+            model.PatientRepoDeleteIDs = PatientRepoDeleteIDs;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/HealthHistory/DeleteRepoMessage",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").show();
+                        var url = '@Url.Action("upload", "HealthHistory")';
+                        window.location.href = url;
+                        return true;
+
+
+
+                    }
+
+                },
+                data: JSON.stringify(model)
+            });
+            location.reload();
+        });
+
+
+
+    });
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

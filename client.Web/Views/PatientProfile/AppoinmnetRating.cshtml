@@ -1,0 +1,301 @@
+﻿@model DOCVIDEO.Domain.APPOINTMENTRATING
+
+@{
+    ViewBag.Title = "AppoinmnetRating";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+
+<div class="pagetTitle">
+    <h3>Appoinmnet Rating</h3>
+</div>
+<div class="padding">
+    <div id="divAppointment" style="display: none;">
+                        <p style="margin-top:100px;"></p>
+                    </div>
+            <div id="fade" class="black_overlay">
+            </div>
+      <div class="row">
+        <div class="editor-label">
+        <h3> Dr. @Html.DisplayFor(model => model.FIRSTNAME)&nbsp; @Html.DisplayFor(model => model.LASTNAME)</h3>
+        </div>
+          </div>
+    <div class="row">
+         <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENTRATING):
+        </div>
+         
+        <div style="margin:2px 0px 0px 12px;">
+            <img id="Rating1" class="Empty" src="~/Content/Images/Empty.png" onclick="return Decide(1)" />
+            <img id="Rating2" class="Empty" src="~/Content/Images/Empty.png" onclick="return Decide(2)" />
+            <img id="Rating3" class="Empty" src="~/Content/Images/Empty.png" onclick="return Decide(3)" />
+            <img id="Rating4" class="Empty" src="~/Content/Images/Empty.png" onclick="return Decide(4)" />
+            <img id="Rating5" class="Empty" src="~/Content/Images/Empty.png" onclick="return Decide(5)" />
+        </div>
+        </div>
+    <div class="row">
+        <div class="editor-label">
+           Write a Review on Dr. @Html.DisplayFor(model => model.FIRSTNAME)&nbsp; @Html.DisplayFor(model => model.LASTNAME):
+        </div>
+        </div>
+        <div class="editor-field">
+           @Html.TextAreaFor(model => model.COMMENT, new { @Value = "" ,  @cols = 93, @rows = 7,maxlength = 1000 })
+            @Html.ValidationMessageFor(model => model.COMMENT)
+        </div>
+        
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.APPOINTMENTID)          
+        </div>
+          <input type="text" name="Create" id="HiddenRatingValue" style="display:none;" />
+
+      <div class="row c_buttonContainer" style="width:93%;margin-top: 20px;">
+                       <div class="right">                      
+                             
+                            <a  class="button cancel" href="/PatientProfile/Appointment" >Go Back</a>
+                             <input type="button" value="Create" id="btnRating"  class="button"/>
+                        </div>                           
+                    </div>
+        
+    
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    var temp = "";
+    $(document).ready(function () {
+
+        $('.quicksearchAppointmentRating').insertBefore('.availableDoctor');
+
+        var AppointmentRating = new Object();
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+        $("#Rating1").mouseover(function () {
+            $(this).attr("src", "/Content/Images/Filled.png");
+            $("#Rating2").attr("src", "/Content/Images/Empty.png");
+        });
+
+        $("#Rating1").mouseout(function () {
+            $(this).attr("src", "/Content/Images/Empty.png");
+
+        });
+
+        $("#Rating2").mouseover(function () {
+            $(this).attr("title", "Fair");
+            $("#Rating1").attr("src", "/Content/Images/Filled.png");
+            $("#Rating3").attr("src", "/Content/Images/Empty.png");
+            $(this).attr("src", "/Content/Images/Filled.png");
+        });
+
+        $("#Rating2").mouseout(function () {
+            $(this).attr("title", "");
+        });
+        $("#Rating3").mouseover(function () {
+            $(this).attr("title", "Good");
+            $("#Rating1").attr("src", "/Content/Images/Filled.png");
+            $("#Rating2").attr("src", "/Content/Images/Filled.png");
+            $(this).attr("src", "/Content/Images/Filled.png");
+            $("#Rating4").attr("src", "/Content/Images/Empty.png");
+        });
+
+        $("#Rating3").mouseout(function () {
+            $(this).attr("title", "");
+        });
+        $("#Rating4").mouseover(function () {
+            $(this).attr("title", "Great");
+            $("#Rating1").attr("src", "/Content/Images/Filled.png");
+            $("#Rating2").attr("src", "/Content/Images/Filled.png");
+            $("#Rating3").attr("src", "/Content/Images/Filled.png");
+            $(this).attr("src", "/Content/Images/Filled.png");
+            $("#Rating5").attr("src", "/Content/Images/Empty.png");
+        });
+
+        $("#Rating4").mouseout(function () {
+            $(this).attr("title", "");
+
+        });
+        $("#Rating5").mouseover(function () {
+            $(this).attr("title", "Excellent");
+            $("#Rating1").attr("src", "/Content/Images/Filled.png");
+            $("#Rating2").attr("src", "/Content/Images/Filled.png");
+            $("#Rating3").attr("src", "/Content/Images/Filled.png");
+            $("#Rating4").attr("src", "/Content/Images/Filled.png");
+            $(this).attr("src", "/Content/Images/Filled.png");
+        });
+
+        $("#Rating5").mouseout(function () {
+            $(this).attr("title", "");
+        });
+
+        $("#btnRating").click(function (e) {
+            AppointmentRating.APPOINTMENTID = $("#APPOINTMENTID").val();
+            AppointmentRating.DOCTORONTIME = "yes";
+            AppointmentRating.COMMENT = $("#COMMENT").val();
+            AppointmentRating.CLIENTRATING = $("#HiddenRatingValue").val();
+            if ($("#HiddenRatingValue").val() < 1)
+            {
+                $("#divAppointment > p").html('Please select stars for rating');
+                $("#divAppointment").dialog({
+                    autoOpen: false,
+                    height: 175,
+                    width: 175,
+                    modal: false,
+                    open: function () {
+                        $('.black_overlay').show();
+                        $('.divAppointment').show();
+                    },
+
+                    close: function () {
+                        //$('#divDelete').html('');
+
+                        $('.black_overlay').hide();
+                        $('#light').hide();                       
+                }
+                 });
+                $("#divAppointment").dialog('open');
+                e.stopPropagation();
+                return;
+            }
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/PatientProfile/AppintmentRating",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#divAppointment > p").html(msg.msg);
+
+                        $("#divAppointment").dialog({
+                            autoOpen: false,
+                            height: 175,
+                            width: 175,
+                            modal: false,
+                            open: function () {
+                                $('.black_overlay').show();
+                                $('.divAppointment').show();
+                            },
+
+                            close: function () {
+                                //$('#divDelete').html('');
+
+                                $('.black_overlay').hide();
+                                $('#light').hide();
+                                var url = '@Url.Action("Appointment", "PatientProfile")';
+                                 window.location.href = url;
+                             }
+                         });
+                         $("#divAppointment").dialog('open');
+                     }
+                 },
+                 data: JSON.stringify(AppointmentRating),
+             });
+
+
+         });
+
+    });
+     function Decide(option) {
+
+         var elem = document.getElementById("HiddenRatingValue");
+         if (option == 1) {
+             document.getElementById('Rating1').className = "Filled";
+             document.getElementById('Rating2').className = "Empty";
+             document.getElementById('Rating3').className = "Empty";
+             document.getElementById('Rating4').className = "Empty";
+             document.getElementById('Rating5').className = "Empty";
+             document.getElementById("Rating" + option).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 2).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 3).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 4).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 5).src = "/Content/Images/Empty.png";
+             elem.value = "1";
+         }
+         if (option == 2) {
+             document.getElementById('Rating1').className = "Filled";
+             document.getElementById('Rating2').className = "Filled";
+             document.getElementById('Rating3').className = "Empty";
+             document.getElementById('Rating4').className = "Empty";
+             document.getElementById('Rating5').className = "Empty";
+
+             document.getElementById("Rating" + option).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 1).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 3).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 4).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 5).src = "/Content/Images/Empty.png";
+
+             elem.value = "2";
+         }
+         if (option == 3) {
+             document.getElementById('Rating1').className = "Filled";
+             document.getElementById('Rating2').className = "Filled";
+             document.getElementById('Rating3').className = "Filled";
+             document.getElementById('Rating4').className = "Empty";
+             document.getElementById('Rating5').className = "Empty";
+             document.getElementById("Rating" + option).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 1).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 2).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 4).src = "/Content/Images/Empty.png";
+             document.getElementById("Rating" + 5).src = "/Content/Images/Empty.png";
+             elem.value = "3";
+
+         }
+         if (option == 4) {
+             document.getElementById('Rating1').className = "Filled";
+             document.getElementById('Rating2').className = "Filled";
+             document.getElementById('Rating3').className = "Filled";
+             document.getElementById('Rating4').className = "Filled";
+             document.getElementById('Rating5').className = "Empty";
+             document.getElementById("Rating" + option).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 1).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 2).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 3).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 5).src = "/Content/Images/Empty.png";
+             elem.value = "4";
+
+         }
+         if (option == 5) {
+             document.getElementById('Rating1').className = "Filled";
+             document.getElementById('Rating2').className = "Filled";
+             document.getElementById('Rating3').className = "Filled";
+             document.getElementById('Rating4').className = "Filled";
+             document.getElementById('Rating5').className = "Filled";
+             document.getElementById("Rating" + option).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 1).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 2).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 3).src = "/Content/Images/Filled.png";
+             document.getElementById("Rating" + 4).src = "/Content/Images/Filled.png";
+             elem.value = "5";
+
+         }
+
+         return false;
+     }
+    </script>
+
+<style scoped="scoped">
+        .ui-dialog {
+width: 514px !important;
+}
+    #COMMENT {
+        width: 481px;
+    }
+</style>

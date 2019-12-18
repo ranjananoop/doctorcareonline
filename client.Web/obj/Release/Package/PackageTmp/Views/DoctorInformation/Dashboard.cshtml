@@ -1,0 +1,286 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+<style type="text/css">
+    .d_myReviews .d_doctors_review_rating_display {
+        border-bottom: 0px solid white !important; 
+        width: 940px;
+        padding-bottom: 8px;
+    }
+</style>
+<div class="c_pgTitle">
+    <div class="c_pgTitle_Fleet">
+        <h1>Dashboard</h1>
+    </div>
+
+</div>
+@*doctorsdashboard *@
+
+<div class="frameContainer displayOn">
+    <div class="d_dashboard">
+        <div class="d_dashboardHeader">
+            <div class="fleet">
+                <div class="left">
+                    <div class="d_doctorPic">
+                        <div class="boxSep">
+                            <div class="imgLiquidFill imgLiquid " style="width: 130px; height: 160px;">
+                                <img  id="viewimg" src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephoto();' />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="d_welcomeDoctorDesc">
+                        <h1>Welcome<br />
+                            <strong>@Html.DisplayFor(model => model.Salutation) @Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME),@Html.DisplayFor(model => model.SUFFIX)</strong></h1>
+                      
+                            <div id="doctor_desc_dash">@Html.DisplayFor(model => model.ABOUTME)</div><br /><br />
+                           @*<div id="doctor_desc_dash">you want the text use this
+Welcome to Innovative Healthcare Physicians, Founded By board-certified Ob/Gyn John C. Wirth III, MD. He has years of experience, advanced training and credentials you can feel good about, including a faculty appointment at New York University, where he teaches in the residency program.<br /></div>*@
+                            <p class="cancelledAppointment">@Html.LabelFor(m => m.rejectCount) &nbsp;<a href="/DoctorInformation/Appointment"><span style="color:white"> @Html.DisplayFor(m => m.rejectCount)</span></a></p>
+                        
+                    </div>
+
+
+                </div>
+                <div class="right">
+                    <div class="d_profileCompleteMsg">
+                        <a href="/DoctorInformation/DoctorsInformatonEdit">View profile</a>
+                        <h2>@Html.DisplayNameFor(model => model.profilecompleted)@Html.HiddenFor(model => model.profilecompleted)</h2>
+                    </div>
+                    <div class="d_profileCompleteBox">
+                        <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c_column_three">
+            <div class="c_column_two left">
+                <div class="fleet">
+                    <div>
+                        @{Html.RenderPartial("_doctorreview");}
+                    </div>
+                    <ul class="d_dashboard_chart">
+            <li class="paymentReceived">
+                <div class="fleet">
+                    <b>Payment Received</b>
+                    <h2>$@Html.DisplayFor(model => model.paymentrecieved)</h2>
+                </div>
+            </li>
+            <li class="appointments">
+                <div class="fleet">
+                    <b> Appointments </b>
+                    <h2>@Html.DisplayFor(model => model.appintmentdone)</h2>
+                </div>
+            </li>
+            <li class="profileViewed">
+                <div class="fleet">
+                   <b> Profile Viewed </b>
+                    <h2>@Html.DisplayFor(model => model.HITCOUNT)</h2>
+                </div>
+            </li>
+            <li class="patients">
+                <div class="fleet">
+                    <b>@Html.DisplayNameFor(model => model.patientdone)</b>
+                    <h2>@Html.DisplayFor(model => model.patientdone)</h2>
+                </div>
+            </li>
+        </ul>
+                </div>
+            </div>
+            <div class="c_column_one right">
+                <div class="fleet">
+                    @if (Model.validlicence)
+                    {
+                        <div class="d_dashboard_panel" style="height:77px;">
+                            <div class="d_dashboard_message">
+                                <div class="left" style="height:77px;">
+                                    <div class="dashboard_npiIcon"></div>
+                                </div>
+                                <div class="right">
+                                    <h1>Your NPI is Expired </h1>
+                                    <a href="/DoctorInformation/DoctorsInformatonEdit">Change</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="d_dashboard_panel" style="height:77px;">
+                        <div class="d_dashboard_message">
+                            <div class="left" style="height:77px;">
+                                <div class="dashboard_messageIcon"></div>
+                            </div>
+                            <div class="right">
+                                <h1>You have <strong><b>@Html.DisplayFor(model => model.inboxUreadMessageCount)</b></strong> new messages</h1>
+                                <a href="/DoctorInformation/Inbox">View all messages</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_message">
+                            <div class="left">
+                                <div class="dashboard_requestIcon"></div>
+                            </div>
+                            <div class="right">
+                                <h1>You have <strong><b>@Html.DisplayFor(model => model.appintmentpending)</b></strong> request pending</h1>
+                                <a href="/DoctorInformation/Appointment">View pending appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                    @if (Model.appintmentcurrent)
+                    {
+                        <div class="d_dashboard_panel">
+                            <div class="d_dashboard_message">
+                                <div class="left">
+                                    <div class="dashboard_videoIcon"></div>
+                                </div>
+                                <div class="right">
+                                    <div>
+                                        <div class="display-label">
+                                            You have a Upcoming Video Conference 
+                                        </div>
+                                        <a href="/DoctorInformation/ReleaseStatement">Start Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_panelHeader">
+                            <b>Upcoming Appointments</b>
+                        </div>
+                        <div class="d_dashboard_panelContent">
+                            <div id="grid"></div>
+                        </div>
+                        <div class="d_dashboard_panelgridBottom">
+                            <a href="/DoctorInformation/Appointment">View more</a>
+                        </div>
+                    </div>
+
+
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_panelHeader">
+                            <b>Review Comments</b>
+                        </div>
+
+                        <div class="d_dashboard_panelContent">
+                            @foreach (var temp in Model.DoctorsInformationEditModels)
+                            {
+                    
+                                <div class="row">
+
+                                    <div class="display-field stars">
+                                        @for (var k = 0; k < temp.CLIENTRATING; k++)
+                                        {
+                                            <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                                        }
+                                        @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                                        {
+                                            <img class="Empty" src="~/Content/Images/Empty.png" />
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="display-field">@Html.LabelFor(m => m.Comment, @temp.Comment) </div>
+                                </div>
+                                <div class="row">
+                                    <div class="display-field reviewCommentsDate">
+                                        @Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="d_dashboard_panelgridBottom">
+                            <a href="/DoctorInformation/DoctorsInformatonReviews">Read Reviews</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>
+    var statusSelected = 0;
+    var poData = [];
+    $(document).ready(function () {
+
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        //$(".d_profileCompleteBox").attr('style','border-left-width:'+$("#profilecompleted").val() +'px !important');
+        calculate_time_zone();
+        var doctorSlot = {
+            TimeZoneOffset: document.getElementById('timezoneOffset').value,
+            DSTObserved: document.getElementById('dstObserved').value
+        };
+        $("#grid").kendoGrid({
+
+            dataSource: {
+                type: "Json",
+                serverFiltering: false,
+                transport: {
+                    read: {
+                        url: "/PatientProfile/GetUpcomingAppintmentDocFilter",
+                        dataType: "json",
+                        type: "post",
+                        //contentType: "application/json; charset=utf-8",
+                        data: doctorSlot,
+                    },
+                },
+                schema: {
+                    id: "APPOINTMENTID",
+                    model: {
+                        fields: {
+                            FIRSTNAME: { type: "string" },
+                            APPOINTMENTSTARTTIME: { type: "Date" },
+                            APPOINTMENTSTARTTIME: { type: "Date" },
+                            CurrenttimeZone: { type: "string" },
+                            REASONFORVISIT: { type: "string" },
+                            STATUS: { type: "string" },
+                            APPOINTMENTID: { type: "integer" }
+                        }
+                    }
+                },
+            },
+            groupable: false,
+            columns: [
+
+
+                {
+                    field: "APPOINTMENTSTARTTIME",
+                    title: "Date",
+                    template: '#= kendo.toString(APPOINTMENTSTARTTIME, "MM/dd/yyyy") #',
+                    width: 90
+
+                },
+                 {
+                     field: "FIRSTNAME",
+                     title: "Patient Name",
+
+                     width: 90
+
+                 },
+                {
+                    field: "APPOINTMENTSTARTTIME",
+                    title: " Time",
+                    template: '#= kendo.toString(APPOINTMENTSTARTTIME, "hh:mm tt") #' + " " + '#=CurrenttimeZone#',
+                    width: 90
+                },
+
+            ]
+        });
+
+
+
+    });
+    $('.c_site_search').hide();
+</script>

@@ -1,0 +1,163 @@
+﻿@model DOCVIDEO.Domain.MESSAGE
+
+@{
+    ViewBag.Title = "QuickSearch";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+<div class="pagetTitle">
+    <h3>Advanced Quick Search</h3>
+</div>
+            
+<div class="accordion noaccordion">    
+            </div>
+
+             <div id="patientSearch" >     
+         
+  
+          
+            <script>
+
+                function returnImage(rating) {
+                    var path;
+                    switch (rating) {
+                        case 0:
+                            path = '/Images/none.png';
+                            break;
+                        case 1:
+                            path = '/Images/one.png';
+                            break;
+                        case 2:
+                            path = '/Images/two.png';
+                            break;
+                        case 3:
+                            path = '/Images/three.png';
+                            break;
+                        case 4:
+                            path = '/Images/four.png';
+                            break;
+                        case 5:
+                            path = '/Images/five.png';
+                            break;
+                        default:
+                            path = '/Images/none.png';
+                    }
+                    return path;
+                }
+                var PreferedDoctors = @Html.Raw(Json.Encode(ViewBag.PreferedDoctors))
+                   function getPeffered(UserName) {
+                       if (PreferedDoctors == null) {
+                           return false;
+                       } else {
+                           for (var idx = 0, length = PreferedDoctors.length; idx < length; idx++) {
+                               if (PreferedDoctors[idx] === UserName) {
+                                   return true;
+                               }
+                           }
+                       }
+                   }
+                $('.img_Showed').each(function () {
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/PatientProfile/ImagePath",
+                        data: "{}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (msg) {
+                            $('.img_Showed').attr('src', msg.msg);
+
+                        }
+                    });
+
+                });
+                $(document).ready(function () {
+
+            $('.inboxAdvanceSearch').insertBefore('.availableDoctor');
+
+            $("#patientSearch").kendoGrid({
+                        dataSource: {
+                            type: "Json",
+                            serverFiltering: true,
+
+                            transport: {
+                                read: "/Message/GetQuickProviders"
+                            },
+                            pageSize: 5,
+                        },
+                        sortable: true,
+                        pageable: true,
+                        columns: [
+                     { field: "", width: 100, template: "<img src=${ USERPHOTOFILEPATH } class='docImage' style='width:80px;height:80px;' alt=${ UserName } />" },
+                     { field: "", width: 100, template: "<div style='float:left;margin:0px;padding:0px;'><b>Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }</b><br/><img src='/Images/none.png' onload='this.onload=null; this.src=returnImage(${ AverageRating });'  style='width:100px;height:20px'/><br/>  ${ USERSTATE }<br/> <input type='checkbox' class='target' value=${ UserName } # if(getPeffered(UserName)){ # checked #} #> Add to preferred</input></div>", title: "Doctors Details" },
+                     { field: "", width: 100, template: "  <a href='DoctorsRatingsViews?id=${ UserName }' class='linkClass'>Read my reviews</a><br/><a href='DoctorsInformatonViews?id=#=UserName#' class='linkClass' >View Profile</a> <br/> <a href='Index?id=#=UserName#' class='linkClass'>Send Secure Message</a>", title: "Available Details" }
+                        ]
+                       
+                    });
+
+                    $('.img_Showed').each(function () {
+
+                        $.ajax({
+                            type: "GET",
+                            url: "/PatientProfile/ImagePath",
+                            data: "{}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (msg) {
+                                $('.img_Showed').attr('src', msg.msg);
+
+                            }
+                        });
+
+                    });
+                    $('.target').live('change', function () {
+
+
+
+                        if ($(this).is(':checked')) {
+                            var preferedData = new Object();
+                            preferedData.ProviderId = $(this).val();
+                            $.ajax({
+                                async: false,
+                                type: "POST",
+                                cache: false,
+                                dataType: 'json',
+                                url: "/PatientProfile/PreferedDoctorUpdate",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (msg) {
+                                    if (msg) {
+                                        alert(msg.msg);
+                                    }
+                                },
+                                data: JSON.stringify(preferedData),
+                            });
+                        }
+                        else {
+                            var preferedData = new Object();
+                            preferedData.RemoveProviderId = $(this).val();
+                            $.ajax({
+                                async: false,
+                                type: "POST",
+                                cache: false,
+                                dataType: 'json',
+                                url: "/PatientProfile/PreferedDoctorUpdate",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (msg) {
+                                    if (msg) {
+                                        alert(msg.msg);
+                                    }
+                                },
+                                data: JSON.stringify(preferedData),
+                            });
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+
+
+
+ <div>
+     @{Html.RenderPartial("inboxAdvancesearch");}         
+</div>

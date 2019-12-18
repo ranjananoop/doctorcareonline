@@ -1,0 +1,26 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+@{
+    ViewBag.Title = "Appointment Failure";
+    
+}
+
+<div class="appoinment_res">
+    <div class="sorry_left">
+        <h1 class="hidemsg">Sorry,</h1>
+        <h3>@Html.DisplayFor(model => model.MessageUpdateStatus)
+            @Html.HiddenFor(model => model.MessageUpdateStatus)
+        </h3>
+        <a href="#" class="button">Back</a>
+    </div>
+    <div class="sorry_right">
+        <img src="~/Content/Images/amy_inner.png" />
+    </div>
+</div>
+<script>
+
+    if ($('#MessageUpdateStatus').val().indexOf('Successfully') > -1) {
+        $('.hidemsg').hide();
+    }
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+</script>

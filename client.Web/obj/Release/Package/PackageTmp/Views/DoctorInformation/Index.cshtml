@@ -1,0 +1,112 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+   
+    <div class="d_compose">
+        <div class="fleet">
+            @Html.HiddenFor(model => model.UserName)
+            @Html.HiddenFor(model => model.FIRSTNAME)
+            @Html.HiddenFor(model => model.INSTITUTIONNAME)
+            @Html.HiddenFor(model => model.LASTNAME)
+            @Html.HiddenFor(model => model.GENDER)
+            @Html.HiddenFor(model => model.CITY)
+            @Html.HiddenFor(model => model.ZIPCODE)
+            @Html.HiddenFor(model => model.USERSTATE)
+            @Html.HiddenFor(model => model.USERSTREETADDRESS1)
+            @Html.HiddenFor(model => model.LICENSEIN)
+            @Html.HiddenFor(model => model.LICENSE)
+            @Html.HiddenFor(model => model.DOBDAY)
+            @Html.HiddenFor(model => model.DOBYEAR)
+            @Html.HiddenFor(model => model.DOBMonth)
+            @Html.HiddenFor(model => model.CurrenttimeZone)
+
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" value="@Model.MessageUpdateStatus"  />
+
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SENDMESSAGETO):
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.SENDMESSAGETO)
+                    @Html.ValidationMessageFor(model => model.SENDMESSAGETO)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MESSAGESUBJECT):
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.MESSAGESUBJECT, new { @Value = "", maxlength = 32 })
+                    @Html.ValidationMessageFor(model => model.MESSAGESUBJECT)
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MESSAGEBODY):
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(model => model.MESSAGEBODY, new { @cols = 20, @rows = 5, maxlength = 1000 })
+                    @Html.HiddenFor(model => model.UserName)
+                </div>
+            </div>
+            <div class="row c_buttonContainer">
+                <div class="right">
+                     <a  class="button cancel" href="/DoctorInformation/Inbox" >Go Back</a>
+                    <input type="submit" value="Send" class="button" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+
+    $(document).ready(function () {
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+        }
+
+        $('.c_pgTitleText').text('Compose');
+        $('.c_pgTitleIcon').addClass('compose');
+
+
+
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+
+        $("textarea").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+    });
+
+</script>

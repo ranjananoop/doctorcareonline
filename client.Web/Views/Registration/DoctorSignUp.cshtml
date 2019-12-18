@@ -1,0 +1,512 @@
+﻿@*@using Recaptcha.Web.Mvc;*@
+@model client.Web.Models.DoctorsRegistrationModel
+@{
+    ViewBag.Title = "DoctorSignUp";
+   
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.frameContainer').hide();
+        $('.framecontentTitle:first').addClass('active').next().show();
+        $('.framecontentTitle').click(function () {
+            if ($(this).next().is(':hidden')) { //If immediate next container is closed...
+                $('.framecontentTitle').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+                $(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+            }
+            return false; //Prevent the browser jump to the link anchor
+        });
+        $('.highlights').height(($('.c_column_two').height()) + 20);
+     
+    });
+</script>
+
+<div class="c_pgTitle">
+    <div class="c_pgTitle_Fleet">
+        <h1>Sign Up as Doctor</h1>
+</div>
+</div>
+<div class="c_column_three">
+    <div class="c_column_two">
+        <div class="signupForm">
+
+
+            @using (Html.BeginForm("DoctorSignUp", "Registration"))
+            {
+                @Html.ValidationSummary(true) 
+               
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.FIRSTNAME)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.FIRSTNAME, new { maxlength = "32", title = "Please enter first name", @class = "textbox" })
+                            @Html.ValidationMessageFor(model => model.FIRSTNAME)
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LASTNAME)
+                        </div>
+                        <div class="editor-field  ">
+                            @Html.TextBoxFor(model => model.LASTNAME, new { maxlength = "32", title = "Please enter last name" })
+                            @Html.ValidationMessageFor(model => model.LASTNAME)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.GENDER)
+                        </div>
+                        <div class="editor-field g_selelct">
+                            @Html.DropDownListFor(model => model.GENDER, new[] {
+                                new SelectListItem(){Text = "Male" ,Value="Male" },
+                                new SelectListItem(){Text ="Female", Value ="Female" }
+                            }, "Select Your Gender", new { title = "Please select gender" })
+                            @Html.ValidationMessageFor(model => model.GENDER)
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LICENSE)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.LICENSE, new { maxlength = "10", title = "Please select NPI" })
+                            @Html.ValidationMessageFor(model => model.LICENSE)
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LICENSEEXPIRESON)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.LICENSEEXPIRESON, new { id = "licenceExpdate", title = "Please select NPI expiration date" })
+                            @Html.ValidationMessageFor(model => model.LICENSEEXPIRESON)
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.STATELICENSE)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.STATELICENSE, new[] { 
+                        new SelectListItem(){Text = "Alabama" ,Value="Alabama" },
+                        new SelectListItem(){Text = "Alaska" ,Value="Alaska" },
+	                    new SelectListItem(){Text = "Arizona" ,Value="Arizona" },
+	                    new SelectListItem(){Text = "Arkansas" ,Value="Arkansas" },
+	                    new SelectListItem(){Text = "California" ,Value="California" },
+	                    new SelectListItem(){Text = "Colorado" ,Value="Colorado" },
+	                    new SelectListItem(){Text = "Connecticut" ,Value="Connecticut" },
+	                    new SelectListItem(){Text = "Delaware" ,Value="Delaware" },
+	                    new SelectListItem(){Text = "Florida" ,Value="Florida" },
+	                    new SelectListItem(){Text = "Georgia" ,Value="Georgia" },
+	                    new SelectListItem(){Text = "Hawaii" ,Value="Hawaii" },
+	                    new SelectListItem(){Text = "Idaho" ,Value="Idaho" },
+	                    new SelectListItem(){Text = "illinois" ,Value="illinois" },
+	                    new SelectListItem(){Text = "Indiana" ,Value="Indiana" },
+	                    new SelectListItem(){Text = "Iowa" ,Value="Iowa" },
+	                    new SelectListItem(){Text = "Kansas" ,Value="Kansas" },
+	                    new SelectListItem(){Text = "Kentucky" ,Value="Kentucky" },
+	                    new SelectListItem(){Text = "Louisiana" ,Value="Louisiana" },
+	                    new SelectListItem(){Text = "Maine",Value="Maine" },
+	                    new SelectListItem(){Text = "Maryland",Value="Maryland" },
+	                    new SelectListItem(){Text = "Massachusetts",Value="Massachusetts" },
+	                    new SelectListItem(){Text = "Michigan",Value="Michigan" },
+	                    new SelectListItem(){Text = "Minnesota",Value="Minnesota" },
+	                    new SelectListItem(){Text = "Mississippi",Value="Mississippi" },
+	                    new SelectListItem(){Text = "Missouri",Value="Missouri" },
+	                    new SelectListItem(){Text = "Montana",Value="Montana" },
+	                    new SelectListItem(){Text = "Nebraska",Value="Nebraska" },
+	                    new SelectListItem(){Text = "Nevada",Value="Nevada" },
+	                    new SelectListItem(){Text = "New Hampshire",Value="New Hampshire" },
+	                    new SelectListItem(){Text = "New Jersey",Value="New Jersey" },
+	                    new SelectListItem(){Text = "New Mexico",Value="New Mexico" },
+	                    new SelectListItem(){Text = "New York",Value="New York" },
+	                    new SelectListItem(){Text = "North Carolina",Value="North Carolina" },
+	                    new SelectListItem(){Text = "North Dakota",Value="North Dakota" },
+	                    new SelectListItem(){Text = "Ohio",Value="Ohio" },
+	                    new SelectListItem(){Text = "Oklahoma",Value="Oklahoma" },
+	                    new SelectListItem(){Text = "Oregon",Value="Oregon" },
+	                    new SelectListItem(){Text = "Pennsylvania",Value="Pennsylvania" },
+	                    new SelectListItem(){Text = "Rhode Island",Value="Rhode Island" },
+	                    new SelectListItem(){Text = "South Carolina",Value="South Carolina" },
+	                    new SelectListItem(){Text = "South Dakota",Value="South Dakota" },
+	                    new SelectListItem(){Text = "Tennessee",Value="Tennessee" },
+	                    new SelectListItem(){Text = "Texas",Value="Texas" },
+	                    new SelectListItem(){Text = "Utah",Value="Utah" },
+	                    new SelectListItem(){Text = "Vermont",Value="Vermont" },
+	                    new SelectListItem(){Text = "Virginia",Value="Virginia" },
+	                    new SelectListItem(){Text = "Washington",Value="Washington" },
+	                    new SelectListItem(){Text = "West Virginia",Value="West Virginia" },
+	                    new SelectListItem(){Text = "Wisconsin",Value="Wisconsin" },
+	                    new SelectListItem(){Text = "Wyoming",Value="Wyoming" }, 
+                }, "Select", new { title = "Please select State licence" })
+
+                            @Html.ValidationMessageFor(model => model.STATELICENSE)
+                        </div>
+                    </div>
+
+
+                </div>*@
+
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Specialities)
+                            <a href="#" class="tooltip">
+                                <div class="help"></div>
+                                <span>
+                                    <img class="callout" src="~/Content/Images/callout.gif" />
+                                    <strong>Press control to select multiple Specialities
+                                    </strong>
+                                </span>
+                            </a>
+                        </div>
+
+                        @{
+                var itemspecialities = new List<SelectListItem>{
+                            new SelectListItem { Value ="Acupuncturists",Text="Acupuncturists"},
+                            new SelectListItem { Value ="Adult Nurse Practitioners",Text="Adult Nurse Practitioners"},
+                            new SelectListItem { Value ="Adult Psychiatric & Mental Health Nurse Practitioners",Text="Adult Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Allergists",Text="Allergists"},
+                            new SelectListItem { Value ="Anesthesiologists",Text="Anesthesiologists"},
+                            new SelectListItem { Value ="Audiologists",Text="Audiologists"},
+                            new SelectListItem { Value ="Cardiac Electro Physiologists",Text="Cardiac Electro Physiologists"},
+                            new SelectListItem { Value ="Cardiologists",Text="Cardiologists"},
+                            new SelectListItem { Value ="Chiropractors",Text="Chiropractors"},
+                            new SelectListItem { Value ="Colorectal Surgeons",Text="Colorectal Surgeons"},
+                            new SelectListItem { Value ="Dentists",Text="Dentists"},
+                            new SelectListItem { Value ="Dermatologists",Text="Dermatologists"},
+                            new SelectListItem { Value ="Dietitians",Text="Dietitians"},
+                            new SelectListItem { Value ="Dietitians/Nutritionists",Text="Dietitians/Nutritionists"},
+                            new SelectListItem { Value ="Ear, Nose & Throat Doctors",Text="Ear, Nose & Throat Doctors"},
+                            new SelectListItem { Value ="Emergency Medicine Physicians",Text="Emergency Medicine Physicians"},
+                            new SelectListItem { Value ="Endocrinologists",Text="Endocrinologists"},
+                            new SelectListItem { Value ="Endodontists",Text="Endodontists"},
+                            new SelectListItem { Value ="Eye Doctors",Text="Eye Doctors"},
+                            new SelectListItem { Value ="Family Nurse Practitioners",Text="Family Nurse Practitioners"},
+                            new SelectListItem { Value ="Family Physicians",Text="Family Physicians"},
+                            new SelectListItem { Value ="Family Psychiatric & Mental Health Nurse Practitioners",Text="Family Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Gastroenterologists",Text="Gastroenterologists"},
+                            new SelectListItem { Value ="General Nurse Practitioners",Text="General Nurse Practitioners"},
+                            new SelectListItem { Value ="Geneticists",Text="Geneticists"},
+                            new SelectListItem { Value ="Hand Surgeons",Text="Hand Surgeons"},
+                            new SelectListItem { Value ="Hearing Specialists",Text="Hearing Specialists"},
+                            new SelectListItem { Value ="Hematologists",Text="Hematologists"},
+                            new SelectListItem { Value ="Immunologists",Text="Immunologists"},
+                            new SelectListItem { Value ="Infectious Disease Specialists",Text="Infectious Disease Specialists"},
+                            new SelectListItem { Value ="Infertility Specialists",Text="Infertility Specialists"},
+                            new SelectListItem { Value ="Internists",Text="Internists"},
+                            new SelectListItem { Value ="Medical Ethicists",Text="Medical Ethicists"},
+                            new SelectListItem { Value ="Mental Health Nurse Practitioners",Text="Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Microbiologists",Text="Microbiologists"},
+                            new SelectListItem { Value ="Naturopathic Doctors",Text="Naturopathic Doctors"},
+                            new SelectListItem { Value ="Nephrologists",Text="Nephrologists"},
+                            new SelectListItem { Value ="Neurologists",Text="Neurologists"},
+                            new SelectListItem { Value ="Neuropsychiatrists",Text="Neuropsychiatrists"},
+                            new SelectListItem { Value ="Neurosurgeons",Text="Neurosurgeons"},
+                            new SelectListItem { Value ="Nutritionists",Text="Nutritionists"},
+                            new SelectListItem { Value ="OB-GYNs",Text="OB-GYNs"},
+                            new SelectListItem { Value ="OB-GYN Nurse Practitioners",Text="OB-GYN Nurse Practitioners"},
+                            new SelectListItem { Value ="Occupational Medicine Specialists",Text="Occupational Medicine Specialists"},
+                            new SelectListItem { Value ="Oncologists",Text="Oncologists"},
+                            new SelectListItem { Value ="Ophthalmologists",Text="Ophthalmologists"},
+                            new SelectListItem { Value ="Optometrists",Text="Optometrists"},
+                            new SelectListItem { Value ="Oral Surgeons",Text="Oral Surgeons"},
+                            new SelectListItem { Value ="Orthodontists",Text="Orthodontists"},
+                            new SelectListItem { Value ="Orthopedic Surgeons",Text="Orthopedic Surgeons"},
+                            new SelectListItem { Value ="Pain Management Specialists",Text="Pain Management Specialists"},
+                            new SelectListItem { Value ="Pathologists",Text="Pathologists"},
+                            new SelectListItem { Value ="Pediatric Dentists",Text="Pediatric Dentists"},
+                            new SelectListItem { Value ="Pediatric Nurse Practitioners",Text="Pediatric Nurse Practitioners"},
+                            new SelectListItem { Value ="Pediatricians",Text="Pediatricians"},
+                            new SelectListItem { Value ="Periodontitis",Text="Periodontitis"},
+                            new SelectListItem { Value ="Physiatrists",Text="Physiatrists"},
+                            new SelectListItem { Value ="Physical Therapists",Text="Physical Therapists"},
+                            new SelectListItem { Value ="Plastic Surgeons",Text="Plastic Surgeons"},
+                            new SelectListItem { Value ="Podiatrists",Text="Podiatrists"},
+                            new SelectListItem { Value ="Preventive Medicine Specialists",Text="Preventive Medicine Specialists"},
+                           
+                            new SelectListItem { Value ="Prosthodontics",Text="Prosthodontics"},
+                            new SelectListItem { Value ="Psychiatrists",Text="Psychiatrists"},
+                            new SelectListItem { Value ="Psychologists",Text="Psychologists"},
+                            new SelectListItem { Value ="Psychosomatic Medicine Specialists",Text="Psychosomatic Medicine Specialists"},
+                            new SelectListItem { Value ="Psychotherapists",Text="Psychotherapists"},
+                            new SelectListItem { Value ="Pulmonologists",Text="Pulmonologists"},
+                            new SelectListItem { Value ="Radiation Oncologists",Text="Radiation Oncologists"},
+                            new SelectListItem { Value ="Radiologists",Text="Radiologists"},
+                            new SelectListItem { Value ="Reproductive Endocrinologists",Text="Reproductive Endocrinologists"},
+                            new SelectListItem { Value ="Rheumatologists",Text="Rheumatologists"},
+                            new SelectListItem { Value ="Sleep Medicine Specialists",Text="Sleep Medicine Specialists"},
+                            new SelectListItem { Value ="Sports Medicine Specialists",Text="Sports Medicine Specialists"},
+                            new SelectListItem { Value ="Surgeons",Text="Surgeons"},
+                            new SelectListItem { Value ="Therapists / Counselors",Text="Therapists / Counselors"},
+                            new SelectListItem { Value ="Travel Medicine Specialists",Text="Travel Medicine Specialists"},
+                            new SelectListItem { Value ="Urologists",Text="Urologists"},
+                            new SelectListItem { Value ="Women’s Health Nurse Practitioners",Text="Women’s Health Nurse Practitioners"}	
+                        };        
+                        }
+
+                        <div class="editor-field">
+                            @Html.ListBoxFor(model => model.Specialities, itemspecialities)
+                            @Html.ValidationMessageFor(model => model.Specialities)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.UserName)
+                            <a href="#" class="tooltip">
+                                <div class="help"></div>
+                                <span>
+                                    <img class="callout" src="~/Content/Images/callout.gif" />
+                                    <strong>Please enter your Email-id
+                                    </strong>
+                                </span>
+                            </a>                        
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.UserName)
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </div>
+                    </div>
+                   
+
+                </div>
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PASSWORD)
+                            <a href="#" class="tooltip">
+                                <div class="help"></div>
+                                <span>
+                                    <img class="callout" src="~/Content/Images/callout.gif" />
+                                    <strong>Please enter your password
+                                    </strong>
+                                </span>
+                            </a>  
+                            
+                        </div>
+                        <div class="editor-field noShadow">
+                            @Html.PasswordFor(model => model.PASSWORD)
+                            @Html.ValidationMessageFor(model => model.PASSWORD)
+
+                        </div>
+                        @*<a href="#" id="passwordPolicy" class="linkPasswordPolicy">Password policy</a>*@
+                    </div>
+                     <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CONFIRMPASSWORD)
+
+                            <a href="#" class="tooltip">
+                                <div class="help"></div>
+                                <span>
+                                    <img class="callout" src="~/Content/Images/callout.gif" />
+                                    <strong>Please re-enter your password
+                                    </strong>
+                                </span>
+                            </a>  
+
+                           
+                        </div>
+                        <div class="editor-field noShadow">
+                            @Html.PasswordFor(model => model.CONFIRMPASSWORD , new { title="Please re-enter your password" })
+                            @Html.ValidationMessageFor(model => model.CONFIRMPASSWORD)
+
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.SECURITYQESTID1)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.SECURITYQESTID1, new[] {
+                                new SelectListItem(){Text = "What was your childhood nickname?" ,Value="1" },
+                                new SelectListItem(){Text ="What is the name of your favorite childhood friend?", Value ="2" },
+                                new SelectListItem(){Text ="In what city or town was your first job?", Value ="3" },
+                                new SelectListItem(){Text ="What is your favorite pet name?", Value ="4" },
+                                new SelectListItem(){Text ="What is your mother's maiden name?", Value ="5" }
+                            }, "Select", new { title = "Please select a security question" })
+                            @Html.ValidationMessageFor(model => model.SECURITYQESTID1)
+                        </div>
+                    </div>
+
+
+                    <div class="left">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ANSWER1)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.ANSWER1, new { title = "Please enter the answer" })
+                            @Html.ValidationMessageFor(model => model.ANSWER1)
+                        </div>
+                        <div class="editor-field">
+
+                            @Html.HiddenFor(model => model.VERIFICATIONCODE)
+                        </div>
+                    </div>
+
+
+                </div>
+                @*<div class="row">
+                    <div class="editor-label">@Html.LabelFor(model => model.VERIFICATIONCODE) </div>
+                    <div class="editor-field">
+                        @Html.Recaptcha(theme: Recaptcha.Web.RecaptchaTheme.Clean)
+                    </div>
+
+                </div>*@
+                <div class="row">
+                    <div class="c_terms">
+                        <b>Terms and Conditions</b>
+                        <div class="c_terms_scroll">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="editor-field noShadow" style="float: left;">
+                        @Html.CheckBoxFor(model => model.AGREETERMS, new { title = "Please agree terms and condition", @style = "width: 15px;float:left;margin-top: -2px;" })
+                        @Html.ValidationMessageFor(model => model.AGREETERMS)<a href="#" class="condition_text">@Html.LabelFor(model => model.AGREETERMS)</a>
+                    </div>
+                </div>
+             <div class="clear"></div>
+                <div class="buttonsWrapper">
+                    <input type="submit" value="Join docare" class="button" />
+                </div>
+           
+      
+            }
+        </div>
+    </div>
+
+    <div class="c_column_one">
+        <div class="highlights">
+            <h1>Benefits of
+                <br />
+                <strong>joining docare</strong></h1>
+            <ul>
+                <li>Effective way to provide quality healthcare to patients</li>
+                <li>Market physicians’ services online</li>
+                <li>Access to new local and foreign patients</li>
+                <li>Payment at time of service</li>
+                <li>No insurance paperwork</li>
+                <li>Flexibility for scheduling: online or in office</li>
+                <li>Minimal support staff</li>
+            </ul>
+            <div class="amy_group">
+                <div class="amy_desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+
+                <div class="amy_inner"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var myPSPlugin = $('#PASSWORD').password_strength();
+
+
+        $(".validation-summary-errors li").each(function () {
+            if ($(this).text().indexOf('Error') > -1) {
+                $('.validation-summary-errors').addClass('MessageUpdateStatus');
+            }
+        });
+        $("input").on("focus", function () {
+            $('.validation-summary-errors').hide();
+        });
+        $("select").on("focus", function () {
+            $('.validation-summary-errors').hide();
+
+        });
+        $("textarea").on("focus", function () {
+            $('.validation-summary-errors').hide();
+        });
+
+
+
+
+        var now = new Date();
+        now.setDate(now.getDate() + 3);
+        $("#licenceExpdate").kendoDatePicker({
+            max: new Date(2030, 0, 0),
+            min: now,
+        });
+        var datepicker = $("#licenceExpdate").data("kendoDatePicker");
+
+        datepicker.value(now);
+
+        $('#FIRSTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        //$('#CITY').keyup(function () {
+        //    var $th = $(this);
+        //    $th.val($th.val().replace(/[^a-zA-Z\s]*$/g, function (str) { return ''; }));
+        //});
+
+        $('#LASTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        //$('#STREETADDRESS').keyup(function () {
+        //    var $th = $(this);
+        //    $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        //});
+
+
+        //$('#ZIPCODE').keyup(function (e) {
+        //    var $th = $(this);
+        //    $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        //});
+        $('#LICENSE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+
+
+    });
+</script>
+
+<script id="template" type="text/x-kendo-template">               
+                <p> $("#Specialities").tooltip();</p>
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+    $(document).ready(function () {
+
+        
+
+        // create DropDownList from input HTML element
+
+        // create DropDownList from select HTML element
+        $("#GENDER").kendoDropDownList();
+        $("#SECURITYQESTID1").kendoDropDownList();
+        $("#STATELICENSE").kendoDropDownList();
+    });
+</script>

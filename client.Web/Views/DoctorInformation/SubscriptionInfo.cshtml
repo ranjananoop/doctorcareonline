@@ -1,0 +1,151 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "SubscriptionInfo";
+}
+
+@using (Html.BeginForm())
+{
+    
+<div class="c_body innerLayout">
+        <div class="c_body_fleet">
+            <div class="c_pgTitle">
+                <div class="c_pgTitle_Fleet">
+                    <h1 class="c_pgTitleText">Steps</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="c_column_three d_doctorSteps step3">
+            <div class="fleet">
+                <div class="steps">
+                    <ul>
+                        <li class="step1 completedStep">
+                            <span>Personal Info</span>
+                            <h3>1</h3>
+                        </li>
+                        <li class="step2 completedStep">
+                            <span>Educational Info </span>
+                            <h3>2</h3>
+                        </li>
+                        <li class="step3 completedStep">
+                            <span>Video Info</span>
+                            <h3>3</h3>
+                        </li>
+                        <li class="step4 completedStep">
+                            <span>Clinic Info</span>
+                            <h3>4</h3>
+                        </li>
+                        <li class="step5 currentStep" >
+                            <span>Subscription Info</span>
+                            <h3>5</h3>
+                        </li>
+                    </ul>
+                    <div class="stepsLine"></div>
+                </div>
+                
+                <div style="float: left; width: 675px;">
+                     @Html.ValidationSummary(true) 
+                    <div class="row" id="docInfoClinicDisplay">
+                        @Html.HiddenFor(model => model.UserName)
+                        <div class="row">
+                            <h6>docare Subscription</h6>
+                             <p>
+                                Paypal is the faster,safer way to pay and get paid online.The service allows the members to send money without sharing financial information, with the felixibility to pay using their account balances,bank accounts, creditcard or promotional financing.
+                            </p>
+                        </div>
+                        <div class="payPalLogo"></div>
+                        <div class="row">
+
+                            <p>
+                                Subscription Fee US$:50 per month</p>
+                            <p>docare will charge you US$ 50 every month starting from today.</p>
+
+                        </div>
+                        <div >
+                            @*<div class="editor-label heading">
+                                @Html.LabelFor(model => model.PAYPALEMAIL)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.PAYPALEMAIL)
+                            </div>*@
+                            
+                            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="NDWPYN24NHFHA">
+                                <table>
+                                <tr><td><input type="hidden" name="on0" value="Just US $50 /Month">Just US $50 /Month</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
+                                </table>
+                                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                <input name="custom" value='@Model.UserName' type="hidden">
+                            </form>
+
+                       </div>
+                        <div class="row c_buttonContainer" style="margin-top:20px;">
+                    <div class="right">
+                        <input type="submit" value="Pay using PayPal" class="button" />
+                    </div>
+                </div>
+                         
+
+                    </div>
+                   
+                </div>
+                <div class="amy_group" style="float: right;">
+                    <p>Your profile is completed</p>
+                    <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                    <div class="amy_inner"></div>
+
+                </div>
+             
+                <div class="row c_buttonContainer">
+                    <div class="right">
+                        <a class="button cancel" href="/DoctorInformation/ClinicInfo">Back</a>
+                     
+                        <input type="button" value="DONE" class="button" id="DONE" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}
+
+<script>
+  
+    $(document).ready(function () {
+
+        $("#DONE").click(function () {
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/FirstLoginUpdate",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        var url = '@Url.Action("Dashboard", "DoctorInformation")';
+                        window.location.href = url;
+                    }
+                }
+            });
+
+        });
+         $("#beforelogin").hide();
+         $("#afterlogin").show();
+         $("#afterloginsign").hide();
+         //$("input").on("focus", function () {
+         //    $("#MessageUpdateStatus").hide();
+         //});
+
+
+         //if ($("#MessageUpdateStatus").val().length > 0) {
+         //    $("#MessageUpdateStatus").show();
+         //} else {
+         //    $("#MessageUpdateStatus").hide();
+         //}
+     });
+
+</script>

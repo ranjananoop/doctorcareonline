@@ -1,0 +1,27 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\DOCVIDEO.CompanyDatabaseInitilization.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\GURUKUL.CompanyDatabaseInitilization.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\bin\Release\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\DOCVIDEO.CompanyDatabaseInitilization.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\DOCVIDEO.CompanyDatabaseInitilization.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\DOCVIDEO.CompanyDatabaseInitilization.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.CompanyDatabaseInitilization\obj\Release\GURUKUL.CompanyDatabaseInitilization.pdb

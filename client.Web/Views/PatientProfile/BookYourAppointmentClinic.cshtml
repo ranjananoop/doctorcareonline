@@ -1,0 +1,145 @@
+﻿@model client.Web.Models.BookingAppointmentModel
+
+@{
+    ViewBag.Title = "ClinicPreBookYourAppointmentConfirm";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+     <div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon appointmentsIcon"></div>
+                        <h1 class="c_pgTitleText">Appointments</h1>
+                    </div>
+                </div>
+   
+        <div class="pre_book_con signupForm" style="font-size:15px;">
+
+    <div class="app_left">
+
+        <h1>@Html.DisplayNameFor(model => model.ISEXISITING)</h1>
+
+        <p class="sec_desc-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+
+
+
+        <div class="row">
+            <div class="display_label" style="margin-top:3px;">@Html.DisplayNameFor(model => model.REASONFORVISIT)</div>
+            <div>@Html.TextBoxFor(model => model.REASONFORVISIT, new { maxlength = "46" })</div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="display_label">@Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</div>
+
+
+            <div><h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+        </div>
+         <br />
+        <div class="row">
+        <div class="display_label">@Html.DisplayNameFor(model => model.Speciality)</div>
+
+
+        <div>
+            <h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+            @Html.DisplayFor(model => model.LASTNAME)</strong></h3>
+            <p><h3><em>@Html.DisplayFor(model => model.Speciality)</em></h3></p>
+        </div>
+        <br />
+        
+        </div>
+
+
+        
+    </div>
+
+    <div class="app_right">
+        <div class="amy_inner" style="margin-left: 65px;"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="c_buttonContainer" style="width: 100%;">
+    <div class="right">
+        <input type="submit" value="Confirm" class="button" id="btnSave"  />
+    </div>
+</div>
+</div>
+
+
+
+
+<div class="row">
+    <div>
+        <div class="display-field">
+            @Html.HiddenFor(model => model.DOCTORID)
+            @Html.HiddenFor(model => model.tabvalue)
+            @Html.HiddenFor(model => model.DOCTORSLOTID)
+            @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+
+      
+}
+
+<script>
+    $(document).ready(function () {
+
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+
+    });
+</script>
+
+<style>
+    input[type=text] {
+        width: 250px;
+    }
+
+    .pre_book_con .app_left {
+        float: left;
+        width: 600px;
+    }
+
+    .pre_book_con .app_right {
+        float: left;
+    }
+
+    .app_left h2 {
+        color: #3aa3ff;
+        font-size: 28px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+    }
+
+    .sec_desc-con {
+        margin: 10px 0px;
+    }
+    .pre_book_con .display_label {
+        width:120px;
+       color: #096ca3 !important;
+       margin-top:4px;
+    }
+    h6 {
+font-weight: 400;
+font-size: 20px;
+padding: 7px 0px 11px 10px !important;
+color: #000;
+margin: 0 0 10px 0px;
+/*background-color: #d2e6f4;*/
+}
+    .pre_book_con .app_left {
+float: left;
+width: 600px;
+background: #d2e6f4;
+border: 1px solid #999;
+padding: 0px 10px;
+height: 259px !important;
+}
+
+    h1 {
+        padding:5px 0px;
+    }
+</style>

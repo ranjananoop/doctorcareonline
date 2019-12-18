@@ -1,0 +1,24 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+
+
+<div class="d_doctorInfoDisplay">
+
+    <div class="row">
+        <div class="display-field">
+            <h2>@Html.DisplayFor(model => model.Salutation) @Html.DisplayFor(model => model.FIRSTNAME) @Html.DisplayFor(model => model.LASTNAME), @Html.DisplayFor(model => model.SUFFIX)</h2>
+        </div>
+
+        <div class="display-field">
+            <b>@Html.DisplayFor(model => model.Speciality)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.GENDER) <span>,</span>  @Html.DisplayFor(model => model.DOBDisplay) <span>,</span>  @Html.DisplayFor(model => model.Language)
+        </div>
+        
+        <div class="display-field">
+            <a href="/DoctorInformation/DoctorChangedPassword" >Change password</a>
+        </div>
+    </div>
+</div>

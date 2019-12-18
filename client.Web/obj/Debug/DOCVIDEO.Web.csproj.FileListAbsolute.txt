@@ -1,0 +1,649 @@
+D:\DOCCARE_Nov13\ENH\client.Web\obj\Debug\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+D:\DOCCARE_Nov13\ENH\client.Web\obj\Debug\RdlCompile.cache
+D:\DOCCARE_Nov13\ENH\client.Web\obj\Debug\RdlCompile.compiled
+D:\DOCCARE_Nov13\ENH\client.Web\bin\client.Web.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\client.Web.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Antlr3.Runtime.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.BaseDataLayer.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.BOL.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.CompanyDatabaseInitilization.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.DAL.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.ErrorLoggingContext.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.HealthHistoryServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.HealthHistoryServiceRepoUOW.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PatientInformationServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PatientInformationServiceRepoUOW.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PayPalWrapper.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.UserServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.UserServiceRepoUOW.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.Utility.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.MvcModel.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.Web.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Optimization.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\WebGrease.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Elmah.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.BaseDataLayer.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.BOL.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.CompanyDatabaseInitilization.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.DAL.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.Domain.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.ErrorLoggingContext.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.HealthHistoryServiceBoundedContext.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.HealthHistoryServiceRepoUOW.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PatientInformationServiceBoundedContext.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PatientInformationServiceRepoUOW.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.PayPalWrapper.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.UserServiceBoundedContext.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.UserServiceRepoUOW.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DOCVIDEO.Utility.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.pdb
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.xml
+D:\DOCCARE_Nov13\ENH\client.Web\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\DOCCARE_Nov13\ENH\client.Web\obj\Debug\client.Web.dll
+D:\DOCCARE_Nov13\ENH\client.Web\obj\Debug\client.Web.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Web.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Antlr3.Runtime.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.MvcModel.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Optimization.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebGrease.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Elmah.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\GURUKUL.Utility.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.Core.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Newtonsoft.Json.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Recaptcha.pdb
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Net.Http.Formatting.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Helpers.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Http.WebHost.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Mvc.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.Razor.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\System.Web.WebPages.Razor.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\WebMatrix.Data.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\Mono.Math.xml
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Debug\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Debug\RdlCompile.cache
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Debug\RdlCompile.compiled
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Debug\GURUKUL.Web.dll
+D:\New folder\DOCCARE_Nov13\ENH\client.Web\obj\Debug\GURUKUL.Web.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.Web.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.Web.pdb
+D:\GURUKUL\client.Web\bin\Antlr3.Runtime.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.dll
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.Domain.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.Utility.dll
+D:\GURUKUL\client.Web\bin\Microsoft.ReportViewer.WebForms.dll
+D:\GURUKUL\client.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\GURUKUL\client.Web\bin\Newtonsoft.Json.dll
+D:\GURUKUL\client.Web\bin\Recaptcha.dll
+D:\GURUKUL\client.Web\bin\Recaptcha.MvcModel.dll
+D:\GURUKUL\client.Web\bin\Recaptcha.Web.dll
+D:\GURUKUL\client.Web\bin\System.Net.Http.Formatting.dll
+D:\GURUKUL\client.Web\bin\System.Web.Helpers.dll
+D:\GURUKUL\client.Web\bin\System.Web.Http.dll
+D:\GURUKUL\client.Web\bin\System.Web.Http.WebHost.dll
+D:\GURUKUL\client.Web\bin\System.Web.Mvc.dll
+D:\GURUKUL\client.Web\bin\System.Web.Optimization.dll
+D:\GURUKUL\client.Web\bin\System.Web.Razor.dll
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.dll
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.dll
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.dll
+D:\GURUKUL\client.Web\bin\WebGrease.dll
+D:\GURUKUL\client.Web\bin\WebMatrix.Data.dll
+D:\GURUKUL\client.Web\bin\Elmah.dll
+D:\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+D:\GURUKUL\client.Web\bin\Mono.Math.dll
+D:\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.Domain.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+D:\GURUKUL\client.Web\bin\GURUKUL.Utility.pdb
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.xml
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.xml
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.xml
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\GURUKUL\client.Web\bin\Newtonsoft.Json.xml
+D:\GURUKUL\client.Web\bin\Recaptcha.pdb
+D:\GURUKUL\client.Web\bin\System.Net.Http.Formatting.xml
+D:\GURUKUL\client.Web\bin\System.Web.Helpers.xml
+D:\GURUKUL\client.Web\bin\System.Web.Http.xml
+D:\GURUKUL\client.Web\bin\System.Web.Http.WebHost.xml
+D:\GURUKUL\client.Web\bin\System.Web.Mvc.xml
+D:\GURUKUL\client.Web\bin\System.Web.Razor.xml
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.xml
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.xml
+D:\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.xml
+D:\GURUKUL\client.Web\bin\WebMatrix.Data.xml
+D:\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.xml
+D:\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+D:\GURUKUL\client.Web\bin\Mono.Math.xml
+D:\GURUKUL\client.Web\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\GURUKUL\client.Web\obj\Debug\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+D:\GURUKUL\client.Web\obj\Debug\RdlCompile.cache
+D:\GURUKUL\client.Web\obj\Debug\RdlCompile.compiled
+D:\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.dll
+D:\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Web.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Web.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Antlr3.Runtime.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Utility.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Microsoft.ReportViewer.WebForms.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Newtonsoft.Json.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Recaptcha.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Recaptcha.MvcModel.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Recaptcha.Web.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Net.Http.Formatting.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Helpers.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Http.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Http.WebHost.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Mvc.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Optimization.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Razor.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\WebGrease.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\WebMatrix.Data.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Elmah.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Mono.Math.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\GURUKUL.Utility.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Newtonsoft.Json.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Recaptcha.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Net.Http.Formatting.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Helpers.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Http.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Http.WebHost.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Mvc.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.Razor.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\WebMatrix.Data.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\Mono.Math.xml
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\obj\Debug\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.dll
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\obj\Debug\RdlCompile.cache
+E:\Data_old_Hard_disk_D\GURUKUL\client.Web\obj\Debug\RdlCompile.compiled
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Web.dll.config
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Web.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Web.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Antlr3.Runtime.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Utility.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Newtonsoft.Json.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Recaptcha.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Recaptcha.MvcModel.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Recaptcha.Web.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Net.Http.Formatting.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Helpers.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Http.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Http.WebHost.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Mvc.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Optimization.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Razor.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\WebGrease.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\WebMatrix.Data.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Elmah.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Mono.Math.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\GURUKUL.Utility.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.Core.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Newtonsoft.Json.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Recaptcha.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Net.Http.Formatting.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Helpers.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Http.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Http.WebHost.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Mvc.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.Razor.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\System.Web.WebPages.Razor.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\WebMatrix.Data.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\Mono.Math.xml
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\obj\Debug\DOCVIDEO.Web.csprojResolveAssemblyReference.cache
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\obj\Debug\GURUKUL.Web.pdb
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\client.Web\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Web.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Antlr3.Runtime.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.Core.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Newtonsoft.Json.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Recaptcha.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Recaptcha.MvcModel.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Recaptcha.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Net.Http.Formatting.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Helpers.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Http.WebHost.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Optimization.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\WebGrease.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\WebMatrix.Data.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Mono.Math.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.Core.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Newtonsoft.Json.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Recaptcha.pdb
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Net.Http.Formatting.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Helpers.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Http.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Http.WebHost.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Mvc.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\System.Web.WebPages.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\WebMatrix.Data.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\bin\Mono.Math.xml
+C:\Softwares\sitework\CHIKITSHAK\client.Web\obj\Debug\DOCVIDEO.Web.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\client.Web\obj\Debug\DOCVIDEO.Web.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\client.Web\obj\Debug\DOCVIDEO.Web.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\client.Web\obj\Debug\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\client.Web\obj\Debug\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\MFCapturer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\opentok.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\x64\MFCapturer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\x64\opentok.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Web.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Antlr3.Runtime.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.Core.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\JWT.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Newtonsoft.Json.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\OpenTokNET.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.MvcModel.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Net.Http.Formatting.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Helpers.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.WebHost.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Optimization.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebGrease.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebMatrix.Data.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WPFVideoRenderer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Mono.Math.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.CompanyDatabaseInitilization.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.MarksHistoryServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.StudentInformationServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.UserServiceRepoUOW.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.Core.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Newtonsoft.Json.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\OpenTokNET.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Recaptcha.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Net.Http.Formatting.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Helpers.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Http.WebHost.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Mvc.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\System.Web.WebPages.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\WebMatrix.Data.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\bin\Mono.Math.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Debug\DOCVIDEO.Web.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Debug\DOCVIDEO.Web.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Debug\DOCVIDEO.Web.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Debug\GURUKUL.Web.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\client.Web\obj\Debug\GURUKUL.Web.pdb

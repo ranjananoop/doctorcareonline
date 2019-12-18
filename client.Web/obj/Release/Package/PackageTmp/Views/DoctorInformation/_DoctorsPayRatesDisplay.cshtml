@@ -1,0 +1,41 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+<div class="payRates">
+    <div>
+        @Html.HiddenFor(model => model.UserName)
+    </div>
+    <div class="row">
+        <div class="display-label heading">
+            @Html.DisplayNameFor(model => model.TimeDisplay)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RateQuatermins)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RateHalfmins)
+    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RateFortyFivemins)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.RateHourmins)
+        </div>
+    </div>
+    <div class="row">
+        <div class="display-label heading">
+            @Html.DisplayNameFor(model => model.RateDisplay)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RateQuatermins)
+    </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RateHalfmins)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RateFortyFivemins)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RateHourmins)
+        </div>
+    </div>   
+</div>
+

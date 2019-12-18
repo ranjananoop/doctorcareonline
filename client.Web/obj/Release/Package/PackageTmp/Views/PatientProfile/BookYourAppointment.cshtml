@@ -1,0 +1,177 @@
+﻿@model client.Web.Models.BookingAppointmentModel
+
+@{
+    ViewBag.Title = "BookYourAppointment";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+<div class="p_book_con">
+ <div class="pagetTitle">
+    <span class="pageIcon inbox"></span>
+    <h6>Book Appointment</h6>
+     
+     <div id="loading"><img src="~/Content/Images/spinner20_20.gif" /></div>
+    </div>
+    
+<div>
+           
+    <div>
+        <div class="bookAppointment">
+              <input id="MessageUpdateStatus" disabled="disabled" type="text" style="width: 99.7%;" />
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(false)
+            <div id="tabs">
+                <ul>
+                        <li id="li_tab1"><span class="tabReason"></span></li>
+                        <li id="li_tab2"><span class="tabPay"></span></li>
+                        <li id="li_tab3"><span class="tabConfirm"></span></li>
+                                      
+                </ul>
+                   
+               
+                <div id="Content_Area">
+                      @Html.HiddenFor(model=>model.tabvalue)
+                    <div id="tab1">
+                          <div> @{Html.RenderPartial("_ResonForVisit");} </div> 
+                    </div>
+
+                        <div id="tab2">
+                       <div> @{Html.RenderPartial("_PayForVisit");} </div> 
+                    </div>
+
+                    <div id="tab3">
+                          <div> @{Html.RenderPartial("_ConfirmPayForVisit");} </div> 
+                    </div>
+                </div>
+            </div>
+    
+    
+        }
+
+    </div>
+</div>
+    </div>
+<div>
+   @{Html.RenderPartial("_quicksearchbookappointment");}    
+</div>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+    document.getElementById('tab1').style.display = 'none';
+    document.getElementById('tab2').style.display = 'none';
+    document.getElementById('tab3').style.display = 'none';
+  
+    document.getElementById('tab1').style.display = 'block';
+    document.getElementById('li_tab1').setAttribute("class", "");
+    document.getElementById('li_tab2').setAttribute("class", "");
+    document.getElementById('li_tab3').setAttribute("class", "");
+ 
+    function tab(tab) {
+        document.getElementById('tab1').style.display = 'none';
+        document.getElementById('tab2').style.display = 'none';
+        document.getElementById('tab3').style.display = 'none';
+       
+        document.getElementById('li_tab1').setAttribute("class", "");
+        document.getElementById('li_tab2').setAttribute("class", "");
+        document.getElementById('li_tab3').setAttribute("class", "");       
+        document.getElementById(tab).style.display = 'block';
+        if (tab == 'tab3') {
+            document.getElementById('li_' + tab).setAttribute("class", "active");
+            document.getElementById('li_tab2').setAttribute("class", "active");
+        } else {
+            document.getElementById('li_' + tab).setAttribute("class", "active");
+        }
+    }
+</script>
+
+<script>
+    $('.c_pgTitleText').text('Appointment');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    $(document).ready(function () {
+ $('.quicksearchAppointment').insertBefore('.availableDoctor');
+
+ if ($("#MessageUpdateStatus").val().length > 0) {
+     $("#MessageUpdateStatus").show();
+ } else {
+     $("#MessageUpdateStatus").hide();
+ }
+
+        var frameHeight = $('.frameContent').height();
+        var formHeight = $('form').height();
+        $('.middleColumnContent').height(frameHeight - 400 );
+        if ($("#tabvalue").val() != null) {
+            tab($("#tabvalue").val())
+        }
+        $("#textContainers > p").html("");
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+
+        </script>
+<style>
+    .display-label {
+        font-size:14px !important;
+    }
+
+    .appontment_3Box {
+        width:200px;float:left;
+        margin:10px 0px 0px 20px;
+    }
+
+    .appontment_2Box {
+        width:250px;float:left;
+        margin-left:25px;
+    }
+    .appontment_2Box h2 {
+        margin-bottom:20px;
+        color:#0f82dc;
+    }
+    .appontment_1Box {
+        width:190px;float:left;
+    }
+    .space_bottom {
+        margin-bottom:10px;
+    }
+    .c_buttonContainer {
+        margin:10px 0px 0px 0px;
+    }
+    .p_app_con {
+        margin:15px 0px;
+    }
+    h3 {
+        margin-top:3px;
+    }
+    .c_buttonContainer .right {
+width: auto !important;
+margin-right: 20px !important;
+}
+    .display-label {
+        color: #0F82DC !important;
+    }
+    .c_leftColumn {
+        height: 560px !important;
+    }
+</style>

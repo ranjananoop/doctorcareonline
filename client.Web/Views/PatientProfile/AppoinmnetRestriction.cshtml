@@ -1,0 +1,57 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+@{
+    ViewBag.Title = "Appointment Failure";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+
+<div class="appoinment_res signupForm">
+
+@*   <div class="framecontentTitle"><h2>Appointment Failure</h2></div>*@
+    <div class="sorry_left">
+        <h1 class="hidemsg">Sorry,</h1>
+        <h3>@Html.DisplayFor(model => model.MessageUpdateStatus)
+            @Html.HiddenFor(model => model.MessageUpdateStatus)
+        </h3>
+    </div>
+    <div class="sorry_right">
+        <img src="~/Content/Images/amy_home.png" />
+    </div>
+    <div class="clear"></div>
+
+        
+    
+
+    </div>
+<div class="buttonsWrapper" >
+     @{Html.RenderPartial("_quicksearch");}    
+</div>
+<script>
+    if ($('#MessageUpdateStatus').val().indexOf('Successfully') > -1) {
+        $('.hidemsg').hide();
+    }
+    $(document).ready(function () {
+        $('.quickSearch').insertBefore('.availableDoctor');
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+
+</script>
+<script>
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+    </script>

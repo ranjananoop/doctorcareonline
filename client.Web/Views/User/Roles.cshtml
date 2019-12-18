@@ -1,0 +1,133 @@
+﻿@model CIINVENT.Domain.User
+
+@{
+    ViewBag.Title = "Roles";
+}
+
+
+
+<div class="contentTitle">
+    <h2>Roles</h2>
+    <div class="title_b_l"></div>
+    <div class="title_b_r"></div>
+</div>
+
+<div class="bodyContent">
+    <div class="bodyContentPadding">
+
+        <table cellpadding="0" cellspacing="0" style="width: 60% !important; float: left;">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                <td>@Html.DisplayFor(model => model.UserName)</td>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                <td>@Html.DisplayFor(model => model.FirstName)</td>
+                <th>@Html.DisplayNameFor(model => model.MiddleName)</th>
+                <td>@Html.DisplayFor(model => model.MiddleName)</td>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                <td>@Html.DisplayFor(model => model.LastName)</td>
+            </tr>
+        </table>
+        <div class="btnWrapper">@Html.ActionLink("Back to List", "Index", "User", null, new { @class = "btn" })</div>
+        <div id="grid" class="gridPadding"></div>
+        <div class="buttonsWrapper">
+            <input type="button" id="btnSave" value="Save" class="btnClass" />
+            @Html.ActionLink("Back to List", "Index", "User", null, new { @class = "btn" })
+        </div>
+        <script>
+            var roleItems = [];
+            var rolesMemberships = [];
+            var userRoles = [];
+            var UserName = @Html.Raw(Json.Encode(Model.UserName))
+
+
+    RolesMemberships = @Html.Raw(Json.Encode(ViewBag.RoleNames))
+
+
+
+    $(document).ready(function () {
+
+        //$.getJSON("/User/GetUserRoles/", function (data) {
+        //    userRoles = data;
+
+        //});
+
+        $("#grid").kendoGrid({
+            dataSource: {
+                type: "Json",
+                transport: { read: "/User/GetRoles" },
+                schema: {
+                    model: {
+                        id: "RoleName",
+                        fields: {
+                            RoleName: { field: "RoleName", editable: false, },
+                        }
+                    }
+                },
+            },
+            height: 450,
+            autoBind: true,
+            columns: [
+                { field: "RoleName", title: "Role", width: "20%" },
+                { template: "<input type='checkbox' value='#= RoleName #' # if(getRole(RoleName)){ # checked #} #/>", width: "200px" }
+            ],
+        });
+
+
+    });
+            $("#btnSave").click(function (e) {
+
+                var checkedCheckboxes = $("#grid :checked");
+
+                var grid = $("#grid").data("kendoGrid");
+
+                checkedCheckboxes.each(function () {
+                    var id = this.value;
+                    // alert(id);
+                    //var record = grid.dataSource.get(id);
+                    //alert(record.RoleName);
+                    var role = { RoleName: id };
+                    rolesMemberships.push(role);
+                });
+                var user = {
+                    UserName: UserName,
+                    Roles: rolesMemberships
+                }
+
+               // alert(JSON.stringify(user));
+
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    cache: false,
+                    dataType: 'json',
+                    url: "/User/SaveRoleMemberships",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (msg) {
+                        if (msg) {
+                            alert("success!");
+                            window.location = "/User/Index";
+                            return true;
+                        }
+                        else {
+                            alert("Cannot add to list !");
+                        }
+                    },
+                    data: JSON.stringify(user)
+                });
+            });
+
+            function getRole(roleName) {
+                for (var idx = 0, length = RolesMemberships.length; idx < length; idx++) {
+                    if (RolesMemberships[idx] === roleName) {
+                        return true;
+                    }
+                }
+            }
+
+        </script>
+    </div>
+</div>

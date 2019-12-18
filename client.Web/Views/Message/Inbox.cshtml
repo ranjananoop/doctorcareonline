@@ -1,0 +1,598 @@
+﻿@model DOCVIDEO.Domain.MESSAGE
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+    
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+  
+    
+    <div class="fleet inboxPatient">
+        <div id="dummy_idBox"></div>
+        <div class="framecontentTitle">           
+            <h6>Inbox</h6>
+        </div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+        </p>
+
+
+
+        <div class="Inbox">
+            <input id="MessageUpdateStatus" disabled="disabled" type="text" />
+
+            <div class="actionPanel">
+                <div id="drpMessageStatus" style="display: block;" class="left"></div>
+                <div class="right">
+                    <input type="button" value="Delete" id="btndelete" title="Delete" />
+                    <input type="button" value="Refresh" id="btnrefresh" title="Refresh" />
+                    <input type="button" value="Select All" id="btnselect" title="Slelct All" />
+                </div>
+            </div>
+            <div id="divAppointments">
+                <p></p>
+                <div class="row c_buttonContainer">
+                    <div class="right">
+                        <input type="button" value="Close" class="button closeMessageDialog" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="fade" class="black_overlay">
+            </div>
+            <div id="example" class="k-content">
+                <div id="patientInbox"></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="Inbox" style="overflow: hidden;">
+            <div class="framecontentTitle">               
+                <h6>Sent Items</h6>
+            </div>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+            </p>
+
+            <div class="actionPanel">
+                <div id="drpMessageStatus1" style="display: block;" class="left"></div>
+                <div class="right">
+                    <input type="button" value="Delete" id="btndelete1" title="Delete" />
+                    <input type="button" value="Refresh" id="btnrefresh1" title="Refresh" />
+                    <input type="button" value="Select All" id="btnselect1" title="Slelct All" />
+                </div>
+            </div>
+            <div id="grid"></div>
+        </div>
+
+    </div>
+   
+  
+}
+<script>
+    $('#MessageUpdateStatus').insertBefore('#dummy_idBox');
+
+    var preferedData = new Object();
+    var messages = [];
+    var messageType = '';
+
+
+    function Hide(displaymessage) {
+
+        $('#' + displaymessage).hide();
+
+    }
+    var preferedData = new Object();
+    function setStatus(MESSAGEID) {
+
+
+        $('html').addClass('noScrollbar');
+
+        var message = new Object();
+        message.MESSAGEID = MESSAGEID;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/Message/UpdateMailStatus",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#divAppointments > p").html(msg.msg);
+                    $("#divAppointments").fadeIn('slow');
+                   
+
+                    $('#fade').insertBefore('.c_container');
+                    $('#divAppointments').insertBefore('#fade');
+
+                    $('#divAppointments').css({
+                        left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                        top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                    });
+
+                    $(window).resize(function () {
+                        $('#divAppointments').css({
+                            left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                            top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                        });
+                    });
+
+                    $('#fade').height($(document).height());
+                    $('html').addClass('scrollbarOff');
+
+                    jQuery.fn.center = function () {
+                        this.css("position", "absolute");
+                        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                    $(window).scrollTop()) + "px");
+                        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                    $(window).scrollLeft()) + "px");
+                        return this;
+                    }
+
+                    $('#divAppointments').center();
+
+                    $(".black_overlay").fadeIn('slow');
+                }
+            },
+            data: JSON.stringify(message),
+        });
+
+    }
+    $('.img_Showed').each(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/PatientProfile/ImagePath",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                $('.img_Showed').attr('src', msg.msg);
+
+            }
+        });
+
+    });
+    $("#drpMessageStatus1").kendoDropDownList({
+        optionLabel: "All",
+        dataTextField: "MESSAGESTATUS",
+        dataValueField: "MESSAGESTATUS",
+        dataSource: {
+            type: "json",
+            serverFiltering: false,
+            transport: {
+                read: "/Message/Getdrpdwn"
+            }
+        },
+        change: function () {
+            $("#MessageUpdateStatus").val("");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+            BindGridsentitem(this.value());
+
+        },
+        animation: {
+            open: {
+                effects: "fadeIn",
+                duration: 300,
+                show: true
+            }
+        },
+        index: 0
+    });
+    $(document).ready(function () {
+
+        $('.c_pgTitleText').text('Message Center');
+        $('.c_pgTitleIcon').addClass('inbox');
+        $('#divAppointment').closest('.ui-dialog').draggable();
+        $('.advanceQuickSearch').insertBefore('.availableDoctor');
+
+        //$('#divAppointment').css('top', $(window).height() / 4);
+
+        // close button script
+        $('.closeMessageDialog').click(function () {
+            $('#divAppointments').hide();
+            $('#fade').hide();
+            $('html').removeClass('scrollbarOff');
+        });
+
+
+
+        $("#fade").css('height', $(document).height());
+
+        $("#textContainers > p").html("");
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+        BindGrid("All");
+        BindGridsentitem("All");
+        $("#drpMessageStatus").kendoDropDownList({
+            optionLabel: "All",
+            dataTextField: "MESSAGESTATUS",
+            dataValueField: "MESSAGESTATUS",
+            dataSource: {
+                type: "json",
+                serverFiltering: false,
+                transport: {
+                    read: {
+                        url: "/Message/Getdrpdwn",
+                        dataType: "json",
+                        type: "post",
+                        contentType: "application/json; charset=utf-8",
+                    },
+                    update: {
+                        url: "/Message/UpdateMailStatus",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                    },
+
+                    parameterMap: function (data, type) {
+                        var patientmessage = new Object();
+
+                        if (type == "update") {
+                            patientmessagetModel = data.models;
+                            return JSON.stringify(data);
+                        }
+                        return JSON.stringify(data);
+                    }
+                }
+            },
+            change: function () {
+                BindGrid(this.value());
+                $("#MessageUpdateStatus").val("");
+                if ($("#MessageUpdateStatus").val().length > 0) {
+                    $("#MessageUpdateStatus").show();
+                } else {
+                    $("#MessageUpdateStatus").hide();
+                }
+            },
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            },
+            index: 0
+        });
+
+
+    });
+
+    function BindGrid(status) {
+        var dataSourceProjects = new kendo.data.DataSource({
+            pageSize: 5,
+            autoSync: true,
+            transport: {
+                read: {
+                    url: "/Message/GetFilteredInbox",
+                    data: function () {
+                        return {
+                            id: status,
+                        }
+                    },
+                    dataType: "json",
+                    type: "post",
+                }
+            },
+            schema:
+               {
+                   model:
+                       {
+                           id: "MessageId",
+                           fields: {
+                               Salutation: { field: "Salutation", editable: false, },
+                               FIRSTNAME: { field: "FIRSTNAME", editable: false, },
+                               LASTNAME: { field: "FIRSTNAME", editable: false, },
+                               SENDMESSAGEFROM: { field: "SENDMESSAGEFROM", editable: false, },
+                               MESSAGESUBJECT: { field: "MESSAGESUBJECT", editable: true, },
+                               MESSAGESTATUS: { field: "MESSAGESTATUS", editable: false, },
+                               MESSAGEBODY: { field: "MESSAGEBODY", editable: false, }
+                           }
+                       }
+               },
+        });
+        dataSourceProjects.read();
+
+        $("#patientInbox").kendoGrid({
+            dataSource: dataSourceProjects,
+            sortable: true,
+            pageable: true,
+
+
+            columns: [
+                { field: "", width: 70, template: "<input type='checkbox' class='targets' value='${ MESSAGEID }'/>", title: "Select" },
+                { field: "FIRSTNAME", width: 200, title: "From", template: "  ${ Salutation }&nbsp;${ FIRSTNAME }&nbsp; ${ LASTNAME }" },
+                { field: "MESSAGESUBJECT", width: 120, title: "Subject" },
+                { width: 100, template: "<a  title=${ MESSAGEID } onclick=setStatus(${ MESSAGEID }) class='linkClass' href='javascript:void(0);' >View</a>", title: "View" },
+              { width: 100, template: "<a   title='${ SENDMESSAGEFROM }' href=/Message/Index?id=${ SENDMESSAGEFROM }  class=''>New Mail</a> ", title: "Compose" },
+
+            ],
+            dataBound: function () {
+                var grid = this;
+                if (grid.table.hasClass('k-focusable'))
+                    grid.table.removeClass('k-focusable');
+                grid.tbody.find('>tr').each(function () {
+                    var dataItem = grid.dataItem(this);
+                    if ($(this).hasClass('k-alt')) {
+                        $(this).removeClass('k-alt');
+                    }
+                    if (dataItem.MESSAGESTATUS == "Read") {
+
+                        $(this).addClass('read');
+                    }
+                    else {
+                        $(this).addClass('unread');
+                    }
+                })
+            }
+        });
+
+
+
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+        var MessageDeleteIds = [];
+        $('.target').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+
+        });
+        $('.targets').live('change', function () {
+            $("#MessageUpdateStatus").hide();
+
+
+        });
+        $("#btnselect").click(function () {
+
+            $('.targets').attr('checked', 'checked');
+            $("#MessageUpdateStatus").val("All Messages Selected");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+        });
+        $("#btnrefresh").click(function () {
+
+            location.reload();
+
+        });
+
+        $("#btndelete").click(function () {
+            MessageDeleteIds = [];
+            var model = new Object();
+            $('.targets').each(function () {
+
+
+                if ($(this).is(':checked')) {
+
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.push(MessageDeleteId);
+
+                }
+
+            });
+            model.MessageDeleteIds = MessageDeleteIds;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/Message/DeleteMessage",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        } else if ($('#MessageUpdateStatus').val().indexOf('Error') == -1) {
+                            $('#MessageUpdateStatus').removeClass();
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatusNormal');
+                        }
+                        MessageDeleteIds = [];
+                        BindGrid("All");
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+        });
+
+
+    }
+
+    function BindGridsentitem(status) {
+        var dataSourceProjects = new kendo.data.DataSource({
+            pageSize: 5,
+            transport: {
+                read: {
+                    url: "/Message/GetFilteredSentItem",
+                    data: function () {
+                        return {
+                            id: status,
+                        }
+                    },
+                    dataType: "json",
+                    type: "post",
+                }
+            }
+        });
+        dataSourceProjects.read();
+
+        $("#grid").kendoGrid({
+            dataSource: dataSourceProjects,
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+            columns: [{
+                template: "<input type='checkbox' class='target' value='#= MESSAGEID #'/>",
+                width: 70,
+                title: "Select"
+            },
+                 { field: "FIRSTNAME", width: 100, title: "To", template: "  ${ Salutation }&nbsp;${ FIRSTNAME }&nbsp; ${ LASTNAME }" },
+                   { field: "MESSAGESUBJECT", title: "Subject", width: "200px", },
+                 { width: 120, template: "<a  title=${ MESSAGEID } onclick=setStatus(${ MESSAGEID }) class='linkClass'  >View</a>", title: "View" }
+            ],
+            dataBound: function () {
+                var grid = this;
+                if (grid.table.hasClass('k-focusable'))
+                    grid.table.removeClass('k-focusable');
+                grid.tbody.find('>tr').each(function () {
+                    var dataItem = grid.dataItem(this);
+                    if ($(this).hasClass('k-alt')) {
+                        $(this).removeClass('k-alt');
+                    }
+                    if (dataItem.MESSAGESTATUS == "Read") {
+
+                        $(this).addClass('read');
+                    }
+                    else {
+                        $(this).addClass('unread');
+                    }
+                })
+            }
+        });
+        var MessageDeleteIds = [];
+        $('.target').live('change', function () {
+            
+
+            //if ($(this).is(':checked')) {
+
+            //    var MessageDeleteId = $(this).val();
+            //    MessageDeleteIds.push(MessageDeleteId);
+
+            //}
+            //else {
+            //    var MessageDeleteId = $(this).val();
+            //    MessageDeleteIds.pop(MessageDeleteId);
+            //}
+            $("#MessageUpdateStatus").val("");
+        });
+        $("#btnselect1").click(function () {
+
+            $('.target').attr('checked', 'checked');
+            $("#MessageUpdateStatus").val("All Messages Selected");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+
+        });
+        $("#btnrefresh1").click(function () {
+
+            location.reload();
+
+        });
+
+        $("#btndelete1").click(function () {
+           
+            MessageDeleteIds = [];
+            var model = new Object();
+            $('.target').each(function () {
+               
+
+                if ($(this).is(':checked')) {
+
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.push(MessageDeleteId);
+
+                } 
+
+            });
+            model.MessageDeleteIds = MessageDeleteIds;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/Message/DeleteMessage",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        } else if ($('#MessageUpdateStatus').val().indexOf('Error') == -1) {
+                            $('#MessageUpdateStatus').removeClass();
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatusNormal');
+                        }
+                        MessageDeleteIds = [];
+                        BindGridsentitem("All");
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+
+        });
+
+
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<style>
+   
+
+
+    .read {
+        background-color: #fff !important;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    unread {
+        background-color: #f2f2f2 !important;
+        font-weight: bold !important;
+        height: 10px;
+        font-size: 12px;
+    }
+
+
+
+ 
+</style>
+

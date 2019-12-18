@@ -1,0 +1,150 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViews";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+    
+    
+}
+
+@*<div class="sectionTitle"><span class="username">@Html.ActionLink("My Profile", "DoctorsInformatonViews", "DoctorInformation", htmlAttributes: new { @class = "username", title = "Manage" })</span>> Public Profile</div>*@
+
+<div>
+    <div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(false)
+
+            <div class="pagetTitle">
+                <span class="pageIcon docInfoViews"></span>
+                <h3>Doctor Info Views</h3>
+            </div>
+            <div id="tabs">
+           
+
+                <div style="margin:4px;">
+                    <div class="accordion">
+                        <!--My Review-->
+                        <div class="framecontentTitle">
+                            <h2>My Reviews</h2>
+                        </div>
+                        <div class="frameContainer">
+                            <div>
+                                @{Html.RenderPartial("_doctorpatientreview");}
+                            </div>
+                        </div>
+ <div class="framecontentTitle">
+                    <h2>About Dr  @Html.DisplayFor(model => model.FIRSTNAME) &nbsp;@Html.DisplayFor(model => model.LASTNAME)</h2>                   
+                </div>
+                <div class="frameContainer">
+                    <div id="doctorsInfoDisplay">
+                        @{Html.RenderPartial("_DoctorsInfoDisplay");}
+                    </div>
+                </div>
+                       <!--Clinic Photo Display-->
+                        <div class="framecontentTitle">
+                            <h2>About Clinic</h2>
+                        </div>
+                        <div class="frameContainer">
+                         <div id="view2"> @{Html.RenderPartial("_DoctorsInfoClinicPhotosDisplay");} </div>
+                        </div>
+
+                        <!--Appointment Display-->
+                        <div class="framecontentTitle">
+                            <h2>Doctor Availability on Video</h2>
+                        </div>
+                        <div class="frameContainer">
+                          <div> @{Html.RenderPartial("_SetAppointmentDisplays");} </div>                       
+                        </div>
+
+                        <!--Clinic Appointment Display-->
+                        <div class="framecontentTitle">
+                            <h2>Doctor Availability in Clinic</h2>
+                        </div>
+                        <div class="frameContainer">
+                         <div > @{Html.RenderPartial("_SetClinicAppointmentDisplay");} </div>                         
+                        </div>
+
+                        <!--Doctor Rate Display-->
+                        <div class="framecontentTitle">
+                            <h2>Pay rate for this Doctor</h2>
+                        </div>
+                        <div class="frameContainer">
+                            <div id="docRatesDisplay">@{Html.RenderPartial("_DoctorsPayRatesDisplay");}</div>                           
+                    </div>
+                    </div>
+                </div>
+
+                        
+
+         
+
+
+            </div>
+    
+    
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+<script>
+    $(document).ready(function () {
+       
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+      });
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+        $('.img_ShowClinic').each(function () {
+
+            $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+
+
+       
+    });
+
+</script>
+<script>
+
+   
+    $(document).ready(function () {
+      
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+      
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        
+    });
+
+</script>

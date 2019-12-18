@@ -1,0 +1,309 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "AccountAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div >
+<div class="c_pgTitle">
+                    <div class="c_pgTitle_Fleet">
+                         <div class="c_pgTitleIcon myAccounts"></div>
+                        <h1 class="c_pgTitleText">Admin Settings</h1>
+                    </div>
+                </div>
+<div class="signupForm">
+    
+    <p style="width:955px;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+    </p>
+ <div class="a_buttonsWrapper">
+    <div><div class="a_radio_btn"><input type="radio" name="searchfilter" value="NPI"></div><div class="a_radio_txt">NPI</div></div>
+    <div><div class="a_radio_btn"><input type="radio" name="searchfilter" value="FirstName"></div><div class="a_radio_txt">First Name</div></div>
+     <div><div class="a_radio_btn"><input type="radio" name="searchfilter" value="Lastname"></div><div class="a_radio_txt">Last Name</div></div><br />
+     <div class="clear"></div>
+     </div>
+     <div class="a_search_con">
+         <div class="Search"> 
+             <div style="float:left;margin:5px 0px 0px 5px;color:#096ca3;">Search Doctor:</div>
+              <div style="float:left;margin-left:20px;"><input type="text" id="data"></div>
+             <div style="float:left;margin-top:-2px;margin-left: 10px;" ><input type="button" value="Search" id="Search"  class="button"/></div>
+         </div>
+         </div>
+  
+
+ <div id="grid5" style="margin-bottom:20px;width:930px !important;"></div>
+      </div>
+    </div>
+<script>
+    $("#beforelogin").hide();
+    $("#afterlogin").show();
+    $("#afterloginsign").hide();
+    var Approveddoctors = @Html.Raw(Json.Encode(ViewBag.ApprovedDoctors))
+             function getPeffered(UserName) {
+                 if (Approveddoctors == null) {
+                     return false;
+                 } else {
+                     for (var idx = 0, length = Approveddoctors.length; idx < length; idx++) {
+                         if (Approveddoctors[idx] === UserName) {
+                             return true;
+                         }
+                     }
+                 }
+             }
+    $("#NOTES").val("");
+    var ApprovedDoctorsIDs = [];
+    var DisapprovedDoctorsIDs = [];
+ 
+    $(document).ready(function () {
+        BindGrid("Default", null);
+
+        $('.advanceQuickSearch').insertBefore('.availableDoctor');
+
+        $("#Search").click(function (e) {
+           
+            if ($("#data").val().length>0) {
+
+                if ($('input:radio[name=searchfilter]:checked').val() != null) {
+                    BindGrid($('input:radio[name=searchfilter]:checked').val(), $("#data").val())
+                } else {
+                    alert('Please check the search option');
+                }
+            } else {
+                alert('Please give the search text');
+            }
+        });
+        function BindGrid(status,value) {
+            var dataSource1 = new kendo.data.DataSource({
+                pageSize: 8,
+                transport: {
+                    read: {
+                        url: "/AccountSettings/GetDoctors",
+                        data: function () {
+                            return {
+                                id: status,
+                                value:value
+                            }
+                        },
+                        dataType: "json",
+                        type: "post",
+                        contentType: "application/json; charset=utf-8",
+                    },
+                    update: {
+                        url: "/AccountSettings/GetDoctorsUpdate",                      
+                        
+                        dataType: "json",
+                        type: "POST",
+                        autoSync: true,
+                        contentType: "application/json; charset=utf-8"
+                        
+                    },
+
+                    parameterMap: function (data, type) {
+                        var patientReport = new Object();
+
+                        if (type == "update") {
+                            patientReportModel = data.models;
+                            return JSON.stringify(data);
+                        }
+                        return JSON.stringify(data);
+                    }
+                },
+                batch: false,
+                autoSync: true,
+                schema:
+                    {
+                        model: {
+                            id: "UserName",
+                            fields: {
+                                UserName: { type: "string", editable: false },
+                                Salutation: { type: "string", editable: false },
+                                FIRSTNAME: { type: "string", editable: false },
+                                LASTNAME: { type: "string", editable: false },
+                                LICENSE: { type: "string", editable: false },
+                                STATELICENSE: { type: "string", editable: false },
+                                MODIFIEDBY: { type: "string", editable: false },
+                                Comment: { type: "string", editable: true },
+                                IsApproved: { editable: true },
+                                DateCreated: { type: "Date", template: '#= kendo.toString(DateCreated, "MM/dd/yyyy") #', editable: false }
+                            }
+                        }
+                    },
+            });
+
+          
+            $("#grid5").kendoGrid({
+                dataSource: dataSource1,
+                transport: { read: "/AccountSettings/GetDoctors" },
+
+                groupable: false,
+                autoBind: true,
+                editable: "inline",
+                save: function (e) {
+                    Refresh(e);
+                },
+                sortable: true,              
+                pageable: {
+                    refresh: true
+                },
+                columns: [
+                {
+                    field: "FIRSTNAME",
+                   width:140,
+                    title: "Doctor",
+                    template: " ${ FIRSTNAME }&nbsp; ${ LASTNAME }"
+                },
+                 {
+                     field: "LICENSE",
+                     title: "License Number",
+                     width: 90,
+                 },
+                 {
+                     field: "STATELICENSE",
+                     title: "State Licence",
+                     width:100,
+                 }
+                 ,
+                 {
+                     field: "IsApproved",
+                     title: "Is Approved",                    
+                     editor: isApprovedDropDownEditor,
+                     template: '#=IsApproved #',
+                     width: 90,
+                 }
+                 ,
+                 {
+                     field: "DateCreated",
+                     title: "Date Created",
+                     width: 100,
+                     template: '#= kendo.toString(DateCreated, "MM/dd/yyyy") #'
+                 }
+                 ,
+                 {
+                     field: "Comment",
+                     title: "Reason to Deactivate",
+                     validation: { required: true, min: 5},
+                     width: 120,
+                 },                
+                {
+                    command: ["edit"],
+                    title: "Edit",
+                    width: 80,
+                   
+                }
+                ],
+                dataBound: function () {
+                    var grid = this;
+                    if (grid.table.hasClass('k-focusable'))
+                        grid.table.removeClass('k-focusable');
+                    grid.tbody.find('>tr').each(function () {
+                        var dataItem = grid.dataItem(this);
+                      
+                        if (dataItem.IsApproved) {
+                            $(this).find('.k-edit').attr('class', 'deactivate');
+                        } else {
+                            $(this).find('.k-edit').attr('class', 'activate');
+                            }
+                    })
+                   
+                }
+
+            });
+            var data = [
+                      { text: "true", value: "true" },
+                      { text: "false", value: "false" }
+            ];
+            function isApprovedDropDownEditor(container, options) {
+                $('<input  data-bind="value:' + options.field + '"/>')
+                    .appendTo(container)
+                    .kendoDropDownList({
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        dataSource: data,
+                    });
+            }
+            function Refresh(e) {
+           
+                $("#grid5").data("kendoGrid").dataSource.read();
+            }
+            $('.target').live('change', function () {
+
+
+                if ($(this).is(':checked')) {
+
+
+                    DisapprovedDoctorsIDs.pop(PatientRepoDeleteID);
+
+                } else {
+                    var PatientRepoDeleteID = $(this).val();
+                    ApprovedDoctorsIDs.pop(PatientRepoDeleteID);
+                    DisapprovedDoctorsIDs.push(PatientRepoDeleteID);
+                }
+            });
+            $("#btndel13").click(function (e) {
+                var model = new Object();
+                $('.target').each(function () {
+
+
+                    if ($(this).is(':checked')) {
+
+                        var PatientRepoDeleteID = $(this).val();
+                        ApprovedDoctorsIDs.push(PatientRepoDeleteID);
+
+                    }
+                });
+                model.UserApproved = ApprovedDoctorsIDs;
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    cache: false,
+                    dataType: 'json',
+                    url: "/AccountSettings/Userapproved",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (msg) {
+                        if (msg) {
+                            location.reload();
+                        }
+
+                    },
+                    data: JSON.stringify(model)
+                });
+            });
+          
+            $("#btndel400").click(function (e) {
+                var model = new Object();
+                $('.target').each(function () {
+
+
+                    if ($(this).is(':checked')) {
+
+
+                    }
+                    else {
+                        var PatientRepoDeleteID = $(this).val();
+                        DisapprovedDoctorsIDs.push(PatientRepoDeleteID);
+                    }
+                });
+                model.UserDisApproved = DisapprovedDoctorsIDs;
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    cache: false,
+                    dataType: 'json',
+                    url: "/AccountSettings/Userdisapproved",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (msg) {
+                        location.reload();
+
+                    },
+                    data: JSON.stringify(model)
+                });
+            });
+
+        }
+        });
+
+  </script>
+  <style>
+      .k-dropdown-wrap {
+          width: 50px! important;      }
+  </style>

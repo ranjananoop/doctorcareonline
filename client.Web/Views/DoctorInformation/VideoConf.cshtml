@@ -1,0 +1,1079 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonEdit";
+
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+
+}
+
+<script type="text/javascript" src="../../Scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.countdown.js"></script>
+@*<script src="https://static.opentok.com/v2/js/opentok.min.js"></script>*@
+<script src="~/Scripts/opentox.js"></script>
+<link rel="stylesheet" href="~/Content/jquery.countdown.css" />
+<script type="text/javascript">
+    var chatMessage = new Object();
+    var cMessage = new Object();
+    var doctorID = null, patientID = null;
+    var startTime = null, endTime = null;
+    var userType = null;
+    var totalMinutes = null, elapsedMinutes = null; appointmentId = 0;
+    $('.img_Showed').each(function () {
+
+        $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+    });
+
+
+    $(function () {
+
+        $('#overlayContainer').insertBefore('.c_container');
+        //$('#displayBarAppointment').insertBefore('#overlayContainer');
+
+        $('#txtMessage').keydown(function (e) {
+            if (e.keyCode == 13) {
+                chatMessage.CHATTEXT = $("#txtMessage").val();
+                chatMessage.DOCTORID = doctorID;
+                chatMessage.PATIENTID = patientID;
+                chatMessage.APPOINTMENTID = appointmentId;
+                $.ajax({
+                    type: "POST",
+                    //Page Name (in which the method should be called) and method name
+                    url: "/DoctorInformation/InsertMessage",
+                    // If you want to pass parameter or data to server side function you can try line
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(chatMessage),
+                    async: true,
+                    //else If you don't want to pass any value to server side function leave the data to blank line below
+                    //data: "{}",
+                    success: function (msg) {
+                        //Got the response from server and render to the client
+
+                    },
+                    error: function (msg) {
+
+                    }
+                });
+                $("#txtMessage").val('');
+            }
+        })
+
+        $("#btnSend").click(function () {
+
+            chatMessage.CHATTEXT = $("#txtMessage").val();
+            chatMessage.DOCTORID = doctorID;
+            chatMessage.PATIENTID = patientID;
+            chatMessage.APPOINTMENTID = appointmentId;
+            $.ajax({
+                type: "POST",
+                //Page Name (in which the method should be called) and method name
+                url: "/DoctorInformation/InsertMessage",
+                // If you want to pass parameter or data to server side function you can try line
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(chatMessage),
+                async: true,
+                //else If you don't want to pass any value to server side function leave the data to blank line below
+                //data: "{}",
+                success: function (msg) {
+                    //Got the response from server and render to the client
+
+                },
+                error: function (msg) {
+
+                }
+            });
+            $("#txtMessage").val('');
+        });
+
+        $("#btnNotesSend").click(function () {
+            var DoctorsInformationEditModel = new Object();
+            DoctorsInformationEditModel.APPOINTMENTID = $("#APPOINTMENTID").val();
+            DoctorsInformationEditModel.NOTES = $("#txtDoctorNotes").val();
+            $.ajax({
+                type: "POST",
+                //Page Name (in which the method should be called) and method name
+                url: "/DoctorInformation/InsertDoctorNotes",
+                // If you want to pass parameter or data to server side function you can try line
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(DoctorsInformationEditModel),
+                async: true,
+                //else If you don't want to pass any value to server side function leave the data to blank line below
+                //data: "{}",
+                success: function (msg) {
+                    //Got the response from server and render to the client
+
+                },
+                error: function (msg) {
+
+                }
+            });
+            $("#txtMessage").val('');
+        });
+
+    });
+
+
+</script>
+<script type="text/javascript">
+
+    function setStatus(ID, flag) {
+
+        var HealthHistoryModel = new Object();
+        HealthHistoryModel.ID = ID;
+        HealthHistoryModel.flag = flag;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: '@Url.Action("DisplayField", "HealthHistory")',
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#divAppointments > p").html(msg.msg);
+
+                    $("#divAppointments").dialog({
+                        autoOpen: false,
+                        modal: false,
+                        height: '250px',
+                        position: 'center',
+
+                        open: function () {
+                            $('.black_overlay').show();
+                            $('.divAppointments').show();
+                        },
+
+                        close: function () {
+
+                            $('.black_overlay').hide();
+                            $('#light').hide();
+                            $('html').removeClass('noScrollbar');
+                        }
+                    });
+                    $("#divAppointments").dialog('open');
+                }
+            },
+            data: JSON.stringify(HealthHistoryModel),
+        });
+
+    }
+    //debugger;
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    // Global Variables
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    var apiKey = 46363152; // OpenTok sample code key. Replace with your own API key.
+    var sessionId; // Replace with your session ID.
+    var token = "moderator_token"; // Should not be hard-coded.
+    // Add to the page using the OpenTok server-side libraries.
+    var session;
+    var publisher;
+    var myConnectionId;
+    var subscribers = {};
+    var isPublishing = false;
+
+    var PUBLISHER_WIDTH = 150
+    var PUBLISHER_HEIGHT = 150
+
+    var SUBSCRIBER_WIDTH = 470	// video widget dimension
+    var SUBSCRIBER_HEIGHT = 350	// video widget dimension
+
+    var activeStreamContainers = new Array();
+    var availableStreamContainers = new Array();
+    var userNames = new Array();
+    var localUserName = '';
+    var lights = new Array();
+    var localUserStreamContainerObj;
+    var watchers = 0;
+    var participants = 0;
+    var debug = false;
+    var audiovideo = null;
+    lights[0] = "<img src='../../Images/off.png' alt='stream off' width='20' height='20'/>";
+    lights[1] = "<img src='../../Images/1.png' alt='stream 1' width='20' height='20' />";
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    // Initialize session.
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    function callback(event) {
+        $this = $(this);
+        switch (event.type) {
+
+            case "minutes":
+                var appointment = new Object();
+                appointment.APPOINTMENTID = appointmentId;
+                if (userType == "D") {
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        cache: false,
+                        dataType: 'json',
+                        url: "/DoctorInformation/MinutesElapsedUpdate",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(appointment),
+                        success: function (msg) {
+                        },
+                    });
+                }
+                finished = false;
+            case "seconds":
+                $this.find('span#' + event.type).html(event.value);
+                if (finished) {
+                    $this.fadeTo(0, 1);
+                    finished = false;
+                }
+                break;
+            case "finished":
+                $this.fadeTo('slow', .5);
+                finished = true;
+                stopPublishing();
+                //$.ajax({
+                //    async: false,
+                //    type: "POST",
+                //    cache: false,
+                //    dataType: 'json',
+                //    url: "/DoctorInformation/EndVideoSession",
+                //    contentType: "application/json; charset=utf-8",
+                //    success: function (msg) {
+                //    },
+                //});
+                break;
+        }
+    }
+
+
+    var currentDate = new Date(),
+       finished = false,
+       myVar = null;
+
+    $(document).ready(function () {
+        //debugger;
+        totalMinutes = 0;
+        elapsedMinutes = 0;
+        var appointmentExists;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/DoctorInformation/CheckAppointmentExists",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                appointmentExists = msg.msg;
+                doctorID = msg.doctorID;
+                patientID = msg.patientID;
+                if (msg.startTime != null)
+                    startTime = new Date(parseInt(msg.startTime.substr(6)));
+                if (msg.endTime != null)
+                    endTime = new Date(parseInt(msg.endTime.substr(6)));
+                userType = msg.userType;
+                totalMinutes = msg.totalMinutes;
+                elapsedMinutes = msg.elapsedMinutes;
+                appointmentId = msg.appointmentID;
+                //alert('chk Appointment exists');
+                //alert('totalMinutes = ' + totalMinutes + ' elapsedMinutes = ' + elapsedMinutes);
+            },
+        });
+        if (appointmentExists == "notexists") {
+
+            $('.closeDisplayBar').show();
+            $('#noAppt').show();           
+        }
+        else
+        if (appointmentExists == "exists" ) {
+            setInterval(function () {
+                getMessages();
+            }, 7000);
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/CreateVideoSession",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    sessionId = msg.sessionid;
+                    console.log(sessionId);
+                    token = msg.token;
+
+                    OT.on("exception", exceptionHandler);
+
+                    if (OT.checkSystemRequirements() != OT.HAS_REQUIREMENTS) {
+                        alert("You don't have the minimum requirements to run this application."
+                          + "Please upgrade to the latest version of Flash.");
+                    } else {
+                        session = OT.initSession(sessionId);
+
+                        // Add event listeners to the session
+                        session.on("sessionConnected", sessionConnectedHandler);
+                        session.on("sessionDisconnected", sessionDisconnectedHandler);
+                        session.on("connectionCreated", connectionCreatedHandler);
+                        session.on("connectionDestroyed", connectionDestroyedHandler);
+                        session.on("streamCreated", streamCreatedHandler);
+                        session.on("streamDestroyed", streamDestroyedHandler);
+                        session.on("signalReceived", signalReceivedHandler);
+                    }
+                    var av = "undefined";
+                    connect();
+                },
+            });
+        }
+
+        $("#btnConnect").click(function () {
+
+            // start the timer immediately if the user loggged in is doctor
+            if (userType == "D") {
+                //alert('btnConnect   ');
+                //alert('totalMinutes = ' + totalMinutes + ' elapsedMinutes = ' + elapsedMinutes);
+                $('div#clock').countdown(new Date().getTime() + ((totalMinutes - elapsedMinutes) * 60 * 1000), callback);
+                SetTimer();
+            }
+            else {
+                myVar = setInterval(function () {
+                    StartTimer();
+                }, 5000);
+            }
+
+            $('#displayBarAppointment').hide();
+            $('#overlayContainer').hide();
+
+
+
+        });
+
+
+
+        // INITIALIZE the stream container pool
+        availableStreamContainers.push({ index: 1, stream: $("#stream_1").get(0), label: $("#stream_name_1").get(0), light: $("#stream_light_1").get(0), icon: "../../Images/pin1.png" });
+        availableStreamContainers.push({ index: 2, stream: $("#stream_2").get(0), label: $("#stream_name_2").get(0), light: $("#stream_light_2").get(0), icon: "../../Images/pin2.png" });
+
+        // Un-comment either of the following to set automatic logging and exception handling.
+        // See the exceptionHandler() method below.
+        OT.setLogLevel(OT.DEBUG);
+    });
+
+    function getMessages() {
+        cMessage.DOCTORID = doctorID;
+        cMessage.PATIENTID = patientID;
+        cMessage.StartTime = startTime;
+        cMessage.EndTime = endTime;
+        cMessage.APPOINTMENTID = appointmentId;
+        $.ajax({
+            type: "POST",
+            //Page Name (in which the method should be called) and method name
+            url: "/DoctorInformation/GetMessages",
+            // If you want to pass parameter or data to server side function you can try line
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(cMessage),
+            async: false,
+            //else If you don't want to pass any value to server side function leave the data to blank line below
+            //data: "{}",
+            success: function (msg) {
+                //Got the response from server and render to the client
+                $("#divChatText").html(msg.text);
+            },
+            error: function (msg) {
+
+            }
+        });
+        SetScrollPosition();
+    }
+
+    function SetTimer() {
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/DoctorInformation/SetTimer",
+            //contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+            },
+            data: { appointmentId: appointmentId },
+        });
+
+    }
+
+    function StartTimer() {
+        //alert('StartTimer');
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/DoctorInformation/ShowTimer",
+           // contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg.msg == "success") {
+                    //alert('StartTimer inside');
+
+                    if (myVar != null)
+                        clearTimeout(myVar);
+                    $('div#clock').countdown(new Date().getTime() + ((totalMinutes - elapsedMinutes) * 60 * 1000), callback);
+                }
+            },
+            data: { appointmentId: appointmentId },
+        });
+
+    }
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    //  OPENTOK EVENT HANDLERS
+    //-------------------------------------------------------------------------------------------------------------------------------------------------
+    function connectionCreatedHandler(event) {
+        // Note that we will do not get a connectionCreated
+        // event for ourselves when we connect - that case
+        // is handled by the sessionConnected event
+
+        if (debug) {
+            alert("connectionCreatedHandler");
+            dumpConnections(event.connections, "");
+        }
+        watchers += event.connections.length;
+        //updateCountDisplays();
+    }
+
+    function connectionDestroyedHandler(event) {
+        if (debug) {
+            alert("connectionDestroyedHandler");
+            dumpConnections(event.connections, event.reason);
+        }
+        watchers -= event.connections.length;
+        //updateCountDisplays();
+    }
+
+    function sessionConnectedHandler(event) {
+        // debugger;
+        myConnectionId = event.target.connection.connectionId;
+        var streamConnectionIds = {};
+        var streamConnections = 0; // Number of connections with a stream
+        if (debug) {
+            alert("sessionConnectedHandler");
+            dumpConnections(event.connections, "");
+            dumpStreams(event.streams, "");
+        }
+
+        for (var i = 0; i < event.streams.length; i++) {
+            addStream(event.target, event.streams[i]);
+
+            if (!streamConnectionIds.hasOwnProperty(event.streams[i].connection.connectionId)) {
+                streamConnectionIds[event.streams[i].connection.connectionId] = true;
+                streamConnections++;
+            }
+        }
+        watchers = event.connections.length - streamConnections;
+        $("#divConnect").hide();
+        $("#divAppt").show();
+
+    }
+    function sessionDisconnectedHandler(event) {
+        event.preventDefault(); // Prevent the default cleanup because we do it ourselves
+        // Remove the publisher
+        if (publisher) {
+            stopPublishing();
+        }
+        // Remove all subscribers
+        for (var streamId in subscribers) {
+            removeStream(event.target, streamId);
+        }
+
+        if (event.reason == "forceDisconnected") {
+            alert("A moderator has disconnected you from the session.So if you want to connect again than please click on Connect button");
+            window.location.reload();
+        }
+        document.getElementById("status").innerHTML = "";
+    }
+    function streamCreatedHandler(event) {
+
+        if (debug) {
+            alert("streamCreatedHandler");
+            dumpStreams(event.streams, "");
+        }
+        for (var i = 0; i < event.streams.length; i++) {
+            var conenctionID = event.streams[i].connection.connectionId;
+            if (event.streams[i].connection.connectionId != event.target.connection.connectionId) {
+                addStream(event.target, event.streams[i]);
+                watchers--;
+
+                if (audiovideo == "Audio") {
+                    turnOnHerAudio(event.streams[i].streamId);
+                    turnOffHerVideo(event.streams[i].streamId);
+                }
+                else if (audiovideo == "Video") {
+                    turnOnHerVideo(event.streams[i].streamId);
+                    turnOffHerAudio(event.streams[i].streamId);
+                }
+            }
+            else {
+                // Our publisher just started streaming
+                // Update status, controls and counts
+
+                participants++;
+                watchers--;
+                if (audiovideo == "Audio") {
+                    turnOnMyAudio();
+                    turnOffMyVideo();
+                }
+                else if (audiovideo == "Video") {
+                    turnOnMyVideo();
+                    turnOffMyAudio();
+                }
+            }
+        }
+    }
+    function streamDestroyedHandler(event) {
+        if (debug) {
+            alert("streamDestroyedHandler");
+            dumpStreams(event.streams, event.reason);
+        }
+        //event.preventDefault(); // Prevent the default cleanup because we do it ourselves
+        for (var i = 0; i < event.streams.length; i++) {
+            if (event.streams[i].connection.connectionId != event.target.connection.connectionId) {
+                removeStream(event.target, event.streams[i].streamId);
+                recycleStreamContainerObj(event.streams[i].connection.connectionId);
+                watchers++;
+            } else {
+                // Our publisher just stopped streaming
+                // Update status, controls and counts
+                participants--;
+                watchers++;
+
+                removeStream(event.target, event.streams[i].streamId);
+                if (event.streams[i].connection.connectionId == session.connection.connectionId &&
+                              event.reason == "forceUnpublished") {
+                    alert("A moderator has stopped publication of your stream.");
+                    publisher = null;
+                    recycleStreamContainerObj(event.streams[i].connection.connectionId);
+                }
+            }
+        }
+    }
+    function signalReceivedHandler(event) {
+        alert("Received a signal from connection " + event.fromConnection.connectionId);
+    }
+    /*
+    If you un-comment the call to OT.on("exception", exceptionHandler) above, OpenTok calls the
+    exceptionHandler() method when exception events occur. You can modify this method to further process exception events.
+    If you un-comment the call to OT.setLogLevel(), above, OpenTok automatically displays exception event messages.
+    */
+    function exceptionHandler(event) {
+        alert("Exception: " + event.code + "::" + event.message);
+    }
+    function publisherResizeHandler(event) {
+
+    }
+
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    //Link Click Event
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    function connect() {
+        session.connect(apiKey, token);
+
+        $("#msgBar").show();
+        $('#divConnect').show();
+
+        audiovideo = "audio"//document.getElementsByName('hidAudioVideo').value;
+    }
+    function disconnect() {
+        session.disconnect();
+        document.getElementById("status").innerHTML = "";
+    }
+    // Called when user wants to start publishing to the session
+    function startPublishing() {
+
+        start_Publishing();
+    }
+    function start_Publishing() {
+        // debugger;
+        //localUserName = document.getElementById('txtName').value
+
+        if (!publisher) {
+            var streamContainerObj = getStreamContainerObj(myConnectionId);
+            if (streamContainerObj) {
+                //var str = streamContainerObj.stream.all.length;
+                localUserStreamContainerObj = streamContainerObj;
+                isPublishing = true;
+                var parentDiv = streamContainerObj.stream
+                var stubDiv = document.createElement("div");
+                stubDiv.id = "tbx_publisher";
+                parentDiv.appendChild(stubDiv);
+                // TBD: failed silently when div ID didn't exist
+                publisher = session.publish(stubDiv.id, { width: PUBLISHER_WIDTH, height: PUBLISHER_HEIGHT, name: localUserName });
+                publisher.on("resize", publisherResizeHandler);
+                publisher.on("settingsButtonClick", publisherResizeHandler);
+                streamContainerObj.label.innerHTML = localUserName;
+                streamContainerObj.light.innerHTML = lights[streamContainerObj.index];
+
+                if (streamContainerObj.index == 1) {
+                    $(".videoStreamSmall").append($("#tempStream1"));
+                    $("#tempStream1").css("display", "block");
+                }
+                else if (streamContainerObj.index == 2) {
+                    $(".videoStreamSmall").append($("#tempStream2"));
+                    $("#tempStream2").css("display", "block");
+                }
+
+            }
+
+        }
+    }
+    function stopPublishing() {
+        finished = true;
+        isPublishing = false;
+        if (publisher != null) {
+            session.unpublish(publisher);
+            publisher = null;
+        }
+        if (localUserStreamContainerObj) {
+            localUserStreamContainerObj.label.innerHTML = "Disconnected";
+            localUserStreamContainerObj.light.innerHTML = lights[0];
+            recycleStreamContainerObj(myConnectionId);
+            delete localUserStreamContainerObj;
+        }
+    }
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    //Helpers Method
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    function forceDisconnectStream(streamId) {
+        if (subscribers[streamId] == 'undefined') {
+        }
+        else {
+            session.forceDisconnect(subscribers[streamId].stream.connection.connectionId);
+        }
+    }
+    function forceUnpublishStream(streamId) {
+        if (subscribers[streamId] == 'undefined') {
+        }
+        else {
+            session.forceUnpublish(subscribers[streamId].stream);
+        }
+    }
+    // Generic function to dump connectionEvents to the alert box
+    function dumpConnections(connections, reason) {
+        for (var i = 0; i < connections.length; i++) {
+            alert("connectionId: " + connections[i].connectionId + " \n" +
+        "reason: " + reason);
+        }
+    }
+    // Generic function to dump streamEvents to the alert box
+    function dumpStreams(streams, reason) {
+        for (var i = 0; i < streams.length; i++) {
+            alert("streamID: " + streams[i].streamId + "\n" +
+        "connectionId: " + streams[i].connection.connectionId + " \n" +
+        "type: " + streams[i].type + "\n" +
+        "name: " + streams[i].name + "\n" +
+        "reason: " + reason);
+        }
+    }
+    function recycleStreamContainerObj(connectionId) {
+        var streamConObj = activeStreamContainers[connectionId];
+        if (streamConObj) {
+            availableStreamContainers.unshift(streamConObj);
+            streamConObj.connectionId = null;
+            streamConObj.label.innerHTML = "disconnected";
+            streamConObj.light.innerHTML = lights[0];
+            var streamContainer = streamConObj.stream;
+            //remove all the children from the stream div container
+            while (streamContainer.hasChildNodes()) {
+                streamContainer.removeChild(streamContainer.lastChild);
+            }
+            delete activeStreamContainers[connectionId];
+        }
+        else {
+            //alert("failed to recycle stream container: " + connectionId);
+        }
+    }
+    function getStreamContainerObj(connectionId) {
+        //  debugger;
+        var streamContainerObj;
+        if (availableStreamContainers.length > 0) {
+            streamContainerObj = availableStreamContainers.shift();
+            streamContainerObj.connectionId = connectionId;
+            activeStreamContainers[connectionId] = streamContainerObj;
+        }
+        return streamContainerObj;
+    }
+    function addStream(tsession, stream) {
+
+        // Create a div for the subscribe widget to replace
+        var streamContainerObj = getStreamContainerObj(stream.connection.connectionId);
+        if (streamContainerObj) {
+
+            var parentDiv = streamContainerObj.stream;
+            var stubDiv = document.createElement("div");
+            stubDiv.id = "tbx_subscriber_" + stream.streamId;
+            parentDiv.appendChild(stubDiv);
+            //if (streamContainerObj.stream.id != "stream_1") {
+
+            //var existssessionid = document.getElementById('hdSessionIDExists');
+            var existssessionid = sessionId;
+            if (existssessionid.value == "") {
+                var moderationControls = document.createElement('div');
+                moderationControls.style.cssFloat = "bottom";
+                moderationControls.innerHTML =
+              '<a href="#" onclick="javascript:forceDisconnectStream(\'' + stream.streamId + '\')">Force Disconnect</a><br>'
+            + '<a href="#" onclick="javascript:forceUnpublishStream(\'' + stream.streamId + '\')">Force Unpublish</a>'
+                parentDiv.appendChild(moderationControls);
+            }
+
+            //}
+            var labelDiv = streamContainerObj.label;
+            labelDiv.innerHTML = stream.name;
+            streamContainerObj.light.innerHTML = lights[streamContainerObj.index];
+            userNames[stream.connection.connectionId] = stream.name;
+            subscribers[stream.streamId] = tsession.subscribe(stream, stubDiv.id, { width: SUBSCRIBER_WIDTH, height: SUBSCRIBER_HEIGHT });
+            if (streamContainerObj.index == 1) {
+                $(".videoStreamLarge").append($("#tempStream1"));
+                $("#tempStream1").css("display", "block");
+            }
+            else if (streamContainerObj.index == 2) {
+                $(".videoStreamLarge").append($("#tempStream2"));
+                $("#tempStream2").css("display", "block");
+            }
+
+            if (userType == "D") {
+                //$('div#clock').countdown(new Date().getTime() + ((totalMinutes - elapsedMinutes) * 60 * 1000), callback);
+                SetTimer();
+                //alert('totalMinutes = ' + totalMinutes + ' elapsedMinutes = ' + elapsedMinutes);
+
+            }
+            $('div#clock').countdown(new Date().getTime() + ((totalMinutes - elapsedMinutes) * 60 * 1000), callback);
+        }
+        participants++;
+
+    }
+    function removeStream(tsession, streamId) {
+        var subscriber = subscribers[streamId];
+        if (subscriber) {
+            var container = document.getElementById(subscriber.id).parentNode;
+            tsession.unsubscribe(subscriber);
+            delete subscribers[streamId];
+            //document.getElementById("subscribers").removeChild(container);
+            participants--;
+        }
+    }
+    function isFull() {
+        return participants >= maxParticipants;
+    }
+    function turnOffHerVideo(streamId) {
+        var subscriber = subscribers[streamId];
+        subscriber.subscribeToVideo(false);
+    }
+    function turnOnHerVideo(streamId) {
+        var subscriber = subscribers[streamId];
+        subscriber.subscribeToVideo(true);
+    }
+    function turnOffHerAudio(streamId) {
+        var subscriber = subscribers[streamId];
+        subscriber.subscribeToAudio(false);
+    }
+    function turnOnHerAudio(streamId) {
+        var subscriber = subscribers[streamId];
+        subscriber.subscribeToAudio(true);
+    }
+    function turnOffMyVideo() {
+        publisher.publishVideo(false);
+    }
+    function turnOnMyVideo() {
+        publisher.publishVideo(true);
+    }
+    function turnOffMyAudio() {
+        publisher.publishAudio(false);
+    }
+    function turnOnMyAudio() {
+        publisher.publishAudio(true);
+    }
+
+
+
+
+</script>
+<div id="divAppointments">
+    <p></p>
+</div>
+<div id="fade" class="black_overlay">
+</div>
+<div id="displayBarAppointment">
+    <div id="noAppt" class="msgDisplayBar noAppoointment" style="display: none">
+        <h1>You don't have an appointment now.</h1>
+    </div>
+    <div id="msgBar" class="msgDisplayBar yesAppointment">
+        <div id="divAppt" style="display: none">
+            <h1>You have an appointment.<br /><a href="#" id="btnConnect" class="button">Connect Now</a></h1>
+        </div>
+        <div id="divConnect" style="display: none">
+            <h1>Please wait as you are connecting....</h1>
+        </div>
+    </div>
+
+    <div class="row c_buttonContainer">
+        <div class="right"><a class="closeDisplayBar button" style="display: none;">Close</a></div>
+    </div>
+</div>
+<div id="overlayContainer"></div>
+
+@Html.HiddenFor(model => model.APPOINTMENTID)
+
+
+<div class="videoConference">
+
+    <div class="fleet">
+        <div style="padding: 0 0 20px 0;">
+
+        </div>
+        <div class="videoLeft">
+            <div class="videoHeader">
+                @if (Model.USERTYPE == "D")
+                {
+
+                    <b>Patient</b>
+
+                }
+                else if (Model.USERTYPE == "P")
+                {
+                    <b>Doctor</b>
+                }
+            </div>
+            <div class="videoStreamLarge">
+            </div>
+            <div class="uploadFiles">
+                <div class="padding">
+                    <div class="editor-label">Attach File</div>
+                    <div class="uploadClass">
+                        <input id="files" name="files" type="file" />
+                    </div>
+                </div>
+
+            </div>
+            @if (Model.USERTYPE == "D")
+            {
+                <b style="padding: 10px 0; display: inline-block;">Doctor Video Call Notes</b>
+                <textarea id="txtDoctorNotes" maxlength="500"></textarea>
+                <input type="button" id="btnNotesSend" value="Save" class="button" />
+            }
+        </div>
+
+        <div class="videoRight">
+
+            <div class="videoSmall">
+                <div class="videoHeader">
+                    @if (Model.USERTYPE == "D")
+                    {
+                        <b>Doctor</b>
+                    }
+                    else if (Model.USERTYPE == "P")
+                    {
+                        <b>Patient</b>
+                    }
+                    <div style="float: right; margin: -2px -8px 0 0;">
+                        <input type="button" class="btnStart" id="publishLink" onclick="javascript: start_Publishing()" />
+                        <input type="button" class="btnStop" id="unpublishLink" onclick="javascript: stopPublishing()" />
+                    </div>
+                </div>
+                <div class="videoStreamSmall">
+                </div>
+            </div>
+            <div class="timeSlot" id="clock">
+                <label>Minutes Left:</label>
+                <span class="timer" id="minutes"></span>
+            </div>
+
+            <div class="chatWindow" id="divChat">
+                <div class="videoHeader">
+                    <b>Chat</b>
+                </div>
+                <div id="divMessages">
+                    <div id="divChatText"></div>
+                </div>
+                <div class="chatControl">
+                    <textarea id="txtMessage" onkeyup="ReplaceChars()" onclick="FocusMe()" onfocus="SetToEnd(this)" maxlength="500"></textarea>
+                    <input type="button" id="btnSend" value="Send" class="button" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="tempStream1" style="display: none">
+    <div id="stream_light_1" class="streamLight">
+        <img src="images/off.png" alt="stream off" width="20" height="20" style="display: none;" />
+    </div>
+    <div id="stream_name_1" class="streamName"></div>
+    <div id="stream_1"></div>
+</div>
+<div id="tempStream2" style="display: none">
+    <div id="stream_light_2" class="streamLight">
+        <img src="images/off.png" alt="stream off" width="20" height="20" style="display: none;" />
+    </div>
+    <div id="stream_name_2" class="streamName"></div>
+    <div id="stream_2"></div>
+</div>
+
+
+<div class="videoConference">
+    <div class="fleet">
+        @Html.HiddenFor(model => model.uploadreport)
+
+        @if (true)
+        {
+            if (@Model.uploadreport)
+            {
+                <div class="row marginTop30">
+                    <div class="d_accordion_Title">
+                        <h6>Upload Report</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                            ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                    <div id="r1">@{Html.RenderPartial("_uploadreport");}</div>
+                </div>
+                <div class="row marginTop30">
+                    <div class="d_accordion_Title">
+                        <h6>Medication Report</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                            ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                    <div id="r2">@{Html.RenderPartial("_medication");}</div>
+                </div>
+                <div class="row marginTop30">
+                    <div class="d_accordion_Title">
+                        <h6>Immunization Report</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                            ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                    <div id="r3 ">@{Html.RenderPartial("_immunization");}</div>
+                </div>
+                <div class="row marginTop30">
+                    <div class="d_accordion_Title">
+                        <h6>Allergies Report</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                            ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                    <div id="r4">@{Html.RenderPartial("_allergies");}</div>
+                </div>
+                <div class="row marginTop30">
+                    <div class="d_accordion_Title">
+                        <h6>Procedure Report</h6>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                            ever since the 1500s, when an unknown printer took a galley of type.
+                        </p>
+                    </div>
+                    <div id="r5">
+                        @{Html.RenderPartial("_procedure");}
+                    </div>
+                </div>
+            }
+        }
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="character video">
+    <div class="characterDesc">How can I help you?</div>
+</div>
+
+<script type="text/javascript">
+    function SetScrollPosition() {
+        var objDiv = document.getElementById("divMessages");
+        objDiv.scrollTop = objDiv.scrollHeight + 1000000;
+    }
+
+    function SetToEnd(txtMessage) {
+        if (txtMessage.createTextRange) {
+            var fieldRange = txtMessage.createTextRange();
+            fieldRange.moveStart('character', txtMessage.value.length);
+            fieldRange.collapse();
+            fieldRange.select();
+        }
+    }
+
+    function ReplaceChars() {
+        var txt = document.getElementById('txtMessage').value;
+        var out = "<"; // replace this
+        var add = ""; // with this
+        var temp = "" + txt; // temporary holder
+
+        while (temp.indexOf(out) > -1) {
+            pos = temp.indexOf(out);
+            temp = "" + (temp.substring(0, pos) + add +
+                temp.substring((pos + out.length), temp.length));
+        }
+
+        document.getElementById('txtMessage').value = temp;
+    }
+
+    function LogOutUser(result, context) {
+        // don't do anything here
+    }
+
+    function LogMeOut() {
+        LogOutUserCallBack('LogOut');
+    }
+
+    function FocusThisWindow(result, context) {
+        // don't do anything here
+    }
+
+    function FocusMe() {
+        // FocusThisWindowCallBack('FocusThisWindow');
+    }
+</script>
+<script>
+
+
+    $('.c_pgTitleText').text('Video Conference');
+    $('.c_pgTitleIcon').addClass('myProfile');
+    $('.img_Shows').each(function () {
+
+        $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+    });
+
+    $("#files").kendoUpload({
+        async: {
+            saveUrl: "/DoctorInformation/SaveFile",
+            //removeUrl: "/DoctorInformation/RemoveFile",
+            autoUpload: true
+        },
+        upload: function (e) {
+            e.data = { doctorID: doctorID, patientID: patientID };
+        },
+        success: onSuccess
+    });
+
+    function onSuccess(e) {
+
+
+    }
+
+    $(document).ready(function () {
+        $('#overlayContainer').height($(document).height());
+    });
+
+
+    $('.closeDisplayBar').click(function () {
+
+        $('#displayBarAppointment').hide();
+        $('#overlayContainer').hide();
+    });
+</script>

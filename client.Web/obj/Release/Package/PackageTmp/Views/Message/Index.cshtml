@@ -1,0 +1,163 @@
+﻿@model DOCVIDEO.Domain.MESSAGE
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+    
+}
+ @using (Html.BeginForm())
+  {
+         @Html.ValidationSummary(true)
+   
+       
+<div class="p_message_con">
+    <div class="pagetTitle">
+        <span class="pageIcon message"></span>
+        <h6 style="margin-bottom:-28px;">Message</h6>
+    </div>
+     <div id="dummy_idBox"></div>
+   
+
+        <div class="padding signupForm">
+             
+            <div class="row">
+                <div class="left">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.SENDMESSAGETO)
+                    </div>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="left">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.SENDMESSAGETO)
+                        @Html.ValidationMessageFor(model => model.SENDMESSAGETO)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.MESSAGESUBJECT)
+                    </div>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="left">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.MESSAGESUBJECT, new { @Value = "", maxlength = 32 })
+                        @Html.ValidationMessageFor(model => model.MESSAGESUBJECT)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <div class="display-label">
+                        @Html.LabelFor(model => model.MESSAGEBODY)
+                    </div>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="left">
+                    <div class="display-field">
+                        @Html.TextAreaFor(model => model.MESSAGEBODY, new { @cols = 10, @rows = 5,  maxlength = 1000, @style="height:100px;"})
+                    </div>
+                </div>
+            </div>
+            <div class="editor-field">
+                <div class="c_buttonContainer">
+                    <div class="right">
+                <a  class="button cancel" href="/Message/Inbox" >Go Back</a>
+                <input type="submit" value="Send" class="button" />
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        <div>
+            @{Html.RenderPartial("inboxAdvancesearch");}
+        </div>
+   
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $('#MessageUpdateStatus').insertBefore('#dummy_idBox');
+    $('.c_pgTitleText').text('Compose');
+    $('.c_pgTitleIcon').addClass('inbox');
+    //$('.validation-summary-errors').insertAfter('.p_message_con');
+   
+    $('.img_Showed').each(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/PatientProfile/ImagePath",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                $('.img_Showed').attr('src', msg.msg);
+
+            }
+        });
+
+    });
+    $(document).ready(function () {
+
+        $('.inboxAdvanceSearch').insertBefore('.availableDoctor');
+
+        $("input").on("focus", function () {
+            $('.validation-summary-errors').hide();
+        });
+
+        $("textarea").on("focus", function () {
+            $('.validation-summary-errors').hide();
+
+        });
+
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+
+
+        
+
+    });
+
+</script>
+<style>
+    .c_rightColumn li {
+        color: green;
+        margin: 10px;
+        font-size:15px;
+        background-color:#F5F1DC;
+        padding:10px 0px 10px 10px;
+        width:730px;
+    }
+    .validation-summary-errors {
+color: #EC3636;
+height: 45px !important;
+}
+</style>
+  }

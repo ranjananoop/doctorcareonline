@@ -1,0 +1,114 @@
+﻿@model IEnumerable<CIINVENT.Domain.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="contentTitle">
+    <h2>Users Info</h2>
+    <div class="title_b_l"></div>
+    <div class="title_b_r"></div>
+</div>
+<div class="bodyContent">
+    <div class="bodyContentPadding">
+        @Html.ActionLink("Create New", "Create", "User", null, new { @class = "btn" })
+
+        <div id="users" class="k-content">
+            <div id="grid"></div>
+            <script>
+                $(document).ready(function () {
+                    $("#grid").kendoGrid({
+                        dataSource: {
+                            type: "Json",
+                            transport: { read: "/User/GetUsers" },
+                            schema: {
+                                id: "UserName",
+                                model: {
+                                    fields: {
+                                        UserName: { editable: false, nullable: true },
+                                        Email: { type: "string" },
+                                        IsApproved: { type: "string" },
+                                        DateOfBirth: { type: "Date" },
+                                        DateOfJoining: { type: "Date" },
+                                        Mobile: { type: "number" },
+                                        DesignationName: { type: "string" },
+                                        FirstName: { type: "string" },
+                                        LastName: { type: "string" },
+                                        DepartmentName: { type: "string" },
+                                        EmployeeTypeEmpType: { type: "string" },
+                                        //Gender: { type: "string" }
+                                    }
+                                }
+                            },
+                            pageSize: 20,
+                        },
+                        height: 600,
+                        scrollable: true,
+                        groupable: false,
+                        filterable: {
+                            extra: false,
+                            operators: {
+                                string: {
+                                    startswith: "Starts with",
+                                    eq: "Is equal to",
+                                    neq: "Is not equal to"
+                                }
+                            }
+                        },
+                        sortable: true,
+                        pageable: true,
+                        columns: [{
+                            field: "UserName",
+                            title: "User Name",
+                            width: 90,
+                            filterable: { ui: UserNameFilter }
+                        },
+                                  {
+                                      field: "FirstName",
+                                      title: "First Name",
+                                      width: 90,
+                                      filterable: false
+                                  },
+                                  {
+                                      field: "LastName",
+                                      title: "Last Name",
+                                      width: 90,
+                                      filterable: false
+                                  },
+                                  {
+                                      field: "Email",
+                                      width: 90,
+                                      filterable: false
+                                  },
+                                  {
+                                      field: "DesignationName",
+                                      title: "Designation",
+                                      width: 80,
+                                      filterable: false
+                                  },
+                                 {
+                                     field: "Mobile",
+                                     width: 80,
+                                     filterable: false
+                                 },
+                                 {
+                                     width: 150,
+                                     filterable: false,
+                                     template: "<a href='/User/PasswordReset/#= UserName#'>Reset Password</a>&nbsp;&nbsp;<a href='/User/Roles/#= UserName#'>Roles</a><a href='/User/Edit/#= UserName#' class='linkEdit'></a><a href='/User/Details/#= UserName#' class='linkDetails'></a><a href='/User/Delete/#= UserName#' class='linkDelete'></a>",
+                                 }
+                        ]
+                    });
+                });
+
+                function UserNameFilter(element) {
+                    element.kendoAutoComplete({
+                        dataSource: JSON
+                    });
+                }
+
+            </script>
+        </div>
+
+    </div>
+</div>

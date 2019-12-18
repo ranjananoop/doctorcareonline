@@ -1,0 +1,89 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+  
+    <div class="docRatesEdit">
+
+                 @Html.HiddenFor(model => model.UserName)
+                 @Html.HiddenFor(model => model.FIRSTNAME)  
+                 @Html.HiddenFor(model => model.INSTITUTIONNAME)
+                 @Html.HiddenFor(model => model.LASTNAME)
+                 @Html.HiddenFor(model => model.GENDER)
+                 @Html.HiddenFor(model => model.CITY)
+                 @Html.HiddenFor(model => model.ZIPCODE)
+                 @Html.HiddenFor(model => model.USERSTATE)
+                 @Html.HiddenFor(model => model.USERSTREETADDRESS1)
+                 @Html.HiddenFor(model => model.LICENSEIN)
+                 @Html.HiddenFor(model => model.LICENSE)
+                 @Html.HiddenFor(model => model.DOBDAY)
+                 @Html.HiddenFor(model => model.DOBYEAR)
+                 @Html.HiddenFor(model => model.DOBMonth)
+                 @Html.HiddenFor(model => model.CurrenttimeZone) 
+
+        <div class="row">
+            <div class="editor-label heading">
+                @Html.LabelFor(model => model.TimeDisplay)
+            </div>
+                <div class="editor-label">
+                @Html.LabelFor(model => model.RateQuatermins)
+                </div>
+                 <div class="editor-label">
+                @Html.LabelFor(model => model.RateHalfmins)
+                </div>               
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RateFortyFivemins)
+            </div>           
+
+                <div class="editor-label">
+                @Html.LabelFor(model => model.RateHourmins)
+            </div>
+        </div>
+        <div class="row">
+            <div class="editor-label heading">
+                @Html.LabelFor(model => model.RateDisplay)
+                </div>
+                <div class="editor-field">
+                     @Html.TextBoxFor(model => model.RateQuatermins, new { maxlength = "5" })                   
+                    @Html.ValidationMessageFor(model => model.RateQuatermins)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.RateHalfmins, new { maxlength = "5" })                 
+                    @Html.ValidationMessageFor(model => model.RateHalfmins)
+                </div>
+
+                <div class="editor-field">
+                      @Html.TextBoxFor(model => model.RateFortyFivemins, new { maxlength = "5" })                   
+                    @Html.ValidationMessageFor(model => model.RateFortyFivemins)
+                </div>
+                <div class="editor-field">
+                     @Html.TextBoxFor(model => model.RateHourmins, new { maxlength = "5" })                  
+                    @Html.ValidationMessageFor(model => model.RateHourmins)
+                </div>
+            </div>
+
+
+            <div>
+            <input type="submit" value="Save" class="btnClass" />
+            <input type="button" value="Back" class="btnClass cancel" />
+       </div>
+
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.docRatesEdit .cancel').click(function () {
+            $('#docRatesDisplay').show();
+            $('#docRatesEdit').hide();
+        });
+
+
+    });
+</script>

@@ -1,0 +1,111 @@
+﻿<div id="grid3"></div>
+
+
+<script>
+
+
+
+    $("#COMMENT").val("");
+
+    $(document).ready(function () {
+
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 2,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetMedicationReportDocPateint",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetMedicationeRep",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var medicationReport = new Object();
+
+                    if (type == "update") {
+                        medicationReportModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "MEDICATIONID",
+                        fields: {
+                            MEDICATIONID: { editable: false, nullable: true },
+                            MEDICATIONNAME: { type: "string" },
+                            PRESCRIBEDDATE: { type: "Date", template: '#= kendo.toString(PRESCRIBEDDATE, "MM/dd/yyyy") #' },
+                            STOPPEDDATE: { type: "Date", template: '#= kendo.toString(STOPPEDDATE, "MM/dd/yyyy") #' },
+                            COMMENT: { type: "string" }
+                        }
+                    }
+                },
+        });
+
+
+        $("#grid3").kendoGrid({
+            dataSource: dataSource1,
+            scrollable: true,
+            groupable: false,
+            filterable: {
+                extra: false,
+                operators: {
+                    string: {
+                        startswith: "Starts with",
+                        eq: "Is equal to",
+                        neq: "Is not equal to"
+                    }
+                }
+            },
+            sortable: true,
+            pageable: true,
+            autoBind: true,
+            Code: { editable: true },
+            editable: "inline",
+            columns: [
+           {
+               field: "MEDICATIONNAME",
+               title: "Medication Name",
+               width: "25%",
+               filterable: false
+           }, {
+               field: "PRESCRIBEDDATE",
+               title: "Prescribed Date",
+               width: "24%",
+               template: '#= kendo.toString(PRESCRIBEDDATE, "MM/dd/yyyy") #',
+               filterable: false
+           }, {
+               field: "STOPPEDDATE",
+               title: "Stopped Date",
+               width: "24%",
+               template: '#= kendo.toString(STOPPEDDATE, "MM/dd/yyyy") #',
+               filterable: false
+           },
+            {
+            title: "View",
+        width: 50, template: "<a  title=${ MEDICATIONID } onclick=setStatus(${ MEDICATIONID },5) class='linkClass'  >View</a>"
+    }
+
+
+            ]
+        });
+
+    });
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

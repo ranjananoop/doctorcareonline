@@ -1,0 +1,481 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script lang="javascript" type="text/javascript"></script>
+
+<script>
+    var map;
+    var geocoder, icon;
+    icon = '/Content/Images/blue_marker.png';
+    function InitializeMap() {
+
+        var latlng = new google.maps.LatLng(36.553224, -96.855469);
+        var myOptions =
+        {
+            zoom: 4,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: false,
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    }
+
+    function FindLocaiton(addressdata) {
+        geocoder = new google.maps.Geocoder();
+        //InitializeMap();
+
+
+        if (addressdata != null) {
+
+            geocoder.geocode({ 'address': addressdata }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        icon:icon,
+                    });
+
+                }
+                else {
+
+                }
+
+            });
+        }
+
+        resizeprofilephoto();
+    }
+
+
+    function resizeprofilephoto() {
+        
+        $(".imgLiquidFill").imgLiquid({
+            fill: true,
+            horizontalAlign: "center",
+            verticalAlign: "top"
+        });
+    }
+
+
+    window.onload = InitializeMap;
+
+</script>
+
+<div class="c_advancedSearch">
+    <div class="c_column_three">
+        <div style="float: left; width: 250px;">
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Speciality)
+                </div>
+                
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Speciality, new[] {   
+	                      new SelectListItem { Value ="Acupuncturists",Text="Acupuncturists"},
+                            new SelectListItem { Value ="Adult Nurse Practitioners",Text="Adult Nurse Practitioners"},
+                            new SelectListItem { Value ="Adult Psychiatric & Mental Health Nurse Practitioners",Text="Adult Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Allergists",Text="Allergists"},
+                            new SelectListItem { Value ="Anesthesiologists",Text="Anesthesiologists"},
+                            new SelectListItem { Value ="Audiologists",Text="Audiologists"},
+                            new SelectListItem { Value ="Cardiac Electro physiologists",Text="Cardiac Electro physiologists"},
+                            new SelectListItem { Value ="Cardiologists",Text="Cardiologists"},
+                            new SelectListItem { Value ="Chiropractors",Text="Chiropractors"},
+                            new SelectListItem { Value ="Colorectal Surgeons",Text="Colorectal Surgeons"},
+                            new SelectListItem { Value ="Dentists",Text="Dentists"},
+                            new SelectListItem { Value ="Dermatologists",Text="Dermatologists"},
+                            new SelectListItem { Value ="Dietitians",Text="Dietitians"},
+                            new SelectListItem { Value ="Dietitians/Nutritionists",Text="Dietitians/Nutritionists"},
+                            new SelectListItem { Value ="Ear, Nose & Throat Doctors",Text="Ear, Nose & Throat Doctors"},
+                            new SelectListItem { Value ="Emergency Medicine Physicians",Text="Emergency Medicine Physicians"},
+                            new SelectListItem { Value ="Endocrinologists",Text="Endocrinologists"},
+                            new SelectListItem { Value ="Endodontists",Text="Endodontists"},
+                            new SelectListItem { Value ="Eye Doctors",Text="Eye Doctors"},
+                            new SelectListItem { Value ="Family Nurse Practitioners",Text="Family Nurse Practitioners"},
+                            new SelectListItem { Value ="Family Physicians",Text="Family Physicians"},
+                            new SelectListItem { Value ="Family Psychiatric & Mental Health Nurse Practitioners",Text="Family Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Gastroenterologists",Text="Gastroenterologists"},
+                            new SelectListItem { Value ="General Nurse Practitioners",Text="General Nurse Practitioners"},
+                            new SelectListItem { Value ="Geneticists",Text="Geneticists"},
+                            new SelectListItem { Value ="Hand Surgeons",Text="Hand Surgeons"},
+                            new SelectListItem { Value ="Hearing Specialists",Text="Hearing Specialists"},
+                            new SelectListItem { Value ="Hematologists",Text="Hematologists"},
+                            new SelectListItem { Value ="Immunologists",Text="Immunologists"},
+                            new SelectListItem { Value ="Infectious Disease Specialists",Text="Infectious Disease Specialists"},
+                            new SelectListItem { Value ="Infertility Specialists",Text="Infertility Specialists"},
+                            new SelectListItem { Value ="Internists",Text="Internists"},
+                            new SelectListItem { Value ="Medical Ethicists",Text="Medical Ethicists"},
+                            new SelectListItem { Value ="Mental Health Nurse Practitioners",Text="Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Microbiologists",Text="Microbiologists"},
+                            new SelectListItem { Value ="Naturopathic Doctors",Text="Naturopathic Doctors"},
+                            new SelectListItem { Value ="Nephrologists",Text="Nephrologists"},
+                            new SelectListItem { Value ="Neurologists",Text="Neurologists"},
+                            new SelectListItem { Value ="Neuropsychiatrists",Text="Neuropsychiatrists"},
+                            new SelectListItem { Value ="Neurosurgeons",Text="Neurosurgeons"},
+                            new SelectListItem { Value ="Nutritionists",Text="Nutritionists"},
+                            new SelectListItem { Value ="OB-GYNs",Text="OB-GYNs"},
+                            new SelectListItem { Value ="OB-GYN Nurse Practitioners",Text="OB-GYN Nurse Practitioners"},
+                            new SelectListItem { Value ="Occupational Medicine Specialists",Text="Occupational Medicine Specialists"},
+                            new SelectListItem { Value ="Oncologists",Text="Oncologists"},
+                            new SelectListItem { Value ="Ophthalmologists",Text="Ophthalmologists"},
+                            new SelectListItem { Value ="Optometrists",Text="Optometrists"},
+                            new SelectListItem { Value ="Oral Surgeons",Text="Oral Surgeons"},
+                            new SelectListItem { Value ="Orthodontists",Text="Orthodontists"},
+                            new SelectListItem { Value ="Orthopedic Surgeons",Text="Orthopedic Surgeons"},
+                            new SelectListItem { Value ="Pain Management Specialists",Text="Pain Management Specialists"},
+                            new SelectListItem { Value ="Pathologists",Text="Pathologists"},
+                            new SelectListItem { Value ="Pediatric Dentists",Text="Pediatric Dentists"},
+                            new SelectListItem { Value ="Pediatric Nurse Practitioners",Text="Pediatric Nurse Practitioners"},
+                            new SelectListItem { Value ="Pediatricians",Text="Pediatricians"},
+                            new SelectListItem { Value ="Periodontitis",Text="Periodontitis"},
+                            new SelectListItem { Value ="Physiatrists",Text="Physiatrists"},
+                            new SelectListItem { Value ="Physical Therapists",Text="Physical Therapists"},
+                            new SelectListItem { Value ="Plastic Surgeons",Text="Plastic Surgeons"},
+                            new SelectListItem { Value ="Podiatrists",Text="Podiatrists"},
+                            new SelectListItem { Value ="Preventive Medicine Specialists",Text="Preventive Medicine Specialists"},
+                            new SelectListItem { Value ="Doctors",Text="Doctors"},
+                            new SelectListItem { Value ="Prosthodontics",Text="Prosthodontics"},
+                            new SelectListItem { Value ="Psychiatrists",Text="Psychiatrists"},
+                            new SelectListItem { Value ="Psychologists",Text="Psychologists"},
+                            new SelectListItem { Value ="Psychosomatic Medicine Specialists",Text="Psychosomatic Medicine Specialists"},
+                            new SelectListItem { Value ="Psychotherapists",Text="Psychotherapists"},
+                            new SelectListItem { Value ="Pulmonologists",Text="Pulmonologists"},
+                            new SelectListItem { Value ="Radiation Oncologists",Text="Radiation Oncologists"},
+                            new SelectListItem { Value ="Radiologists",Text="Radiologists"},
+                            new SelectListItem { Value ="Reproductive Endocrinologists",Text="Reproductive Endocrinologists"},
+                            new SelectListItem { Value ="Rheumatologists",Text="Rheumatologists"},
+                            new SelectListItem { Value ="Sleep Medicine Specialists",Text="Sleep Medicine Specialists"},
+                            new SelectListItem { Value ="Sports Medicine Specialists",Text="Sports Medicine Specialists"},
+                            new SelectListItem { Value ="Surgeons",Text="Surgeons"},
+                            new SelectListItem { Value ="Therapists / Counselors",Text="Therapists / Counselors"},
+                            new SelectListItem { Value ="Travel Medicine Specialists",Text="Travel Medicine Specialists"},
+                            new SelectListItem { Value ="Urologists",Text="Urologists"},
+                            new SelectListItem { Value ="Women’s Health Nurse Practitioners",Text="Women’s Health Nurse Practitioners"}	
+                        }, "Select", new { })
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.GENDER)
+                </div>
+                
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.GENDER, new[] {
+                                new SelectListItem(){Text= "Male" ,Value="Male" },
+                                new SelectListItem(){Text="Female", Value ="Female" }
+                            }, "Select Your Gender", new { })
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.USERSTATE)
+                </div>
+              
+                <div class="editor-field">                    
+                        @Html.DropDownListFor(model => model.USERSTATE, new[] {
+                          new SelectListItem(){Text= "Andaman and Nicobar Islands" ,Value="Andaman and Nicobar Islands" },
+                          new SelectListItem(){Text= "Andhra Pradesh" ,Value="Andhra Pradesh" },
+                          new SelectListItem(){Text= "Arunachal Pradesh" ,Value="Arunachal Pradesh" },
+                          new SelectListItem(){Text= "Assam" ,Value="Assam" },
+                          new SelectListItem(){Text= "Bihar" ,Value="Bihar" },
+                          new SelectListItem(){Text= "Chandigarh" ,Value="Chandigarh" },
+                          new SelectListItem(){Text= "Chhattisgarh" ,Value="Chhattisgarh" },
+                          new SelectListItem(){Text= "Dadra and Nagar Haveli" ,Value="Dadra and Nagar Haveli" },
+                          new SelectListItem(){Text= "Daman and Diu" ,Value="Daman and Diu" },
+                          new SelectListItem(){Text= "Delhi" ,Value="Delhi" },
+                          new SelectListItem(){Text= "Goa" ,Value="Goa" },
+                          new SelectListItem(){Text= "Gujarat" ,Value="Gujarat" },
+                          new SelectListItem(){Text= "Haryana" ,Value="Haryana" },
+                          new SelectListItem(){Text= "Himachal Pradesh" ,Value="Himachal Pradesh" },
+                          new SelectListItem(){Text= "Jammu and Kashmir" ,Value="Jammu and Kashmir" },
+                          new SelectListItem(){Text= "Jharkhand" ,Value="Jharkhand" },
+                          new SelectListItem(){Text= "Karnataka" ,Value="Karnataka" },
+                          new SelectListItem(){Text= "Kerala" ,Value="Kerala" },
+                          new SelectListItem(){Text= "Lakshadweep" ,Value="Lakshadweep" },
+                          new SelectListItem(){Text= "Madhya Pradesh" ,Value="Madhya Pradesh" },
+                          new SelectListItem(){Text= "Maharashtra" ,Value="Maharashtra" },
+                          new SelectListItem(){Text= "Manipur" ,Value="Manipur" },
+                          new SelectListItem(){Text= "Meghalaya" ,Value="Meghalaya" },
+                          new SelectListItem(){Text= "Mizoram" ,Value="Mizoram" },
+                          new SelectListItem(){Text= "Nagaland" ,Value="Nagaland" },
+                          new SelectListItem(){Text= "Orissa" ,Value="Orissa" },
+                          new SelectListItem(){Text= "Pondicherry" ,Value="Pondicherry" },
+                          new SelectListItem(){Text= "Punjab" ,Value="Punjab" },
+                          new SelectListItem(){Text= "Rajasthan" ,Value="Rajasthan" },
+                          new SelectListItem(){Text= "Sikkim" ,Value="Sikkim" },
+                          new SelectListItem(){Text= "Tamil Nadu" ,Value="Tamil Nadu" },
+                          new SelectListItem(){Text= "Tripura" ,Value="Tripura" },
+                          new SelectListItem(){Text= "Uttaranchal" ,Value="Uttaranchal" },
+                          new SelectListItem(){Text= "Uttar Pradesh" ,Value="Uttar Pradesh" },
+                          new SelectListItem(){Text= "West Bengal" ,Value="West Bengal" },
+                                                          }, "Select")                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Language)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Language, new[] {   
+	                   new SelectListItem { Value = "AR", Text = "Arabic"},
+                                     new SelectListItem { Value = "EN", Text = "English"},
+                                     new SelectListItem { Value = "FR", Text = "French"},
+                                     new SelectListItem { Value = "DE", Text = "German"},
+                                     new SelectListItem { Value = "EL", Text = "Greek"},
+                                     new SelectListItem { Value = "HI", Text = "Hindi"},
+                                     new SelectListItem { Value = "IT", Text = "Italian"},
+                                     new SelectListItem { Value = "JA", Text = "Japanese"},
+                                     new SelectListItem { Value = "KO", Text = "Korean"},
+                                     new SelectListItem { Value = "ZH", Text = "Mandarin"},
+                                     new SelectListItem { Value = "PL", Text = "Polish"},
+                                     new SelectListItem { Value = "PT", Text = "Portuguese"},
+                                     new SelectListItem { Value = "RO", Text = "Romanian"},
+                                     new SelectListItem { Value = "RU", Text = "Russian"},
+                                     new SelectListItem { Value = "ES", Text = "Spanish"},
+                                     new SelectListItem { Value = "TR", Text = "Turkish"},
+                                     new SelectListItem { Value = "VI", Text = "Vietnamese"},
+                        }, "Select", new { })
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ZIPCODE)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.ZIPCODE)
+                </div>
+            </div>
+            <div class="row" style="margin-top:8px;">
+                <div class="left">
+                    <input type="button" value="Get Doctors" id="btnSave" class="button" />
+                </div>
+            </div>
+
+        </div>
+        <div style="float: left; width: 300px;">
+            <div class="amy_group">
+                <div class="amy_desc">
+                    <h2>Get me the doctors</h2>
+                    <p>based on these filters</p>
+                </div>
+
+                <div class="amy_inner"></div>
+            </div>
+        </div>
+        <div style="float: left; width: 408px;">
+            <div id="map_canvas"></div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="primaryHeading" >Primary Doctors</div>
+    <div id="generalSearch" ></div>
+
+
+</div>
+
+
+
+<script>
+    
+    
+    function returnImage(rating) {
+        var path;
+        switch (rating) {
+            case 0:
+                path = '/Content/Images/none.png';
+                break;
+            case 1:
+                path = '/Content/Images/one.png';
+                break;
+            case 2:
+                path = '/Content/Images/two.png';
+                break;
+            case 3:
+                path = '/Content/Images/three.png';
+                break;
+            case 4:
+                path = '/Content/Images/four.png';
+                break;
+            case 5:
+                path = '/Content/Images/five.png';
+                break;
+            case null:
+                path = '/Content/Images/none.png';
+                break;
+            default:
+                path = '/Content/Images/none.png';
+        }
+        return path;
+    }
+    $(document).ready(function () {
+        
+       
+        GetExistingSession();
+
+
+
+
+        function populate(datavalue) {
+
+           
+            $("#generalSearch").kendoGrid({
+
+                dataSource: {
+                    data: datavalue,
+                    type: "Json",
+                    pageSize: 5
+                },
+                sortable: true,
+                pageable: true,
+                columns: [
+                    //{ field: "", width: 180, template: "<div style='width:100px;float:left;margin-right:10px;margin-top: 2px;'><img src=${ USERPHOTOFILEPATH } class='docImage'  alt=${ UserName } onload=FindLocaiton('${ MAPPINGADDRESS }') /></div><div style='float:left;margin-right:2px;width:180px;padding:0px;text-wrap:normal;'><b>Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }#if(SUFFIX ===null){# #}else{#<br/> #=SUFFIX# # }#</b><br/><div style='margin:0px;width:170px;padding:0px;text-wrap:normal;'>${ SPECIALITY }</div><br/><div style='float:none'>${ STATELICENSE }</div><img src='/Content/Images/none.png' onload='this.onload=null; this.src=returnImage(${ AverageRating });' style='width:100px;height:20px'/></div>" },
+
+                           { field: "", width: 180, template: "<div class='boxSep' style='margin-top:5px'><div class='imgLiquidFill imgLiquid' style='width:120px; height:120px;'><img  src=${ USERPHOTOFILEPATH }   alt=${ UserName } onload=FindLocaiton('${ MAPPINGADDRESS }') /></div></div><div style='float:left;margin-right:2px;margin-left:5px;width:180px;padding:0px;text-wrap:normal;'><b>#if(Salutation ===null){# #}else{# #=Salutation# # }# ${ FIRSTNAME }&nbsp; ${ LASTNAME }#if(SUFFIX ===null){# #}else{#<br/> #=SUFFIX# # }#</b><br/><div style='margin:0px;width:195px;padding:0px;text-wrap:normal;font-style:italic;'>${ SPECIALITY }</div><br/><div style='float:none'>${ STATELICENSE }</div><img src='/Content/Images/none.png' onload='this.onload=null; this.src=returnImage(${ AverageRating });' style='width:100px;height:20px'/></div>" },
+                   {
+                       field: "", width: 100, template: "<div style='float:left;margin-right:5px;padding:0px;text-overflow:ellipsis;'><b>${ INSTITUTIONNAME }</b><br/>${ STREETADDRESS1 } #if(STREETADDRESS2 ===null){# #}else{#<br/> #=STREETADDRESS2# # }# <br/>${ CLINICCITY },&nbsp; ${ CLINICZIPCODE }<br/>${ CLINICUSERSTATE }</div>", title: "Doctors Details", attributes: {
+                           style: "padding-right:5px;"
+                       }
+                   },
+                    { field: "", width: 100, template: " <a href='DoctorsInformatonViewsAnnonymus?id=#=UserName#&mode=1' class='linkClass'><span class='icon_videoSlots'></span>Video Slots</a> <br/><a href='DoctorsInformatonViewsAnnonymus?id=#=UserName#&mode=2' class='linkClass' ><span class='icon_clinicSlots'></span>Clinic Slots</a>  ", title: "Available Slots" },
+                    { field: "", width: 100, template: " <a href='DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' >View Profile</a> <br/><a href='DoctorsInformatonViewsReviews?id=#=UserName#' class='linkClass' >View Reviews</a>  ", title: "Available Details" }
+
+                ]
+            });
+
+
+           
+
+
+
+
+
+
+            $('.target').live('change', function () {
+
+
+
+                if ($(this).is(':checked')) {
+                    var preferedData = new Object();
+                    preferedData.ProviderId = $(this).val();
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        cache: false,
+                        dataType: 'json',
+                        url: "/PatientProfile/PreferedDoctorUpdate",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (msg) {
+                            if (msg) {
+                                alert(msg.msg);
+                            }
+                        },
+                        data: JSON.stringify(preferedData),
+                    });
+                }
+                else {
+                    var preferedData = new Object();
+                    preferedData.RemoveProviderId = $(this).val();
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        cache: false,
+                        dataType: 'json',
+                        url: "/PatientProfile/PreferedDoctorUpdate",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (msg) {
+                            if (msg) {
+                                alert(msg.msg);
+                            }
+                        },
+                        data: JSON.stringify(preferedData),
+                    });
+                }
+            });
+
+        }
+        function GetExistingSession() {
+
+            
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/GetExistingSession",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg.msg != "No records") {
+                        datavalue = msg;
+                        populate(datavalue);
+                        $("#generalSearch").show();
+                        $(".primaryHeading").show();
+                    }
+                   
+                },
+                // data: JSON.stringify(doctorsInformationEditmodel),
+            });
+        }
+        $("#btnSave").click(function () {
+
+          
+            var doctorsInformationEditmodel = new Object();
+            var datavalue = null;
+           
+            $("#generalSearch").show();
+            $(".primaryHeading").show();
+
+            doctorsInformationEditmodel.Speciality = $("#Speciality").val();
+            doctorsInformationEditmodel.GENDER = $("#GENDER").val();
+            doctorsInformationEditmodel.CITY = $("#CITY").val();
+            doctorsInformationEditmodel.ZIPCODE = $("#ZIPCODE").val();
+            doctorsInformationEditmodel.USERSTATE = $("#USERSTATE").val();
+            doctorsInformationEditmodel.Language = $("#Language").val();
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/DoctorsSearchData",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        datavalue = msg;
+                        populate(datavalue);
+                    }
+                    else {
+                        alert(msg.msg);
+                    }
+                },
+                data: JSON.stringify(doctorsInformationEditmodel),
+            });
+
+
+        });
+    });
+    
+
+</script>
+<script>
+    $(document).ready(function () {
+        
+        // create DropDownList from input HTML element
+
+        // create DropDownList from select HTML element
+        $("#Speciality").kendoDropDownList();
+        $("#GENDER").kendoDropDownList();
+        $("#USERSTATE").kendoDropDownList();
+        $("#Language").kendoDropDownList();
+    });
+</script>
+
+ 

@@ -1,0 +1,177 @@
+﻿@model client.Web.Models.BookingAppointmentModel
+
+
+<div class="reason">
+    
+    <div class="row">
+        <p style="margin-left: 4px;">
+            PayPal is the faster,safer way to pay and get paid online.The service allows the members to send money without sharing financial information, with the flexibility to pay using their account balances,bank accounts, credit card or promotional financing.
+        </p>
+        <br />
+        <div class="display-label">
+            
+        </div>
+    </div>
+    <div class="appontment_1Box">
+        <img src="~/Images/paypal_img.jpg" />
+      
+        </div>
+
+    <div class="appontment_2Box">
+        <div ><h2>@Html.DisplayNameFor(model => model.ISEXISITING)</h2></div>
+        <div class="row" >
+        <div class="left checkbox-group">
+          <div class="left" style="margin:-12px 10px 0px -6px"> @Html.RadioButtonFor(model => model.ISEXISITING, 0, new { Checked = "checked" })</div><div class="left">I'm an existing patient *</div> <br />
+            <div class="left" style="margin:-5px 0px 0px -32px;"> @Html.RadioButtonFor(model => model.ISNOTEXISITING, 1) </div><div style="margin-top:8px;">I'm a new patient *</div> 
+        </div>
+            
+    </div>
+        <div class="row">
+        <div class="display-label" style="margin-top: 8px;">
+            <div>@Html.DisplayNameFor(model => model.REASONFORVISIT)</div>
+        </div>
+        <div class="display-field" style="margin:10px 0px 0px 0px;">
+            @Html.TextBoxFor(model => model.REASONFORVISIT, new { maxlength = "46" })
+        </div>
+        
+    </div>
+        </div>
+    <br />
+    <div class="appontment_3Box">
+    
+    <div class="row">
+        <div class="space_bottom">
+          <span style="color: #0F82DC;">  @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</span>
+        
+          <h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="space_bottom">
+          <div style="color: #0F82DC;width:100px;"> @Html.DisplayNameFor(model => model.Speciality)</div>
+        
+            <div><h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                @Html.DisplayFor(model => model.LASTNAME)</strong> </h3>
+            <em>@Html.DisplayFor(model => model.Speciality)</em></div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="space_bottom">
+           <span style="color: #0F82DC">   @Html.DisplayNameFor(model => model.RateDisplay)</span>
+        
+          <h3><strong> @Html.DisplayFor(model => model.RateQuatermins)</strong> </h3> 
+        </div>
+    </div>
+         </div>
+    <div class="row c_buttonContainer">
+        <div class="display-label">&nbsp;</div>
+        <div class="right">
+            <input type="button" value="Confirm" class="button" id="btnSave" />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div>
+            <div class="display-field">
+                @Html.HiddenFor(model => model.DOCTORID)
+                @Html.HiddenFor(model => model.DOCTORSLOTID)
+                @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<script>
+
+
+
+    $(document).ready(function (e) {
+
+        $("#APPOINTMENTENDTIME").change(function () {
+            $('.validation-summary-errors').hide();
+            $("#MessageUpdateStatus").hide();
+        });
+
+        $('#REASONFORVISIT').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+      
+        $(":radio:eq(0)").click(function () {
+            $("#ISEXISITING").attr('checked','checked')
+            $("#ISNOTEXISITING").prop('checked', false);
+        });
+
+        $(":radio:eq(1)").click(function () {
+            $("#ISEXISITING").prop('checked', false);
+            $("#ISNOTEXISITING").attr('checked','checked');
+        });
+
+        });
+        $("#btnSave").click(function (e) {
+            var BookingAppointmentModel = new Object();
+            var datavalue = null;
+
+            if ($('input:radio[name=ISEXISITING]:checked').val() != null) {
+                BookingAppointmentModel.ISEXISITING = "true";
+            } else if ($('input:radio[name=ISNOTEXISITING]:checked').val() != null) {
+                BookingAppointmentModel.ISEXISITING = "false";
+            }
+
+            $(this).closest('li#li_tab1').addClass('done');
+
+
+
+            BookingAppointmentModel.REASONFORVISIT = $("#REASONFORVISIT").val();
+
+            BookingAppointmentModel.APPOINTMENTENDTIME = $("#APPOINTMENTENDTIME").val();
+            BookingAppointmentModel.APPOINTMENTSTARTTIME = $("#APPOINTMENTSTARTTIME").val();
+            BookingAppointmentModel.DOCTORID = $("#DOCTORID").val();
+            BookingAppointmentModel.DOCTORSLOTID = $("#DOCTORSLOTID").val();
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/PatientProfile/Appintments",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg.msg == "Requested Slots are not Available") {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                    } else if (msg.msg == "Error : Requested Slots Pay Rates are not Available ,Try different duration") {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                    }
+                    else {
+                        $("#MessageUpdateStatus").val("");
+                        tab("tab2");
+                    }
+                    
+                },
+                data: JSON.stringify(BookingAppointmentModel),
+            });
+
+
+        });
+
+ 
+
+</script>

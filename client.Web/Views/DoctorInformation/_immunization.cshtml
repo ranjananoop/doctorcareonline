@@ -1,0 +1,102 @@
+﻿
+<div id="gridimmune"></div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#COMMENT").val("");
+
+        var dataSource1 = new kendo.data.DataSource({
+            pageSize: 3,
+            transport: {
+                read: {
+                    url: "/HealthHistory/GetImmuneReportDocPateint",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                },
+                update: {
+                    url: "/HealthHistory/GetImmuneRep",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                },
+
+                parameterMap: function (data, type) {
+                    var immuneReport = new Object();
+
+                    if (type == "update") {
+                        immuneModel = data.models;
+                        return JSON.stringify(data);
+                    }
+                    return JSON.stringify(data);
+                }
+            },
+            batch: false,
+            autoSync: false,
+            schema:
+                {
+                    model: {
+                        id: "IMMUNIZATIONID",
+                        fields: {
+                            IMMUNIZATIONID: { editable: false, nullable: true },
+                            IMMUNIZATIONNAME: { type: "string" },
+                            IMMUNEDATE: { type: "Date", template: '#= kendo.toString(IMMUNEDATE, "MM/dd/yyyy") #' }
+                        }
+                    }
+                },
+        });
+
+
+
+        $("#gridimmune").kendoGrid({
+
+            dataSource: dataSource1,
+
+            width: "20px",
+            groupable: false,
+            filterable: {
+                extra: false,
+                operators: {
+                    string: {
+                        startswith: "Starts with",
+                        eq: "Is equal to",
+                        neq: "Is not equal to"
+                    }
+                }
+            },
+            autoBind: true,
+            editable: "inline",
+            sortable: true,
+            pageable: true,
+            Code: { editable: true },
+            columns: [
+                {
+                    field: "IMMUNIZATIONNAME",
+                    title: "Immunization Name",
+                    width: "35%",
+                    filterable: false
+                },
+                {
+                    title: "Immune Date",
+                    field: "IMMUNEDATE",
+                    template: '#= kendo.toString(IMMUNEDATE, "MM/dd/yyyy") #',
+                    width: "35%",
+                    filterable: false
+                } ,    
+            {
+            title: "View",
+        width: 50, template: "<a  title=${ IMMUNIZATIONID } onclick=setStatus(${ IMMUNIZATIONID },4) class='linkClass'  >View</a>"
+    }
+            ]
+        });
+
+    });
+
+</script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

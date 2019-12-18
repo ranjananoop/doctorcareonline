@@ -1,0 +1,46 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonReviews";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@*<div class="c_body_fleet">
+        <div class="c_pgTitle">
+            <div class="c_pgTitle_Fleet">
+                <h1 class="c_pgTitleText"></h1>
+            </div>
+        </div>
+    </div>
+
+*@
+@*<h2><span class="username">@Html.ActionLink("My Profile", "DoctorsInformatonViews", "DoctorInformation", htmlAttributes: new { @class = "username", title = "Manage" })</span>> Public Profile</h2>*@
+
+
+<div>
+    @{Html.RenderPartial("_doctorreview");}
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+
+    $(document).ready(function () {
+        $('.d_doctors_review_rating_display').hide();
+        $('.c_pgTitleText').text('Reviews');
+        $('.c_pgTitleIcon').addClass('docInfoViews');
+
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+    });
+</script>

@@ -1,0 +1,364 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+
+
+<div>
+    <div>
+
+        @using (Html.BeginForm())
+        {
+           
+            <div class="accordion doctorProfileEdit">
+
+                <div id="fade" class="black_overlay" style="height:244%;"></div>
+                <div class="pagetTitle">
+                    <span class="pageIcon editDocInfo"></span>
+                    <h3>Edit Doctor Info</h3>
+                </div>
+                  <div style="margin: 0 10px 0 10px;">
+                <input id="MessageUpdateStatus" disabled="disabled" type="text" value="@Model.MessageUpdateStatus"  style="display:none;" />
+                 <div id="tabs">
+        <ul>
+            <li id="li_tab1" onclick="customtab('tab1')"><a>Doctor Informations</a></li>
+            <li id="li_tab2" onclick="customtab('tab2')"><a>My Reviews</a></li>
+            <li id="li_tab3" onclick="customtab('tab3')"><a>Clinic Details</a></li>
+            <li id="li_tab4" onclick="customtab('tab4')"><a>Pay Rates</a></li>            
+
+        </ul>
+
+        <div id="Content_Area">
+
+            <div id="tab1" style="display:block;">
+                <h1 class="subTitle"> @Html.DisplayNameFor(model => model.ABOUTME)&nbsp;@Html.DisplayFor(model => model.Salutation)&nbsp;@Html.DisplayFor(model => model.FIRSTNAME) &nbsp;@Html.DisplayFor(model => model.LASTNAME) <span class="toggleRight"><a class="toggle doctorInfo linkClass">Edit</a> <a class="customToggleCollapse docMyProfile"></a></span></h1>
+
+                    <div class="customAccordionContent">
+                        <div id="doctorsInfoDisplay">
+                            @{Html.RenderPartial("_DoctorsInfoDisplay");}
+                        </div>
+                        <div id="doctorsInfoEdit">@{Html.RenderPartial("_DoctorsInfoEdit");}</div>
+                    </div>
+                  <!--Doctor on Video-->
+                    <h1 class="subTitle" style="display:block;">Doctor Availability on Video   <a class="customToggleCollapse docMyProfile"></a></h1>
+                    <div class="customAccordionContent" style="display:block;">
+                        <div>@{Html.RenderPartial("_SetAppointmentDisplays");}</div>
+
+                    </div>
+            </div>
+
+            <div id="tab2" style="height: 900px;display:none;">
+               <!--My Review-->
+                    <h1 class="subTitle">My Reviews <a class="customToggleCollapse docMyProfile"></a></h1>
+                    <div class="customAccordionContent">
+                        <div>
+                            @{Html.RenderPartial("_doctorpatientreview");}
+                        </div>
+                    </div>
+            </div>
+
+            <div id="tab3" style="display:none;">
+                 <!--About Clinic-->
+                    <h1 class="subTitle">About Clinic  <span class="toggleRight"><a class="toggle docInfoClinic linkClass">Edit</a> <a class="customToggleCollapse docMyProfile"></a></span></h1>
+                    <div class="customAccordionContent">
+                        <div id="docInfoClinicDisplay">
+                            @{Html.RenderPartial("_DoctorsInfoClinicPhotosDisplay");}
+                        </div>
+                        <div id="docInfoClinicEdit">@{Html.RenderPartial("_DoctorsInfoClinicPhotosEdit");}</div>
+                    </div>
+                <!--Doctor on Clinic-->
+                    <h1 class="subTitle">Doctor Availability on Clinic  <a class="customToggleCollapse docMyProfile"></a></h1>
+                    <div class="customAccordionContent">
+                        <div>@{Html.RenderPartial("_SetClinicAppointmentDisplay");}</div>
+                    </div>
+                
+            </div>
+
+            <div id="tab4" style="display:none;">
+                   <!--Doctor Pay-->
+                    <h1 class="subTitle">Pay Rates<span class="toggleRight"><a class="toggle docRates linkClass">Edit</a> <a class="customToggleCollapse docMyProfile"></a></span></h1>
+                    <div class="customAccordionContent">
+                        <div id="docRatesDisplay">@{Html.RenderPartial("_DoctorsPayRatesDisplay");}</div>
+                        <div id="docRatesEdit">@{Html.RenderPartial("_DoctorsPayRatesEdit");}</div>
+                    </div>
+            </div>
+
+            <div id="tab5" style="display:none;">
+               
+
+            </div>
+        </div>
+    </div>
+              </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script type="text/javascript">
+    document.getElementById('tab1').style.display = 'none';
+    document.getElementById('tab2').style.display = 'none';
+    document.getElementById('tab3').style.display = 'none';
+    document.getElementById('tab4').style.display = 'none';
+  
+    document.getElementById('li_tab1').setAttribute("class", "");
+    document.getElementById('li_tab2').setAttribute("class", "");
+    document.getElementById('li_tab3').setAttribute("class", "");
+    document.getElementById('li_tab4').setAttribute("class", "");
+   
+    document.getElementById('tab1').style.display = 'block';
+    document.getElementById('li_tab1').setAttribute("class", "active");
+    function tab(tab) {
+        if (tab != null) {
+            document.getElementById('tab1').style.display = 'none';
+            document.getElementById('tab2').style.display = 'none';
+            document.getElementById('tab3').style.display = 'none';
+            document.getElementById('tab4').style.display = 'none';
+        
+            document.getElementById('li_tab1').setAttribute("class", "");
+            document.getElementById('li_tab2').setAttribute("class", "");
+            document.getElementById('li_tab3').setAttribute("class", "");
+            document.getElementById('li_tab4').setAttribute("class", "");
+          
+            document.getElementById(tab).style.display = 'block';
+            document.getElementById('li_' + tab).setAttribute("class", "active");
+        }
+
+    }
+    function customtab(tab) {
+        if (tab != null) {
+            document.getElementById('tab1').style.display = 'none';
+            document.getElementById('tab2').style.display = 'none';
+            document.getElementById('tab3').style.display = 'none';
+            document.getElementById('tab4').style.display = 'none';
+          
+            document.getElementById('li_tab1').setAttribute("class", "");
+            document.getElementById('li_tab2').setAttribute("class", "");
+            document.getElementById('li_tab3').setAttribute("class", "");
+            document.getElementById('li_tab4').setAttribute("class", "");
+          
+            document.getElementById(tab).style.display = 'block';
+            document.getElementById('li_' + tab).setAttribute("class", "active");
+            document.getElementById('MessageUpdateStatus').style.display = 'none';
+            document.getElementById("MessageUpdateStatus").value = "";
+
+        }
+    }
+</script>
+
+<script>
+    function resizeImage() {
+        var imgWidth = $("#viewimg").css("width");
+        var imgHeight = $("#viewimg").css("height");
+        var divWidth = $("#viewimg").css("width");
+        var divHeight = $("#viewimg").css("height");
+        originalHeight = imgHeight;
+        originalWidth = imgWidth;
+
+        if (imgWidth > divWidth && imgHeight > divHeight) {
+            var heightDiff = imgHeight - divHeight;
+            var widthDiff = imgWidth - divWidth;
+            //First find out which of the two dimensions is MORE boundry stretching, then we only change that dimension, to keep the image's original proportions.
+            if (heightDiff > widthDiff) {
+                $("#viewimg").css("height", 400); //Set the
+            }
+            else {
+                $("#viewimg").css("width", 400); //Set the width to the div's width
+            }
+        }
+        else if (imgWidth > divWidth) {
+            $("#viewimg").css("width", 400); //Set the width to the div's width
+        }
+        else if (imgHeight > divHeight) {
+            $("#viewimg").css("height", 400); //Set the height to the div's height
+        }
+    }
+    var now = new Date();
+    now.setDate(now.getDate() + 0);
+    $("#pracdate").kendoDatePicker({
+        max: now,
+        min: new Date(1900, 0, 0)
+    });
+    var datepickers = $("#pracdate").data("kendoDatePicker");
+
+    datepickers.value(now);
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    $(document).ready(function () {
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+        }
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("select").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+        $("textarea").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+
+        $("#RateQuatermins").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("#RateHalfmins").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("#RateFortyFivemins").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("#RateHourmins").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+
+
+
+
+
+        $('.toggle.doctorInfo').click(function () {
+            $('#doctorsInfoDisplay').hide();
+            $('#doctorsInfoEdit').show();
+        });
+
+        $('.toggle.docInfoClinic').click(function () {
+            $('#docInfoClinicDisplay').hide();
+            $('#docInfoClinicEdit').show();
+        });
+        $('.toggle.docRates').click(function () {
+            $('#docRatesDisplay').hide();
+            $('#docRatesEdit').show();
+        });
+
+
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        $('.img_ShowClinic').each(function () {
+
+            $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+
+        $('#FIRSTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#LASTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateFortyFivemins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateHalfmins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#ZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#TELEPHONE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s\-]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateQuatermins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+           
+        $('#RateHourmins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#ZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#CLINICZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+    });
+    $("#viewimg").click(function () {
+        //Checks if the image is already in original size:      
+        $(this).css("width", 400);
+        $(this).css("height", 400);
+        $(this).css("z-index", 99999999);
+        $(this).css("position", 'relative');
+        $(this).css("margin-top", -250);
+        $(this).css("border", " 8px solid white");
+        $(this).css("border-radius", 5);
+        $('#fade').show();
+        $('.closeDisplayBar').show();
+    });
+
+    $('.closeDisplayBar').click(function () {
+        $('#fade').hide();
+        $('.closeDisplayBar').hide();
+        $("#viewimg").css("width", 100);
+        $("#viewimg").css("height", 100);
+        $("#viewimg").css("z-index", 0);
+        $("#viewimg").css("position", 'relative');
+        $("#viewimg").css("margin-top", 0);
+    });
+
+
+
+</script>
+<script>
+
+
+    $(document).ready(function () {
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+
+    });
+
+</script>

@@ -1,0 +1,84 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+
+<div class="fleet">
+    <div class="d_myReviews">
+
+        @{Html.RenderPartial("_DoctorsReviewRatingDisplay");}
+
+
+        @foreach (var temp in Model.DoctorsInformationEditModels)
+        {
+                    
+            <div class="d_myReviews_reviewContent">
+
+            
+
+                <div class="right" style="margin-top:-5px;">
+
+                    <div class="row">
+                        <div class="d_myReviews_userName">docare loyal patient </div>
+                    </div>
+                    <div class="row">
+                        <div class="stars">
+                            @for (var k = 0; k < temp.CLIENTRATING; k++)
+                            {
+                                <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                            }
+                            @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                            {
+                                <img class="Empty" src="~/Content/Images/Empty.png" />
+                            }
+
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin-top:-5px;">
+                        <div class="display-field">@Html.LabelFor(m => m.Comment, @temp.Comment) </div>
+                    </div>
+
+
+                    <div class="row" style="margin-top:-5px;">
+                        <div class="display-field dates">
+                            @Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                   
+                  
+
+                  
+                   
+        }
+
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+    });
+</script>

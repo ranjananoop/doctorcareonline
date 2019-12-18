@@ -1,0 +1,35 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csprojResolveAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ObjectInterfaces\obj\Debug\DOCVIDEO.ObjectInterfaces.csprojAssemblyReference.cache

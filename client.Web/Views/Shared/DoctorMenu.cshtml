@@ -1,0 +1,22 @@
+﻿@section head
+{
+
+}
+
+
+
+<ul id="jMenu" class="jMenu">
+    <li>
+        <a class="fNiv" href="~/DoctorInformation/DoctorsInformatonEdit">Profile</a>
+    </li>   
+    <li>
+        <a class="fNiv" href="~/Account/LogOff">Logout</a>
+    </li>
+    <li>
+         <div class="messageCounter">
+              @Model.inboxUreadMessageCount
+            </div>
+        <a class="fNiv" href="~/DoctorInformation/Inbox">New Messages</a>
+    </li>   
+</ul>
+

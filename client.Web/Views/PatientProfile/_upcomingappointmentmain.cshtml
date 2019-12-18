@@ -1,0 +1,85 @@
+﻿
+ <div id="grid"></div>
+
+ <script>
+        var statusSelected = 0;
+        var poData = [];
+        $(document).ready(function () {
+            calculate_time_zone();
+            var doctorSlot = {
+                TimeZoneOffset: document.getElementById('timezoneOffset').value,
+                DSTObserved: document.getElementById('dstObserved').value
+            };
+            $("#grid").kendoGrid({
+                dataSource: {
+                    type: "Json",
+                    serverFiltering: false,
+                    pageSize: 6,
+                    transport: {
+                        read: {
+                            url: "/PatientProfile/GetUpcomingResentAppintment",
+                            dataType: "json",
+                            type: "get",
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify(doctorSlot),
+                        },
+                    },
+                    schema: {
+                        id: "APPOINTMENTID",
+                        model: {
+                            fields: {                              
+                                DOCTORID: { type: "string" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                REASONFORVISIT: { type: "string" },
+                                STATUS: { type: "string" }
+                            }
+                        }
+                    },
+                },
+                height: 200,
+                groupable: false,
+                scrollable: true,               
+                sortable: true,
+                pageable: true,
+                columns: [
+                  
+                    {
+                        field: "FIRSTNAME",
+                        title: "Doctor",
+                      
+                    },
+                    {
+                        field: "APPOINTMENTSTARTTIME",
+                        title: "Date",
+                        template: '#= kendo.toString(APPOINTMENTSTARTTIME, "MM/dd/yyyy") #' 
+
+                    },
+                    {
+                        field: "APPOINTMENTSTARTTIME",
+                        title: " Time",
+                         template: '#= kendo.toString(APPOINTMENTSTARTTIME, "hh:mm tt") #'+" "+ '#=CurrenttimeZone#'
+                    },
+                    {
+                        field: "REASONFORVISIT",
+                        title: "Reason For Visit",
+                        headerAttributes: {
+                        style: " width:100px;"
+                        },
+                       
+
+                    },
+                    {
+                        field: "STATUS",
+                        title: "Status",                             
+                    }
+                   
+                ]
+            });
+
+            
+       
+        }); 
+ 
+ </script>
+

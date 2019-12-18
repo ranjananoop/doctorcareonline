@@ -1,0 +1,661 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViews";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+    
+    
+}
+
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR0Ur1-E5c0xgGMwxv7MNK0bDa_iXDpp0&sensor=false&libraries=places">
+</script>
+
+<script lang="javascript" type="text/javascript">
+
+    var geocoder, map, icon;
+    icon = '/Content/Images/blue_marker.png';
+    function PlotLocation() {
+        var address = document.getElementById("clinicaddress").value;
+        if (address != null) {
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                'address': address
+            }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var myOptions = {
+                        zoom: 17,
+                        center: results[0].geometry.location,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                    google.maps.event.trigger(map, 'resize')
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        icon:icon,
+                    });
+
+                    var bounds = new google.maps.LatLngBounds();
+                    bounds.extend(myLatLng);
+                    map.fitBounds(bounds);
+
+                }
+            });
+        }
+    }
+
+    window.onload = PlotLocation;
+
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(false)
+
+    <div class="fleet">
+
+            <div>
+                @*<h1 class="subTitle">About Doctor<a class="customToggleCollapse"></a></h1>*@
+                <div class="customAccordionContent">@Html.Partial("~/Views/DoctorInformation/_DoctorsInfoRatingDisplay.cshtml")</div>
+            </div>
+        <div class="arrow-up" style="display: none;"></div>
+                                    <div id="divCancelledAppointments" onmouseout="viewRejectCount()" style="display: none;position:absolute;top: 121px;left: 326px;">
+                                        <p style="margin-bottom: 0px !important;"></p>
+                                    </div>
+            <div id="customdisplay" class="c_publicProfileContactInfo" style="width: 752px; color: #fff;">
+                <div class="c_publicProfileContactInfo_List p_publicProfileContactInfo_List">
+                    <ul>
+                        <li>
+                               <span class="icon_contactInfo" style="margin-top: 4px;"></span><h5>Contact Information</h5>
+                         
+                            <div class="row">
+                                <div class="display-label">@Html.DisplayFor(model => model.USERSTREETADDRESS1)</div>
+                                @if(Model.USERSTREETADDRESS2!=null)
+                                {
+                                <div class="display-label">@Html.DisplayFor(model => model.USERSTREETADDRESS2)</div>
+                                }
+                                <div class="display-label">@Html.DisplayFor(model => model.CITY)</div>
+                                <div class="display-label">@Html.DisplayFor(model => model.USERSTATE)</div>
+                                <div class="display-label">@Html.DisplayFor(model => model.ZIPCODE)</div>
+                            </div>
+                        </li>
+                        <li style="width:220px !important;">
+                            <span class="icon_educationalInfo"></span><h5>Educational Information</h5>
+                            <div class="row">
+                               <div class="display-label">@Html.DisplayFor(model => model.EDUCATIONALQUAL)</div>
+                                <div class="display-label" style="margin-top: -3px; ">@Html.DisplayFor(model => model.CERTIFICATIONBOARD)</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon_clinicInfo" style="margin-top: 4px;"></span><h5>Clinic Information</h5>
+                            <div class="row">
+                                <div class="display-label">@Html.DisplayFor(model => model.INSTITUTIONNAME)</div>
+                                 <div class="display-label">@Html.DisplayFor(model => model.STREETADDRESS1)</div>
+                                 @if (Model.STREETADDRESS2 != null)
+                                {
+                                <div class="display-label">@Html.DisplayFor(model => model.STREETADDRESS2)</div>
+                                }
+                                  <div class="display-label">@Html.DisplayFor(model => model.CLINICCITY),  @Html.DisplayFor(model => model.CLINICUSERSTATE)- @Html.DisplayFor(model => model.CLINICZIPCODE)</div>                              
+                                 
+                                   <div class="display-label">@Html.DisplayFor(model => model.TELEPHONE)</div> 
+                                                                     
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="c_video_clinic_panel">
+                    <a class="button " id="videodisplay">
+                        <div class="indicator video"></div>
+                        Doctor Availability on Video</a>
+                    <a class="button inactive" id="clinicdisplay">
+                        <div class="indicator clinic"></div>
+                        Doctor Availability on Clinic</a>
+                    <a class="button inactive" id="clinicdetailsdisplay">
+                        <div class="indicator clinicinfo"></div>
+                        Clinic Info</a>
+                   <a class="button inactive" id="toggleReview">
+                        <div class="indicator review"></div>
+                        Reviews</a>
+                </div>
+               
+                <div class="c_detailsofclinicaddress" style="display: none;">
+                    <div class="clinic_address">
+
+                        <div class="fleet">
+                            <div class="clinic_photo">
+                                <div class="boxSep">
+                                    <div class="imgLiquidFill imgLiquid " style="width: 129px; height: 130px;border: 1px solid #aaa;">
+                                        <img id="viewimg2" src="#" onload='resizeprofilephotopatient();' />
+                                        @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHSECOND)
+                                        @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATH)
+                                        @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHTHIRD)
+                                        @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHFOURTH)
+                                    </div>
+                                     <div class="clinic_arrow_con">
+                                        <a  >  <img src="~/Content/Images/icon_search_arrowBack.png" width="20" height="20"  class="backdisplay" /></a>
+                                        <a  > <img src="~/Content/Images/icon_search_arrowOn.png" width="20" height="20"  class="nextdisplay"  /></a>
+                                    </div>
+                     
+                                </div>
+
+
+                                @*<a href="#" id="hidedisplayclinic" class="linkClass">Hide clinic Details</a>*@
+                                </div>
+                                <div class="left">
+                                    <div class="row">
+                                        <b>@Html.DisplayFor(model => model.INSTITUTIONNAME)</b>
+                                         <p>@Html.DisplayFor(model => model.STREETADDRESS1)</p>
+                                        @if(Model.STREETADDRESS2!=null)
+                                        {
+                                        <p>@Html.DisplayFor(model => model.STREETADDRESS2)</p>
+                                        }
+                                        <p>@Html.DisplayFor(model => model.CLINICCITY), &nbsp;</p>
+                                        <p> <div style="margin-right:10px;">@Html.DisplayFor(model => model.CLINICUSERSTATE)</div>,  <div>- @Html.DisplayFor(model => model.CLINICZIPCODE)</div></p>
+                                        <p>@Html.DisplayFor(model => model.TELEPHONE)</p>
+                                        <p><a href="#">info@sampleclininic.com</a></p>
+                                        <a href='javascript:void(null);' id="toggleAboutClinic" class="linkClass">Read More</a>
+                            <div class="readMoreClinicInfo">
+                                <b>About Clinic:</b>
+                                <p style="clear:both;">@Html.DisplayFor(model => model.ABOUTCLINIC)</p>
+                                <a href='javascript:void(null);' id="HideAboutClinic" class="linkClass">Hide</a>
+                            </div>
+
+                                    </div>
+                                   @* <div class="row">
+                                        <b>Clinic Hours:</b>
+                                        <p>9 AM to 20:00 PM</p>
+                                    </div>
+
+                                    <div class="row">
+                                        <b>About the Clinic</b>
+                                        <p>Lorem Ipsum and this is the test content for this clinic. The new content will be updated later.</p>
+                                    </div>*@
+                                    @Html.HiddenFor(model => model.mode)
+                                    @* <p>@Html.DisplayFor(model => model.STREETADDRESS1)</p>
+                        <p> @Html.DisplayFor(model => model.STREETADDRESS2)</p>
+                        <p> @Html.DisplayFor(model => model.CLINICZIPCODE)</p>
+                        <p> @Html.DisplayFor(model => model.CLINICUSERSTATE)</p>*@
+                                </div>
+                                <input type ="text" id="clinicaddress" value="@Model.MAPPINGADDRESS" style="display:none;" />
+
+                            </div>
+
+
+                        </div>
+                        <div style="position:relative;width:50%;height:285px !important;"><div id="map_canvas" style="height:285px !important;"></div></div>
+                    </div>
+                <div class="c_bookVideoConference">
+                    <div class="fleet">
+                        <h5>Video Appointments</h5>
+                        
+                        <p class="display-field" style="color:#666;margin:5px 0px;">Video Consultation @Html.DisplayNameFor(model => model.RateDisplay)@Html.DisplayFor(model => model.RateQuatermins)</p>
+                        @Html.Partial("~/Views/PatientProfile/_SetAppointments.cshtml")
+                    </div>
+                </div>
+                <div class="c_bookClinicAppointment">
+                    <div class="fleet">
+                        <h5>Clinic Appointments</h5>
+                        @Html.Partial("~/Views/PatientProfile/_SetClinicAppointment.cshtml")
+                    </div>
+                </div>
+                <div class="c_doctorsReviews">
+                     <div class="fleet">
+                        <h5>Doctors Reviews</h5>
+                        <br />
+                        @foreach (var temp in Model.DoctorsInformationEditModels)
+                        {
+                    
+                            <div class="d_myReviews_reviewContent">
+
+
+
+                                <div class="right" style="margin-top: 10px;border-top:1px solid #999;">
+
+                                    <div class="row">
+                                        <div class="d_myReviews_userName"><strong>docare loyal patient</strong> </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="stars">
+                                            @for (var k = 0; k < temp.CLIENTRATING; k++)
+                                            {
+                                                <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                                            }
+                                            @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                                            {
+                                                <img class="Empty" src="~/Content/Images/Empty.png" />
+                                            }
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row" style="margin-top: -5px;">
+                                        <div class="display-field">Even tho going to the doctors always makes me nervous and under stress </div>
+                                    </div>
+
+
+                                    <div class="row" style="margin-top: -5px;">
+                                        <div class="display-field dates" style="float:right;">
+                                           <em style="float:right;">@Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))</em> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                   
+                  
+
+                
+                   
+                        }
+                    </div>
+                </div>
+   </div>
+
+    </div>
+}
+
+
+<div>
+    @{Html.RenderPartial("_advancequicksearch");}
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+<script>
+    var src = $("#viewimg2").attr("src");
+    if (src == '#') {
+        $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+    }
+
+    var HealthHistoryModel = new Object();
+    HealthHistoryModel.DOCTORID = "@Model.UserName";
+    HealthHistoryModel.flag = 6;
+    $.ajax({
+        async: false,
+        type: "POST",
+        cache: false,
+        dataType: 'json',
+        url: '@Url.Action("DisplayField", "HealthHistory")',
+          contentType: "application/json; charset=utf-8",
+          success: function (msg) {
+              if (msg) {
+                  $("#divCancelledAppointments > p").html(msg.msg);
+
+              }
+          },
+          data: JSON.stringify(HealthHistoryModel),
+      });
+
+      $('.recount').mouseover(function () {
+          $('#divCancelledAppointments').show();
+          //$('.appclose').show();
+          $('.arrow-up').show();
+      });
+      $('#divCancelledAppointments').mouseover(function () {
+          $('#divCancelledAppointments').show();
+          //$('.appclose').show();
+          $('.arrow-up').show();
+      });
+      $('#divCancelledAppointments').mouseout(function () {
+          $('#divCancelledAppointments').hide();
+
+          $('.arrow-up').hide();
+      });
+
+    $(document).ready(function () {
+
+       
+        $(".nextdisplay").click(function () {
+
+
+            var src = $("#viewimg2").attr("src");
+            if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+
+            }
+
+            if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+            }
+
+            if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+            }
+
+            if (src == '#') {
+
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+            }
+        });
+
+        $(".backdisplay").click(function () {
+
+
+            var src = $("#viewimg2").attr("src");
+            if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+            }
+
+            if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+            }
+
+            if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+            }
+
+            if (src == '#') {
+
+                $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+            }
+        });
+        $('.c_pgTitleText').text('Doctor Information');
+        $('.c_pgTitleIcon').addClass('clinicPhoto');
+
+        //if ($("#mode").val() == 2) {
+
+
+        //    $("#videodisplay").addClass('inactive');
+        //    $("#clinicdisplay").removeClass();
+        //    $("#clinicdisplay").addClass('button');
+        //    $(".c_bookVideoConference").hide();
+        //    $(".c_bookClinicAppointment").show();
+        //}
+        ////add as temp fix by sanjeev
+        $('.indicator.clinicinfo').show();
+        $('.c_doctorsReviews').hide();
+        $('.indicator.video').hide();
+        $('#videodisplay').addClass('inactive');
+        $('#clinicdisplay').addClass('inactive');
+        $('#toggleReview').addClass('inactive');
+        $('.c_bookClinicAppointment').hide();
+        $('.c_bookVideoConference').hide();
+        $("#clinicdetailsdisplay").removeClass();
+        $("#clinicdetailsdisplay").addClass('button');
+        $('.c_detailsofclinicaddress').show();
+
+        //end
+
+        if ($("#mode").val() == 2) {
+
+            //$("#videodisplay").addClass('inactive');
+            $("#clinicdisplay").removeClass();
+            $("#clinicdisplay").addClass('button');
+            //$(".c_bookVideoConference").hide();
+            $(".c_bookClinicAppointment").show();
+
+
+            $("#clinicdetailsdisplay").addClass('inactive');
+            $('.indicator.clinicinfo').hide();
+            $('.indicator.clinic').show();
+            $(".c_detailsofclinicaddress").hide();
+        }
+        else if ($("#mode").val() == 1) {
+            $("#videodisplay").removeClass();
+            $("#videodisplay").addClass('button');
+            $("#clinicdetailsdisplay").addClass('inactive');
+            $(".c_bookVideoConference").show();
+            $(".c_detailsofclinicaddress").hide();
+            $('.indicator.clinicinfo').hide();
+            $('.indicator.video').show();
+        }
+
+       
+
+        
+        $("#hidedisplayclinic").click(function () {           
+            $(".c_detailsofclinicaddress").hide();            
+            $("#clinicdetailsdisplay").addClass('inactive');
+        });
+
+        //script for hide n show the clinic information
+        $('#toggleAboutClinic').click(function () {
+            $('.readMoreClinicInfo').show();
+            $(this).hide();
+        });
+        $('#toggleAboutClinic').bind('mousedown', function (e) {
+            e.preventDefault();
+        })
+        $('#HideAboutClinic').click(function () {
+            $('.readMoreClinicInfo').hide();
+            $('#toggleAboutClinic').show();
+
+        });
+        $('#HideAboutClinic').bind('mousedown', function (e) {
+            e.preventDefault();
+        })
+// script ends here
+
+        $("#videodisplay").click(function () {
+            $(this).removeClass('inactive');
+            $("#clinicdetailsdisplay").addClass('inactive');
+            $("#clinicdisplay").addClass('inactive');
+            $("#toggleReview").addClass('inactive');
+            //$("#videodisplay").removeClass('inactive');
+            $("#videodisplay").addClass('button');            
+            $("#clinicdetailsdisplay").addClass('inactive');
+            $(".c_bookVideoConference").show();
+            $(".c_bookClinicAppointment").hide();
+            $(".c_detailsofclinicaddress").hide(); 
+            $(".c_doctorsReviews").hide();
+            $('.indicator.clinicinfo').hide();
+            $('.indicator.video').show();
+        });
+        $("#clinicdisplay").click(function () {
+            $("#videodisplay").addClass('inactive');
+            $("#toggleReview").addClass('inactive');
+            $("#clinicdisplay").removeClass();
+            $("#clinicdisplay").addClass('button');           
+            $("#clinicdetailsdisplay").addClass('inactive');
+            $(".c_bookVideoConference").hide();
+            $(".c_bookClinicAppointment").show();
+            $(".c_detailsofclinicaddress").hide();
+            $(".c_doctorsReviews").hide();
+            $('.indicator.clinicinfo').hide();
+            $('.indicator.video').hide();
+        });
+
+        $("#clinicdetailsdisplay").click(function () {
+            //$("#videodisplay").addClass('inactive');
+            //$("#clinicdisplay").addClass('inactive');
+            //$("#toggleReview").addClass('inactive');
+            //$("#clinicdetailsdisplay").removeClass();
+            //$("#clinicdetailsdisplay").addClass('button');
+            //$(".c_bookVideoConference").hide();
+            //$(".c_bookClinicAppointment").hide();
+            //$(".c_detailsofclinicaddress").show();
+            //$(".c_doctorsReviews").hide();
+            //$('.indicator.clinicinfo').show();
+            //$('.indicator.video').hide();
+            var param = getUrlVars()["id"];
+            window.location.href = "/PatientProfile/DoctorsInformatonViews?id=" + param;
+        });
+        $('#toggleReview').click(function () {
+           // $(this).removeClass('inactive');
+            //$('.indicator.review').show();
+            //$('.indicator.video').hide();
+            //$('.indicator.clinicInfo').hide();
+            //$('.indicator.aboutMe').hide();
+            $('#videodisplay').addClass('inactive');
+            $('#toggleAboutMe').addClass('inactive');
+            $('#clinicdetailsdisplay').addClass('inactive');
+            $("#toggleReview").removeClass('inactive');
+            $("#toggleReview").addClass('button');        
+            $('.c_doctorsReviews').show();
+            $('.c_bookVideoConference').hide();
+            $('.moreInformationContent').hide(); 
+            $('.c_detailsofclinicaddress').hide();
+            $('.indicator.video').hide();
+            $('.c_bookClinicAppointment').hide();
+            $('#details').hide();
+            $('.indicator.clinicinfo').hide();
+        });
+        $("#viewimg").click(function () {
+            //Checks if the image is already in original size:
+
+            $(this).css("width", 400);
+            $(this).css("height", 400);
+            $(this).css("z-index", 99999999);
+            $(this).css("position", 'relative');
+            $(this).css("margin-top", -65);
+            $(this).css("border", " 8px solid white");
+            $(this).css("border-radius", 5);
+            $('#fade').show();
+            $('.closeDisplayBar').show();
+
+
+        });
+
+        $('.closeDisplayBar').click(function () {
+
+            $('#fade').hide();
+            $('.closeDisplayBar').hide();
+            $("#viewimg").css("width", 100);
+            $("#viewimg").css("height", 100);
+            $("#viewimg").css("z-index", 0);
+            $("#viewimg").css("position", 'relative');
+            $("#viewimg").css("margin-top", 0);
+        });
+        $('.advanceQuickSearch').insertBefore('.availableDoctor');
+        $('.panelHeading').hide();
+
+
+        $('.customToggleCollapse').click(function () {
+            $(this).parent().next('customAccordionContent').toggle().toggleClass('customToggleExpand');
+            //$(this).toggleClass('customToggleExpand');
+        });
+
+
+        $(function () {
+            //function count($this) {
+            //    var current = parseInt($this.html(), 10);
+            //    $this.html(++current);
+            //    if (current !== $this.data('count')) {
+            //        setTimeout(function () { count($this) }, 50);
+            //    }
+            //}
+            //$("#hitcount").each(function () {
+            //    $(this).data('count', parseInt($(this).html(), 10));
+            //    $(this).html('0');
+            //    count($(this));
+            //});
+        });
+
+
+        $('.img_Show').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Show').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+            });
+
+
+
+            $('.img_ShowClinic').each(function () {
+
+                $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+        });
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+</script>
+<style>
+    .c_publicProfileContactInfo ul li h5 {
+margin-bottom: 10px;
+font-size: 18px;
+margin-top: 10px;
+}
+.icon_educationalInfo  {
+        margin-top: 7px;
+    }
+    .c_profileViewedCountRight {
+        float: right;
+        margin: -70px 10px 0 0px;
+        padding-bottom: 33px;
+    }
+.c_detailsofclinicaddress .clinic_address .left {
+float: left;
+margin: 0 0 0 30px;
+width: 150px !important;
+}
+    .middleContent {
+        width:300px;
+        margin-left:-10px;
+    }
+    .c_bookVideoConference .toggleCalender {
+        clear:both;
+        margin-top:0px;
+    }
+    .c_bookClinicAppointment .toggleCalender {
+         margin-top:10px;
+    }
+    .readMoreClinicInfo {
+float: left !important;
+width: 345px;
+margin-left: -145px;
+margin-top: 57px;
+overflow: visible !important;
+margin-right: 71px;
+    }
+    .c_detailsofclinicaddress #map_canvas  {
+        height:205px !important;
+        width:365px !important;
+    }
+    .wc-time-header-cell {
+        height: 58px !important;
+    }
+</style>

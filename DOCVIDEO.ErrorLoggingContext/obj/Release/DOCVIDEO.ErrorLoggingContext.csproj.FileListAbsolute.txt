@@ -1,0 +1,22 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\Elmah.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\Elmah.Mvc.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Web.Http.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Net.Http.Formatting.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Net.Http.Formatting.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Release\DOCVIDEO.ErrorLoggingContext.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\bin\Release\GURUKUL.ErrorLoggingContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Release\GURUKUL.ErrorLoggingContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.ErrorLoggingContext\obj\Release\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\GURUKUL.ErrorLoggingContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\Elmah.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\Elmah.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Web.Http.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Net.Http.Formatting.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\bin\Release\System.Net.Http.Formatting.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Release\DOCVIDEO.ErrorLoggingContext.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Release\DOCVIDEO.ErrorLoggingContext.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Release\DOCVIDEO.ErrorLoggingContext.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Release\GURUKUL.ErrorLoggingContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.ErrorLoggingContext\obj\Release\GURUKUL.ErrorLoggingContext.pdb

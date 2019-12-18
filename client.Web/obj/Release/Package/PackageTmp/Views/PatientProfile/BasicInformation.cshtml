@@ -1,0 +1,110 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+@{
+    ViewBag.Title = "BasicInformation";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+ <div class="p_changePassword ">
+        <div class="fleet" >
+  
+   @* <div class="framecontentTitle" style="margin:13px 0px 0px 10px;width:95%;">
+        <h2>Change Password</h2>
+    </div>*@
+    <div class="frameContainer">
+     @{Html.RenderPartial("_changepassword");}    
+</div>
+</div>
+     </div>
+
+<script>
+    $('.c_pgTitleText').text('Change Password');
+    $('.c_pgTitleIcon').addClass('myProfile');
+   
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+
+   
+    $(document).ready(function () {
+      
+
+      
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+            $('.validation-summary-errors').hide();
+        });
+        $("select").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+            $('.validation-summary-errors').hide();
+        });
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+     
+        $("#OldPassword").val('');
+        $("#NewPassword").val('');
+        $("#ConfirmPassword").val('');
+
+     
+
+
+        
+          
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+
+    });
+    
+     </script>           
+<style>
+    #PasswordStrengthBorder {
+position: absolute !important;
+display: inline !important;
+height: 3px !important;
+top: 306px !important;
+left: 0px !important;
+padding: 2px !important;
+width: 200px !important;
+}
+
+#PasswordStrengthBar 
+{
+ position: relative !important;
+top: -23px !important;
+left: 324.5px !important;
+font-size: 80% !important;
+display: none;
+width: 240px;
+margin-top: 5px;
+height: 5px !important;
+width: 125px !important;
+background-color: rgb(255, 0, 0) !important;
+}
+    #msgtext {
+     
+       top: -25px !important;
+left: 324px !important;
+      
+    }
+    #pass_con {
+        margin-left: -10px;
+    }
+</style>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Followupemail";
+}
+
+<script> 
+<!-- 
+today = new Date(); 
+document.write( today.getHours(),":",today.getMinutes()); 
+document.write("&nbsp;&nbsp;", today.getDate(), "/", today.getMonth() + 1, "/", today.getYear());
+//--> 
+</script>
+<div>
+<label>Dear,Dr._________</label></div>
+<p>This is just a reminder that you have an upcoming appointment</p>
+
+<table>
+    <tr>
+        <td><label>When</label></td>
+         <td><text>Mon nov 8,2010 at 12:15pm</text></td>
+        </tr>
+    <tr>
+         <td><label>with</label></td>
+         <td><text>Jenny Bangle</text></td>
+    </tr>
+    <tr>
+         <td><label>Reason For Visit</label></td>
+         <td><text>Pink Eye</text></td>
+    </tr>
+</table>
+<p>
+    If you have to cancel the appointment please fill out the form below.If you cancel an appointment you will not recieve the</br>
+    payment and it will be documented that you canceled on your profile page.
+</p>
+<table>
+    <div><input type="checkbox" id="checkbox_id" />
+        <label for="checkbox_id">I need to cancel this appointment</label>
+    </div>
+    <tr>
+        <td><label>Reason to Cancel</label></td>
+        <td><text></text></td>
+    </tr>
+    <tr><td><input type="button" name="Submit" /></td></tr>
+</table>

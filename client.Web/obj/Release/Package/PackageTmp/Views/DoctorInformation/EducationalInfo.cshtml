@@ -1,0 +1,649 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "EducationalInfo";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="c_body innerLayout">
+        <div class="c_body_fleet">
+            <div class="c_pgTitle">
+                <div class="c_pgTitle_Fleet">
+                    <h1 class="c_pgTitleText">Steps</h1>
+                </div>
+            </div>
+        </div>
+        <div class="c_column_three d_doctorSteps step2">
+            <div class="fleet">
+                <div class="steps">
+                                        <ul>
+                        <li class="step1 completedStep">
+                            <span>Personal Info</span>
+                            <h3>1</h3>
+                        </li>
+                        <li class="step2 currentStep">
+                            <span>Educational Info </span>
+                            <h3>2</h3>
+                        </li>
+                        <li class="step3 ">
+                            <span>Video Info</span>
+                            <h3>3</h3>
+                        </li>
+                        <li class="step4 ">
+                            <span>Clinic Info</span>
+                            <h3>4</h3>
+                        </li>
+                        <li class="step5 " >
+                            <span>Subscription Info</span>
+                            <h3>5</h3>
+                        </li>
+                    </ul>
+                    <div class="stepsLine"></div>
+                </div>
+                <div class="left">
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.EDUCATIONALQUAL)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextAreaFor(model => model.EDUCATIONALQUAL, new { maxlength = "256" })
+                            @Html.ValidationMessageFor(model => model.EDUCATIONALQUAL)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.CERTIFICATIONBOARDS)
+                            @{
+    var boardcerti = new List<SelectListItem>{
+
+new SelectListItem(){Text="American Academy of Chiropractic Orthopedics",Value="American Academy of Chiropractic Orthopedics"},
+ new SelectListItem(){Text="American Board Electrodiagnostic Medicine",Value="American Board Electrodiagnostic Medicine"},
+ new SelectListItem(){Text="American Board of Addiction Medicine",Value="American Board of Addiction Medicine"},
+ new SelectListItem(){Text="American Board of Allergy and Immunology",Value="American Board of Allergy and Immunology"},
+ new SelectListItem(){Text="American Board of Anesthesiology",Value="American Board of Anesthesiology"},
+ new SelectListItem(){Text="Critical Care Medicine (Anesthesiology)",Value="Critical Care Medicine (Anesthesiology)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Anesthesiology)",Value="Hospice and Palliative Care (Anesthesiology)"},
+ new SelectListItem(){Text="Pain Medicine (Anesthesiology)",Value="Pain Medicine (Anesthesiology)"},
+ new SelectListItem(){Text="American Board Of Anti-Aging & Regenerative Medicine",Value="American Board Of Anti-Aging & Regenerative Medicine"},
+ new SelectListItem(){Text="American Board of Audiology",Value="American Board of Audiology"},
+ new SelectListItem(){Text="American Board of Bariatric Medicine",Value="American Board of Bariatric Medicine"},
+ new SelectListItem(){Text="American Board of Chiropractic Internists",Value="American Board of Chiropractic Internists"},
+ new SelectListItem(){Text="American Board of Clinical Lipidology",Value="American Board of Clinical Lipidology"},
+ new SelectListItem(){Text="American Board of Colon and Rectal Surgery",Value="American Board of Colon and Rectal Surgery"},
+ new SelectListItem(){Text="American Board of Cosmetic Surgery",Value="American Board of Cosmetic Surgery"},
+ new SelectListItem(){Text="American Board of Dental Public Health",Value="American Board of Dental Public Health"},
+ new SelectListItem(){Text="American Board of Dermatology",Value="American Board of Dermatology"},
+ new SelectListItem(){Text="Clinical & Laboratory Dermatological Immunology (Dermatology)",Value="Clinical & Laboratory Dermatological Immunology (Dermatology)"},
+ new SelectListItem(){Text="Dermatopathology (Dermatology)",Value="Dermatopathology (Dermatology)"},
+ new SelectListItem(){Text="Pediatric Dermatology (Dermatology)",Value="Pediatric Dermatology (Dermatology)"},
+ new SelectListItem(){Text="American Board of Disability Analysts",Value="American Board of Disability Analysts"},
+ new SelectListItem(){Text="Disability Analyst and Fellow (Disability Analysts)",Value="Disability Analyst and Fellow (Disability Analysts)"},
+ new SelectListItem(){Text="Senior Disability Analyst and Diplomate (Disability Analysts)",Value="Senior Disability Analyst and Diplomate (Disability Analysts)"},
+ new SelectListItem(){Text="American Board of Emergency Medicine",Value="American Board of Emergency Medicine"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Emergency Medicine)",Value="Hospice and Palliative Care (Emergency Medicine)"},
+ new SelectListItem(){Text="Medical Toxicology (Emergency Medicine)",Value="Medical Toxicology (Emergency Medicine)"},
+ new SelectListItem(){Text="Pediatric Emergency Medicine (Emergency Medicine)",Value="Pediatric Emergency Medicine (Emergency Medicine)"},
+ new SelectListItem(){Text="Sports Medicine (Emergency Medicine)",Value="Sports Medicine (Emergency Medicine)"},
+ new SelectListItem(){Text="Undersea and Hyperbaric Medicine (Emergency Medicine)",Value="Undersea and Hyperbaric Medicine (Emergency Medicine)"},
+ new SelectListItem(){Text="American Board of Endodontics",Value="American Board of Endodontics"},
+ new SelectListItem(){Text="American Board of Facial Plastic and Reconstructive Surgery",Value="American Board of Facial Plastic and Reconstructive Surgery"},
+ new SelectListItem(){Text="American Board of Family Medicine",Value="American Board of Family Medicine"},
+ new SelectListItem(){Text="Adolescent Medicine (Family Medicine)",Value="Adolescent Medicine (Family Medicine)"},
+ new SelectListItem(){Text="Geriatric Medicine (Family Medicine)",Value="Geriatric Medicine (Family Medicine)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Family Medicine)",Value="Hospice and Palliative Care (Family Medicine)"},
+ new SelectListItem(){Text="Sleep Medicine (Family Medicine)",Value="Sleep Medicine (Family Medicine)"},
+ new SelectListItem(){Text="Sports Medicine (Family Medicine)",Value="Sports Medicine (Family Medicine)"},
+ new SelectListItem(){Text="American Board of Independent Medical Examiners",Value="American Board of Independent Medical Examiners"},
+ new SelectListItem(){Text="American Board of Integrative Holistic Medicine",Value="American Board of Integrative Holistic Medicine"},
+ new SelectListItem(){Text="American Board of Internal Medicine",Value="American Board of Internal Medicine"},
+ new SelectListItem(){Text="Adolescent Medicine (Internal Medicine)",Value="Adolescent Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Cardiovascular Disease (Internal Medicine)",Value="Cardiovascular Disease (Internal Medicine)"},
+ new SelectListItem(){Text="Clinical Cardiac Electrophysiology (Internal Medicine)",Value="Clinical Cardiac Electrophysiology (Internal Medicine)"},
+ new SelectListItem(){Text="Critical Care Medicine (Internal Medicine)",Value="Critical Care Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Endocrinology”}, Diabetes & Metabolism (Internal Medicine)",Value="Endocrinology”}, Diabetes & Metabolism (Internal Medicine)"},
+ new SelectListItem(){Text="Gastroenterology (Internal Medicine)",Value="Gastroenterology (Internal Medicine)"},
+ new SelectListItem(){Text="Geriatric Medicine (Internal Medicine)",Value="Geriatric Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Hematology (Internal Medicine)",Value="Hematology (Internal Medicine)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Internal Medicine)",Value="Hospice and Palliative Care (Internal Medicine)"},
+ new SelectListItem(){Text="Infectious Disease (Internal Medicine)",Value="Infectious Disease (Internal Medicine)"},
+ new SelectListItem(){Text="Interventional Cardiology (Internal Medicine)",Value="Interventional Cardiology (Internal Medicine)"},
+ new SelectListItem(){Text="Medical Oncology (Internal Medicine)",Value="Medical Oncology (Internal Medicine)"},
+ new SelectListItem(){Text="Nephrology (Internal Medicine)",Value="Nephrology (Internal Medicine)"},
+ new SelectListItem(){Text="Pulmonary Disease (Internal Medicine)",Value="Pulmonary Disease (Internal Medicine)"},
+ new SelectListItem(){Text="Rheumatology (Internal Medicine)",Value="Rheumatology (Internal Medicine)"},
+ new SelectListItem(){Text="Sleep Medicine (Internal Medicine)",Value="Sleep Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Sports Medicine (Internal Medicine)",Value="Sports Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Transplant Hepatology (Internal Medicine)",Value="Transplant Hepatology (Internal Medicine)"},
+ new SelectListItem(){Text="American Board of Lower Extremity Surgery",Value="American Board of Lower Extremity Surgery"},
+ new SelectListItem(){Text="American Board of Managed Care Medicine",Value="American Board of Managed Care Medicine"},
+ new SelectListItem(){Text="American Board of Medical Acupuncture",Value="American Board of Medical Acupuncture"},
+ new SelectListItem(){Text="American Board of Medical Genetics",Value="American Board of Medical Genetics"},
+ new SelectListItem(){Text="Molecular Genetic Pathology (Medical Genetics)",Value="Molecular Genetic Pathology (Medical Genetics)"},
+ new SelectListItem(){Text="American Board of Medical Genetics",Value="American Board of Medical Genetics"},
+ new SelectListItem(){Text="American Board of Multiple Specialties in Podiatry",Value="American Board of Multiple Specialties in Podiatry"},
+ new SelectListItem(){Text="Primary Care in Podiatric Medicine (Multiple Specialties in Podiatry)",Value="Primary Care in Podiatric Medicine (Multiple Specialties in Podiatry)"},
+ new SelectListItem(){Text="Podiatric Surgery (Multiple Specialties in Podiatry)",Value="Podiatric Surgery (Multiple Specialties in Podiatry)"},
+ new SelectListItem(){Text="Prevention and Treatment of Diabetic Foot Wounds (Multiple Specialties in Podiatry)",Value="Prevention and Treatment of Diabetic Foot Wounds (Multiple Specialties in Podiatry)"},
+ new SelectListItem(){Text="American Board of Neurological Surgery",Value="American Board of Neurological Surgery"},
+ new SelectListItem(){Text="American Board of Neurosonology",Value="American Board of Neurosonology"},
+ new SelectListItem(){Text="American Board of Nuclear Medicine",Value="American Board of Nuclear Medicine"},
+ new SelectListItem(){Text="American Board of Obesity Medicine",Value="American Board of Obesity Medicine"},
+ new SelectListItem(){Text="American Board of Obstetrics and Gynecology",Value="American Board of Obstetrics and Gynecology"},
+ new SelectListItem(){Text="Critical Care Medicine (Obstetrics and Gynecology)",Value="Critical Care Medicine (Obstetrics and Gynecology)"},
+ new SelectListItem(){Text="Gynecologic Oncology (Obstetrics and Gynecology)",Value="Gynecologic Oncology (Obstetrics and Gynecology)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Obstetrics and Gynecology)",Value="Hospice and Palliative Care (Obstetrics and Gynecology)"},
+ new SelectListItem(){Text="Maternal & Fetal Medicine (Obstetrics and Gynecology)",Value="Maternal & Fetal Medicine (Obstetrics and Gynecology)"},
+ new SelectListItem(){Text="Reproductive Endocrinology/Infertility (Obstetrics and Gynecology)",Value="Reproductive Endocrinology/Infertility (Obstetrics and Gynecology)"},
+ new SelectListItem(){Text="American Board of Ophthalmology",Value="American Board of Ophthalmology"},
+ new SelectListItem(){Text="American Board of Optometry",Value="American Board of Optometry"},
+ new SelectListItem(){Text="American Board of Oral and Maxillofacial Pathology",Value="American Board of Oral and Maxillofacial Pathology"},
+ new SelectListItem(){Text="American Board of Oral and Maxillofacial Radiology",Value="American Board of Oral and Maxillofacial Radiology"},
+ new SelectListItem(){Text="American Board of Oral and Maxillofacial Surgery",Value="American Board of Oral and Maxillofacial Surgery"},
+ new SelectListItem(){Text="American Board of Oral Implantology",Value="American Board of Oral Implantology"},
+ new SelectListItem(){Text="American Board of Orthodontics",Value="American Board of Orthodontics"},
+ new SelectListItem(){Text="American Board of Orthopaedic Surgery",Value="American Board of Orthopaedic Surgery"},
+ new SelectListItem(){Text="Orthopaedic Sports Medicine (Orthopaedic Surgery)",Value="Orthopaedic Sports Medicine (Orthopaedic Surgery)"},
+ new SelectListItem(){Text="Surgery of the Hand (Orthopaedic Surgery)",Value="Surgery of the Hand (Orthopaedic Surgery)"},
+ new SelectListItem(){Text="American Board of Otolaryngology",Value="American Board of Otolaryngology"},
+ new SelectListItem(){Text="Neurotology (Otolaryngology)",Value="Neurotology (Otolaryngology)"},
+ new SelectListItem(){Text="Pediatric Otolaryngology (Otolaryngology)",Value="Pediatric Otolaryngology (Otolaryngology)"},
+ new SelectListItem(){Text="Plastic Surgery Within the Head and Neck (Otolaryngology)",Value="Plastic Surgery Within the Head and Neck (Otolaryngology)"},
+ new SelectListItem(){Text="Sleep Medicine (Otolaryngology)",Value="Sleep Medicine (Otolaryngology)"},
+ new SelectListItem(){Text="American Board of Pain Medicine",Value="American Board of Pain Medicine"},
+ new SelectListItem(){Text="American Board of Pathology",Value="American Board of Pathology"},
+ new SelectListItem(){Text="Blood Banking/Transfusion Medicine (Pathology)",Value="Blood Banking/Transfusion Medicine (Pathology)"},
+ new SelectListItem(){Text="Chemical Pathology (Pathology)",Value="Chemical Pathology (Pathology)"},
+ new SelectListItem(){Text="Cytopathology (Pathology)",Value="Cytopathology (Pathology)"},
+ new SelectListItem(){Text="Dermatopathology (Pathology)",Value="Dermatopathology (Pathology)"},
+ new SelectListItem(){Text="Forensic Pathology (Pathology)",Value="Forensic Pathology (Pathology)"},
+ new SelectListItem(){Text="Hematology (Pathology)",Value="Hematology (Pathology)"},
+ new SelectListItem(){Text="Medical Microbiology (Pathology)",Value="Medical Microbiology (Pathology)"},
+ new SelectListItem(){Text="Molecular Genetic Pathology (Pathology)",Value="Molecular Genetic Pathology (Pathology)"},
+ new SelectListItem(){Text="Neuropathology (Pathology)",Value="Neuropathology (Pathology)"},
+ new SelectListItem(){Text="Pediatric Pathology (Pathology)",Value="Pediatric Pathology (Pathology)"},
+ new SelectListItem(){Text="Anatomic Pathology (Pathology)",Value="Anatomic Pathology (Pathology)"},
+ new SelectListItem(){Text="Clinical Pathology (Pathology)",Value="Clinical Pathology (Pathology)"},
+ new SelectListItem(){Text="American Board of Pediatric Dentistry",Value="American Board of Pediatric Dentistry"},
+ new SelectListItem(){Text="American Board of Pediatrics",Value="American Board of Pediatrics"},
+ new SelectListItem(){Text="Adolescent Medicine (Pediatrics)",Value="Adolescent Medicine (Pediatrics)"},
+ new SelectListItem(){Text="Child Abuse Pediatrics (Pediatrics)",Value="Child Abuse Pediatrics (Pediatrics)"},
+ new SelectListItem(){Text="Developmental-Behavioral Pediatrics (Pediatrics)",Value="Developmental-Behavioral Pediatrics (Pediatrics)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Pediatrics)",Value="Hospice and Palliative Care (Pediatrics)"},
+ new SelectListItem(){Text="Medical Toxicology (Pediatrics)",Value="Medical Toxicology (Pediatrics)"},
+ new SelectListItem(){Text="Neonatal-Perinatal Medicine (Pediatrics)",Value="Neonatal-Perinatal Medicine (Pediatrics)"},
+ new SelectListItem(){Text="Neurodevelopmental Disabilities (Pediatrics)",Value="Neurodevelopmental Disabilities (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Cardiology (Pediatrics)",Value="Pediatric Cardiology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Critical Care Medicine (Pediatrics)",Value="Pediatric Critical Care Medicine (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Emergency Medicine (Pediatrics)",Value="Pediatric Emergency Medicine (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Endocrinology (Pediatrics)",Value="Pediatric Endocrinology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Gastroenterology (Pediatrics)",Value="Pediatric Gastroenterology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Hematology-Oncology (Pediatrics)",Value="Pediatric Hematology-Oncology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Infectious Diseases (Pediatrics)",Value="Pediatric Infectious Diseases (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Nephrology (Pediatrics)",Value="Pediatric Nephrology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Pulmonology (Pediatrics)",Value="Pediatric Pulmonology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Rheumatology (Pediatrics)",Value="Pediatric Rheumatology (Pediatrics)"},
+ new SelectListItem(){Text="Pediatric Transplant Hepatology (Pediatrics)",Value="Pediatric Transplant Hepatology (Pediatrics)"},
+ new SelectListItem(){Text="Sleep Medicine (Pediatrics)",Value="Sleep Medicine (Pediatrics)"},
+ new SelectListItem(){Text="Sports Medicine (Pediatrics)",Value="Sports Medicine (Pediatrics)"},
+ new SelectListItem(){Text="American Board of Periodontology",Value="American Board of Periodontology"},
+ new SelectListItem(){Text="American Board of Physical Medicine and Rehabilitation",Value="American Board of Physical Medicine and Rehabilitation"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Physical Medicine and Rehabilitation)",Value="Hospice and Palliative Care (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="Neuromuscular Medicine (Physical Medicine and Rehabilitation)",Value="Neuromuscular Medicine (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="Pain Medicine (Physical Medicine and Rehabilitation)",Value="Pain Medicine (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="Pediatric Rehabilitation Medicine (Physical Medicine and Rehabilitation)",Value="Pediatric Rehabilitation Medicine (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="Spinal Cord Injury Medicine (Physical Medicine and Rehabilitation)",Value="Spinal Cord Injury Medicine (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="Sports Medicine (Physical Medicine and Rehabilitation)",Value="Sports Medicine (Physical Medicine and Rehabilitation)"},
+ new SelectListItem(){Text="American Board of Physician Nutrition Specialists",Value="American Board of Physician Nutrition Specialists"},
+ new SelectListItem(){Text="American Board of Physician Nutrition Specialists",Value="American Board of Physician Nutrition Specialists"},
+ new SelectListItem(){Text="American Board of Plastic Surgery",Value="American Board of Plastic Surgery"},
+ new SelectListItem(){Text="Plastic Surgery Within the Head and Neck (Plastic Surgery)",Value="Plastic Surgery Within the Head and Neck (Plastic Surgery)"},
+ new SelectListItem(){Text="Surgery of the Hand (Plastic Surgery)",Value="Surgery of the Hand (Plastic Surgery)"},
+ new SelectListItem(){Text="American Board of Podiatric Orthopedics and Primary Podiatric Medicine",Value="American Board of Podiatric Orthopedics and Primary Podiatric Medicine"},
+ new SelectListItem(){Text="American Board of Podiatric Surgery",Value="American Board of Podiatric Surgery"},
+ new SelectListItem(){Text="Foot Surgery (Podiatric Surgery)",Value="Foot Surgery (Podiatric Surgery)"},
+ new SelectListItem(){Text="Reconstructive Rearfoot / Ankle Surgery (Podiatric Surgery)",Value="Reconstructive Rearfoot / Ankle Surgery (Podiatric Surgery)"},
+ new SelectListItem(){Text="American Board of Preventive Medicine",Value="American Board of Preventive Medicine"},
+ new SelectListItem(){Text="Medical Toxicology (Preventive Medicine)",Value="Medical Toxicology (Preventive Medicine)"},
+ new SelectListItem(){Text="Undersea & Hyperbaric Medicine (Preventive Medicine)",Value="Undersea & Hyperbaric Medicine (Preventive Medicine)"},
+ new SelectListItem(){Text="Occupational Medicine (Preventive Medicine)",Value="Occupational Medicine (Preventive Medicine)"},
+ new SelectListItem(){Text="American Board of Prosthodontics",Value="American Board of Prosthodontics"},
+ new SelectListItem(){Text="American Board of Psychiatry and Neurology",Value="American Board of Psychiatry and Neurology"},
+ new SelectListItem(){Text="Addiction Psychiatry (Psychiatry and Neurology)",Value="Addiction Psychiatry (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Child & Adolescent Psychiatry (Psychiatry and Neurology)",Value="Child & Adolescent Psychiatry (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Forensic Psychiatry (Psychiatry and Neurology)",Value="Forensic Psychiatry (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Geriatric Psychiatry (Psychiatry and Neurology)",Value="Geriatric Psychiatry (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Psychiatry and Neurology)",Value="Hospice and Palliative Care (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Pain Medicine (Psychiatry and Neurology)",Value="Pain Medicine (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Psychosomatic Medicine (Psychiatry and Neurology)",Value="Psychosomatic Medicine (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Sleep Medicine (Psychiatry and Neurology)",Value="Sleep Medicine (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Clinical Neurophysiology (Psychiatry and Neurology)",Value="Clinical Neurophysiology (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Neurodevelopmental Disabilities (Psychiatry and Neurology)",Value="Neurodevelopmental Disabilities (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Neuromuscular Medicine (Psychiatry and Neurology)",Value="Neuromuscular Medicine (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Vascular Neurology (Psychiatry and Neurology)",Value="Vascular Neurology (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="Neurology with Special Qualification in Child Neurology (Psychiatry and Neurology)",Value="Neurology with Special Qualification in Child Neurology (Psychiatry and Neurology)"},
+ new SelectListItem(){Text="American Board of Radiology",Value="American Board of Radiology"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Radiology)",Value="Hospice and Palliative Care (Radiology)"},
+ new SelectListItem(){Text="Neuroradiology (Radiology)",Value="Neuroradiology (Radiology)"},
+ new SelectListItem(){Text="Nuclear Radiology (Radiology)",Value="Nuclear Radiology (Radiology)"},
+ new SelectListItem(){Text="Pediatric Radiology (Radiology)",Value="Pediatric Radiology (Radiology)"},
+ new SelectListItem(){Text="Vascular & Interventional Radiology (Radiology)",Value="Vascular & Interventional Radiology (Radiology)"},
+ new SelectListItem(){Text="American Board of Sleep Medicine",Value="American Board of Sleep Medicine"},
+ new SelectListItem(){Text="American Board of Spine Surgery",Value="American Board of Spine Surgery"},
+ new SelectListItem(){Text="American Board of Surgery",Value="American Board of Surgery"},
+ new SelectListItem(){Text="Hospice and Palliative Care (Surgery)",Value="Hospice and Palliative Care (Surgery)"},
+ new SelectListItem(){Text="Pediatric Surgery (Surgery)",Value="Pediatric Surgery (Surgery)"},
+ new SelectListItem(){Text="Surgery of the Hand (Surgery)",Value="Surgery of the Hand (Surgery)"},
+ new SelectListItem(){Text="Surgical Critical Care (Surgery)",Value="Surgical Critical Care (Surgery)"},
+ new SelectListItem(){Text="Vascular Surgery (Surgery)",Value="Vascular Surgery (Surgery)"},
+ new SelectListItem(){Text="American Board of Thoracic Surgery",Value="American Board of Thoracic Surgery"},
+ new SelectListItem(){Text="American Board of Urology",Value="American Board of Urology"},
+ new SelectListItem(){Text="Pediatric Urology (Urology)",Value="Pediatric Urology (Urology)"},
+ new SelectListItem(){Text="American Board of Vascular Medicine",Value="American Board of Vascular Medicine"},
+ new SelectListItem(){Text="American Board Urgent Care Medicine",Value="American Board Urgent Care Medicine"},
+ new SelectListItem(){Text="American Chiropractic Board of Acupuncture",Value="American Chiropractic Board of Acupuncture"},
+ new SelectListItem(){Text="American Chiropractic Board of Radiology",Value="American Chiropractic Board of Radiology"},
+ new SelectListItem(){Text="American Chiropractic Board of Sports Physicians",Value="American Chiropractic Board of Sports Physicians"},
+ new SelectListItem(){Text="American Chiropractic Neurology Board",Value="American Chiropractic Neurology Board"},
+ new SelectListItem(){Text="American Chiropractic Rehabilitation Board",Value="American Chiropractic Rehabilitation Board"},
+ new SelectListItem(){Text="American Clinical Board of Nutrition",Value="American Clinical Board of Nutrition"},
+ new SelectListItem(){Text="American Midwifery Certification Board",Value="American Midwifery Certification Board"},
+ new SelectListItem(){Text="American Osteopathic Board of Anesthesiology",Value="American Osteopathic Board of Anesthesiology"},
+ new SelectListItem(){Text="American Osteopathic Board of Dermatology",Value="American Osteopathic Board of Dermatology"},
+ new SelectListItem(){Text="American Osteopathic Board of Emergency Medicine",Value="American Osteopathic Board of Emergency Medicine"},
+ new SelectListItem(){Text="American Osteopathic Board of Family Physicians",Value="American Osteopathic Board of Family Physicians"},
+ new SelectListItem(){Text="American Osteopathic Board of Internal Medicine",Value="American Osteopathic Board of Internal Medicine"},
+ new SelectListItem(){Text="Allergy/Immunology (Internal Medicine)",Value="Allergy/Immunology (Internal Medicine)"},
+ new SelectListItem(){Text="Cardiology (Internal Medicine)",Value="Cardiology (Internal Medicine)"},
+ new SelectListItem(){Text="Endocrinology (Internal Medicine)",Value="Endocrinology (Internal Medicine)"},
+ new SelectListItem(){Text="Gastroenterology (Internal Medicine)",Value="Gastroenterology (Internal Medicine)"},
+ new SelectListItem(){Text="Hematology (Internal Medicine)",Value="Hematology (Internal Medicine)"},
+ new SelectListItem(){Text="Infectious Disease (Internal Medicine)",Value="Infectious Disease (Internal Medicine)"},
+ new SelectListItem(){Text="Nephrology (Internal Medicine)",Value="Nephrology (Internal Medicine)"},
+ new SelectListItem(){Text="Oncology (Internal Medicine)",Value="Oncology (Internal Medicine)"},
+ new SelectListItem(){Text="Pulmonary Diseases (Internal Medicine)",Value="Pulmonary Diseases (Internal Medicine)"},
+ new SelectListItem(){Text="Rheumatology (Internal Medicine)",Value="Rheumatology (Internal Medicine)"},
+ new SelectListItem(){Text="Addiction Medicine (Internal Medicine)",Value="Addiction Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Clinical Cardiac Electrophysiology (Internal Medicine)",Value="Clinical Cardiac Electrophysiology (Internal Medicine)"},
+ new SelectListItem(){Text="Critical Care Medicine (Internal Medicine)",Value="Critical Care Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Geriatric Medicine (Internal Medicine)",Value="Geriatric Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Hospice and Palliative Medicine (Internal Medicine)",Value="Hospice and Palliative Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Interventional Cardiology (Internal Medicine)",Value="Interventional Cardiology (Internal Medicine)"},
+ new SelectListItem(){Text="Sleep Medicine (Internal Medicine)",Value="Sleep Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="Sports Medicine (Internal Medicine)",Value="Sports Medicine (Internal Medicine)"},
+ new SelectListItem(){Text="American Osteopathic Board of Neurology and Psychiatry",Value="American Osteopathic Board of Neurology and Psychiatry"},
+ new SelectListItem(){Text="Child/Adolescent Psychiatry (Neurology and Psychiatry)",Value="Child/Adolescent Psychiatry (Neurology and Psychiatry)"},
+ new SelectListItem(){Text="American Osteopathic Board of Neuromusculoskeletal Medicine",Value="American Osteopathic Board of Neuromusculoskeletal Medicine"},
+ new SelectListItem(){Text="American Osteopathic Board of Nuclear Medicine",Value="American Osteopathic Board of Nuclear Medicine"},
+ new SelectListItem(){Text="American Osteopathic Board of Obstetrics and Gynecology",Value="American Osteopathic Board of Obstetrics and Gynecology"},
+ new SelectListItem(){Text="American Osteopathic Board of Ophthalmology",Value="American Osteopathic Board of Ophthalmology"},
+ new SelectListItem(){Text="American Osteopathic Board of Orthopedic Surgery",Value="American Osteopathic Board of Orthopedic Surgery"},
+ new SelectListItem(){Text="American Osteopathic Board of Otolaryngology-Head and Neck Surgery",Value="American Osteopathic Board of Otolaryngology-Head and Neck Surgery"},
+ new SelectListItem(){Text="American Osteopathic Board of Pathology",Value="American Osteopathic Board of Pathology"},
+ new SelectListItem(){Text="American Osteopathic Board of Pediatrics",Value="American Osteopathic Board of Pediatrics"},
+ new SelectListItem(){Text="American Osteopathic Board of Physical Medicine and Rehabilitation Medicine",Value="American Osteopathic Board of Physical Medicine and Rehabilitation Medicine"},
+ new SelectListItem(){Text="American Osteopathic Board of Preventive Medicine",Value="American Osteopathic Board of Preventive Medicine"},
+ new SelectListItem(){Text="American Osteopathic Board of Proctology",Value="American Osteopathic Board of Proctology"},
+ new SelectListItem(){Text="American Osteopathic Board of Radiology",Value="American Osteopathic Board of Radiology"},
+ new SelectListItem(){Text="American Osteopathic Board of Surgery",Value="American Osteopathic Board of Surgery"},
+ new SelectListItem(){Text="American Professional Wound Care Association",Value="American Professional Wound Care Association"},
+ new SelectListItem(){Text="American Speech-Language-Hearing Association",Value="American Speech-Language-Hearing Association"},
+ new SelectListItem(){Text="Certification Board of Cardiovascular Computed Tomography",Value="Certification Board of Cardiovascular Computed Tomography"},
+ new SelectListItem(){Text="Certification Board of Nuclear Cardiology",Value="Certification Board of Nuclear Cardiology"},
+ new SelectListItem(){Text="Chiropractic Board of Clinical Nutrition",Value="Chiropractic Board of Clinical Nutrition"},
+ new SelectListItem(){Text="National Board for Certification in Hearing Instrument Sciences",Value="National Board for Certification in Hearing Instrument Sciences"},
+ new SelectListItem(){Text="National Board of Chiropractic Examiners",Value="National Board of Chiropractic Examiners"},
+ new SelectListItem(){Text="National Board of Echocardiography",Value="National Board of Echocardiography"},
+ new SelectListItem(){Text="National Board of Examiners in Optometry",Value="National Board of Examiners in Optometry"},
+ new SelectListItem(){Text="National Certification Board for Diabetes Educators",Value="National Certification Board for Diabetes Educators"},
+ new SelectListItem(){Text="National Certification Commission for Acupuncture and Oriental Medicine",Value="National Certification Commission for Acupuncture and Oriental Medicine"},
+ new SelectListItem(){Text="National Dental Board of Anesthesiology",Value="National Dental Board of Anesthesiology"},
+ new SelectListItem(){Text="Selected Certifications",Value="Selected Certifications"},
+ new SelectListItem(){Text="American Board of Colon and Rectal Surgery",Value="American Board of Colon and Rectal Surgery"},
+ new SelectListItem(){Text="American Board of Obstetrics and Gynecology",Value="American Board of Obstetrics and Gynecology"}
+	 };        
+                            }
+
+
+                        </div>
+                        <div class="editor-field">
+                            @Html.ListBoxFor(model => model.CERTIFICATIONBOARDS, boardcerti)
+                            @Html.ValidationMessageFor(model => model.CERTIFICATIONBOARD)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Specialities)
+                        </div>
+                        @{
+    var itemspecialities = new List<SelectListItem>{
+                            new SelectListItem { Value ="Acupuncturists",Text="Acupuncturists"},
+                            new SelectListItem { Value ="Adult Nurse Practitioners",Text="Adult Nurse Practitioners"},
+                            new SelectListItem { Value ="Adult Psychiatric & Mental Health Nurse Practitioners",Text="Adult Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Allergists",Text="Allergists"},
+                            new SelectListItem { Value ="Anesthesiologists",Text="Anesthesiologists"},
+                            new SelectListItem { Value ="Audiologists",Text="Audiologists"},
+                            new SelectListItem { Value ="Cardiac Electro physiologists",Text="Cardiac Electro physiologists"},
+                            new SelectListItem { Value ="Cardiologists",Text="Cardiologists"},
+                            new SelectListItem { Value ="Chiropractors",Text="Chiropractors"},
+                            new SelectListItem { Value ="Colorectal Surgeons",Text="Colorectal Surgeons"},
+                            new SelectListItem { Value ="Dentists",Text="Dentists"},
+                            new SelectListItem { Value ="Dermatologists",Text="Dermatologists"},
+                            new SelectListItem { Value ="Dietitians",Text="Dietitians"},
+                            new SelectListItem { Value ="Dietitians/Nutritionists",Text="Dietitians/Nutritionists"},
+                            new SelectListItem { Value ="Ear, Nose & Throat Doctors",Text="Ear, Nose & Throat Doctors"},
+                            new SelectListItem { Value ="Emergency Medicine Physicians",Text="Emergency Medicine Physicians"},
+                            new SelectListItem { Value ="Endocrinologists",Text="Endocrinologists"},
+                            new SelectListItem { Value ="Endodontists",Text="Endodontists"},
+                            new SelectListItem { Value ="Eye Doctors",Text="Eye Doctors"},
+                            new SelectListItem { Value ="Family Nurse Practitioners",Text="Family Nurse Practitioners"},
+                            new SelectListItem { Value ="Family Physicians",Text="Family Physicians"},
+                            new SelectListItem { Value ="Family Psychiatric & Mental Health Nurse Practitioners",Text="Family Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Gastroenterologists",Text="Gastroenterologists"},
+                            new SelectListItem { Value ="General Nurse Practitioners",Text="General Nurse Practitioners"},
+                            new SelectListItem { Value ="Geneticists",Text="Geneticists"},
+                            new SelectListItem { Value ="Hand Surgeons",Text="Hand Surgeons"},
+                            new SelectListItem { Value ="Hearing Specialists",Text="Hearing Specialists"},
+                            new SelectListItem { Value ="Hematologists",Text="Hematologists"},
+                            new SelectListItem { Value ="Immunologists",Text="Immunologists"},
+                            new SelectListItem { Value ="Infectious Disease Specialists",Text="Infectious Disease Specialists"},
+                            new SelectListItem { Value ="Infertility Specialists",Text="Infertility Specialists"},
+                            new SelectListItem { Value ="Internists",Text="Internists"},
+                            new SelectListItem { Value ="Medical Ethicists",Text="Medical Ethicists"},
+                            new SelectListItem { Value ="Mental Health Nurse Practitioners",Text="Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Microbiologists",Text="Microbiologists"},
+                            new SelectListItem { Value ="Naturopathic Doctors",Text="Naturopathic Doctors"},
+                            new SelectListItem { Value ="Nephrologists",Text="Nephrologists"},
+                            new SelectListItem { Value ="Neurologists",Text="Neurologists"},
+                            new SelectListItem { Value ="Neuropsychiatrists",Text="Neuropsychiatrists"},
+                            new SelectListItem { Value ="Neurosurgeons",Text="Neurosurgeons"},
+                            new SelectListItem { Value ="Nutritionists",Text="Nutritionists"},
+                            new SelectListItem { Value ="OB-GYNs",Text="OB-GYNs"},
+                            new SelectListItem { Value ="OB-GYN Nurse Practitioners",Text="OB-GYN Nurse Practitioners"},
+                            new SelectListItem { Value ="Occupational Medicine Specialists",Text="Occupational Medicine Specialists"},
+                            new SelectListItem { Value ="Oncologists",Text="Oncologists"},
+                            new SelectListItem { Value ="Ophthalmologists",Text="Ophthalmologists"},
+                            new SelectListItem { Value ="Optometrists",Text="Optometrists"},
+                            new SelectListItem { Value ="Oral Surgeons",Text="Oral Surgeons"},
+                            new SelectListItem { Value ="Orthodontists",Text="Orthodontists"},
+                            new SelectListItem { Value ="Orthopedic Surgeons",Text="Orthopedic Surgeons"},
+                            new SelectListItem { Value ="Pain Management Specialists",Text="Pain Management Specialists"},
+                            new SelectListItem { Value ="Pathologists",Text="Pathologists"},
+                            new SelectListItem { Value ="Pediatric Dentists",Text="Pediatric Dentists"},
+                            new SelectListItem { Value ="Pediatric Nurse Practitioners",Text="Pediatric Nurse Practitioners"},
+                            new SelectListItem { Value ="Pediatricians",Text="Pediatricians"},
+                            new SelectListItem { Value ="Periodontitis",Text="Periodontitis"},
+                            new SelectListItem { Value ="Physiatrists",Text="Physiatrists"},
+                            new SelectListItem { Value ="Physical Therapists",Text="Physical Therapists"},
+                            new SelectListItem { Value ="Plastic Surgeons",Text="Plastic Surgeons"},
+                            new SelectListItem { Value ="Podiatrists",Text="Podiatrists"},
+                            new SelectListItem { Value ="Preventive Medicine Specialists",Text="Preventive Medicine Specialists"},
+                            new SelectListItem { Value ="Doctors",Text="Doctors"},
+                            new SelectListItem { Value ="Prosthodontics",Text="Prosthodontics"},
+                            new SelectListItem { Value ="Psychiatrists",Text="Psychiatrists"},
+                            new SelectListItem { Value ="Psychologists",Text="Psychologists"},
+                            new SelectListItem { Value ="Psychosomatic Medicine Specialists",Text="Psychosomatic Medicine Specialists"},
+                            new SelectListItem { Value ="Psychotherapists",Text="Psychotherapists"},
+                            new SelectListItem { Value ="Pulmonologists",Text="Pulmonologists"},
+                            new SelectListItem { Value ="Radiation Oncologists",Text="Radiation Oncologists"},
+                            new SelectListItem { Value ="Radiologists",Text="Radiologists"},
+                            new SelectListItem { Value ="Reproductive Endocrinologists",Text="Reproductive Endocrinologists"},
+                            new SelectListItem { Value ="Rheumatologists",Text="Rheumatologists"},
+                            new SelectListItem { Value ="Sleep Medicine Specialists",Text="Sleep Medicine Specialists"},
+                            new SelectListItem { Value ="Sports Medicine Specialists",Text="Sports Medicine Specialists"},
+                            new SelectListItem { Value ="Surgeons",Text="Surgeons"},
+                            new SelectListItem { Value ="Therapists / Counselors",Text="Therapists / Counselors"},
+                            new SelectListItem { Value ="Travel Medicine Specialists",Text="Travel Medicine Specialists"},
+                            new SelectListItem { Value ="Urologists",Text="Urologists"},
+                            new SelectListItem { Value ="Women’s Health Nurse Practitioners",Text="Women’s Health Nurse Practitioners"}	
+                        };        
+                        }
+
+                        <div class="editor-field">
+                            @Html.ListBoxFor(model => model.Specialities, itemspecialities)
+                            @Html.ValidationMessageFor(model => model.Specialities)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.GETSUFFIX)
+                        </div>
+                        <div class="editor-field">
+
+                            @Html.ListBoxFor(model => model.GETSUFFIX, new List<SelectListItem> {
+                             new SelectListItem(){Text="MD",Value="MD"},
+                             new SelectListItem(){Text="DDS",Value="DDS"},
+                             new SelectListItem(){Text="OD ",Value="OD"},
+                             new SelectListItem(){Text="DO ",Value="DO"},
+                             new SelectListItem(){Text="DMD",Value="DMD"},
+                             new SelectListItem(){Text="FACOG",Value="FACOG"},
+                             new SelectListItem(){Text="DPM",Value="DPM"},
+                             new SelectListItem(){Text="FACS ",Value="FACS"},
+                             new SelectListItem(){Text="PhD ",Value="PhD"},
+                             new SelectListItem(){Text="FACC",Value="FACC"},
+                             new SelectListItem(){Text="MPH",Value="MPH"},
+                             new SelectListItem(){Text="FAAD ",Value="FAAD"},
+                             new SelectListItem(){Text="FAAP",Value="FAAP"},
+                             new SelectListItem(){Text="ACNP-BC",Value="ACNP-BC"},
+                             new SelectListItem(){Text="ACNPC ",Value="ACNPC"},
+                             new SelectListItem(){Text="ANP",Value="ANP"},
+                             new SelectListItem(){Text="AP ",Value="AP"},
+                             new SelectListItem(){Text="APN ",Value="APN"},
+                             new SelectListItem(){Text="APRN ",Value="APRN"},
+                             new SelectListItem(){Text="ARNP ",Value="ARNP"},
+                             new SelectListItem(){Text="AuD ",Value="AuD"},
+                             new SelectListItem(){Text="BA",Value="BA"},
+                             new SelectListItem(){Text="BChD ",Value="BChD"},
+                             new SelectListItem(){Text="BDS ",Value="BDS"},
+                             new SelectListItem(){Text="BS ",Value="BS"},
+                             new SelectListItem(){Text="CAc",Value="CAc"},
+                             new SelectListItem(){Text="CCSP",Value="CCSP"},
+                             new SelectListItem(){Text="CDE",Value="CDE"},
+                             new SelectListItem(){Text="CDN ",Value="CDN"},
+                             new SelectListItem(){Text="CNM",Value="CNM"},
+                             new SelectListItem(){Text="CNP",Value="CNP"},
+                             new SelectListItem(){Text="CNS",Value="CNS"},
+                             new SelectListItem(){Text="CPNP ",Value="CPNP"},
+                             new SelectListItem(){Text="CRNP",Value="CRNP"},
+                             new SelectListItem(){Text="CSCS",Value="CSCS"},
+                             new SelectListItem(){Text="CSW",Value="CSW"},
+                             new SelectListItem(){Text="DAc",Value="DAc"},
+                             new SelectListItem(){Text="DAOM",Value="DAOM"},
+                             new SelectListItem(){Text="DC ",Value="DC"},
+                             new SelectListItem(){Text="DiplAc",Value="DiplAc"},
+                             new SelectListItem(){Text="DM",Value="DM"},
+                             new SelectListItem(){Text="DMSc",Value="DMSc"},
+                             new SelectListItem(){Text="DNP ",Value="DNP"},
+                             new SelectListItem(){Text="DNSc ",Value="DNSc"},
+                             new SelectListItem(){Text="DOM ",Value="DOM"},
+                             new SelectListItem(){Text="DPT",Value="DPT"},
+                             new SelectListItem(){Text="DSc",Value="DSc"},
+                             new SelectListItem(){Text="FAAN ",Value="FAAN"},
+                             new SelectListItem(){Text="FAANS",Value="FAANS"},
+                             new SelectListItem(){Text="FAAOS",Value="FAAOS"},
+                             new SelectListItem(){Text="FACE",Value="FACE"},
+                             new SelectListItem(){Text="FACEP ",Value="FACEP"},
+                             new SelectListItem(){Text="FACFAOM ",Value="FACFAOM"},
+                             new SelectListItem(){Text="FACFAS",Value="FACFAS"},
+                             new SelectListItem(){Text="FACOS",Value="FACOS"},
+                             new SelectListItem(){Text="FACP ",Value="FACP"},
+                             new SelectListItem(){Text="FACR ",Value="FACR"},
+                             new SelectListItem(){Text="FAGD ",Value="FAGD"},
+                             new SelectListItem(){Text="FAHA ",Value="FAHA"},
+                             new SelectListItem(){Text="FAOO ",Value="FAOO"},
+                             new SelectListItem(){Text="FASN ",Value="FASN"},
+                             new SelectListItem(){Text="FCCP ",Value="FCCP"},
+                             new SelectListItem(){Text="FIAMA ",Value="FIAMA"},
+                             new SelectListItem(){Text="FRCOG",Value="FRCOG"},
+                             new SelectListItem(){Text="FRCP ",Value="FRCP"},
+                             new SelectListItem(){Text="FRCPC ",Value="FRCPC"},
+                             new SelectListItem(){Text="FRCSI",Value="FRCSI"},
+                             new SelectListItem(){Text="FSCAI ",Value="FSCAI"},
+                             new SelectListItem(){Text="LAc",Value="LAc"},
+                             new SelectListItem(){Text="LCSW ",Value="LCSW"},
+                             new SelectListItem(){Text="LMFT ",Value="LMFT"},
+                             new SelectListItem(){Text="LMHC",Value="LMHC"},
+                             new SelectListItem(){Text="LMSW ",Value="LMSW"},
+                             new SelectListItem(){Text="MA",Value="MA"},
+                             new SelectListItem(){Text="MAGD ",Value="MAGD"},
+                             new SelectListItem(){Text="MB ",Value="MB"},
+                             new SelectListItem(){Text="MBA",Value="MBA"},
+                             new SelectListItem(){Text="MBBS",Value="MBBS"},
+                             new SelectListItem(){Text="MHlthSci ",Value="MHlthSci"},
+                             new SelectListItem(){Text="MN ",Value="MN"},
+                             new SelectListItem(){Text="MPA ",Value="MPA"},
+                             new SelectListItem(){Text="MPT ",Value="MPT"},
+                             new SelectListItem(){Text="MRCP ",Value="MRCP"},
+                             new SelectListItem(){Text="MS ",Value="MS"},
+                             new SelectListItem(){Text="MSD ",Value="MSD"},
+                             new SelectListItem(){Text="MSN",Value="MSN"},
+                             new SelectListItem(){Text="MSOM",Value="MSOM"},
+                             new SelectListItem(){Text="MSTOM ",Value="MSTOM"},
+                             new SelectListItem(){Text="MSWk",Value="MSWk"},
+                             new SelectListItem(){Text="ND",Value="ND"},
+                             new SelectListItem(){Text="NP ",Value="NP"},
+                             new SelectListItem(){Text="NTP ",Value="NTP"},
+                             new SelectListItem(){Text="OMD ",Value="OMD"},
+                             new SelectListItem(){Text="PA ",Value="PA"},
+                             new SelectListItem(){Text="PAC",Value="PAC"},
+                             new SelectListItem(){Text="PharmD ",Value="PharmD"},
+                             new SelectListItem(){Text="PMH ",Value="PMH"},
+                             new SelectListItem(){Text="PsyD",Value="PsyD"},
+                             new SelectListItem(){Text="PT ",Value="PT"},
+                             new SelectListItem(){Text="RAc",Value="RAc"},
+                             new SelectListItem(){Text="RD ",Value="RD"},
+                             new SelectListItem(){Text="RDH ",Value="RDH"},
+                             new SelectListItem(){Text="RN ",Value="RN"},
+                             new SelectListItem(){Text="RPh",Value="RPh"},
+                             new SelectListItem(){Text="RVT",Value="RVT"}
+				                            }, "Select Suffix")
+                            @Html.ValidationMessageFor(model => model.GENDER)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PRACTICENAME)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.PRACTICENAME, new { maxlength = "46" })
+                            @Html.ValidationMessageFor(model => model.PRACTICENAME)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+
+
+
+
+
+                    
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.HOSPITALAFFILIATION)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextAreaFor(model => model.HOSPITALAFFILIATION, new { maxlength = "52" })
+                            @Html.ValidationMessageFor(model => model.HOSPITALAFFILIATION)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PROFESSIONALMEMBERSHIP)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.PROFESSIONALMEMBERSHIP, new { maxlength = "40" })
+                            @Html.ValidationMessageFor(model => model.PROFESSIONALMEMBERSHIP)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AWARDCERTIFICATION)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextAreaFor(model => model.AWARDCERTIFICATION)
+                            @Html.ValidationMessageFor(model => model.AWARDCERTIFICATION)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.PRACTISESINCE)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.PRACTISESINCE, new { id = "pracdate" })
+                            @Html.ValidationMessageFor(model => model.PRACTISESINCE)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ABOUTME) &nbsp;@Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextAreaFor(model => model.ABOUTME, new { @cols = 40, @rows = 5, maxlength = 500 })
+                        </div>
+                    </div>
+                </div>
+                 <div class="amy_group" style="float:right;">
+                            <p>Your profile is completed</p>
+                            <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                     <div class="amy_inner"></div>
+
+                        </div>
+                <div class="row c_buttonContainer">
+                    <div class="right">
+                        <a  class="button cancel" href="~/DoctorInformation/PersonalInfo" >Back</a>
+                        <input type="submit" value="Next" class="button" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+ 
+
+    <div class="editor-field" style="display: none;">
+        <input class="text-box single-line" id="UserName" name="UserName" type="text" value="@Model.UserName" maxlength="100" />
+    </div>
+
+
+   
+}
+
+<script>
+    $(document).ready(function () {
+        $('.c_site_search').hide();
+        $('#EDUCATIONALQUAL').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#PROFESSIONALMEMBERSHIP').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#AWARDCERTIFICATION').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#PRACTICENAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $("#beforelogin").hide();
+        $("#afterlogin").show();
+        $("#afterloginsign").hide();
+        var now = new Date();
+        now.setDate(now.getDate() + 0);
+        $("#pracdate").kendoDatePicker({
+            max: now,
+            min: new Date(1900, 0, 0)
+        });
+        var datepickers = $("#pracdate").data("kendoDatePicker");
+
+        datepickers.value(now);
+    });
+</script>

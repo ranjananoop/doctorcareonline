@@ -1,0 +1,95 @@
+﻿@*<table cellpadding="0" cellspacing="0" class="table"><tr><td>Patient Name</td><td>Date</td><td>Time</td><td>Reason For Visit</td><td> Status</td></tr></table>  *@
+ <div id="gridr" style="margin-bottom:30px;"></div>
+
+ <script>
+        var statusSelected = 0;
+        var poData = [];
+        $(document).ready(function () {
+            calculate_time_zone();
+            var doctorSlot = {
+                TimeZoneOffset: document.getElementById('timezoneOffset').value,
+                DSTObserved: document.getElementById('dstObserved').value
+            };
+            $("#gridr").kendoGrid({
+                
+                dataSource: {
+                    pageSize: 4,
+                    type: "Json",
+                    serverFiltering: false,
+                    transport: {
+                        read: {
+                            url: "/PatientProfile/GetUpcomingAppintmentDocRequest",                           
+                            dataType: "json",
+                            type: "post",
+                            //contentType: "application/json; charset=utf-8",
+                            data: doctorSlot,
+                        },
+                    },
+                    schema: {
+                        id: "APPOINTMENTID",
+                        model: {
+                            fields: {                               
+                                FIRSTNAME: { type: "string" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                APPOINTMENTSTARTTIME: { type: "Date" },
+                                CurrenttimeZone: { type: "string" },
+                                REASONFORVISIT: { type: "string" },
+                                STATUS: { type: "string" },
+                                APPOINTMENTID:{type:"integer"}
+                            }
+                        }
+                    },
+                },               
+                groupable: false,                          
+                sortable: true,
+                pageable: true,
+                columns: [
+                  
+                    {
+                        field: "FIRSTNAME",
+                        title: "Patient Name",
+
+                        width: 90
+                      
+                    },
+                    {
+                        field: "APPOINTMENTSTARTTIME",
+                        title: "Date",
+                        template: '#= kendo.toString(APPOINTMENTSTARTTIME, "MM/dd/yyyy") #',
+                        width:90
+
+                    },
+                    {
+                        field: "APPOINTMENTSTARTTIME",
+                        title: " Time",
+                         template: '#= kendo.toString(APPOINTMENTSTARTTIME, "hh:mm tt") #'+" "+ '#=CurrenttimeZone#',
+                        width: 90
+                    },
+                    {
+                        field: "REASONFORVISIT",
+                        title: "Reason For Visit",
+                        width: 120
+
+                    },
+                    {
+                        field: "STATUS",
+                        title: "Status",
+                        width: 130
+                    }
+                    ,
+                    {
+                        field: "APPOINTMENTID",
+                        template: " <a href='DoctorAppointmentConfirmation?id=#=APPOINTMENTID#' class='linkClass' >Confirm</a> <br/> ",
+                        title: "Confirm",
+                        width: 90
+                    }
+                   
+                ]
+            });
+
+            
+       
+        }); 
+ 
+ </script>
+

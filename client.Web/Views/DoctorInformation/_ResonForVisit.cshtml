@@ -1,0 +1,189 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+<div class="pre_book_con signupForm" style="font-size:15px;">
+
+    <div class="app_left">
+
+        <h1>@Html.DisplayNameFor(model => model.ISEXISITING)</h1>
+
+
+        <p class="sec_desc-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+
+
+
+        <div class="row">
+            <div class="display_label" style="margin-top: 5px;">@Html.DisplayNameFor(model => model.REASONFORVISIT)</div>
+            <div>@Html.TextBoxFor(model => model.REASONFORVISIT)</div>
+        </div>
+        <div class="row">
+            <div class="display_label">@Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</div>
+
+
+            <div><h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+        </div>
+        <div class="row">
+            <div class="display_label">@Html.DisplayNameFor(model => model.Speciality)</div>
+            <div>
+                <h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                    @Html.DisplayFor(model => model.LASTNAME) </strong><br />
+               <em>@Html.DisplayFor(model => model.Speciality)</em> </h3>
+            </div>
+            
+        </div>
+
+
+        <div class="display_label">@Html.DisplayNameFor(model => model.RateDisplay)</div>
+
+
+       <h3><strong> @Html.DisplayFor(model => model.RateQuatermins)</strong></h3>
+    </div>
+
+    <div class="app_right">
+        <div class="amy_inner" style="margin-left: 85px;"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="c_buttonContainer" style="width: 100%;">
+        <div class="right">
+            <input type="button" value="Confirm" class="button" id="btnSave" />
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div>
+        <div class="display-field">
+            @Html.HiddenFor(model => model.DOCTORID)
+            @Html.HiddenFor(model => model.tabvalue)
+            @Html.HiddenFor(model => model.DOCTORSLOTID)
+            @Html.HiddenFor(model => model.APPOINTMENTSTARTTIME)
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+
+
+
+<script>
+
+    var BookingAppointmentModelOuter = new Object();
+
+    $(document).ready(function (e) {
+
+        $("#APPOINTMENTENDTIME").change(function () {
+            $('.validation-summary-errors').hide();
+            $("#MessageUpdateStatus").hide();
+        });
+
+        $('#REASONFORVISIT').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('input[type=radio]').change(function () {
+            if (this.checked) {
+                $(this).closest('.display-field')
+                    .find('input[type=radio]').not(this)
+                    .prop('checked', false);
+
+            }
+
+        });
+        $("#btnSave").click(function (e) {
+
+            var datavalue = null;
+
+            if ($('input:radio[name=ISEXISITING]:checked').val() != null) {
+                BookingAppointmentModelOuter.ISEXISITING = "true";
+            } else if ($('input:radio[name=ISNOTEXISITING]:checked').val() != null) {
+                BookingAppointmentModelOuter.ISEXISITING = "false";
+            }
+            else {
+                BookingAppointmentModelOuter.ISEXISITING = "false";
+            }
+
+
+
+
+
+            BookingAppointmentModelOuter.REASONFORVISIT = $("#REASONFORVISIT").val();
+
+            BookingAppointmentModelOuter.APPOINTMENTENDTIME = $("#APPOINTMENTENDTIME").val();
+            BookingAppointmentModelOuter.APPOINTMENTSTARTTIME = $("#APPOINTMENTSTARTTIME").val();
+            BookingAppointmentModelOuter.DOCTORID = $("#DOCTORID").val();
+            BookingAppointmentModelOuter.DOCTORSLOTID = $("#DOCTORSLOTID").val();
+
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/Appintments",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg.msg == "Requested Slots are not Available") {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                    } else if (msg.msg == "Error : Requested Slots Pay Rates are not Available ,Try different duration") {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                    } else if (msg.msg == "success") {
+
+                        var url = '@Url.Action("BookYourAppointment", "DoctorInformation")';
+                            window.location.href = url;
+                        }
+                        else {
+                            $("#MessageUpdateStatus").val("");
+                            tab("tab2");
+                        }
+
+                },
+                data: JSON.stringify(BookingAppointmentModelOuter),
+            });
+        });
+    });
+
+</script>
+<style>
+    input[type=text] {
+        width: 250px;
+    }
+
+    .pre_book_con .app_left {
+        float: left;
+        width: 600px;
+
+    }
+
+    .pre_book_con .app_right {
+        float: left;
+    }
+
+    .app_left h2 {
+        color: #3aa3ff;
+        font-size: 28px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+    }
+
+    .sec_desc-con {
+        margin: 10px 0px;
+    }
+
+    .pre_book_con .display_label {
+        width: 120px !important;
+      color: #096ca3 !important;
+       
+    }
+</style>

@@ -1,0 +1,110 @@
+﻿ <div id="prefferedprovider"> 
+            <script>
+                function returnImage(rating) {
+                    var path;
+                    switch (rating) {
+                        case 0:
+                            path = '/Content/Images/none.png';
+                            break;
+                        case 1:
+                            path = '/Content/Images/one.png';
+                            break;
+                        case 2:
+                            path = '/Content/Images/two.png';
+                            break;
+                        case 3:
+                            path = '/Content/Images/three.png';
+                            break;
+                        case 4:
+                            path = '/Content/Images/four.png';
+                            break;
+                        case 5:
+                            path = '/Content/Images/five.png';
+                            break;
+                        default:
+                            path = '/Content/Images/none.png';
+                    }
+                    return path;
+                }
+                var PreferedDoctors = @Html.Raw(Json.Encode(ViewBag.PreferedDoctors))
+               function getPeffered(UserName) {
+                   if (PreferedDoctors == null) {                      
+                       return false;
+                   } else {
+                       for (var idx = 0, length = PreferedDoctors.length; idx < length; idx++) {
+                           if (PreferedDoctors[idx] === UserName) {                              
+                               return true;
+                           }
+                       }
+                   }
+               }
+                $(document).ready(function () {
+                   
+                    $('.img_Showed').each(function () {
+
+                        $.ajax({
+                            type: "GET",
+                            url: "/PatientProfile/ImagePath",
+                            data: "{}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (msg) {
+                                $('.img_Showed').attr('src', msg.msg);
+
+                            }
+                        });
+
+                    });
+                    $("#prefferedprovider").kendoGrid({
+                        dataSource: {
+                            type: "Json",
+                            pageSize: 5,
+                            serverFiltering: true,
+
+                            transport: {
+                                read: "/PatientProfile/GetPreferredProviders"
+                            },
+                            groupable: false,
+                        },
+                        sortable: true,
+                        pageable: true,                       
+                        columns: [
+                          { field: "", width: 230, template: "<div style='margin-right:-30px';><div class='boxSep'><div class='imgLiquidFill imgLiquid' style='width:100px; height:100px;margin-top:5px;'><img  src=${ USERPHOTOFILEPATH }   alt=${ UserName } onload='resizeprofilephotopatient()' /></div></div><div style='float:left;margin-right:2px;width:140px;padding:0px;text-wrap:normal;margin-left:15px;'><b>#if(Salutation ===null){# #}else{# #=Salutation# # } # ${ FIRSTNAME }&nbsp; ${ LASTNAME }#if(SUFFIX ===null){# #}else{#<br/> #=SUFFIX# # }#</b><br/><div style='margin:0px;width:170px;padding:0px;text-wrap:normal;font-style:italic;'>${ SPECIALITY }</div><br/><div style='float:none'>${ STATELICENSE }</div><img src='/Content/Images/none.png' onload='this.onload=null; this.src=returnImage(${ AverageRating });' style='width:100px;height:20px'/></div></div>" },
+                    { field: "", width: 140, template: "<div style='float:left;margin:0px;padding:0px;'><b>${ INSTITUTIONNAME }</b><br/>${ STREETADDRESS1 }#if(STREETADDRESS2 ===null){# #}else{#<br/> #=STREETADDRESS2# # }#<br/>${ CLINICCITY },${ CLINICZIPCODE }<br/>${ CLINICUSERSTATE }</div>", title: "Doctors Details" },
+                           {
+                               field: "", width: 110, template: " <div style='margin-left:5px'><a href='DoctorsInformatonViews?id=#=DOCTORID#' class='linkClass'>View Profile</a> <br/>  <a href='DoctorsRatingsViews?id=${ DOCTORID }' class='linkClass'>View Reviews</a><br/><a href='Index?id=#=DOCTORID#' class='linkClass'>Send  Message</a><br/><div class='hidecustom'><div style='margin-top:-2px;margin-left:-3px;'> <input type='checkbox' class='target' value=${ DOCTORID } # if(getPeffered(DOCTORID)){ # checked #} #></input></div><span style='margin-top:-10px;margin-left:10px;'> Add to preferred</div></span></div>", title: "Available Details"
+                              
+                           }
+
+                            ]                    
+                    });
+                    $('.target').live('change', function () {
+
+
+
+                        if ($(this).is(':checked')) {
+                           
+                        }
+                        else {
+                            var preferedData = new Object();
+                            preferedData.RemoveProviderId = $(this).val();
+                            $.ajax({
+                                async: false,
+                                type: "POST",
+                                cache: false,
+                                dataType: 'json',
+                                url: "/PatientProfile/PreferedDoctorUpdate",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (msg) {
+                                    if (msg) {
+                                       
+                                    }
+                                },
+                                data: JSON.stringify(preferedData),
+                            });
+                            location.reload();
+                        }
+                    });
+                });
+            </script>
+        </div>

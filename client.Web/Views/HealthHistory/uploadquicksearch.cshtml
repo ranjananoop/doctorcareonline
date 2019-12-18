@@ -1,0 +1,117 @@
+﻿@model client.Web.Models.HealthHistoryModel
+     
+
+
+<div class="searchContent uploadQuickSearch">
+   
+    <div class="panelHeader">
+        <h3>Quick Search</h3>
+    </div>
+
+    <div class="uploadQuickeSearchInfo">
+        <div class="editor-label">
+           Provider Type:
+        </div>
+        <div class="editor-field">
+              @Html.DropDownListFor(model => model.ProviderType, new[] {   
+	                    new SelectListItem { Value ="Allergist",Text="Allergist"},
+                                 new SelectListItem { Value ="Cardiologist",Text="Cardiologist"},
+                                 new SelectListItem { Value ="Dentist",Text="Dentist"},
+                                 new SelectListItem { Value ="Dermatologists",Text="Dermatologists"},
+                                 new SelectListItem { Value ="Endocrinologists",Text="Endocrinologists"},
+                                 new SelectListItem { Value ="ENT specialists",Text="ENT specialists"},
+                                 new SelectListItem { Value ="Epidemiologists",Text="Epidemiologists"},
+                                 new SelectListItem { Value ="Family Practitioner",Text="Family Practitioner"},
+                                 new SelectListItem { Value ="Gastroenterologists",Text="Gastroenterologists"},
+                                 new SelectListItem { Value ="Gynecologists",Text="Gynecologists"},
+                                 new SelectListItem { Value ="Hematologists",Text="Hematologists"},
+                                 new SelectListItem { Value ="Hepatologists",Text="Hepatologists"},
+                                 new SelectListItem { Value ="Infectious Disease Specialists",Text="Infectious Disease Specialists"},
+                                 new SelectListItem { Value ="Internal Medicine Specialists",Text="Internal Medicine Specialists"},
+                                 new SelectListItem { Value ="Immunologists",Text="Immunologists"},
+                                 new SelectListItem { Value ="Internists",Text="Internists"},
+                                 new SelectListItem { Value ="Nutritionist",Text="Nutritionist"},
+                                 new SelectListItem { Value ="Neonatologist",Text="Neonatologist"},
+                                 new SelectListItem { Value ="Nephrologist",Text="Nephrologist"},
+                                 new SelectListItem { Value ="Neurologist",Text="Neurologist"},
+                                 new SelectListItem { Value ="Obstetrician",Text="Obstetrician"},
+                                 new SelectListItem { Value ="Oncologist",Text="Oncologist"},
+                                 new SelectListItem { Value ="Ophthalmologist",Text="Ophthalmologist"},
+                                 new SelectListItem { Value ="Orthopedic Surgeons",Text="Orthopedic Surgeons"},
+                                 new SelectListItem { Value ="Parasitologist",Text="Parasitologist"},
+                                 new SelectListItem { Value ="Pathologists",Text="Pathologists"},
+                                 new SelectListItem { Value ="Pediatricians",Text="Pediatricians"},
+                                 new SelectListItem { Value ="Perinatologist",Text="Perinatologist"},
+                                 new SelectListItem { Value ="Physiologists",Text="Physiologists"},
+                                 new SelectListItem { Value ="Physiatrist",Text="Physiatrist"},
+                                 new SelectListItem { Value ="Plastic Surgeon",Text="Plastic Surgeon"},
+                                 new SelectListItem { Value ="Podiatrists",Text="Podiatrists"},
+                                 new SelectListItem { Value ="Psychiatrists",Text="Psychiatrists"},
+                                 new SelectListItem { Value ="Pulmonologist",Text="Pulmonologist"},
+                                 new SelectListItem { Value ="Radiologists",Text="Radiologists"},
+                                 new SelectListItem { Value ="Rheumatologists",Text="Rheumatologists"},
+                                 new SelectListItem { Value ="Surgeons",Text="Surgeons"},
+                                 new SelectListItem { Value ="Urologists",Text="Urologists"},
+                       }, "Select")
+            @Html.ValidationMessageFor(model => model.ProviderType)           
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SearchGender)
+        </div>
+        <div class="editor-field">
+           @Html.DropDownListFor(model => model.SearchGender, new[] {
+                                new SelectListItem(){Text= "Male" ,Value="Male" },
+                                new SelectListItem(){Text="Female", Value ="Female" }
+                            }, "Select Your Gender")
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SEARCHZIPCODE)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SEARCHZIPCODE, new { maxlength = "6" })
+        </div>
+        <div>
+          <input type="button" value="Search" class="btnClass" id="quickSearch"/>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('#SEARCHZIPCODE').keyup(function (e) {
+        var $th = $(this);
+        $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+    });
+
+        $(document).ready(function () {
+           
+            $("#quickSearch").click(function () {
+                    var userinformation = new Object();
+                    var datavalue = null;                  
+                    userinformation.ProviderType = $("#ProviderType").val();
+                    userinformation.SearchGender = $("#SearchGender").val();
+                    userinformation.SEARCHZIPCODE = $("#SEARCHZIPCODE").val();
+                                     
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        cache: false,
+                        dataType: 'json',
+                        url: "/HealthHistory/QuickSearchOne",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (msg) {
+                            var url = '@Url.Action("AdvancedQuickSearch", "HealthHistory")';
+                            window.location.href = url;
+                        },
+                        data: JSON.stringify(userinformation),
+                    });
+
+
+                });
+             
+           
+
+        });
+
+       
+    </script>

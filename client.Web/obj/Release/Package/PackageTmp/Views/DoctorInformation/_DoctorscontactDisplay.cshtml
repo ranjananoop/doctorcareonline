@@ -1,0 +1,45 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+<div class="d_doctorscontantDisplay">
+    <div class="row">
+       
+        <div class="display-field">
+            @Html.DisplayFor(model => model.USERSTREETADDRESS1)
+        </div>
+    </div>
+    @if(Model.USERSTREETADDRESS2!=null)
+    {
+    <div class="row">
+       
+        <div class="display-field">
+            @Html.DisplayFor(model => model.USERSTREETADDRESS2)
+        </div>
+    </div>
+    }
+
+      <div class="row">
+       
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CITY)
+        </div>
+    </div>
+
+      <div class="row">
+       
+        <div class="display-field">
+            @Html.DisplayFor(model => model.USERSTATE)
+        </div>
+    </div>
+    <div class="row">
+       
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ZIPCODE)
+        </div>
+    </div>
+
+     <div class="row">      
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CurrenttimeZone)
+        </div>
+    </div>
+</div>

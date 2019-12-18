@@ -1,0 +1,207 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+<div class="docClinic">
+    <div class="black_overlay" style="height: 123%;display: none;width: 202%;margin-left: -64%;margin-top: -20%;"></div>
+    <div class="clinicPicture">
+        <div class="closeDisplayBar2" style="display: none; clear: both; margin-top: -18px; position: relative; margin-right: -312px; z-index: 1000000000;">
+        </div>
+        <div class="boxSep">
+            <div class="imgLiquidFill imgLiquid " style="width: 128px; height: 160px;z-index: 9999999;border: 1px solid #aaa;" id="clinic_modified" >                                          
+                            <img  id="viewimg2" src="#"   onload="resizeprofilephotodoctor();" />
+                 @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHSECOND)
+                 @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATH)
+                  @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHTHIRD)
+                  @Html.HiddenFor(model => model.INSTITUTIONIMAGEPATHFOURTH)
+                 @Html.HiddenFor(model => model.CurrentClinicImage)                
+
+                 
+            </div>
+            <div class="clinic_arrow_con">
+                  <a ><img src="~/Content/Images/icon_search_arrowBack.png" width="20" height="20"  class="backdisplay" /></a>
+                   <a  ><img src="~/Content/Images/icon_search_arrowOn.png" width="20" height="20"  class="nextdisplay"  /></a>
+                </div>
+            </div>
+
+    </div>
+
+   
+
+    <div class="leftContent">
+         <div class="row">
+            <div class="display-label">
+            Contact Person:
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.CONTACTPERSON)          
+        </div>
+        </div>
+         <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.CONTACTMAILID)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.CONTACTMAILID)          
+        </div>
+        </div>
+        <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.INSTITUTIONNAME)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.INSTITUTIONNAME)          
+        </div>
+        </div>
+        <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.STREETADDRESS1)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.STREETADDRESS1)         
+        </div>
+        </div>
+        @if(Model.STREETADDRESS2!=null)
+        {
+         <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.STREETADDRESS2)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.STREETADDRESS2)         
+        </div>
+        </div>
+        }
+          <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.CLINICCITY)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.CLINICCITY)         
+        </div>
+        </div>
+         <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.CLINICZIPCODE):
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.CLINICZIPCODE)         
+        </div>
+        </div>
+         <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.CLINICUSERSTATE):
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.CLINICUSERSTATE)         
+        </div>
+        </div>
+        <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.TELEPHONE)
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.TELEPHONE)           
+        </div>        
+        </div>
+         @if(Model.ABOUTCLINIC!=null)
+        {
+         <div class="row">
+            <div class="display-label">
+            @Html.DisplayNameFor(model => model.ABOUTCLINIC):
+        </div>
+            <div class="display-field">
+            @Html.DisplayFor(model => model.ABOUTCLINIC)         
+        </div>
+        </div>
+        }
+        <div class="row">
+            <div class="display-label">
+                @Html.HiddenFor(model => model.UserName)
+            </div>
+        </div>
+
+    </div>
+ </div>
+<script>
+    var src = $("#viewimg2").attr("src");
+    if (src == '#') {       
+        $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+    }
+    $(".nextdisplay").click(function () {
+        var src = $("#viewimg2").attr("src");
+        if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHFOURTH').val());
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHFOURTH').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+        if (src == '#') {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+        }
+    });
+
+    $(".backdisplay").click(function () {
+
+
+        var src = $("#viewimg2").attr("src");
+        if (src == $('#INSTITUTIONIMAGEPATH').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHFOURTH').val());
+
+        }
+
+        if (src == $('#INSTITUTIONIMAGEPATHFOURTH').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHTHIRD').val());
+
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHTHIRD').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATHSECOND').val());
+        }
+        if (src == $('#INSTITUTIONIMAGEPATHSECOND').val()) {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+        }
+
+        
+        if (src == '#') {
+            $("#viewimg2").attr('src', $('#INSTITUTIONIMAGEPATH').val());
+
+        }
+    });
+    
+    $(document).ready(function () {
+
+    });
+</script>
+<style>
+    /*.clinic_arrow_con {
+  background-color: #C2C2C2;
+height: 28px;
+width: 100px;
+border: 1px solid #D5CBCB;
+padding: 4px 0px 0px 0px;
+padding-left: 29px;
+margin-top: 1px;
+}*/
+.docClinic .clinicPicture img {
+width: 20px !important;
+height: 20px !important;
+border: 0px !important;
+clear:both;
+float: none !important;
+}
+</style>
+
+

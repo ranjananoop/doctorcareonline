@@ -1,0 +1,127 @@
+﻿`@model CIINVENT.Domain.User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="contentTitle">
+    <h2>User Details</h2>
+    <div class="title_b_l"></div>
+    <div class="title_b_r"></div>
+</div>
+<div class="bodyContent">
+    <div class="bodyContentPadding">
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <table style="width:100%">
+        <tr>
+            <th>@Html.LabelFor(model => model.UserName)</th>
+            <td>@Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)</td>
+            <th>@Html.LabelFor(model => model.Email)</th>
+            <td>@Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.FirstName)</th>
+            <td>@Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)</td>
+            <th>@Html.LabelFor(model => model.DateOfBirth)</th>
+            <td>@Html.EditorFor(model => model.DateOfBirth)
+                @Html.ValidationMessageFor(model => model.DateOfBirth)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.MiddleName)</th>
+            <td>@Html.EditorFor(model => model.MiddleName)
+                @Html.ValidationMessageFor(model => model.MiddleName)</td>
+            <th>@Html.LabelFor(model => model.DateOfJoining)</th>
+            <td>@Html.EditorFor(model => model.DateOfJoining)
+                @Html.ValidationMessageFor(model => model.DateOfJoining)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.LastName)</th>
+            <td>@Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)</td>
+            <th>@Html.LabelFor(model => model.NextHikeDate)</th>
+            <td>@Html.EditorFor(model => model.NextHikeDate)
+                @Html.ValidationMessageFor(model => model.NextHikeDate)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Gender)</th>
+            <td>@Html.DropDownListFor(model => model.Gender, new[] {
+                                new SelectListItem(){Text = "Male" ,Value="Male" },//= bool.TrueString},
+                                new SelectListItem(){Text ="Female", Value ="Female" },// bool.FalseString},
+                            }, "Select Your Gender") 
+                @Html.ValidationMessageFor(model => model.Gender)</td>
+            <th>@Html.LabelFor(model => model.Landline)</th>
+            <td>@Html.EditorFor(model => model.Landline)
+                @Html.ValidationMessageFor(model => model.Landline)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.DesignationId, "Designation")</th>
+            <td>@Html.DropDownList("DesignationId", String.Empty)
+                @Html.ValidationMessageFor(model => model.DesignationId)</td>
+            <th>@Html.LabelFor(model => model.Mobile)</th>
+            <td>@Html.EditorFor(model => model.Mobile)
+                @Html.ValidationMessageFor(model => model.Mobile)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.DepartmentId, "Department")</th>
+            <td>@Html.DropDownList("DepartmentId", String.Empty) 
+                @Html.ValidationMessageFor(model => model.DepartmentId)</td>
+            <th>@Html.LabelFor(model => model.PFNo)</th>
+            <td>@Html.EditorFor(model => model.PFNo)
+                @Html.ValidationMessageFor(model => model.PFNo)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.EmployeeTypeId, "EmployeeType")</th>
+            <td>@Html.DropDownList("EmployeeTypeId", String.Empty)
+                @Html.ValidationMessageFor(model => model.EmployeeTypeId)</td>
+            <th>@Html.LabelFor(model => model.ESICNo)</th>
+            <td>@Html.EditorFor(model => model.ESICNo)
+                @Html.ValidationMessageFor(model => model.ESICNo)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.BankName)</th>
+            <td>@Html.EditorFor(model => model.BankName)
+                @Html.ValidationMessageFor(model => model.BankName)</td>
+            <th>@Html.LabelFor(model => model.PAN)</th>
+            <td>@Html.EditorFor(model => model.PAN)
+                @Html.ValidationMessageFor(model => model.PAN)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.BankAccountNo)</th>
+            <td>@Html.EditorFor(model => model.BankAccountNo)
+                @Html.ValidationMessageFor(model => model.BankAccountNo)</td>
+            <th>@Html.LabelFor(model => model.Teaching)</th>
+            <td>@Html.EditorFor(model => model.Teaching)
+                @Html.ValidationMessageFor(model => model.Teaching)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.IsApproved)</th>
+            <td>@Html.EditorFor(model => model.IsApproved)
+                @Html.ValidationMessageFor(model => model.IsApproved)</td>
+           @* <th>@Html.LabelFor(model => model.Gender)</th>
+            <td><select name="gender"><option value="1">male</option><option value="2">female</option></select></td>*@
+           
+        </tr>
+    </table>
+            <div class="buttonsWrapper">
+                <input type="submit" value="Create"  class="btnClass"/>
+                @Html.ActionLink("Back to List", "Index" , new { @class = "btn" })
+            </div>
+
+}
+</div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+            
+
+            

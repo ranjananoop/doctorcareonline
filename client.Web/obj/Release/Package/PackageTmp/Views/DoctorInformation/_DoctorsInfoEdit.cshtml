@@ -1,0 +1,487 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+   
+
+    <div class="d_docInfoEdit">
+
+        <div class="left">
+            <div class="display-field">
+                <div class="boxSep" ><div class="imgLiquidFill imgLiquid " style="width: 130px;height: 160px;"><img  src="@Model.USERPHOTOFILEPATH" id="viewimg"    onload='resizeprofilephotodoctor();' /></div></div>                           
+               
+            </div>
+            <div class="editor-field">
+                <input id="UserImageUpload" class="imagedisplay docimagedisplay" name="UserImageUpload" type="file" />
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="row">
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Salutation):
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.Salutation, new[] {
+                                new SelectListItem(){Text = "Mr." ,Value="Mr." },
+                                new SelectListItem(){Text = "Ms." ,Value="Ms." },
+                                new SelectListItem(){Text = "Mrs." ,Value="Mrs." },
+                                new SelectListItem(){Text ="Dr.", Value ="Dr." }
+                            }, "Select Salutation", new { @style = "width:128px !important;" })
+                    @Html.ValidationMessageFor(model => model.Salutation)
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.FIRSTNAME)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.FIRSTNAME, new { maxlength = "46" })
+                    @Html.ValidationMessageFor(model => model.FIRSTNAME)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.LASTNAME)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.LASTNAME, new { maxlength = "46" })
+                    @Html.ValidationMessageFor(model => model.LASTNAME)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Specialities)
+                </div>
+                @{
+    var itemspecialities = new List<SelectListItem>{
+                            new SelectListItem { Value ="Acupuncturists",Text="Acupuncturists"},
+                            new SelectListItem { Value ="Adult Nurse Practitioners",Text="Adult Nurse Practitioners"},
+                            new SelectListItem { Value ="Adult Psychiatric & Mental Health Nurse Practitioners",Text="Adult Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Allergists",Text="Allergists"},
+                            new SelectListItem { Value ="Anesthesiologists",Text="Anesthesiologists"},
+                            new SelectListItem { Value ="Audiologists",Text="Audiologists"},
+                            new SelectListItem { Value ="Cardiac Electro Physiologists",Text="Cardiac Electro Physiologists"},
+                            new SelectListItem { Value ="Cardiologists",Text="Cardiologists"},
+                            new SelectListItem { Value ="Chiropractors",Text="Chiropractors"},
+                            new SelectListItem { Value ="Colorectal Surgeons",Text="Colorectal Surgeons"},
+                            new SelectListItem { Value ="Dentists",Text="Dentists"},
+                            new SelectListItem { Value ="Dermatologists",Text="Dermatologists"},
+                            new SelectListItem { Value ="Dietitians",Text="Dietitians"},
+                            new SelectListItem { Value ="Dietitians/Nutritionists",Text="Dietitians/Nutritionists"},
+                            new SelectListItem { Value ="Ear, Nose & Throat Doctors",Text="Ear, Nose & Throat Doctors"},
+                            new SelectListItem { Value ="Emergency Medicine Physicians",Text="Emergency Medicine Physicians"},
+                            new SelectListItem { Value ="Endocrinologists",Text="Endocrinologists"},
+                            new SelectListItem { Value ="Endodontists",Text="Endodontists"},
+                            new SelectListItem { Value ="Eye Doctors",Text="Eye Doctors"},
+                            new SelectListItem { Value ="Family Nurse Practitioners",Text="Family Nurse Practitioners"},
+                            new SelectListItem { Value ="Family Physicians",Text="Family Physicians"},
+                            new SelectListItem { Value ="Family Psychiatric & Mental Health Nurse Practitioners",Text="Family Psychiatric & Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Gastroenterologists",Text="Gastroenterologists"},
+                            new SelectListItem { Value ="General Nurse Practitioners",Text="General Nurse Practitioners"},
+                            new SelectListItem { Value ="Geneticists",Text="Geneticists"},
+                            new SelectListItem { Value ="Hand Surgeons",Text="Hand Surgeons"},
+                            new SelectListItem { Value ="Hearing Specialists",Text="Hearing Specialists"},
+                            new SelectListItem { Value ="Hematologists",Text="Hematologists"},
+                            new SelectListItem { Value ="Immunologists",Text="Immunologists"},
+                            new SelectListItem { Value ="Infectious Disease Specialists",Text="Infectious Disease Specialists"},
+                            new SelectListItem { Value ="Infertility Specialists",Text="Infertility Specialists"},
+                            new SelectListItem { Value ="Internists",Text="Internists"},
+                            new SelectListItem { Value ="Medical Ethicists",Text="Medical Ethicists"},
+                            new SelectListItem { Value ="Mental Health Nurse Practitioners",Text="Mental Health Nurse Practitioners"},
+                            new SelectListItem { Value ="Microbiologists",Text="Microbiologists"},
+                            new SelectListItem { Value ="Naturopathic Doctors",Text="Naturopathic Doctors"},
+                            new SelectListItem { Value ="Nephrologists",Text="Nephrologists"},
+                            new SelectListItem { Value ="Neurologists",Text="Neurologists"},
+                            new SelectListItem { Value ="Neuropsychiatrists",Text="Neuropsychiatrists"},
+                            new SelectListItem { Value ="Neurosurgeons",Text="Neurosurgeons"},
+                            new SelectListItem { Value ="Nutritionists",Text="Nutritionists"},
+                            new SelectListItem { Value ="OB-GYNs",Text="OB-GYNs"},
+                            new SelectListItem { Value ="OB-GYN Nurse Practitioners",Text="OB-GYN Nurse Practitioners"},
+                            new SelectListItem { Value ="Occupational Medicine Specialists",Text="Occupational Medicine Specialists"},
+                            new SelectListItem { Value ="Oncologists",Text="Oncologists"},
+                            new SelectListItem { Value ="Ophthalmologists",Text="Ophthalmologists"},
+                            new SelectListItem { Value ="Optometrists",Text="Optometrists"},
+                            new SelectListItem { Value ="Oral Surgeons",Text="Oral Surgeons"},
+                            new SelectListItem { Value ="Orthodontists",Text="Orthodontists"},
+                            new SelectListItem { Value ="Orthopedic Surgeons",Text="Orthopedic Surgeons"},
+                            new SelectListItem { Value ="Pain Management Specialists",Text="Pain Management Specialists"},
+                            new SelectListItem { Value ="Pathologists",Text="Pathologists"},
+                            new SelectListItem { Value ="Pediatric Dentists",Text="Pediatric Dentists"},
+                            new SelectListItem { Value ="Pediatric Nurse Practitioners",Text="Pediatric Nurse Practitioners"},
+                            new SelectListItem { Value ="Pediatricians",Text="Pediatricians"},
+                            new SelectListItem { Value ="Periodontitis",Text="Periodontitis"},
+                            new SelectListItem { Value ="Physiatrists",Text="Physiatrists"},
+                            new SelectListItem { Value ="Physical Therapists",Text="Physical Therapists"},
+                            new SelectListItem { Value ="Plastic Surgeons",Text="Plastic Surgeons"},
+                            new SelectListItem { Value ="Podiatrists",Text="Podiatrists"},
+                            new SelectListItem { Value ="Preventive Medicine Specialists",Text="Preventive Medicine Specialists"},
+                            new SelectListItem { Value ="Doctors",Text="Doctors"},
+                            new SelectListItem { Value ="Prosthodontics",Text="Prosthodontics"},
+                            new SelectListItem { Value ="Psychiatrists",Text="Psychiatrists"},
+                            new SelectListItem { Value ="Psychologists",Text="Psychologists"},
+                            new SelectListItem { Value ="Psychosomatic Medicine Specialists",Text="Psychosomatic Medicine Specialists"},
+                            new SelectListItem { Value ="Psychotherapists",Text="Psychotherapists"},
+                            new SelectListItem { Value ="Pulmonologists",Text="Pulmonologists"},
+                            new SelectListItem { Value ="Radiation Oncologists",Text="Radiation Oncologists"},
+                            new SelectListItem { Value ="Radiologists",Text="Radiologists"},
+                            new SelectListItem { Value ="Reproductive Endocrinologists",Text="Reproductive Endocrinologists"},
+                            new SelectListItem { Value ="Rheumatologists",Text="Rheumatologists"},
+                            new SelectListItem { Value ="Sleep Medicine Specialists",Text="Sleep Medicine Specialists"},
+                            new SelectListItem { Value ="Sports Medicine Specialists",Text="Sports Medicine Specialists"},
+                            new SelectListItem { Value ="Surgeons",Text="Surgeons"},
+                            new SelectListItem { Value ="Therapists / Counselors",Text="Therapists / Counselors"},
+                            new SelectListItem { Value ="Travel Medicine Specialists",Text="Travel Medicine Specialists"},
+                            new SelectListItem { Value ="Urologists",Text="Urologists"},
+                            new SelectListItem { Value ="Women’s Health Nurse Practitioners",Text="Women’s Health Nurse Practitioners"}	
+                        };        
+                }
+
+                <div class="editor-field">
+                    @Html.ListBoxFor(model => model.Specialities, itemspecialities)
+                    @Html.ValidationMessageFor(model => model.Specialities)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.GETSUFFIX)
+                </div>
+                <div class="editor-field">
+
+                    @Html.ListBoxFor(model => model.GETSUFFIX, new List<SelectListItem> {
+                             new SelectListItem(){Text="MD",Value="MD"},
+                             new SelectListItem(){Text="DDS",Value="DDS"},
+                             new SelectListItem(){Text="OD ",Value="OD"},
+                             new SelectListItem(){Text="DO ",Value="DO"},
+                             new SelectListItem(){Text="DMD",Value="DMD"},
+                             new SelectListItem(){Text="FACOG",Value="FACOG"},
+                             new SelectListItem(){Text="DPM",Value="DPM"},
+                             new SelectListItem(){Text="FACS ",Value="FACS"},
+                             new SelectListItem(){Text="PhD ",Value="PhD"},
+                             new SelectListItem(){Text="FACC",Value="FACC"},
+                             new SelectListItem(){Text="MPH",Value="MPH"},
+                             new SelectListItem(){Text="FAAD ",Value="FAAD"},
+                             new SelectListItem(){Text="FAAP",Value="FAAP"},
+                             new SelectListItem(){Text="ACNP-BC",Value="ACNP-BC"},
+                             new SelectListItem(){Text="ACNPC ",Value="ACNPC"},
+                             new SelectListItem(){Text="ANP",Value="ANP"},
+                             new SelectListItem(){Text="AP ",Value="AP"},
+                             new SelectListItem(){Text="APN ",Value="APN"},
+                             new SelectListItem(){Text="APRN ",Value="APRN"},
+                             new SelectListItem(){Text="ARNP ",Value="ARNP"},
+                             new SelectListItem(){Text="AuD ",Value="AuD"},
+                             new SelectListItem(){Text="BA",Value="BA"},
+                             new SelectListItem(){Text="BChD ",Value="BChD"},
+                             new SelectListItem(){Text="BDS ",Value="BDS"},
+                             new SelectListItem(){Text="BS ",Value="BS"},
+                             new SelectListItem(){Text="CAc",Value="CAc"},
+                             new SelectListItem(){Text="CCSP",Value="CCSP"},
+                             new SelectListItem(){Text="CDE",Value="CDE"},
+                             new SelectListItem(){Text="CDN ",Value="CDN"},
+                             new SelectListItem(){Text="CNM",Value="CNM"},
+                             new SelectListItem(){Text="CNP",Value="CNP"},
+                             new SelectListItem(){Text="CNS",Value="CNS"},
+                             new SelectListItem(){Text="CPNP ",Value="CPNP"},
+                             new SelectListItem(){Text="CRNP",Value="CRNP"},
+                             new SelectListItem(){Text="CSCS",Value="CSCS"},
+                             new SelectListItem(){Text="CSW",Value="CSW"},
+                             new SelectListItem(){Text="DAc",Value="DAc"},
+                             new SelectListItem(){Text="DAOM",Value="DAOM"},
+                             new SelectListItem(){Text="DC ",Value="DC"},
+                             new SelectListItem(){Text="DiplAc",Value="DiplAc"},
+                             new SelectListItem(){Text="DM",Value="DM"},
+                             new SelectListItem(){Text="DMSc",Value="DMSc"},
+                             new SelectListItem(){Text="DNP ",Value="DNP"},
+                             new SelectListItem(){Text="DNSc ",Value="DNSc"},
+                             new SelectListItem(){Text="DOM ",Value="DOM"},
+                             new SelectListItem(){Text="DPT",Value="DPT"},
+                             new SelectListItem(){Text="DSc",Value="DSc"},
+                             new SelectListItem(){Text="FAAN ",Value="FAAN"},
+                             new SelectListItem(){Text="FAANS",Value="FAANS"},
+                             new SelectListItem(){Text="FAAOS",Value="FAAOS"},
+                             new SelectListItem(){Text="FACE",Value="FACE"},
+                             new SelectListItem(){Text="FACEP ",Value="FACEP"},
+                             new SelectListItem(){Text="FACFAOM ",Value="FACFAOM"},
+                             new SelectListItem(){Text="FACFAS",Value="FACFAS"},
+                             new SelectListItem(){Text="FACOS",Value="FACOS"},
+                             new SelectListItem(){Text="FACP ",Value="FACP"},
+                             new SelectListItem(){Text="FACR ",Value="FACR"},
+                             new SelectListItem(){Text="FAGD ",Value="FAGD"},
+                             new SelectListItem(){Text="FAHA ",Value="FAHA"},
+                             new SelectListItem(){Text="FAOO ",Value="FAOO"},
+                             new SelectListItem(){Text="FASN ",Value="FASN"},
+                             new SelectListItem(){Text="FCCP ",Value="FCCP"},
+                             new SelectListItem(){Text="FIAMA ",Value="FIAMA"},
+                             new SelectListItem(){Text="FRCOG",Value="FRCOG"},
+                             new SelectListItem(){Text="FRCP ",Value="FRCP"},
+                             new SelectListItem(){Text="FRCPC ",Value="FRCPC"},
+                             new SelectListItem(){Text="FRCSI",Value="FRCSI"},
+                             new SelectListItem(){Text="FSCAI ",Value="FSCAI"},
+                             new SelectListItem(){Text="LAc",Value="LAc"},
+                             new SelectListItem(){Text="LCSW ",Value="LCSW"},
+                             new SelectListItem(){Text="LMFT ",Value="LMFT"},
+                             new SelectListItem(){Text="LMHC",Value="LMHC"},
+                             new SelectListItem(){Text="LMSW ",Value="LMSW"},
+                             new SelectListItem(){Text="MA",Value="MA"},
+                             new SelectListItem(){Text="MAGD ",Value="MAGD"},
+                             new SelectListItem(){Text="MB ",Value="MB"},
+                             new SelectListItem(){Text="MBA",Value="MBA"},
+                             new SelectListItem(){Text="MBBS",Value="MBBS"},
+                             new SelectListItem(){Text="MHlthSci ",Value="MHlthSci"},
+                             new SelectListItem(){Text="MN ",Value="MN"},
+                             new SelectListItem(){Text="MPA ",Value="MPA"},
+                             new SelectListItem(){Text="MPT ",Value="MPT"},
+                             new SelectListItem(){Text="MRCP ",Value="MRCP"},
+                             new SelectListItem(){Text="MS ",Value="MS"},
+                             new SelectListItem(){Text="MSD ",Value="MSD"},
+                             new SelectListItem(){Text="MSN",Value="MSN"},
+                             new SelectListItem(){Text="MSOM",Value="MSOM"},
+                             new SelectListItem(){Text="MSTOM ",Value="MSTOM"},
+                             new SelectListItem(){Text="MSWk",Value="MSWk"},
+                             new SelectListItem(){Text="ND",Value="ND"},
+                             new SelectListItem(){Text="NP ",Value="NP"},
+                             new SelectListItem(){Text="NTP ",Value="NTP"},
+                             new SelectListItem(){Text="OMD ",Value="OMD"},
+                             new SelectListItem(){Text="PA ",Value="PA"},
+                             new SelectListItem(){Text="PAC",Value="PAC"},
+                             new SelectListItem(){Text="PharmD ",Value="PharmD"},
+                             new SelectListItem(){Text="PMH ",Value="PMH"},
+                             new SelectListItem(){Text="PsyD",Value="PsyD"},
+                             new SelectListItem(){Text="PT ",Value="PT"},
+                             new SelectListItem(){Text="RAc",Value="RAc"},
+                             new SelectListItem(){Text="RD ",Value="RD"},
+                             new SelectListItem(){Text="RDH ",Value="RDH"},
+                             new SelectListItem(){Text="RN ",Value="RN"},
+                             new SelectListItem(){Text="RPh",Value="RPh"},
+                             new SelectListItem(){Text="RVT",Value="RVT"}
+				                            }, "Select Suffix")
+                    @Html.ValidationMessageFor(model => model.GENDER)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.GENDER)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.GENDER, new[] {
+                                new SelectListItem(){Text="Male",Value="Male"},
+                                new SelectListItem(){Text="Female", Value ="Female"}
+                            }, "Select Your Gender")
+                    @Html.ValidationMessageFor(model => model.GENDER)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DOBMonth):
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownListFor(model => model.DOBMonth, new[] {
+                                new SelectListItem(){Value="1",Text ="Jan"},
+                                new SelectListItem(){Value="2",Text ="Feb"},
+                                new SelectListItem(){Value="3",Text ="Mar"},
+                                new SelectListItem(){Value="4",Text ="Apr"},
+                                new SelectListItem(){Value="5",Text ="May"},
+                                new SelectListItem(){Value="6",Text ="Jun"},
+                                new SelectListItem(){Value="7",Text ="Jul"},
+                                new SelectListItem(){Value="8",Text ="Aug"},
+                                new SelectListItem(){Value="9",Text ="Sep"},
+                                new SelectListItem(){Value="10",Text ="Oct"},
+                                new SelectListItem(){Value="11",Text ="Nov"},
+                                new SelectListItem(){Value="12",Text ="Dec"}
+                                                            }, "Month", new { @style = "width:72px !important;" })
+                    @Html.ValidationMessageFor(model => model.DOBMonth)
+                    &nbsp;
+                        @Html.DropDownListFor(model => model.DOBDAY, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Day", new { @style = "width:63px !important;" })
+                    @Html.ValidationMessageFor(model => model.DOBDAY)
+                    &nbsp; 
+                         @Html.DropDownListFor(model => model.DOBYEAR, Enumerable.Range(1900, DateTime.Now.Year - 1899).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "Year", new { @style = "width:63px !important;" })
+
+                    @Html.ValidationMessageFor(model => model.DOBYEAR)
+
+                    @Html.HiddenFor(model => model.DOBDAYDISPLAY)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Languages)
+                </div>
+                @{
+    var items = new List<SelectListItem>
+                            {
+                                new SelectListItem { Value ="AR",Text="Arabic"},
+                                new SelectListItem { Value ="EN",Text="English"},
+                                new SelectListItem { Value ="FR",Text="French"},
+                                new SelectListItem { Value ="DE",Text="German"},
+                                new SelectListItem { Value ="EL",Text="Greek"},
+                                new SelectListItem { Value ="HI",Text="Hindi"},
+                                new SelectListItem { Value ="IT",Text="Italian"},
+                                new SelectListItem { Value ="JA",Text="Japanese"},
+                                new SelectListItem { Value ="KO",Text="Korean"},
+                                new SelectListItem { Value ="ZH",Text="Mandarin"},
+                                new SelectListItem { Value ="PL",Text="Polish"},
+                                new SelectListItem { Value ="PT",Text="Portuguese"},
+                                new SelectListItem { Value ="RO",Text="Romanian"},
+                                new SelectListItem { Value ="RU",Text="Russian"},
+                                new SelectListItem { Value ="ES",Text="Spanish"},
+                                new SelectListItem { Value ="TR",Text="Turkish"},
+                                new SelectListItem { Value ="VI",Text="Vietnamese"}
+                             };        
+                }
+
+                <div class="editor-field">
+                    @Html.ListBoxFor(model => model.Languages, items)
+                    @Html.ValidationMessageFor(model => model.Languages)
+                </div>
+            </div>
+        </div>
+
+        <div class="row c_buttonContainer">
+            <div class="right">               
+                <input type="button" value="Cancel" class="button cancel docInfoEdit" />
+                 <input type="button" value="Save" class="button" id="docinfoedit" />
+            </div>
+        </div>
+
+
+
+    </div>
+   
+    <div class="editor-field" style="display: none;">
+        <input class="text-box single-line" id="UserName" name="UserName" type="text" value="@Model.UserName" maxlength="100" />
+    </div>
+   
+   
+   
+}
+
+<script type="text/javascript">
+
+    $("#docinfoedit").click(function (e) {
+        var DoctorsInformationEditModel = new Object();
+
+        DoctorsInformationEditModel.Salutation = $("#Salutation").val();
+        DoctorsInformationEditModel.FIRSTNAME = $("#FIRSTNAME").val();
+        DoctorsInformationEditModel.LASTNAME = $("#LASTNAME").val();
+        DoctorsInformationEditModel.Specialities = $("#Specialities").val();
+        DoctorsInformationEditModel.GETSUFFIX = $("#GETSUFFIX").val();
+        DoctorsInformationEditModel.GENDER = $("#GENDER").val();
+        DoctorsInformationEditModel.DOBMonth = $("#DOBMonth").val();
+        DoctorsInformationEditModel.DOBDAY = $("#DOBDAY").val();
+        DoctorsInformationEditModel.DOBYEAR = $("#DOBYEAR").val();
+        DoctorsInformationEditModel.Languages = $("#Languages").val();
+        
+       
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/_DoctorsInfoEdit",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {                                             
+                        window.location.reload();
+                    }
+                },
+                data: JSON.stringify(DoctorsInformationEditModel),
+            });
+
+    });
+    $(document).ready(function () {
+
+        
+        $('.docInfoEdit .cancel').click(function () {
+            $('#doctorsInfoDisplay').show();
+            $('#doctorsInfoEdit').hide();
+        });
+
+        $('#DOBMonth').change(function () {
+            var month = $(this).val();
+            var max;
+            if (month == 2) {
+                max = 28;
+            } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                max = 31;
+            }
+            else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                max = 30;
+            }
+            var mySelect = $('#DOBDAY');
+            $('#DOBDAY').empty();
+            mySelect.append(
+                   $('<option></option>').html("Day"));
+            for (i = 1; i <= max; i++) {
+                mySelect.append(
+                    $('<option></option>').val(i).html(i)
+                );
+            }
+        })
+
+        $('#DOBYEAR').change(function () {
+            var year = $(this).val();
+            var max;
+            var month = $('#DOBMonth').val()
+            if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0) && month == 2) {
+                max = 29;
+
+                var mySelect = $('#DOBDAY');
+                $('#DOBDAY').empty();
+                mySelect.append(
+                       $('<option ></option>').html("Day"));
+                for (i = 1; i <= max; i++) {
+                    mySelect.append(
+                        $('<option></option>').val(i).html(i)
+                    );
+                }
+            } else if (month == 2) {
+                max = 28;
+
+                var mySelect = $('#DOBDAY');
+                $('#DOBDAY').empty();
+                mySelect.append(
+                       $('<option></option>').html("Day"));
+                for (i = 1; i <= max; i++) {
+                    mySelect.append(
+                        $('<option></option>').val(i).html(i)
+                    );
+                }
+            }
+
+        })
+
+        if ($("#DOBDAYDISPLAY").val().length > 0) {
+            $("#DOBDAY").val($("#DOBDAYDISPLAY").val());
+        }
+
+    });
+
+    $("#UserImageUpload").kendoUpload({
+        async: {
+            saveUrl: "/DoctorInformation/Save",
+            removeUrl: "/DoctorInformation/Remove",
+            autoUpload: true
+        },
+        multiple: false,
+        upload: function (e) {
+            e.data = { UserName: "@Model.UserName" };
+        },
+        success: onSuccess
+    });
+
+        function onSuccess(e) {
+
+
+        }
+</script>
+<style>
+    .boxSep {
+    
+    margin:0px 0px 10px 0px;}
+</style>

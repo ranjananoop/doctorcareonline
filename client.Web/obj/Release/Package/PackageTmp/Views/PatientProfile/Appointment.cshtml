@@ -1,0 +1,175 @@
+﻿@model DOCVIDEO.Domain.APPOINTMENT
+
+@{
+    ViewBag.Title = "Appointment";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+<div class="c_column_two c_rightColumn">
+<div class="p_appoinmet_con">
+<div class="pagetTitle">
+ <div id="fade" class="black_overlay">
+ </div>  
+</div>
+
+        @using (Html.BeginForm()) 
+        {
+            @Html.ValidationSummary(false)
+               <div class="row">
+                     <div id="divAppointments">
+                         <h3 class="notesTitle">Notes</h3>
+                         <p></p>
+                         <div class="row c_buttonContainer">
+                             <div class="right">
+                                 <input type="button" value="Close" class="button closeMessageDialog" />
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             @Html.HiddenFor(model => model.tabindex)
+           <div class="fleet p_appointmentGridContent" style="margin-top:-20px;">
+                <div class="framecontentTitle">
+                    <h6 >Appointments Confirmed</h6>
+                </div>
+                <div class="sec_desc-con">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type.
+                </div>
+                <div class="frameContainer">
+                    @{Html.RenderPartial("_upcomingappointment");}
+                            </div>
+                <div class="framecontentTitle">
+                    <h6> Upcoming Appointment Requests</h6>
+             
+             
+                </div>
+                <div class="sec_desc-con">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                                ever since the 1500s, when an unknown printer took a galley of type.
+                            </div>
+                <div class="frameContainer">
+                    @{Html.RenderPartial("_upcomingappointmentresent");}
+                            </div>
+                <div class="framecontentTitle">
+                    <h6>Past Appointments</h6>
+            
+                            </div>
+                <div class="sec_desc-con">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+                                ever since the 1500s, when an unknown printer took a galley of type.
+                            </div>
+                <div class="frameContainer">
+                    @{Html.RenderPartial("_pastappointment");}
+                        </div>
+           </div>
+        }
+
+<div>
+@*     @{Html.RenderPartial("_quicksearchappointment");}    *@
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+</div>
+
+
+    </div>
+
+
+<script>
+    
+        function setStatus(ID, flag) {
+            var HealthHistoryModel = new Object();
+            HealthHistoryModel.ID = ID;
+            HealthHistoryModel.flag = flag;
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: '@Url.Action("DisplayField", "HealthHistory")',
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#divAppointments > p").html(msg.msg);
+                    $("#divAppointments > p").addClass('notesScrollbar');
+
+                    $("#divAppointments").fadeIn('slow');
+
+                    $('#fade').height($(document).height());
+                    $('html').addClass('scrollbarOff');
+
+                    $('#divAppointments').css({
+                        left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                        top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                    });
+
+                    $('#fade').insertBefore('.c_container');
+                    $('#divAppointments').insertBefore('#fade');
+
+                    $(window).resize(function () {
+                        $('#divAppointments').css({
+                            left: ($(window).width() - $('#divAppointments').outerWidth()) / 2,
+                            top: ($(window).height() - $('#divAppointments').outerHeight()) / 2
+                        });
+                    });
+
+                    jQuery.fn.center = function () {
+                        this.css("position", "absolute");
+                        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                    $(window).scrollTop()) + "px");
+                        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                    $(window).scrollLeft()) + "px");
+                        return this;
+                    }
+
+                    $('#divAppointments').center();
+
+                    $(".black_overlay").show();
+                }
+            },
+            data: JSON.stringify(HealthHistoryModel),
+        });
+
+    }
+    $('.c_pgTitleText').text('Appointments');
+    $('.c_pgTitleIcon').addClass('appointmentsIcon');
+    $('.closeMessageDialog').click(function () {
+        $('#divAppointments').fadeOut('slow');
+        $('#fade').fadeOut('slow');
+        $('html').removeClass('scrollbarOff');
+    });
+    
+    $(document).ready(function () {
+       
+        $('.quicksearchAppointment').insertBefore('.availableDoctor');
+
+       
+        $('.img_Showed').each(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    $('.img_Showed').attr('src', msg.msg);
+
+                }
+            });
+
+        });
+    });
+
+</script>
+<style>
+    .sec_desc-con {
+font-size: 14px;
+padding: 6px 0;
+margin-top: 12px;
+margin-bottom: 8px;
+line-height: 20px;
+color: #000
+}
+</style>

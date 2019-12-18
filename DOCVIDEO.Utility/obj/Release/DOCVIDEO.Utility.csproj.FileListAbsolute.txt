@@ -1,0 +1,10 @@
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Release\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\bin\Release\GURUKUL.Utility.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Release\GURUKUL.Utility.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Utility\obj\Release\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\bin\Release\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\bin\Release\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Release\DOCVIDEO.Utility.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Release\GURUKUL.Utility.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Release\GURUKUL.Utility.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Utility\obj\Release\DOCVIDEO.Utility.csprojAssemblyReference.cache

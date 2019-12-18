@@ -1,0 +1,272 @@
+﻿@model client.Web.Models.PatientInformationEditModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="c_pgTitle">
+    <div class="c_pgTitle_Fleet">
+        <h1>Dashboard</h1>
+    </div>
+
+</div>
+
+<!--patient dashboard content-->
+<div class="frameContainer displayOn">
+    <div class="d_dashboard">
+        <div class="d_dashboardHeader">
+            <div class="fleet">
+                <div class="left">
+
+                    <div class="d_doctorPic">
+                        <div class="boxSep" ><div class="imgLiquidFill imgLiquid " style="width: 130px;height: 160px;"><img  src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephoto();' /></div></div>          
+                        
+                    </div>
+
+                    <div class="d_welcomeDoctorDesc">
+
+
+                        <h1>Welcome<br />
+                             <strong>@Html.DisplayFor(model => model.Salutation) @Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME)</strong></h1>
+                        
+                    </div>
+
+
+
+                </div>@*left div closed here*@
+
+                <div class="right">
+                     <div class="d_profileCompleteMsg">
+                         <a href="/PatientProfile/MyProfile">View profile</a>
+                        <h2>@Html.DisplayNameFor(model => model.profilecompleted) </h2>
+                       
+                    </div>
+                    <div class="d_profileCompleteBox">
+                        <h1>@Html.DisplayFor(model => model.profilecompleted)%</h1>
+                    </div>
+                   
+                </div>
+
+            </div>@*fleet div closed here*@
+        </div>@*dashboard header closed here*@
+
+        <div class="c_column_three">
+
+            <div class="c_column_two left">
+                <div class="fleet">
+                    <ul class="d_dashboard_chart">
+                        <li class="paymentReceived">
+                            <div class="fleet">
+                                <b>@Html.DisplayNameFor(model => model.paymentdone) </b>
+                                <h2>@Html.DisplayFor(model => model.paymentdone)$</h2>
+                               @* <a href="#">View details</a>*@
+                            </div>
+                            </li>
+                            <li class="appointments">
+                            <div class="fleet">
+                               <b> Appointments </b><br />
+                               <h2> @Html.DisplayFor(model => model.appintmentdone)</h2>
+                               @* <a href="/DoctorInformation/ReleaseStatement">View details</a>*@<br />
+                            </div>
+                                </li>
+                       
+                          <li class="profileViewed">
+                            <div class="fleet">
+                              <b>  Preferred  Providers </b><br />
+                               <h2> @Html.DisplayFor(model => model.prefferedprovidercount)</h2><br />
+                               @* <a href="/PatientProfile/PreferredProviders">View details</a>*@
+                            </div>
+                              </li>
+                             <li class="patients">
+                            <div class="fleet">
+                                <b>@Html.DisplayNameFor(model => model.appintmentdoneclinic)</b><br />
+                                <h2>@Html.DisplayFor(model => model.appintmentdoneclinic)</h2><br />
+                                @*<a href="/PatientProfile/Appointment">View details</a>*@
+                            </div>
+                                 </li>
+                        
+
+                    </ul>
+                </div> @*fleet div ends here*@
+            </div>
+
+            <div class="c_column_one right">
+                <div class="fleet">
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_message">
+                            <div class="left">
+                                <div class="dashboard_messageIcon"></div>
+                            </div>
+                            <div class="right">
+                                <h1>You have <strong><b>@Html.DisplayFor(model => model.inboxUreadMessageCount)</b></strong> new messages</h1>
+
+                                <a href="/Message/Inbox">View all messages</a>
+                            </div>
+                        </div>
+                    </div>
+                       @if (Model.appintmentcurrent)
+                                {
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_message">
+                            <div class="left">
+                                <div class="dashboard_messageIcon"></div>
+                            </div>
+                            <div class="right">
+                             
+        
+                                    <a href="/DoctorInformation/ReleaseStatement">Start Video</a><br />
+                            
+                                    <h1> You have a Video Conference Upcoming </h1>
+                            
+                            </div>
+                        </div>
+                    </div>
+            }
+
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_panelHeader">
+                            <b>Upcoming Appointments</b>
+                        </div>
+                        <div class="d_dashboard_panelgridHeader">
+                            <div id="grid"></div>
+                        </div>
+                        <div class="d_dashboard_panelContent"></div>
+                        <div class="d_dashboard_panelgridBottom">
+                            <a href="/PatientProfile/Appointment">View more</a>
+                        </div>
+                    </div>
+
+
+                    <div class="d_dashboard_panel">
+                        <div class="d_dashboard_panelHeader">
+                            <b>Review Comments</b>
+                        </div>
+
+                        <div class="d_dashboard_panelContent">
+                            @foreach (var temp in Model.DoctorsInformationEditModels)
+                            {
+                    
+                                <div class="row">
+
+                                    <div class="display-field">
+                                        @for (var k = 0; k < temp.CLIENTRATING; k++)
+                                        {
+                                            <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                                        }
+                                        @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                                        {
+                                            <img class="Empty" src="~/Content/Images/Empty.png" />
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="display-field">@Html.LabelFor(m => m.Comment, @temp.Comment) </div>
+                                </div>
+                                <div class="row">
+                                    <div class="display-field reviewCommentsDate">
+                                        @Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="d_dashboard_panelgridBottom">
+                            <a href="#">View more</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        @* class c_column_three opens here *@
+
+    </div>
+</div>
+
+<script>
+    $("#beforelogin").hide();
+    $("#afterlogin").show();
+    $("#afterloginsign").hide();
+    $("#advancesearch").hide();
+    var statusSelected = 0;
+    var poData = [];
+    $(document).ready(function () {
+        calculate_time_zone();
+        var doctorSlot = {
+            TimeZoneOffset: document.getElementById('timezoneOffset').value,
+            DSTObserved: document.getElementById('dstObserved').value
+        };
+        $("#grid").kendoGrid({
+
+            dataSource: {
+                type: "Json",
+                serverFiltering: false,
+                transport: {
+                    read: {
+                        url: "/PatientProfile/GetUpcomingResentAppintmentDash",
+                        dataType: "json",
+                        type: "post",
+                        //contentType: "application/json; charset=utf-8",
+                        data: doctorSlot,
+                    },
+                },
+                schema: {
+                    id: "APPOINTMENTID",
+                    model: {
+                        fields: {
+                            FIRSTNAME: { type: "string" },
+                            APPOINTMENTSTARTTIME: { type: "Date" },
+                            APPOINTMENTSTARTTIME: { type: "Date" },
+                            APPOINTMENTSTARTTIME: { type: "Date" },
+                            CurrenttimeZone: { type: "string" },
+                            REASONFORVISIT: { type: "string" },
+                            STATUS: { type: "string" },
+                            APPOINTMENTID: { type: "integer" }
+                        }
+                    }
+                },
+            },
+            groupable: false,
+            columns: [
+
+
+                {
+                    field: "APPOINTMENTSTARTTIME",
+                    title: "Date",
+                    template: '#= kendo.toString(APPOINTMENTSTARTTIME, "MM/dd/yyyy") #',
+                    width: 90
+
+                },
+                 {
+                     field: "FIRSTNAME",
+                     title: "Doctor Name",
+
+                     width: 90
+
+                 },
+                {
+                    field: "APPOINTMENTSTARTTIME",
+                    title: " Time",
+                    template: '#= kendo.toString(APPOINTMENTSTARTTIME, "hh:mm tt") #'+" "+ '#=CurrenttimeZone#',
+                    width: 90
+                },
+
+            ]
+        });
+
+
+
+    });
+
+</script>
+<style>
+    c_publicProfileContactInfo ul li h5 {
+margin-bottom: 10px;
+font-size: 18px;
+margin-top: 10px;
+}
+    #grid {
+        margin: 15px 0px 0px 5px;
+    }
+</style>

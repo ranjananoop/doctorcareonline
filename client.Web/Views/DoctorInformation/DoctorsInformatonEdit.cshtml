@@ -1,0 +1,292 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+
+@{
+    ViewBag.Title = "DoctorsInformatonEdit";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <div class="fleet">
+        <input id="MessageUpdateStatus" disabled="disabled" type="text" value="@Model.MessageUpdateStatus"    />
+        <div class="d_accordion">
+            <!--About Doctor-->
+            <div class="d_accordion_Title">
+                <h4>About Doctor Info</h4>
+                <a href="javascript:void(null);" class="editLink doctorInfo"></a>
+            </div>
+            <div class="d_accordion_content">
+                <div id="doctorsInfoDisplay">
+                    @{Html.RenderPartial("_DoctorsInfoDisplay");}
+                </div>
+                <div id="doctorsInfoEdit" class="displayOff">@{Html.RenderPartial("_DoctorsInfoEdit");}</div>
+            </div>
+
+
+            <!--Licence-->
+            <div class="d_accordion_Title">
+                <h4>License Details</h4>
+                <a href="javascript:void(null);" class="editLink doctorNPI"></a>
+            </div>
+            <div class="d_accordion_content">
+                <div id="DoctorsNpiDisplay">
+                    @{Html.RenderPartial("_DoctorsNpiDisplay");}
+                </div>
+                <div id="DoctorsNpiEdit" class="displayOff">@{Html.RenderPartial("_DoctorsNpiEdit");}</div>
+            </div>
+
+
+            <!--Education-->
+            <div class="d_accordion_Title">
+                <h4>Education</h4>
+                <a href="javascript:void(null);" class="editLink DoctorseduEdit"></a>
+            </div>
+            <div class="d_accordion_content">
+
+                <div id="DoctorseduDisplay">
+                    @Html.Partial("~/Views/DoctorInformation/_DoctorseduDisplay.cshtml")
+
+                </div>
+                <div id="DoctorseduEdit" class="displayOff">
+                    @Html.Partial("~/Views/DoctorInformation/_DoctorseduEdit.cshtml")
+                </div>
+            </div>
+
+
+            <!--Contact-->
+            <div class="d_accordion_Title">
+                <h4>Contact</h4>
+                <a href="javascript:void(null);" class="editLink DoctorscontactEdit"></a>
+            </div>
+            <div class="d_accordion_content">
+
+                <div id="DoctorscontactDisplay">
+                    @Html.Partial("~/Views/DoctorInformation/_DoctorscontactDisplay.cshtml")
+
+                </div>
+                <div id="DoctorscontactEdit" class="displayOff">
+                    @Html.Partial("~/Views/DoctorInformation/_DoctorscontactEdit.cshtml")
+                </div>
+            </div>
+        </div>
+        <div id="fade" class="black_overlay"></div>
+
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<script>
+    $('.c_pgTitleText').text('Profile');
+    $('.c_pgTitleIcon').addClass('myProfile');
+
+    $('.docInfoEdit').click(function () {
+        $('#doctorsInfoDisplay').show();
+        $('#doctorsInfoEdit').hide();
+    });
+
+    $('.doctorInfo').click(function () {
+        $('#doctorsInfoDisplay').hide();
+        $('#doctorsInfoEdit').show();
+    });
+    $('.doctorNPI').click(function () {
+        $('#DoctorsNpiDisplay').hide();
+        $('#DoctorsNpiEdit').show();
+    });
+    $('.doctorNPICancel').click(function () {
+        $('#DoctorsNpiDisplay').show();
+        $('#DoctorsNpiEdit').hide();
+    });
+
+    $('.DoctorseduEdit').click(function () {
+        $('#DoctorseduDisplay').hide();
+        $('#DoctorseduEdit').show();
+    });
+    $('.cancelDoctorseduEdit').click(function () {
+        $('#DoctorseduDisplay').show();
+        $('#DoctorseduEdit').hide();
+    });
+
+    $('.DoctorscontactEdit').click(function () {
+        $('#DoctorscontactDisplay').hide();
+        $('#DoctorscontactEdit').show();
+    });
+    $('.cancelDoctorscontactEdit').click(function () {
+        $('#DoctorscontactDisplay').show();
+        $('#DoctorscontactEdit').hide();
+    });
+
+
+    function resizeImage() {
+        var imgWidth = $("#viewimg").css("width");
+        var imgHeight = $("#viewimg").css("height");
+        var divWidth = $("#viewimg").css("width");
+        var divHeight = $("#viewimg").css("height");
+        originalHeight = imgHeight;
+        originalWidth = imgWidth;
+
+        if (imgWidth > divWidth && imgHeight > divHeight) {
+            var heightDiff = imgHeight - divHeight;
+            var widthDiff = imgWidth - divWidth;
+            //First find out which of the two dimensions is MORE boundry stretching, then we only change that dimension, to keep the image's original proportions.
+            if (heightDiff > widthDiff) {
+                $("#viewimg").css("height", 400); //Set the
+            }
+            else {
+                $("#viewimg").css("width", 400); //Set the width to the div's width
+            }
+        }
+        else if (imgWidth > divWidth) {
+            $("#viewimg").css("width", 400); //Set the width to the div's width
+        }
+        else if (imgHeight > divHeight) {
+            $("#viewimg").css("height", 400); //Set the height to the div's height
+        }
+    }
+    var now = new Date();
+    now.setDate(now.getDate() + 0);
+    $("#pracdate").kendoDatePicker({
+        max: now,
+        min: new Date(1900, 0, 0)
+    });
+
+
+
+    var now = new Date();
+    $("#expdate").kendoDatePicker({
+        max: new Date(2050, 0, 0),
+        min: now
+    });
+
+
+
+    if ($("#MessageUpdateStatus").val().length > 0) {
+        $("#MessageUpdateStatus").show();
+    } else {
+        $("#MessageUpdateStatus").hide();
+    }
+    $(document).ready(function () {
+
+        $('#LICENSE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+
+
+        $("input").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+        });
+        $("select").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+        $("textarea").on("focus", function () {
+            $("#MessageUpdateStatus").hide();
+
+        });
+
+
+
+
+
+
+
+
+        $('.img_Show').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+        $('.img_Showed').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+        $('.img_ShowClinic').each(function () {
+
+            $(this).attr('src', "@Model.INSTITUTIONIMAGEPATH");
+        });
+
+        $('#FIRSTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#LASTNAME').keyup(function () {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^a-zA-Z0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateFortyFivemins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateHalfmins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#ZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#TELEPHONE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s\-]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateQuatermins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#RateHourmins').keydown(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+        $('#ZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+
+        $('#CLINICZIPCODE').keyup(function (e) {
+            var $th = $(this);
+            $th.val($th.val().replace(/[^0-9\s]*$/g, function (str) { return ''; }));
+        });
+    });
+
+    $("#viewimg").click(function () {
+        //Checks if the image is already in original size:      
+        $(this).css("width", 400);
+        $(this).css("height", 400);
+        $(this).css("z-index", 99999999);
+        $(this).css("position", 'relative');
+        $(this).css("margin-top", -250);
+        $(this).css("border", " 8px solid white");
+        $(this).css("border-radius", 5);
+        $('#fade').show();
+        $('.closeDisplayBar').show();
+    });
+
+    $('.closeDisplayBar').click(function () {
+        $('#fade').hide();
+        $('.closeDisplayBar').hide();
+        $("#viewimg").css("width", 100);
+        $("#viewimg").css("height", 100);
+        $("#viewimg").css("z-index", 0);
+        $("#viewimg").css("position", 'relative');
+        $("#viewimg").css("margin-top", 0);
+    });
+
+
+</script>

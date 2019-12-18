@@ -1,0 +1,65 @@
+﻿@model DOCVIDEO.Domain.USERSINFORMATION
+
+<div class="customAccordionContent" id="personal_details">
+
+    <div class="display-field">
+
+        <div class="personalInfo">
+            <table >
+
+                <tr>
+                   
+                    <td>@Html.DisplayFor(model => model.USERSTREETADDRESS1)
+                    </td>
+                </tr>
+                  @if (Model.USERSTREETADDRESS2 != null)
+                {
+                <tr>
+                   
+                    <td>@Html.DisplayFor(model => model.USERSTREETADDRESS2)
+                    </td>
+                </tr>
+                  }
+                <tr>
+                                    <td>@Html.DisplayFor(model => model.CITY)
+                    </td>
+                </tr>
+                @if (Model.USERSTATE != null)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(model => model.USERSTATE)
+                        </td>
+                    </tr> 
+                }
+                @if (Model.COUNTRY != null)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(model => model.COUNTRY)
+                        </td>
+                    </tr>   
+                }
+                <tr>
+                    
+                    <td>@Html.DisplayFor(model => model.ZIPCODE)
+                    </td>
+                </tr>
+
+                <tr>
+                    
+                    <td>
+                        @Html.DisplayFor(model => model.CurrenttimeZone)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<style>
+    #personal_details {
+        font-size:14px;line-height:22px;
+    }
+</style>

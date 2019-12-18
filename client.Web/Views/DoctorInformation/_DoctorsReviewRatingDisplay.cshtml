@@ -1,0 +1,78 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+<script type="text/javascript">
+    function resizeprofilephotocustom() {
+
+        $(".imgLiquidFill").imgLiquid({
+            fill: true,
+            horizontalAlign: "center",
+            verticalAlign: "top"
+        });
+    }
+</script>
+
+
+<div class="d_doctors_review_rating_display">
+    <div class="left">
+        <div class="boxSep">
+            <div class="imgLiquidFill imgLiquid " style="width: 100px; height: 120px;">
+                <img   src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephotocustom();' /></div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row">
+            <b>@Html.DisplayFor(model => model.Salutation) @Html.DisplayFor(model => model.FIRSTNAME) @Html.DisplayFor(model => model.LASTNAME)</b>   @Html.DisplayFor(model => model.SUFFIX)
+        </div>
+        <div class="row">
+           <em> @Html.DisplayFor(model => model.Speciality) </em>,
+        </div>
+        <div class="row">
+            @Html.DisplayFor(model => model.Language)
+        </div>
+   <div class="row">
+            @Html.DisplayFor(model => model.USERSTATE)
+        </div>
+        <div class="row">
+
+            @Html.LabelFor(m => m.rejectCount)
+            <span style="margin: 0px 5px 20px 5px;">@Html.DisplayFor(m => m.rejectCount)</span>
+
+
+
+            @Html.DisplayNameFor(model => model.Ratings)
+
+
+            @for (var k = 0; k < Model.Ratings; k++)
+            {
+                <img class="Empty" src="~/Content/Images/Filled.png" /> 
+            }
+            @for (var i = 0; i < 5 - Model.Ratings; i++)
+            {
+                <img class="Empty" src="~/Content/Images/Empty.png" />
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

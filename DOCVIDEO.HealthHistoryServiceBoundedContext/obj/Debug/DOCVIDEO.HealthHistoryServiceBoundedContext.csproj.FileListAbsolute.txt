@@ -1,0 +1,117 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.dll.config
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.BaseDataLayer.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.BaseDataLayer.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.Domain.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojResolveAssemblyReference.cache
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojResolveAssemblyReference.cache
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+D:\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojResolveAssemblyReference.cache
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.BaseDataLayer.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\bin\Debug\EntityFramework.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\DOCVIDEO.HealthHistoryServiceBoundedContext.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.HealthHistoryServiceBoundedContext\obj\Debug\GURUKUL.MarksHistoryServiceBoundedContext.pdb

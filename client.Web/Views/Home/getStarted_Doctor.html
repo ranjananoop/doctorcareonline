@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Get Started | Doctor</title>
+	
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
+  <link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #dfdfdf;
+      padding: 0;
+      text-align: left;
+      font-family: Arial;
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+	  line-height:28px;
+    }
+	h1,h2,h3,h4,h5,h6{font-weight:normal;}
+	h1{font-size:45px;color:#3aa3ff;}
+	h2{font-size:17px;clear:both;}
+	header{background:url(header.png) no-repeat;width:960px;height:80px;position:relative;z-index:99999;}
+    
+    .wrapper {
+    	height: 100% !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+		width:960px;
+		box-shadow:0 0 3px 1px #999;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+
+    .main {
+      float: left;
+      width: 960px;
+      margin: 0 auto;
+    }
+   
+    .main section .page_container {
+      position: relative;
+      top: 25%;
+      margin: 0 auto 0;
+      max-width: 950px;
+      z-index: 3;
+    }
+    .main section  {
+      overflow: hidden;
+    }
+    .main section.page1 {
+      background:#ededed;
+    }
+    .main section.page2 {
+      background: #fff;
+    }
+	.main section.page3 {
+      background:#ededed;
+    }
+    .main section.page4 {
+      background: #fff;
+    }
+	.main section.page1 .content{float:left;margin:0px 40px;width:600px;margin-top:-128px;}
+	.main section.page1 img{float:right;margin-top:60px;}
+	.main section.page2 .content{float:right;margin:-244px 60px 0 0;width:500px;}
+	.main section.page2 img{float:left;margin-top:175px;}
+	.main section.page3 .content{float:left;margin:-220px 40px 0 40px;width:600px;}
+	.main section.page3 img{float:right;margin-top:170px;}
+	.main section.page4 .content{float:right;margin:-244px 80px 0 0;width:600px;}
+	.main section.page4 img{float:left;margin-top:175px;}
+	.circle{background:url(circle.png) no-repeat;width:100px;height:100px;color:#fff;float:left;display:block;margin:0px 0 0 -20px;}
+    .circle b{font-size:45px;margin:35px;float:left;}
+	</style>
+	<script>
+	  $(document).ready(function(){
+      $(".main").onepage_scroll({
+        sectionContainer: "section"
+      });
+		});
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+	  <header></header>
+	    
+      <section class="page1">
+        <div class="page_container">
+		<div class="content">
+          <span class="circle"><b>1</b></span><h1>Create profile </h1>
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h2>
+		  </div>
+		  <img src="step1.png"/>
+  	    </div>
+  	   
+      </section>
+	    
+	    <section class="page2">
+	      <div class="page_container">
+		  <div class="content">
+          <span class="circle"><b>2</b></span><h1>Find a Doctor</h1>
+          <h2>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</h2>
+         </div>
+		  <img src="step2.png"/>
+	      </div>
+      </section>
+	  
+	   <section class="page3">
+        <div class="page_container">
+		<div class="content">
+          <span class="circle"><b>3</b></span><h1>Schedule Appointment</h1>
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h2>
+		  </div>
+		  <img src="step1.png"/>
+  	    </div>
+  	   
+      </section>
+	   <section class="page4">
+        <div class="page_container">
+		<div class="content">
+          <span class="circle"><b>4</b></span><h1>Connect with your Doctor</h1>
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h2>
+		  </div>
+		  <img src="step2.png"/>
+  	    </div>
+  	   
+      </section>
+	    
+	 
+    </div>
+  
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\DOCVIDEO.Domain.dll.config
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\DOCVIDEO.Domain.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\DOCVIDEO.ObjectInterfaces.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\DOCVIDEO.ObjectInterfaces.pdb
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojResolveAssemblyReference.cache
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.dll
+D:\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojResolveAssemblyReference.cache
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+D:\New folder\DOCCARE_Nov13\ENH\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+D:\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+D:\GURUKUL\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojResolveAssemblyReference.cache
+D:\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+D:\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojResolveAssemblyReference.cache
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+E:\Data_old_Hard_disk_D\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojResolveAssemblyReference.cache
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Anoop works\live_socailsite\GURUKUL\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll.config
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\Altairis.Web.Security.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\GURUKUL.ObjectInterfaces.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csprojAssemblyReference.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csproj.CoreCompileInputs.cache
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\obj\Debug\DOCVIDEO.Domain.csproj.CopyComplete
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\obj\Debug\GURUKUL.Domain.pdb
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Softwares\sitework\CHIKITSHAK\docareonline\FINAL_WORKING\DOCVIDEO.Domain\bin\Debug\System.Web.WebPages.Deployment.xml

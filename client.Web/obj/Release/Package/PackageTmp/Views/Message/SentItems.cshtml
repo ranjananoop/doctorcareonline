@@ -1,0 +1,300 @@
+﻿@model DOCVIDEO.Domain.MESSAGE
+@{
+    ViewBag.Title = "SENT ITEM";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+  
+    <div class="pagetTitle">
+        <span class="pageIcon sentItems"></span>
+        <h3>Messge Center</h3>
+    </div>
+ 
+    <div class="Inbox">
+        <input id="MessageUpdateStatus" disabled="disabled" type="text"  />
+
+        <div class="actionPanel">
+            <div id="drpMessageStatus" style="display: block;" class="left"></div>
+            <div class="right">
+                <input type="button" value="Delete" id="btndelete1" title="Delete" />
+                <input type="button" value="Refresh" id="btnrefresh1" title="Refresh" />
+                <input type="button" value="Select All" id="btnselect1" title="Slelct All" />
+            </div>
+        </div>
+        <div id="divAppointment" style="background-color: white; display: none;">
+            <p></p>
+        </div>
+        <div id="fade" class="black_overlay">
+        </div>
+        <div id="grid"></div>
+    </div>
+       
+          
+   
+    <div>
+        @{Html.RenderPartial("inboxAdvancesearch");}
+    </div>
+
+}
+<script>
+
+    var messages = [];
+    var messageType = '';
+    var preferedData = new Object();
+    $('.img_Showed').each(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "/PatientProfile/ImagePath",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                $('.img_Showed').attr('src', msg.msg);
+
+            }
+        });
+
+    });
+
+    function setStatus(MESSAGEID) {
+
+
+        $('html').addClass('noScrollbar');
+
+        var message = new Object();
+        message.MESSAGEID = MESSAGEID;
+        $.ajax({
+            async: false,
+            type: "POST",
+            cache: false,
+            dataType: 'json',
+            url: "/Message/UpdateMailStatus",
+            contentType: "application/json; charset=utf-8",
+            success: function (msg) {
+                if (msg) {
+                    $("#divAppointment > p").html(msg.msg);
+
+                    $("#divAppointment").dialog({
+                        autoOpen: false,
+                        modal: false,
+                        height: '250px',
+                        position: 'center',
+
+                        open: function () {
+                            $('.black_overlay').show();
+                            $('.divAppointment').show();
+
+
+                            //var t = $(this).parent(), w = window;
+                            //t.offset({
+                            //    top: (w.height() / 2) - (t.height() / 2),
+                            //    left: (w.width() / 2) - (t.width() / 2)
+                            //});
+                        },
+
+                        close: function () {
+                            //$('#divDelete').html('');
+
+                            $('.black_overlay').hide();
+                            $('#light').hide();
+                            $('html').removeClass('noScrollbar');
+                        }
+                    });
+                    $("#divAppointment").dialog('open');
+                }
+            },
+            data: JSON.stringify(message),
+        });
+
+    }
+    $(document).ready(function () {
+
+        $('.inboxAdvanceSearch').insertBefore('.availableDoctor');
+
+        if ($("#MessageUpdateStatus").val().length > 0) {
+            $("#MessageUpdateStatus").show();
+        } else {
+            $("#MessageUpdateStatus").hide();
+        }
+        BindGrid("All");
+
+
+
+        $("#drpMessageStatus").kendoDropDownList({
+            optionLabel: "All",
+            dataTextField: "MESSAGESTATUS",
+            dataValueField: "MESSAGESTATUS",
+            dataSource: {
+                type: "json",
+                serverFiltering: false,
+                transport: {
+                    read: "/Message/Getdrpdwn"
+                }
+            },
+            change: function () {
+                $("#MessageUpdateStatus").val("");
+                if ($("#MessageUpdateStatus").val().length > 0) {
+                    $("#MessageUpdateStatus").show();
+                } else {
+                    $("#MessageUpdateStatus").hide();
+                }
+                BindGrid(this.value());
+
+            },
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            },
+            index: 0
+        });
+
+
+    });
+
+    function BindGrid(status) {
+        var dataSourceProjects = new kendo.data.DataSource({
+            pageSize: 10,
+            transport: {
+                read: {
+                    url: "/Message/GetFilteredSentItem",
+                    data: function () {
+                        return {
+                            id: status,
+                        }
+                    },
+                    dataType: "json",
+                    type: "post",
+                }
+            }
+        });
+        dataSourceProjects.read();
+
+        $("#grid").kendoGrid({
+            dataSource: dataSourceProjects,
+            autoBind: true,
+            sortable: true,
+            pageable: true,
+            columns: [{
+                template: "<input type='checkbox' class='target' value='#= MESSAGEID #'/>",
+                width: "40px",
+                title: "Select"
+            },
+                 { field: "FIRSTNAME", width: 150, title: "To", template: "  ${ Salutation }&nbsp;${ FIRSTNAME }&nbsp; ${ LASTNAME }" },
+                   { field: "MESSAGESUBJECT", title: "Subject", width: "100px", },
+                 { width: 50, template: "<a  title=${ MESSAGEID } onclick=setStatus(${ MESSAGEID }) class='linkClass'  >View</a>", title: "View" }
+            ],
+            dataBound: function () {
+                var grid = this;
+                if (grid.table.hasClass('k-focusable'))
+                    grid.table.removeClass('k-focusable');
+                grid.tbody.find('>tr').each(function () {
+                    var dataItem = grid.dataItem(this);
+                    if ($(this).hasClass('k-alt')) {
+                        $(this).removeClass('k-alt');
+                    }
+                    if (dataItem.MESSAGESTATUS == "Read") {
+
+                        $(this).addClass('read');
+                    }
+                    else {
+                        $(this).addClass('unread');
+                    }
+                })
+            }
+        });
+        var MessageDeleteIds = [];
+        $('.target').live('change', function () {
+
+
+            if ($(this).is(':checked')) {
+
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.push(MessageDeleteId);
+
+            }
+            else {
+                var MessageDeleteId = $(this).val();
+                MessageDeleteIds.pop(MessageDeleteId);
+            }
+            $("#MessageUpdateStatus").val("");
+        });
+        $("#btnselect1").click(function () {
+
+            $('input:checkbox').attr('checked', 'checked');
+            $('.target').each(function () {
+
+
+                if ($(this).is(':checked')) {
+
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.push(MessageDeleteId);
+
+                } else {
+                    var MessageDeleteId = $(this).val();
+                    MessageDeleteIds.pop(MessageDeleteId);
+                }
+            });
+            $("#MessageUpdateStatus").val("All Messages Selected");
+            if ($("#MessageUpdateStatus").val().length > 0) {
+                $("#MessageUpdateStatus").show();
+            } else {
+                $("#MessageUpdateStatus").hide();
+            }
+
+        });
+        $("#btnrefresh1").click(function () {
+
+            location.reload();
+
+        });
+
+        $("#btndelete1").click(function () {
+
+            var model = new Object();
+            model.MessageDeleteIds = MessageDeleteIds;
+
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/Message/DeleteMessage",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg) {
+                        $("#MessageUpdateStatus").val(msg.msg);
+                        if ($("#MessageUpdateStatus").val().length > 0) {
+                            $("#MessageUpdateStatus").show();
+                        } else {
+                            $("#MessageUpdateStatus").hide();
+                        }
+                        if ($('#MessageUpdateStatus').val().indexOf('Error') > -1) {
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatus');
+                        } else if ($('#MessageUpdateStatus').val().indexOf('Error') == -1) {
+                            $('#MessageUpdateStatus').removeClass();
+                            $('#MessageUpdateStatus').addClass('MessageUpdateStatusNormal');
+                        }
+                        MessageDeleteIds = [];
+                        BindGrid("All");
+                    }
+                },
+                data: JSON.stringify(model)
+            });
+
+        });
+
+
+    }
+
+    @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    }
+
+</script>

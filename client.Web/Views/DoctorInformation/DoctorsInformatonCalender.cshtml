@@ -1,0 +1,649 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonViews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    
+}
+
+
+
+<div class="c_body innerLayout">
+    <div class="c_body_fleet">
+        @*<div class="c_pgTitle">
+            <div class="c_pgTitle_Fleet">
+                <h1 class="c_pgTitleText">Public Profile</h1>
+            </div>
+        </div>*@
+
+        <div class="c_publicProfile">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(false)
+                <div>
+               @*    <div class="c_publicProfileCalenderHeader">
+    <div class="c_doctorInfoLeft">
+
+        <div class="c_publicProfilePhoto">
+            <div id="fade" class="black_overlay"></div>
+            <div class="closeDisplayBar" style="display: none;"></div>
+            <div class="boxSep">
+                <div class="imgLiquidFill imgLiquid " style="width: 130px; height: 160px;">
+                    <img  id="viewimg" src="@Model.USERPHOTOFILEPATH"    onload='resizeprofilephoto();' />
+                </div>
+            </div>
+        </div>
+        <div class="c_publicProfileDoctorInfo">
+            <h2>@Html.DisplayFor(model => model.Salutation)&nbsp;@Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME),&nbsp; @Html.DisplayFor(model => model.SUFFIX)</h2>
+
+            <h4>@Html.DisplayFor(model => model.Speciality)</h4>
+           @* <h4>@Html.LabelFor(m => m.rejectCount)&nbsp;@Html.DisplayFor(m => m.rejectCount)</h4>
+            <div class="stars">
+                @for (var k = 0; k < @Model.Ratings; k++)
+                {
+                    <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                }
+                @for (var i = 0; i < 5 - @Model.Ratings; i++)
+                {
+                    <img class="Empty" src="~/Content/Images/Empty.png" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="c_profileViewedCountRight">
+        <div class="c_profileCount">
+            <div id="hits">
+                <h1 id="hitcount">@Html.DisplayFor(model => model.HITCOUNT)</h1>
+                <label>Profile Viewed</label>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div id="customdisplay" class="c_publicProfileContactInfo">
+   @* <div class="c_publicProfileContactInfo_List">
+        <ul>
+            <li>
+                <h5><span class="icon_contactInfo"></span>Contact Information</h5>
+                <div class="row">
+                    <div class="display-label">@Html.DisplayFor(model => model.USERSTREETADDRESS1)</div>
+                    @if (Model.USERSTREETADDRESS2 != null)
+                    {
+                        <div class="display-label">@Html.DisplayFor(model => model.USERSTREETADDRESS2)</div>
+                    }
+                    <div class="display-label">@Html.DisplayFor(model => model.CITY)</div>
+                    <div class="display-label">@Html.DisplayFor(model => model.USERSTATE)</div>
+                    <div class="display-label">@Html.DisplayFor(model => model.ZIPCODE)</div>
+                </div>
+            </li>
+            <li>
+                <h5><span class="icon_educationalInfo"></span>Educational Information</h5>
+                <div class="row">
+                    <div class="display-label">@Html.DisplayFor(model => model.EDUCATIONALQUAL)</div>
+                    <br />
+                    <div class="display-label">@Html.DisplayFor(model => model.CERTIFICATIONBOARD)</div>
+                </div>
+            </li>
+            <li>
+
+                <h5><span class="icon_clinicInfo"></span>Clinic Information</h5>
+                <div class="row">
+                    <div class="display-label">@Html.DisplayFor(model => model.INSTITUTIONNAME)</div>
+                    <div class="display-label">@Html.DisplayFor(model => model.STREETADDRESS1)</div>
+                    @if (Model.STREETADDRESS2 != null)
+                    {
+                        <div class="display-label">@Html.DisplayFor(model => model.STREETADDRESS2)</div>
+                    }
+                    <div class="display-label">@Html.DisplayFor(model => model.CLINICCITY),  @Html.DisplayFor(model => model.CLINICUSERSTATE) - @Html.DisplayFor(model => model.CLINICZIPCODE) </div>
+                    <div class="display-label">@Html.DisplayFor(model => model.TELEPHONE)</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="c_video_clinic_panel">
+        <a class="button" id="videodisplay">
+            <div class="indicator video"></div>
+            Doctor Availability on Video</a>
+        <a class="button inactive" id="clinicdisplay">
+            <div class="indicator clinic"></div>
+            Doctor Availability on Clinic</a>
+        <a class="button inactive" id="toggleClinicInfo">
+            <div class="indicator clinicInfo"></div>
+            Clinic Info</a>
+        <a class="button inactive" id="toggleAboutMe">
+            <div class="indicator aboutMe"></div>@Html.DisplayNameFor(model => model.ABOUTME)&nbsp;<span>@Html.DisplayFor(model => model.Salutation)&nbsp;@Html.DisplayFor(model => model.FIRSTNAME)&nbsp;@Html.DisplayFor(model => model.LASTNAME)</span></a>
+        <a class="button inactive" id="toggleReview">
+            <div class="indicator review"></div>
+            Reviews</a>
+    </div>
+    *@
+
+    <div class="c_bookVideoConference">
+        <div class="fleet">
+            <h5>Video Appointments</h5>
+            <div class="display-field" style="color: #666; margin: 11px 0px 0px 0px;">Video Consultation @Html.DisplayNameFor(model => model.RateDisplay)@Html.DisplayFor(model => model.RateQuatermins)</div>
+            @Html.Partial("~/Views/AccountSettings/_SetAppointments.cshtml")
+        </div>
+    </div>
+    <div class="c_bookClinicAppointment">
+        <div class="fleet">
+            <h5>Clinic Appointments</h5>
+            @Html.Partial("~/Views/AccountSettings/_SetClinicAppointment.cshtml")
+        </div>
+    </div>
+    <div class="c_doctorsReviews" style="color:#000 !important;">
+        <div class="fleet">
+            <h5>Doctors Reviews</h5>
+            <br />
+            @foreach (var temp in Model.DoctorsInformationEditModels)
+            {
+                    
+                <div class="d_myReviews_reviewContent">
+
+
+
+                    <div class="right" style="margin-top: 10px;border-top:1px solid #999;">
+
+                        <div class="row">
+                            <div class="d_myReviews_userName"><strong>docare loyal patient</strong> </div>
+                        </div>
+                        <div class="row">
+                            <div class="stars">
+                                @for (var k = 0; k < temp.CLIENTRATING; k++)
+                                {
+                                    <img class="Empty" src="~/Content/Images/Filled.png" /> 
+                                }
+                                @for (var i = 0; i < 5 - temp.CLIENTRATING; i++)
+                                {
+                                    <img class="Empty" src="~/Content/Images/Empty.png" />
+                                }
+
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top: -5px;">
+                            <div class="display-field">@Html.LabelFor(m => m.Comment, @temp.Comment) </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top: -5px;">
+                            <div class="display-field dates" style="float:right;">
+                               <em style="float:right;">@Html.LabelFor(m => m.RATINGDATE, String.Format("{0:dddd, MMMM d, yyyy HH:mm:ss tt}", @temp.RATINGDATE))</em> 
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                   
+                  
+
+                
+                   
+            }
+        </div>
+    </div>
+
+   @* <div id="details">
+        <div class="c_detailsofclinicaddress">
+            <div class="clinic_address">
+
+                <div class="fleet">
+
+                    <div class="left">
+                        <div class="row">
+                            <div class="clinic_photo">
+                                <div class="boxSep">
+                                    <div class="imgLiquidFill imgLiquid " style="width: 100px; height: 100px;">
+                                        <img   src="@Model.INSTITUTIONIMAGEPATH"    onload='resizeprofilephoto();' />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div style="float:left;">
+
+                            <b>@Html.DisplayFor(model => model.INSTITUTIONNAME)</b>
+
+                            <p>@Html.DisplayFor(model => model.STREETADDRESS1)</p>
+                            @if (Model.STREETADDRESS2 != null)
+                            {
+                                <p>@Html.DisplayFor(model => model.STREETADDRESS2)</p>
+                            }
+                            <p>@Html.DisplayFor(model => model.CLINICCITY),@Html.DisplayFor(model => model.CLINICUSERSTATE) - @Html.DisplayFor(model => model.CLINICZIPCODE)</p>
+                            <p>@Html.DisplayFor(model => model.TELEPHONE)</p>
+                            <p><a href="#">info@sampleclininic.com</a></p>
+                            <p><a href='javascript:void(null);' id="toggleAboutClinic" class="linkClass">Read More</a></p>
+                                </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="readMoreClinicInfo">
+                                <b>About Clinic:</b>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                <a href='javascript:void(null);' id="HideAboutClinic" class="linkClass">Hide</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <input type ="text" id="clinicaddress" value="@Model.MAPPINGADDRESS" style="display:none;" />
+
+                </div>
+
+
+            </div>
+            <div style="position:relative;width:50%;height:300px;"><div id="map_canvas" ></div></div>
+        </div>
+    </div>*@
+</div>    
+@*<div class="c_detailsofclinicaddress">
+            <div class="clinic_address">
+
+                <div class="fleet">
+
+                    <div class="left">
+                        <div class="row">
+                            <div class="clinic_photo">
+                                <div class="boxSep">
+                                    <div class="imgLiquidFill imgLiquid " style="width: 100px; height: 100px;">
+                                        <img   src="@Model.INSTITUTIONIMAGEPATH"    onload='resizeprofilephoto();' />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div style="float:left;">
+
+                            <b>@Html.DisplayFor(model => model.INSTITUTIONNAME)</b>
+
+                            <p>@Html.DisplayFor(model => model.STREETADDRESS1)</p>
+                            @if (Model.STREETADDRESS2 != null)
+                            {
+                                <p>@Html.DisplayFor(model => model.STREETADDRESS2)</p>
+                            }
+                            <p>@Html.DisplayFor(model => model.CLINICCITY),@Html.DisplayFor(model => model.CLINICUSERSTATE) - @Html.DisplayFor(model => model.CLINICZIPCODE)</p>
+                            <p>@Html.DisplayFor(model => model.TELEPHONE)</p>
+                            <p><a href="#">info@sampleclininic.com</a></p>
+                            <p><a href='javascript:void(null);' id="toggleAboutClinic" class="linkClass">Read More</a></p>
+                                </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="readMoreClinicInfo">
+                                <b>About Clinic:</b>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                <a href='javascript:void(null);' id="HideAboutClinic" class="linkClass">Hide</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <input type ="text" id="clinicaddress" value="@Model.MAPPINGADDRESS" style="display:none;" />
+
+                </div>
+
+
+            </div>
+            <div style="position:relative;width:50%;height:300px;"><div id="map_canvas" ></div></div>
+        </div>*@
+                </div>
+                @*<div class="moreInformationContent">
+                    <div class="row">
+                        <b>About Me</b>
+                        <p>
+                            @Html.DisplayFor(model => model.ABOUTME)
+                            @Html.HiddenFor(model => model.mode)
+                        </p>
+                    </div>
+                    <div class="row">
+                        <b>Award</b>
+                        <p>@Html.DisplayFor(model => model.AWARDCERTIFICATION)</p>
+                    </div>
+                    <div class="row">
+                        <b>Certification</b>
+                        <p>@Html.DisplayFor(model => model.CERTIFICATIONBOARD)</p>
+                    </div>
+                </div>*@
+               
+                 
+
+                <div class="row" style="display: none;">
+                    <div class="row" id="details">
+                        <div id="prefferedprovider" />
+                    </div>
+                </div>
+
+
+
+              
+            }
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+<script>
+
+
+    $(function () {
+        //function count($this) {
+        //    var current = parseInt($this.html(), 10);
+        //    $this.html(++current);
+        //    if (current !== $this.data('count')) {
+        //        setTimeout(function () { count($this) }, 50);
+        //    }
+        //}
+        //$("#hitcount").each(function () {
+        //    $(this).data('count', parseInt($(this).html(), 10));
+        //    $(this).html('0');
+        //    count($(this));
+        //});
+    });
+    $("#prefferedprovider").kendoGrid({
+        dataSource: {
+            type: "Json",
+            pageSize: 5,
+            serverFiltering: true,
+
+            transport: {
+                read: "/AccountSettings/GetAllFilteredDoctors"
+            },
+            groupable: false,
+        },
+        sortable: true,
+        pageable: true,
+        columns: [
+        {
+            field: "", width: 100, template: "<a href='DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;' ><img src='${ USERPHOTOFILEPATH }' class='docImage' style='width:80px;height:80px;float:left;' alt=${ UserName } /></a>" +
+                                  "<div style='float:left;width:195px;font-size:medium;font-weight:bold;margin:0px;padding:0px;'><a href='DoctorInformation/DoctorsInformatonViewsAnnonymus?id=#=UserName#' class='linkClass' style='float:left;text-decoration:none;width: 100%;margin-top: 0;height: 90px;' >Dr. ${ FIRSTNAME }&nbsp; ${ LASTNAME }<br/>${ USERSTREETADDRESS1 } ${ CITY }${ USERSTATE }</a>"
+        },
+        ]
+    });
+    $(document).ready(function () {
+
+        if ($("#mode").val() == 2) {
+
+            //$("#videodisplay").addClass('inactive');
+            $("#clinicdisplay").removeClass();
+            $("#clinicdisplay").addClass('button');
+            //$(".c_bookVideoConference").hide();
+            $(".c_bookClinicAppointment").show();
+
+            
+            $("#toggleClinicInfo").addClass('inactive');
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.clinic').show();
+            $(".c_detailsofclinicaddress").hide();
+        }
+        else if ($("#mode").val() == 1) {
+            $("#videodisplay").removeClass();
+            $("#videodisplay").addClass('button'); 
+            $("#toggleClinicInfo").addClass('inactive');
+            $(".c_bookVideoConference").show();
+            $(".c_detailsofclinicaddress").hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.video').show();
+        }
+
+
+
+        $("#videodisplay").click(function () {
+            //Checks if the image is already in original size:      
+            $("#videoslot").show();
+            $("#clinicslot").hide();
+        });
+        $("#clinicdisplay").click(function () {
+            //Checks if the image is already in original size:      
+            $("#videoslot").hide();
+            $("#clinicslot").show();
+        });
+        $('#paypal').hide();
+        $('.customToggleCollapse').click(function () {
+
+            $(this).parent().next('.customAccordionContent').toggle();
+            $(this).toggleClass('customToggleExpand');
+        });
+
+
+        //Checks if the image is already in original size:      
+       
+
+        $("#hidedisplayclinic").click(function () {
+            //Checks if the image is already in original size:      
+            $("#details").css("display", "none");
+        });
+
+
+        $(".expandMoreInformation").click(function () {
+            $(".moreInformationContent").slideDown('slow');
+            $(this).hide();
+            $(".collapseMoreInformation").show();
+        });
+        $(".collapseMoreInformation").click(function () {
+            $(".moreInformationContent").slideUp('slow');
+            $(this).hide();
+            $(".expandMoreInformation").show();
+        });
+
+
+    });
+
+</script>
+<script type="text/javascript">
+
+    $(function () {
+        PlotLocation('@Model.MAPPINGADDRESS');
+
+        ////add as temp fix by sanjeev
+        $('.indicator.clinic').hide();
+        $('.c_doctorsReviews').hide();
+        $('.indicator.video').hide();
+        $('.indicator.aboutMe').hide();
+        $('.indicator.clinicInfo').show();
+        $('#videodisplay').addClass('inactive');
+        $('#clinicdisplay').addClass('inactive');
+        $('#toggleAboutMe').addClass('inactive');
+        $('#toggleReview').addClass('inactive');
+        $('#details').fadeIn('slow');
+        $('.c_bookClinicAppointment').hide();
+        $('.c_bookVideoConference').hide();
+        $('.moreInformationContent').hide();
+
+        $("#toggleClinicInfo").removeClass();
+        $("#toggleClinicInfo").addClass('button');
+        $('.c_detailsofclinicaddress').show();
+
+        //end
+
+
+        $('#displayclinic').click(function () {
+            $('#details').slideDown('slow');
+            $(this).hide();
+            $('#hidedisplayclinic').show();
+        });
+        $('#hidedisplayclinic').click(function () {
+            $('#details').slideUp('slow');
+            $('#displayclinic').show();
+        });
+        $('#toggleAboutClinic').click(function () {
+            $('.readMoreClinicInfo').fadeIn('slow');
+            $(this).hide();
+        });
+        $('#toggleAboutClinic').bind('mousedown', function (e) {
+            e.preventDefault();
+        })
+        $('#HideAboutClinic').click(function () {
+            $('.readMoreClinicInfo').hide();
+            $('#toggleAboutClinic').show();
+
+        });
+        $('#HideAboutClinic').bind('mousedown', function (e) {
+            e.preventDefault();
+        })
+
+        $('#toggleReview').click(function () {
+            $(this).removeClass('inactive');
+            $('.indicator.review').show();
+            $('.indicator.video').hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.aboutMe').hide();
+            $('#videodisplay').addClass('inactive');
+            $('#toggleClinicInfo').addClass('inactive');
+            $('#toggleAboutMe').addClass('inactive');
+            $('.c_doctorsReviews').show();
+            $('.c_bookVideoConference').hide();
+            $('.moreInformationContent').hide();
+            $('#details').hide();
+            //add as temp fix by sanjeev
+            $('.c_detailsofclinicaddress').hide();
+        });
+
+        $('#clinicdisplay').click(function () {
+            $(this).removeClass('inactive');
+            $('.indicator.clinic').show();
+            $('.c_doctorsReviews').hide();
+            $('.indicator.video').hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.aboutMe').hide();
+            $('#videodisplay').addClass('inactive');
+            $('#toggleClinicInfo').addClass('inactive');
+            $('#toggleAboutMe').addClass('inactive');
+            $('.c_bookClinicAppointment').show();
+            $('.c_bookVideoConference').hide();
+            $('.moreInformationContent').hide();
+            $('#toggleReview').addClass('inactive');
+            $('#details').hide();
+            //add as temp fix by sanjeev
+            $('.c_detailsofclinicaddress').hide();
+        });
+        $('#videodisplay').click(function () {
+            $(this).removeClass('inactive');
+            $('.indicator.video').show();
+            $('.c_doctorsReviews').hide();
+            $('.indicator.clinic').hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.aboutMe').hide();
+            $('#clinicdisplay').addClass('inactive');
+            $('#toggleClinicInfo').addClass('inactive');
+            $('#toggleAboutMe').addClass('inactive');
+            $('.c_bookClinicAppointment').hide();
+            $('.c_bookVideoConference').show();
+            $('.moreInformationContent').hide();
+            $('#toggleReview').addClass('inactive');
+            $('#details').hide();
+
+            //add as temp fix by sanjeev
+            $('.c_detailsofclinicaddress').hide();
+        });
+
+        $('#toggleClinicInfo').click(function () {                      
+            var param = getUrlVars()["id"];
+            window.location.href = "/DoctorInformation/DoctorsInformatonViewsAnnonymus?id=" + param;
+
+        });
+        $('#toggleAboutMe').click(function () {
+            $(this).removeClass('inactive');
+            $('.indicator.clinic').hide();
+            $('.c_doctorsReviews').hide();
+            $('.indicator.video').hide();
+            $('.indicator.clinicInfo').hide();
+            $('.indicator.aboutMe').show();
+            $('#videodisplay').addClass('inactive');
+            $('#clinicdisplay').addClass('inactive');
+            $('#toggleClinicInfo').addClass('inactive');
+            $('.moreInformationContent').show();
+            $('.c_bookClinicAppointment').hide();
+            $('.c_bookVideoConference').hide();
+            $('#toggleReview').addClass('inactive');
+            $('#details').hide();
+            //add as temp fix by sanjeev
+            $('.c_detailsofclinicaddress').hide();
+        });
+
+        // $('#map_canvas').height($('.c_detailsofclinicaddress').height());
+    });
+
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+</script>
+<style>
+    .d_myReviews_userName{
+    margin:5px 0px 0px 0px;
+    }
+    .row {
+        margin-bottom: 5px;
+    }
+    header {
+        display:none;
+    }
+     footer {
+        display:none;
+    }
+
+    .c_container {
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .c_bookVideoConference {
+display: block;
+width: 100%;
+height: 380px;
+}
+</style>
+
+<script lang="javascript" type="text/javascript">
+
+    var geocoder, map, icon;
+    icon = '/Content/Images/blue_marker.png';;
+
+    function PlotLocation(address) {
+        if (address != null) {
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                'address': address
+            }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var myOptions = {
+                        zoom: 15,
+                        center: results[0].geometry.location,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                    google.maps.event.trigger(map, 'resize')
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        icon: icon,
+                    });
+
+                    var bounds = new google.maps.LatLngBounds();
+                    bounds.extend(myLatLng);
+                    map.fitBounds(bounds);
+
+                }
+            });
+        }
+    }
+
+
+</script>

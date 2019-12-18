@@ -1,0 +1,106 @@
+﻿@model client.Web.Models.BookingAppointmentModelOuter
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm())
+{
+  <div class="p_pay_visit" style="font-size:15px;background:#d2e6f4;padding:10px 5px;border:1px solid #999;">
+    <div class="payforVisit">
+        <div class="payPal">
+            <div>
+                <div class="payPalLogo"></div>
+                <div class="payPalMessage">
+                    <h3><strong>Please pay using your paypal account or credit card</strong></h3>
+                    <br />
+                    <p>
+                        Paypal is the faster,safer way to pay and get paid online.The service allows the members to send money without sharing financial information, with the felixibility to pay using their account balances,bank accounts, creditcard or promotional financing.
+                    </p>
+                    <br />
+                </div>
+                <div class="appointmentDateandTime">
+                    <div class="row">
+                        <div class="display-label">
+                            @Html.DisplayNameFor(model => model.APPOINTMENTSTARTTIMEACTUAL)
+                        </div>
+                        <div class="display-field" >
+                          <div>  <h3><strong>@Html.DisplayFor(model => model.APPOINTMENTSTARTTIMEACTUAL)</strong></h3></div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="display-label" >
+                            <div>@Html.DisplayNameFor(model => model.Speciality)</div>
+                             @Html.HiddenFor(model => model.DOCTORSLOTID)
+                             @Html.HiddenFor(model => model.APPOINTMENTENDTIME)
+                             @Html.HiddenFor(model => model.pstatus)
+                            
+                        </div>
+                        <div class="display-field" >
+                            <h3><strong>Dr. @Html.DisplayFor(model => model.FIRSTNAME)
+                                @Html.DisplayFor(model => model.LASTNAME) </strong><br />
+                           <em>@Html.DisplayFor(model => model.Speciality)</em></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="display-label">
+                                @Html.DisplayNameFor(model => model.RateDisplay)
+                            </div>
+                            <div class="display-field" >
+                                <h3><strong>@Html.DisplayFor(model => model.RateQuatermins)</strong></h3>
+                        </div>
+                    </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+                       <div style="margin:32px 0px 0px 0px;"> <img src="~/Content/Images/paypal.gif" /></div>
+    
+            <div class="amy_inner"></div>
+    
+    <div class="row c_buttonContainer" style="width: 96%;padding-top:0px;margin-top: 20px;">
+                        <div class="display-label">&nbsp;</div>
+                        <div class="display-field">
+            <input type="submit" value="Submit" class="button" style="margin-left: 780px;" />
+ </div>
+                        </div>
+}
+<style>
+    .display-label {
+        width:110px;
+        color: #096ca3 !important;
+        
+    }
+    h2 {
+        color: #3aa3ff;
+        font-size: 28px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 5px;
+        width:665px;
+    }
+    h6 {
+font-weight: 400;
+font-size: 20px;
+padding: 7px 0px 11px 10px !important;
+color: #000;
+margin: 0 0 10px 0px;
+/*background-color: #d2e6f4;*/
+}
+    .pre_book_con .app_left {
+float: left;
+width: 600px;
+background: #d2e6f4;
+border: 1px solid #999;
+padding: 0px 10px;
+height: 259px !important;
+}
+
+    h1 {
+        padding:5px 0px;
+    }
+
+</style>

@@ -1,0 +1,81 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "DoctorsInformatonUpdateAvailabilty";
+    Layout = "~/Views/Shared/_DoctorsInformationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+     
+
+    <div class="fleet">
+        <h6>About Video</h6>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+        </p>
+        <div id="docInfoClinicDisplay">
+            <div class="row">
+
+                <div class="subTitle"><b>@Html.LabelFor(model => model.TimeDisplay)</b></div>
+
+            </div>
+            <div class="row">
+                <div class="editor-label heading">
+                    @Html.LabelFor(model => model.RateDisplay)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.RateQuatermins, new { maxlength = "5" })
+                    @Html.ValidationMessageFor(model => model.RateQuatermins)
+                </div>
+            </div>
+            <div class="row">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.PAYPALEMAIL)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.PAYPALEMAIL, new { maxlength = "30" })
+                    @Html.ValidationMessageFor(model => model.PAYPALEMAIL)
+                </div>
+            </div>
+            <div class="row c_buttonContainer">
+                <div class="right">
+                    <input type="submit" value="Update" class="button" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h6>Doctor's Video Availability </h6>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type.
+            </p>
+        </div>
+        <div class="customAccordionContent">
+            <div class="stepsVideo">@{Html.RenderPartial("_SetAppointments");}</div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#pagetitle").text('Doctor Availability');
+        $('.img_Shows').each(function () {
+
+            $(this).attr('src', "@Model.USERPHOTOFILEPATH");
+        });
+
+
+        $('.c_pgTitleText').text('Video Availability');
+        $('.c_pgTitleIcon').addClass('video');
+
+    });
+
+</script>

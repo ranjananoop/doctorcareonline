@@ -1,0 +1,560 @@
+﻿<link rel="stylesheet" href="~/Content/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" />
+<link href="~/Content/smoothness/jquery.weekcalendar.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/jquery-ui-1.8rc3.custom.min.js"></script>
+<script src="~/Scripts/jquery.weekcalendar.js"></script>
+
+<style type="text/css">
+    .panelContent {
+        display: block;
+        background-color: #f0f0f0;
+    }
+</style>
+
+<script type='text/javascript'>
+
+    var doctorSlots1 = [];
+    var existingSlots1 = [];
+    var eventData = [];
+    $("#textContainers > p").html("");
+    var timeSlots = [], startTime, endTime, tempStartTime, tempEndTime;
+
+    $(document).ready(function () {
+        calculate_time_zone();
+        GetexistingSlots1();
+
+
+        function renderCalendar() {
+
+            $('#calendarc').weekCalendar({
+                appointmentURL: '',
+                isPatient: false,
+                timeslotsPerHour: 4,
+                useShortDayNames: true,
+                businessHours: { start: 7, end: 22, limitDisplay: true },
+                height: function ($calendarc) {
+                    return $(window).height() - $("h1").outerHeight();
+                },
+                eventRender: function (calEvent1, $event) {
+                    if (calEvent1.end.getTime() < new Date().getTime()) {
+                        $event.css("backgroundColor", "#aaa");
+                        $event.find(".time").css({ "backgroundColor": "#999", "border": "1px solid #888" });
+                    }
+                },
+                eventNew: function (calEvent1, $event) {
+                    displayMessage("<strong>Added event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                    alert("You've added a new event. You would capture this event, add the logic for creating a new event with your own fields, data and whatever backend persistence you require.");
+                },
+                eventDrop: function (calEvent1, $event) {
+                    displayMessage("<strong>Moved Event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                },
+                eventResize: function (calEvent1, $event) {
+                    displayMessage("<strong>Resized Event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                },
+                eventClick: function (calEvent1, $event) {
+                    displayMessage("<strong>Clicked Event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                },
+                eventMouseover: function (calEvent1, $event) {
+                    displayMessage("<strong>Mouseover Event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                },
+                eventMouseout: function (calEvent1, $event) {
+                    displayMessage("<strong>Mouseout Event</strong><br/>Start: " + calEvent1.start + "<br/>End: " + calEvent1.end);
+                },
+                noEvents: function () {
+                    displayMessage("There are no events for this week");
+                },
+                data: eventData
+            });
+
+            $('#calendarc').weekCalendar('refresh');
+        }
+
+
+
+        function displayMessage(message) {
+            //alert(message);
+            // $("#message").html(message).fadeIn();
+        }
+
+        $('.toggleCalender.Clinic').toggle(
+      function () {
+          $('#calendard').hide();
+          $(this).html('Show Calender');
+      },
+      function () {
+          $('#calendard').show();
+          $(this).html('Hide Calender');
+      });
+
+
+
+        function startChange() {
+            var startTime = start.value();
+
+            if (startTime) {
+                startTime = new Date(startTime);
+
+                end.max(startTime);
+
+                startTime.setMinutes(startTime.getMinutes() + 15);
+
+                end.min(startTime);
+                end.value(startTime);
+            }
+        }
+
+        //init start timepicker
+        var start = $("#startc").kendoTimePicker({
+            change: startChange,
+            interval: 15,
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            }
+        }).data("kendoTimePicker");
+
+        //init end timepicker
+        var end = $("#endc").kendoTimePicker({
+            interval: 15,
+            animation: {
+                open: {
+                    effects: "fadeIn",
+                    duration: 300,
+                    show: true
+                }
+            }
+        }).data("kendoTimePicker");
+
+        //define min/max range
+        start.min("7:00 AM");
+        start.max("10:00 PM");
+
+        //define min/max range
+        end.min("7:15 AM");
+        end.max("10:30 PM");
+
+        $("#startDatec").kendoDatePicker({ value: new Date(), });
+        var today = new Date();
+        var seventhDay = new Date(today.setDate(today.getDate() + 6));
+        $("#endDatec").kendoDatePicker({ value: new Date(seventhDay), });
+
+
+        $("#btnEdit1").click(function () {
+        });
+
+        $("#btnConfirm1").click(function () {
+            setAppointments();
+            $("#confirmDialog1").hide();
+            $("#overlayContainer").hide();
+
+        });
+        $("#overlayContainer").insertBefore('.c_container');
+
+        $('#confirmDialog1').insertBefore('#overlayContainer');
+        $("#overlayContainer").height($('body').height());
+
+        $('#confirmDialog1').css({
+            left: ($(window).width() - $('#confirmDialog1').outerWidth()) / 2,
+            top: ($(window).height() - $('#confirmDialog1').outerHeight()) / 2
+        });
+
+        $(window).resize(function () {
+            $('#confirmDialog1').css({
+                left: ($(window).width() - $('#confirmDialog1').outerWidth()) / 2,
+                top: ($(window).height() - $('#confirmDialog1').outerHeight()) / 2
+            });
+        });
+
+       
+
+        $("#btnCancel1").click(function () {
+            $("#confirmDialog1").hide();
+            $("#overlayContainer").hide();
+            $('html').removeClass('scrollbarOff');
+        });
+        $(".toggleCalender").click(function () {
+            $("#calendarc").toggle();
+
+        });
+
+       
+
+        $("#btnAvailabilityc").click(function () {
+
+
+
+            var slotsExists = false;
+            var deleteConfirm = false;
+            //Check for existing slots
+            $.ajax({
+                async: false,
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+                url: "/DoctorInformation/CheckClinicexistingSlots",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    if (msg.msg == "Doctor slot exists in Clinic") {
+                        ////alert('Doctor slot exists in Clinic');
+                        ////$("#textContainers > p").html(msg.msg);
+                        ////$("#textContainerdialog2 > p").html(msg.msg);
+                        ////$("#btnConfirm1").show();
+                        ////$("#divExistingSlot").show();
+                        ////slotsExists = true;
+                    } else {
+                        //$("#textContainers > p").html(msg.msg);
+                        //$("#textContainerdialog2 > p").html(msg.msg);
+                    }
+                },
+                data: JSON.stringify(doctorSlots1),
+            });
+
+            if (slotsExists) {
+                $('html').css('overflow-y', 'hidden !important');
+                $("#confirmDialog1").show();
+                $("#overlayContainer").show();
+                $('html').addClass('scrollbarOff');
+
+                jQuery.fn.center = function () {
+                    this.css("position", "absolute");
+                    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                $(window).scrollTop()) + "px");
+                    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                $(window).scrollLeft()) + "px");
+                    return this;
+                }
+
+                $('#confirmDialog1').center();
+            }
+            else {
+                setAppointments();
+            }
+        });
+
+        function setAppointments() {
+            $("#btnConfirm1").show();
+            $("#divExistingSlot").show();
+            var slotsVideoExists = false;
+            doctorSlots1 = [];
+            var eventDays = [];
+            var notWorkingDays = [];
+            var sTime = " 2013 / 1/ 1 " + $("#startc").val();
+            var eTime = " 2013 / 1/ 1 " + $("#endc").val();
+
+            var startDate = new Date(parseInt(new Date($("#startDatec").val()).getFullYear()) + ',' + parseInt(new Date($("#startDatec").val()).getMonth() + 1) + ',' + parseInt(new Date($("#startDatec").val()).getDate()));
+            var endDate = new Date(parseInt(new Date($("#endDatec").val()).getFullYear()) + ',' + parseInt(new Date($("#endDatec").val()).getMonth() + 1) + ',' + parseInt(new Date($("#endDatec").val()).getDate()));
+
+            var startHour = new Date(0, 0, 0, parseInt(new Date(sTime).getHours()), parseInt(new Date(sTime).getMinutes()));
+            var endHour = new Date(0, 0, 0, new Date(eTime).getHours(), new Date(eTime).getMinutes());
+            var notWorkingDays = [];
+
+            var count = 1;
+
+            eventDays = getEventDaysC(startDate, endDate);
+
+            if (eventDays.length > 0) {
+                var jsonObj = '{"events" : [';
+                for (var i = 0; i < eventDays.length; i++) {
+                    var doctorSlot = new Object();
+                    var startMin = new Date(startHour);
+                    while (startMin < endHour) {
+
+                        var eventStartDate = new Date(eventDays[i].getMonth() + 1 + '/' + eventDays[i].getDate() + '/' + eventDays[i].getFullYear() + ' ' + startMin.getHours() + ':' + startMin.getMinutes()).getTime();
+                        startMin.setMinutes(startMin.getMinutes() + 15);
+                        var eventEndDate = new Date(eventDays[i].getMonth() + 1 + '/' + eventDays[i].getDate() + '/' + eventDays[i].getFullYear() + ' ' + startMin.getHours() + ':' + startMin.getMinutes()).getTime();
+
+                        var event = ' { "id": ' + count + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "" },';
+                        jsonObj += event;
+                        count++;
+                        doctorSlot = { FROMTIME: new Date(eventStartDate), CALYEAR: eventDays[i].getFullYear(), CALMONTH: eventDays[i].getMonth() + 1, CALDATE: eventDays[i].getDate(), TOTIME: new Date(eventEndDate), AVAILABILITYMODE: 'C', TimeZoneOffset: document.getElementById('timezoneOffset').value, DSTObserved: document.getElementById('dstObserved').value };
+                        doctorSlots1.push(doctorSlot);
+                    }
+                }
+                jsonObj = jsonObj.substr(0, jsonObj.length - 1);
+                jsonObj += ']}';
+                eventData = $.parseJSON(jsonObj);
+
+               // renderCalendar();
+
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    cache: false,
+                    dataType: 'json',
+                    url: "/DoctorInformation/SetDoctorsClinicSlots",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (msg) {
+                        //if (msg.msg == "Succesfully Created") {
+                        //    $("#textContainers > p").html(msg.msg);
+
+                        //    return;
+                        //}
+                        //else {
+                        //    $("#textContainers > p").html(msg.msg);
+                        //    eventData = null;
+                        //    // renderCalendar();
+                        //}
+                        if (msg.msg == "Slot Already Exists in Video Appointments") {
+                           // $("#textContainers > p").html(msg.msg);
+                            $("#textContainerdialog2 > p").html(msg.msg);
+                            $("#btnConfirm1").hide();
+                            $("#divExistingSlot").hide();
+                            slotsVideoExists = true;
+                        } 
+                    },
+                    data: JSON.stringify(doctorSlots1),
+                });
+                if (slotsVideoExists) {
+                    $('html').css('overflow-y', 'hidden !important');
+                    $("#confirmDialog1").show();
+                    $("#overlayContainer").show();
+                    $('html').addClass('scrollbarOff');
+
+                    jQuery.fn.center = function () {
+                        this.css("position", "absolute");
+                        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                                    $(window).scrollTop()) + "px");
+                        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                                    $(window).scrollLeft()) + "px");
+                        return this;
+                    }
+
+                    $('#confirmDialog1').center();
+                    slotsVideoExists = false;
+                }
+                else {
+                    window.location.reload();
+                }
+            }
+           // window.location.reload();
+        }
+
+        function getEventDaysC(stDate, ndDate) {
+            var eDays1 = [];
+            while (stDate <= ndDate) {
+
+                if ($('#daysbox1 input:checked').length > 0) {
+                    var isChecked = false;
+                    $('#daysbox1 input:checked').each(function () {
+                        if (stDate.getDay() == parseInt($(this).attr('name'))) {
+                            isChecked = true;
+                            return false;
+                        }
+                    });
+                    if (!isChecked) {
+                        eDays1.push(new Date(stDate));
+                    }
+                }
+                else
+                    eDays1.push(new Date(stDate));
+                stDate.setDate(stDate.getDate() + 1);
+            }
+
+            return eDays1;
+        }
+
+        function GetexistingSlots1() {
+            var doctorSlot = {
+                TimeZoneOffset: document.getElementById('timezoneOffset').value,
+                DSTObserved: document.getElementById('dstObserved').value
+            };
+
+            $.getJSON("/DoctorInformation/GetClinicExistingSlots", doctorSlot, function (data1) {
+                existingSlots1 = data1;
+                var isStart = false;
+                var jsonObj1 = '{"events" : [';
+                if (existingSlots1.length > 0) {
+                    for (var i = 0; i < existingSlots1.length; i++) {
+                        var stDate = new Date(parseInt(existingSlots1[i].FROMTIME.substring(6, existingSlots1[i].FROMTIME.length - 2)));
+                        var ndDate = new Date(parseInt(existingSlots1[i].TOTIME.substring(6, existingSlots1[i].TOTIME.length - 2)));
+
+                        
+                        tempStartTime = stDate.getHours();
+                        if (ndDate.getMinutes() > 0)
+                            tempEndTime = ndDate.getHours() + 1;
+                        else
+                            tempEndTime = ndDate.getHours();
+                        if (!isStart) {
+                            startTime = tempStartTime;
+                            endTime = tempEndTime;
+                            isStart = true;
+                            if (existingSlots1.length == 1) {
+                                var slot = { "start": startTime, "end": endTime };
+                                // alert(slot);
+                                timeSlots.push(slot);
+                            }
+                        }
+                        else {
+                            if (endTime != tempStartTime) {
+
+                                var slot = { "start": startTime, "end": endTime };
+                                if (!containsObject(slot, timeSlots)) {
+                                    //alert( "start ="+ startTime +"end="+ endTime );
+                                    timeSlots.push(slot);
+
+                                }
+                            }
+                            startTime = tempStartTime
+                            endTime = tempEndTime;
+                        }
+
+                    }
+                    // alert('timeSlots.length='+timeSlots.length);
+                    //alert(timeSlots[0].start + '  ' + timeSlots[0].end + '  ' + timeSlots[1].start + '  ' + timeSlots[1].end);
+                    //alert(timeSlots[2].start + '  ' + timeSlots[2].end + '  ' + timeSlots[3].start + '  ' + timeSlots[3].end);
+                }
+                if (existingSlots1.length > 0) {
+                    for (var i = 0; i < existingSlots1.length; i++) {
+
+                        var stDate = new Date(parseInt(existingSlots1[i].FROMTIME.substring(6, existingSlots1[i].FROMTIME.length - 2)));
+                        var ndDate = new Date(parseInt(existingSlots1[i].TOTIME.substring(6, existingSlots1[i].TOTIME.length - 2)));
+
+                        var eventStartDate = new Date(stDate.getMonth() + 1 + '/' + stDate.getDate() + '/' + stDate.getFullYear() + ' ' + stDate.getHours() + ':' + stDate.getMinutes()).getTime();
+                        var eventEndDate = new Date(ndDate.getMonth() + 1 + '/' + ndDate.getDate() + '/' + ndDate.getFullYear() + ' ' + ndDate.getHours() + ':' + ndDate.getMinutes()).getTime();
+
+
+                        var event = ' { "id": ' + existingSlots1[i].DOCTORSLOTID + ', "start":' + eventStartDate + ', "end":' + eventEndDate + ', "title": "" },';
+                        jsonObj1 += event;
+                    }
+                }
+                jsonObj1 = jsonObj1.substr(0, jsonObj1.length - 1);
+                jsonObj1 += ']}';
+                eventData = $.parseJSON(jsonObj1);
+               
+                renderCalendar();
+
+            });
+        }
+    });
+
+    function containsObject(obj, list) {
+        var i;
+        for (i = 0; i < list.length; i++) {
+            //alert('list[i].start === obj.start && list[i].end === obj.end  ' + list[i].start + ' '+ obj.start + '  '+ list[i].end+ '  '+ obj.end);
+            if (list[i].start === obj.start && list[i].end === obj.end) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+</script>
+
+<div id="overlayContainer" style="display: none;"></div>
+<div id="edit5" class="videoAppointments">
+
+    <div id="dialog-form">
+        <div id="myAvailabilityDiv">
+            <div class="availableTime">
+                <div class="row">
+                    <div class="subTitle"><b>Time</b></div>
+                    <div class="left">
+                        <label for="start">Start Time:</label>
+                        <input id="startc" value="7:00 AM" />
+                    </div>
+                    <div class="left">
+                        <label for="end">End Time:</label>
+                        <input id="endc" value="7:15 AM" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subTitle"><b>Date</b></div>
+                    <div class="left">
+                        <label>Start Date:</label>
+                        <input id="startDatec" />
+                    </div>
+                    <div class="left">
+                        <label>End Date:</label>
+                        <input id="endDatec" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="subTitle"><b>Select not working day</b></div>
+                    <ul id="daysbox1" class="daysbox">
+                        <li>
+                            <input type="checkbox" name="1" value="true" id="mondayc">
+                            <input type="hidden" id="__checkbox_mondacy" name="__checkbox_mondayc" value="true">
+                            Monday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="2" value="true" id="tuesdayc">
+                            <input type="hidden" id="__checkbox_tuesdayc" name="__checkbox_tuesdayc" value="true">
+                            Tuesday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="3" value="true" id="wednesdayc">
+                            <input type="hidden" id="__checkbox_wednesdayc" name="__checkbox_wednesdayc" value="true">
+                            Wednesday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="4" value="true" id="thursdayc">
+                            <input type="hidden" id="__checkbox_thursdayc" name="__checkbox_thursdayc" value="true">
+                            Thursday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="5" value="true" id="fridayc">
+                            <input type="hidden" id="__checkbox_fridayc" name="__checkbox_fridayc" value="true">
+                            Friday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="6" value="true" id="saturdayc">
+                            <input type="hidden" id="__checkbox_saturdayc" name="__checkbox_saturdayc" value="true">
+                            Saturday
+                        </li>
+                        <li>
+                            <input type="checkbox" name="0" value="true" id="sunday">
+                            <input type="hidden" id="__checkbox_sundayc" name="__checkbox_sundayc" value="true">
+                            Sunday
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div id="textContainers">
+                        <p></p>
+                    </div>
+                    <div id="confirmDialog1">
+                        <div class="popupcontent">
+                        <div id="textContainerdialog2">
+                            <p></p>
+                        </div>
+                        <div id="divExistingSlot">Exisitng slots will be updated. Please confirm.</div>
+                            </div>
+                        <div class="row c_buttonContainer">
+                            <div class="right">
+                                <input type="button" value="Cancel" id="btnCancel1" class="button cancel" />
+                                <input type="button" value="Confirm" id="btnConfirm1" class="button" />                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="row c_buttonContainer">
+                    <div class="right" style="float: right !important;">
+                        <input type="button" id="btnAvailabilityc" value="Update" class="button" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="view5" class="clinicAppointmentCalender">
+                        <div class="linkClass toggleCalender Clinic">Hide Calender</div>
+                        <div id='calendarc' style="display: block;"></div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+
+
+    <input type="hidden" name="availabilityModeSavec" value="C" id="availabilityModeSavec">
+    <input type="hidden" name="workDaysString" value="" id="workDaysStringc">
+    <input type="hidden" name="startTimeHidden" value="" id="startTimeHiddenc">
+    <input type="hidden" name="endTimeHidden" value="" id="endTimeHiddenc">
+    <input type="hidden" name="startDateHidden" value="" id="startDateHiddenc">
+    <input type="hidden" name="endDateHidden" value="" id="endDateHiddenc">
+</div>
+

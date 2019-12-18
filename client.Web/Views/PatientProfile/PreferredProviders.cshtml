@@ -1,0 +1,47 @@
+﻿@model client.Web.Models.DoctorsInformationEditModel
+
+@{
+    ViewBag.Title = "QuickSearch";
+    Layout = "~/Views/Shared/_PateintInformationLayout.cshtml";
+}
+
+<div class="pagetTitle">
+    <span class="pageIcon profiderSearch"></span>
+   
+</div>
+
+<div class="accordion noaccordion">
+    
+    <div class="frameContainer">
+        @{Html.RenderPartial("_preferredproviders");}
+    </div>
+
+</div> 
+
+
+<script>
+  
+    $(document).ready(function () {
+        $('.c_pgTitleText').text('Preferred Providers');
+        $('.c_pgTitleIcon').addClass('clinicPhoto');
+    });
+
+        $('.img_Showed').each(function () {
+           
+            $.ajax({
+                type: "GET",
+                url: "/PatientProfile/ImagePath",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {                  
+                    $('.img_Showed').attr('src', msg.msg);
+                    
+                }
+            });
+           
+         });
+        
+  
+
+</script>
